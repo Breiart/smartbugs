@@ -22,11 +22,72 @@ def task_log_dict(task, start_time, duration, exit_code, log, output, docker_arg
 
 
 def execute(task):
+    """
+    ME: Execute the different tools in the predefined order with predefined configurations
+    """
+    tool_order = ["slither", "mythril", "maian", "echidna", "confuzzius"]
+    tool_params = {
+        "slither": "--reentrancy-eth",
+        "mythril": "--execution-timeout 300 --max-depth 64",
+        "maian": "-s",  # Only suicidal contract detection
+        "echidna": "--config config.yaml",
+        "confuzzius": "--epochs 100"
+    }
+
 
     # create result dir if it doesn't exist
     os.makedirs(task.rdir, exist_ok=True)
     if not os.path.isdir(task.rdir):
         raise sb.errors.SmartBugsError(f"Cannot create result directory {task.rdir}")
+
+    # Cleanup old results
+    fn_task_log = os.path.join(task.rdir, sb.cfg.TASK_LOG)
+    fn_tool_log = os.path.join(task.rdir, sb.cfg.TOOL_LOG)
+    fn_tool_output = os.path.join(task.rdir, sb.cfg.TOOL_OUTPUT)
+    fn_parser_output = os.path.join(task.rdir, sb.cfg.PARSER_OUTPUT)
+    fn_sarif_output = os.path.join(task.rdir, sb.cfg.SARIF_OUTPUT)
+    for fn in (fn_task_log, fn_tool_log, fn_tool_output, fn_parser_output, fn_sarif_output):
+        try:
+            os.remove(fn)
+        except Exception:
+            pass
+        if os.path.exists(fn):
+            raise sb.errors.SmartBugsError(f"Cannot clear old output {fn}")
+
+    # Execute tools in order with retry mechanism
+    for tool in tool_order:
+        if task.tool.id.startswith(tool):
+            sb.logging.message(f"Running {tool} with parameters: {tool_params.get(tool, '')}", "INFO")
+            for i in range(3):
+                try:
+                    start_time = time.time()
+                    #task.tool.args = tool_params.get(tool, "")
+                    base_tool_id = tool.split("-")[0]
+                    tool_args = tool_params.get(base_tool_id, "").strip()
+
+                    if not tool_args:
+                        print(f"DEBUG: tool_command for {task.tool.id} is None or empty")
+                        raise sb.errors.SmartBugsError(f"Invalid parameters for tool {tool}")
+
+                    task.tool.args = tool_args
+
+                    print(f"DEBUG: Assigned params to {tool} (base: {base_tool_id}) -> {task.tool.args}")
+
+                    exit_code = sb.docker.execute(task)
+                    duration = time.time() - start_time
+                    if exit_code == 0:
+                        break
+                except sb.errors.SmartBugsError as e:
+                    if i == 2:
+                        raise
+                time.sleep(random.randint(3, 8) * 60)  # Wait before retry
+            if exit_code != 0:
+                sb.logging.message(f"{tool} execution failed with exit code {exit_code}", "WARNING")
+
+    
+    sb.logging.message("All tools executed in the predefined order.", "INFO")
+
+    
 
     # check whether result dir is empty,
     # and if not, whether we are going to overwrite it
@@ -42,19 +103,6 @@ def execute(task):
                 f" ({old_toolid}/{old_mode}, {old_fn})")
         if not task.settings.overwrite:
             return 0.0
-
-    # remove any leftovers from a previous analysis
-    fn_tool_log = os.path.join(task.rdir, sb.cfg.TOOL_LOG)
-    fn_tool_output = os.path.join(task.rdir, sb.cfg.TOOL_OUTPUT)
-    fn_parser_output = os.path.join(task.rdir, sb.cfg.PARSER_OUTPUT)
-    fn_sarif_output = os.path.join(task.rdir, sb.cfg.SARIF_OUTPUT)
-    for fn in (fn_task_log, fn_tool_log, fn_tool_output, fn_parser_output, fn_sarif_output):
-        try:
-            os.remove(fn)
-        except Exception:
-            pass
-        if os.path.exists(fn):
-            raise sb.errors.SmartBugsError(f"Cannot clear old output {fn}")
 
     # perform analysis
     # Docker causes spurious connection errors
@@ -150,10 +198,17 @@ def run(tasks, settings):
     try:
         start_time = time.time()
 
+        # ME: Define the specific order of tools to be used
+        tool_order = ['slither', 'mythril', 'maian', 'echidna', 'confuzzius']
+
         # fill task queue
         taskqueue = mp.Queue()
-        random.shuffle(tasks)
-        for task in tasks:
+        #random.shuffle(tasks)  # ME: replace this with the ordered version
+
+        ordered_tasks = sorted(tasks, key=lambda task: next((i for i, tool in enumerate(tool_order) if task.tool.id.startswith(tool)), len(tool_order)))
+
+
+        for task in ordered_tasks:
             taskqueue.put(task)
         for _ in range(settings.processes):
             taskqueue.put(None)

@@ -1,0 +1,291 @@
+filename,basename,toolid,toolmode,parser_version,runid,start,duration,exit_code,findings,infos,errors,fails
+samples/BecToken.sol,BecToken.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733952162.6742523,453.93320322036743,0,{Integer_Overflow},{},{},{}
+samples/ERC20.sol,ERC20.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733964896.1859694,291.9230155944824,0,{},{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733936631.350874,592.4642252922058,0,"{Assertion_Failure,Block_Dependency,Transaction_Order_Dependency}",{},{},{}
+samples/Government.sol,Government.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733967963.5604854,593.3102447986603,0,"{Assertion_Failure,Block_Dependency,Unhandled_Exception}",{},{},{}
+samples/MyToken.sol,MyToken.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733962980.283509,592.0333874225616,0,{},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733947577.7815714,592.6575336456299,0,"{Block_Dependency,Integer_Overflow}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733969200.008714,593.3765597343445,0,{Unhandled_Exception},{},{},{}
+samples/Rubixi.sol,Rubixi.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733940448.7794962,593.2820212841034,0,"{Assertion_Failure,Integer_Overflow}",{},{Validation error: Sender account balance cannot afford txn (ignoring for now)},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733961702.8684402,592.7840776443481,0,"{Leaking_Ether,Reentrancy,Transaction_Order_Dependency,Unhandled_Exception}",{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,confuzzius,solidity,2022/12/31,20241211_1551,1733956190.0158546,296.26347947120667,0,"{Assertion_Failure,Block_Dependency}",{},{Validation error: Sender account balance cannot afford txn (ignoring for now)},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733971019.2968943,93.41405320167542,0,{Integer_Overflow},{},{},{}
+samples/BecToken.sol,BecToken.sol,conkas,solidity,2022/11/11,20241211_1551,1733966711.4660878,127.1574854850769,0,{Integer_Overflow},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733962879.0657556,1.539734125137329,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,conkas,solidity,2022/11/11,20241211_1551,1733941915.210884,1.5705344676971436,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733945079.5918934,1.0407698154449463,0,"{Integer_Overflow,Integer_Underflow,Reentrancy,Time_Manipulation,Transaction_Ordering_Dependence}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,conkas,solidity,2022/11/11,20241211_1551,1733937225.4782288,1.9097414016723633,0,"{Integer_Overflow,Integer_Underflow,Reentrancy,Time_Manipulation,Transaction_Ordering_Dependence}",{},{},{}
+samples/Government.rt.hex,Government.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733944405.6661363,100.33278965950012,0,"{Integer_Overflow,Reentrancy,Time_Manipulation,Transaction_Ordering_Dependence,Unchecked_Low_Level_Call}",{},{},{}
+samples/Government.sol,Government.sol,conkas,solidity,2022/11/11,20241211_1551,1733964874.1264448,22.058705806732178,0,"{Integer_Overflow,Integer_Underflow,Reentrancy,Time_Manipulation,Transaction_Ordering_Dependence,Unchecked_Low_Level_Call}",{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733953891.539759,1.5353806018829346,0,{Integer_Overflow},{},{},{}
+samples/MyToken.sol,MyToken.sol,conkas,solidity,2022/11/11,20241211_1551,1733957014.0147262,1.779634952545166,0,{Integer_Overflow},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733946367.8255546,29.876380443572998,0,"{Integer_Overflow,Integer_Underflow,Time_Manipulation}",{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,conkas,solidity,2022/11/11,20241211_1551,1733939653.620597,7.429946184158325,0,"{Integer_Overflow,Integer_Underflow,Time_Manipulation}",{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733937833.7481143,0.9626319408416748,0,"{Reentrancy,Unchecked_Low_Level_Call}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,conkas,solidity,2022/11/11,20241211_1551,1733963593.6560633,1.1681160926818848,0,"{Reentrancy,Unchecked_Low_Level_Call}",{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733951100.2927096,610.8267977237701,,{},{},{},{DOCKER_TIMEOUT}
+samples/Rubixi.sol,Rubixi.sol,conkas,solidity,2022/11/11,20241211_1551,1733959507.2700698,268.78041648864746,0,"{Integer_Overflow,Integer_Underflow,Reentrancy,Transaction_Ordering_Dependence,Unchecked_Low_Level_Call}",{},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733941381.7355335,1.5994672775268555,0,"{Integer_Overflow,Integer_Underflow,Reentrancy,Unchecked_Low_Level_Call}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,conkas,solidity,2022/11/11,20241211_1551,1733947575.8449862,1.9352219104766846,0,"{Integer_Overflow,Reentrancy,Unchecked_Low_Level_Call}",{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,conkas,runtime,2022/11/11,20241211_1551,1733945562.9402225,560.8901734352112,0,"{Integer_Overflow,Integer_Underflow,Reentrancy,Transaction_Ordering_Dependence}",{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,conkas,solidity,2022/11/11,20241211_1551,1733953897.7884967,6.651427984237671,0,{},{},{PHI instruction need arguments but 0 was given},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733944598.9518418,1.3108291625976562,0,{},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733961699.976655,1.6324620246887207,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733937832.2631338,1.4843778610229492,0,{},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733949446.1782613,1.502598762512207,0,{},{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733961701.6117718,1.254300594329834,0,{},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733958160.9550555,1.7462611198425293,0,{},{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733959779.0225353,1.5349054336547852,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733962880.6060216,1.3308601379394531,0,{},{},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733948933.7699661,1.5783846378326416,0,{},{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,ethainter,runtime,2022/11/17,20241211_1551,1733941883.7991633,3.152564764022827,0,{},{},{},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733944672.3343248,22.324275970458984,0,{secure},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733948913.6602874,9.49852180480957,0,{secure},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733950082.059338,4.771491050720215,0,{insecure},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733952095.1585937,65.16230535507202,0,{secure},{Encountered an unknown bytecode},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733956185.4188874,4.594146251678467,0,{secure},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733950086.8317285,6.994943141937256,0,{insecure},{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733951713.2268288,3.931865692138672,0,{insecure},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733942714.070413,15.130982875823975,0,{secure},{Encountered an unknown bytecode},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733953886.3363605,5.202310085296631,0,{insecure},{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,ethor-2023,runtime,2022/11/11,20241211_1551,1733958259.3341758,611.3196802139282,,{},"{Encountered an unknown bytecode,analysis incomplete}",{},{DOCKER_TIMEOUT}
+samples/BecToken.rt.hex,BecToken.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733963706.7742534,59.305471658706665,0,{},{},{},{}
+samples/BecToken.sol,BecToken.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733936403.5805898,124.93512463569641,0,{},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733965202.3250778,4.830013751983643,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733946123.8319316,5.276736259460449,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733971226.5558138,2.1107447147369385,0,{Money_flow},{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733946135.76855,2.1409695148468018,0,{Money_flow},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733957781.1374748,365.61871910095215,0,{Money_flow},{incomplete push instruction},{},{}
+samples/Government.sol,Government.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733946137.9113045,41.966649293899536,0,{},{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733963594.8251274,1.673997402191162,0,{},{},{},{}
+samples/MyToken.sol,MyToken.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733958162.701909,1.583418369293213,0,{},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733942732.7593548,8.97841191291809,0,"{Money_flow,Uninitialised_struct}",{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733941359.422609,9.943084001541138,0,"{Money_flow,Uninitialised_struct}",{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733946958.9147406,1.4452662467956543,0,{},{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733946289.8303423,1.2938473224639893,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733966222.963825,434.6327295303345,0,{Money_flow},{incomplete push instruction},{},{}
+samples/Rubixi.sol,Rubixi.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733959412.3182957,53.47085976600647,0,{},{incomplete push instruction},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733956000.7722404,2.160550117492676,0,{Money_flow},{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733942729.2032783,1.635615587234497,0,{Money_flow},{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,honeybadger,runtime,2023/02/27,20241211_1551,1733958872.9100373,503.1051106452942,0,{Money_flow},{},{SYMBOLIC EXECUTION TIMEOUT},{}
+samples/SmartBillions.sol,SmartBillions.sol,honeybadger,solidity,2023/02/27,20241211_1551,1733968695.439179,504.5688781738281,0,{Money_flow},{},{SYMBOLIC EXECUTION TIMEOUT},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733950074.7680023,1.8616390228271484,0,{},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733949447.6819053,1.8432576656341553,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733958165.7734625,1.4706921577453613,0,{},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733956183.5219653,1.8959665298461914,0,{UnboundedMassOp},{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733937223.8173306,1.660233497619629,0,{},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733946132.7310598,1.4354336261749268,0,{},{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733941375.2022164,1.3892455101013184,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733963596.4999352,1.737389326095581,0,{UnboundedMassOp},{},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733941357.679413,1.7417216300964355,0,{},{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,madmax,runtime,2022/11/17,20241211_1551,1733944850.3485756,5.575599431991577,0,{UnboundedMassOp},{},{},{}
+samples/BecToken.hex,BecToken.hex,maian,bytecode,2022/11/11,20241211_1551,1733953836.2926948,46.56842088699341,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733948923.1596954,3.672166585922241,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/BecToken.sol,BecToken.sol,maian,solidity,2022/11/11,20241211_1551,1733941113.026081,239.3359034061432,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/ERC20.hex,ERC20.hex,maian,bytecode,2022/11/11,20241211_1551,1733972501.3490012,33.0195038318634,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733937227.3886752,3.7542848587036133,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/ERC20.sol,ERC20.sol,maian,solidity,2022/11/11,20241211_1551,1733958167.244979,52.2357177734375,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/EtherLotto.hex,EtherLotto.hex,maian,bytecode,2022/11/11,20241211_1551,1733971125.6036954,48.65759491920471,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733966838.6241326,3.7390012741088867,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,maian,solidity,2022/11/11,20241211_1551,1733961157.098927,43.06357789039612,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/Government.hex,Government.hex,maian,bytecode,2022/11/11,20241211_1551,1733972565.5920057,75.7249596118927,0,{Not_destructible_no_self_destruct},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733972534.369121,27.262492656707764,0,{Not_destructible_no_self_destruct},{},{},{}
+samples/Government.sol,Government.sol,maian,solidity,2022/11/11,20241211_1551,1733947514.607365,61.2367627620697,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/MyToken.hex,MyToken.hex,maian,bytecode,2022/11/11,20241211_1551,1733946720.382215,48.6650230884552,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733957777.5689497,3.5678226947784424,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/MyToken.sol,MyToken.sol,maian,solidity,2022/11/11,20241211_1551,1733958219.4813876,34.20910048484802,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/OpenAddressLottery.hex,OpenAddressLottery.hex,maian,bytecode,2022/11/11,20241211_1551,1733960379.6411815,42.50428915023804,0,{},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733953215.49915,6.203796148300171,0,{},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,maian,solidity,2022/11/11,20241211_1551,1733941886.9541717,28.253018856048584,0,{},{},{},{}
+samples/ReturnValue.hex,ReturnValue.hex,maian,bytecode,2022/11/11,20241211_1551,1733946960.3606057,29.166828155517578,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733941353.8252242,3.8523731231689453,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,maian,solidity,2022/11/11,20241211_1551,1733946991.2525008,30.6204833984375,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/Rubixi.hex,Rubixi.hex,maian,bytecode,2022/11/11,20241211_1551,1733956043.1323833,140.38728785514832,0,{Not_destructible_no_self_destruct},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733946229.5611286,60.26737594604492,0,{Not_destructible_no_self_destruct},{},{},{}
+samples/Rubixi.sol,Rubixi.sol,maian,solidity,2022/11/11,20241211_1551,1733965211.854698,168.4138379096985,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/SimpleDAO.hex,SimpleDAO.hex,maian,bytecode,2022/11/11,20241211_1551,1733944819.4065802,29.924989938735962,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733959500.3568428,4.871737003326416,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,maian,solidity,2022/11/11,20241211_1551,1733966671.7854106,37.671141386032104,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/SmartBillions.hex,SmartBillions.hex,maian,bytecode,2022/11/11,20241211_1551,1733936528.516387,71.69909620285034,0,{Not_destructible_no_self_destruct},{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,maian,runtime,2022/11/11,20241211_1551,1733955001.0291893,27.47146487236023,0,{Not_destructible_no_self_destruct},{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,maian,solidity,2022/11/11,20241211_1551,1733944694.6593978,88.41434812545776,0,"{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
+samples/BecToken.sol,BecToken.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733969793.4165063,610.9119279384613,,{},{},{},"{DOCKER_TIMEOUT,exception (manticore.core.state.Concretize),exception (manticore.exceptions.ManticoreError: Forking on unfeasible constraint set)}"
+samples/ERC20.sol,ERC20.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733970404.3294148,610.9092383384705,,{},{},{},"{DOCKER_TIMEOUT,exception (manticore.core.state.Concretize),exception (manticore.exceptions.ManticoreError: Forking on unfeasible constraint set)}"
+samples/EtherLotto.sol,EtherLotto.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733965188.1101277,14.214246988296509,0,{},{},{},{}
+samples/Government.sol,Government.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733949449.5279975,610.9447853565216,,{},{},{},{DOCKER_TIMEOUT}
+samples/MyToken.sol,MyToken.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733968556.8778765,59.9350323677063,0,{},{},{},"{exception (manticore.core.state.Concretize),exception (manticore.exceptions.ManticoreError: Forking on unfeasible constraint set)}"
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733955028.5017712,75.7570230960846,0,{},{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733958154.143223,6.810715913772583,0,{},{manticore.yml not found},{},{exception (manticore.exceptions.SolverError: Solver could not find a value for expression under current constraint set)}
+samples/Rubixi.sol,Rubixi.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733953221.714227,610.9713780879974,,{},{},{},{DOCKER_TIMEOUT}
+samples/SimpleDAO.sol,SimpleDAO.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733944505.9995036,92.94975209236145,0,{},{},{},"{exception (manticore.core.state.Concretize),exception (manticore.exceptions.ManticoreError: Forking on unfeasible constraint set)}"
+samples/SmartBillions.sol,SmartBillions.sol,manticore-0.3.7,solidity,2022/11/17,20241211_1551,1733943249.107081,610.9471192359924,,{},{},{},{DOCKER_TIMEOUT}
+samples/BecToken.hex,BecToken.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733965727.675949,493.22279810905457,0,{},{},{},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733964378.0234082,485.24376463890076,1,{Integer_Arithmetic_Bugs_SWC_101},{},{},{}
+samples/BecToken.sol,BecToken.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733957015.7970984,611.0117053985596,,{},{},{},{DOCKER_TIMEOUT}
+samples/ERC20.hex,ERC20.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733944883.506436,196.08446764945984,0,{},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733972348.9338317,152.41415739059448,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733941916.7835336,186.40214276313782,0,{},{},{},{}
+samples/EtherLotto.hex,EtherLotto.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733946179.8786812,17.27619171142578,1,"{Dependence_on_predictable_environment_variable_SWC_116,Exception_State_SWC_110,Multiple_Calls_in_a_Single_Transaction_SWC_113,Transaction_Order_Dependence_SWC_114}",{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733962892.8488915,11.779449939727783,1,"{Dependence_on_predictable_environment_variable_SWC_116,Exception_State_SWC_110,Multiple_Calls_in_a_Single_Transaction_SWC_113,Transaction_Order_Dependence_SWC_114,requirement_violation_SWC_123}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733968616.8159258,23.28339982032776,1,"{Dependence_on_predictable_environment_variable_SWC_116,Exception_State_SWC_110,Multiple_Calls_in_a_Single_Transaction_SWC_113,Transaction_Order_Dependence_SWC_114}",{},{},{}
+samples/Government.hex,Government.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733939056.562831,490.07454466819763,1,"{Dependence_on_predictable_environment_variable_SWC_116,Integer_Arithmetic_Bugs_SWC_101,Unchecked_return_value_from_external_call_SWC_104}",{},{},{}
+samples/Government.rt.hex,Government.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733943861.0412714,490.31102681159973,1,"{Dependence_on_predictable_environment_variable_SWC_116,Unchecked_return_value_from_external_call_SWC_104}",{},{},{}
+samples/Government.sol,Government.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733946292.2337754,75.59090662002563,1,"{Dependence_on_predictable_environment_variable_SWC_116,Exception_State_SWC_110,Unchecked_return_value_from_external_call_SWC_104}",{},{},{}
+samples/MyToken.hex,MyToken.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733948943.8660526,11.895668983459473,1,{Exception_State_SWC_110},{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733936621.1698773,10.180330514907837,1,{Exception_State_SWC_110},{},{},{}
+samples/MyToken.sol,MyToken.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733972328.2092586,15.920950889587402,1,{Exception_State_SWC_110},{},{},{}
+samples/OpenAddressLottery.hex,OpenAddressLottery.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733971843.032925,485.17523741722107,1,"{Dependence_on_predictable_environment_variable_SWC_120,Integer_Arithmetic_Bugs_SWC_101}",{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733946769.0513678,106.0120861530304,1,{Dependence_on_predictable_environment_variable_SWC_120},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733942743.3305368,485.71234345436096,1,"{Dependence_on_predictable_environment_variable_SWC_120,Integer_Arithmetic_Bugs_SWC_101}",{},{},{}
+samples/ReturnValue.hex,ReturnValue.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733943233.7118094,15.394361734390259,1,"{External_Call_To_User_Supplied_Address_SWC_107,Unchecked_return_value_from_external_call_SWC_104}",{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733936601.971136,14.190018653869629,1,"{External_Call_To_User_Supplied_Address_SWC_107,Unchecked_return_value_from_external_call_SWC_104}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733941093.1669722,19.85731029510498,1,"{External_Call_To_User_Supplied_Address_SWC_107,Unchecked_return_value_from_external_call_SWC_104}",{},{},{}
+samples/Rubixi.hex,Rubixi.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733947021.8735542,491.45285987854004,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733941385.0906084,493.71500182151794,0,{},{},{},{}
+samples/Rubixi.sol,Rubixi.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733946875.0705988,40.520148277282715,139,{},{},{},{DOCKER_SEGV}
+samples/SimpleDAO.hex,SimpleDAO.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733946918.4964483,40.417060136795044,1,"{Exception_State_SWC_110,External_Call_To_User_Supplied_Address_SWC_107,State_access_after_external_call_SWC_107,Unchecked_return_value_from_external_call_SWC_104,Unprotected_Ether_Withdrawal_SWC_105}",{},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733946197.1554282,32.40484881401062,1,"{Exception_State_SWC_110,External_Call_To_User_Supplied_Address_SWC_107,State_access_after_external_call_SWC_107,Unchecked_return_value_from_external_call_SWC_104,Unprotected_Ether_Withdrawal_SWC_105}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733948874.2192085,39.43961238861084,1,"{External_Call_To_User_Supplied_Address_SWC_107,State_access_after_external_call_SWC_107,Unchecked_return_value_from_external_call_SWC_104,Unprotected_Ether_Withdrawal_SWC_105}",{},{},{}
+samples/SmartBillions.hex,SmartBillions.hex,mythril-0.24.7,bytecode,2024/03/24,20241211_1551,1733953908.3393054,493.2065613269806,1,"{Dependence_on_predictable_environment_variable_SWC_120,Exception_State_SWC_110,Integer_Arithmetic_Bugs_SWC_101}",{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,mythril-0.24.7,runtime,2024/03/24,20241211_1551,1733950613.7994297,486.4916272163391,1,"{Dependence_on_predictable_environment_variable_SWC_120,Exception_State_SWC_110}",{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,mythril-0.24.7,solidity,2024/03/24,20241211_1551,1733950102.882704,510.91495060920715,1,"{Dependence_on_predictable_environment_variable_SWC_120,Exception_State_SWC_110,Integer_Arithmetic_Bugs_SWC_101}",{},{},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733971177.3651333,49.18910360336304,0,{Overflow_bugs},{},{},{}
+samples/BecToken.sol,BecToken.sol,osiris,solidity,2023/02/27,20241211_1551,1733948785.5294604,87.56430196762085,0,{Overflow_bugs},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733941383.3356025,1.7532329559326172,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,osiris,solidity,2023/02/27,20241211_1551,1733941372.8131516,2.387200117111206,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733966709.4589245,2.006298065185547,0,"{Concurrency_bug,Overflow_bugs,Underflow_bugs}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,osiris,solidity,2023/02/27,20241211_1551,1733957012.3333547,1.6789305210113525,0,"{Concurrency_bug,Overflow_bugs,Underflow_bugs}",{},{},{}
+samples/Government.rt.hex,Government.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733948955.762855,487.1199622154236,0,"{Callstack_bug,Concurrency_bug,Overflow_bugs,Timedependency_bug,Underflow_bugs}",{incomplete push instruction},{SYMBOLIC EXECUTION TIMEOUT},{}
+samples/Government.sol,Government.sol,osiris,solidity,2023/02/27,20241211_1551,1733957626.8096926,149.67775559425354,0,"{Callstack_bug,Concurrency_bug,Overflow_bugs,Time_dependency_bug}",{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733958258.094153,1.237457513809204,0,{Overflow_bugs},{},{},{}
+samples/MyToken.sol,MyToken.sol,osiris,solidity,2023/02/27,20241211_1551,1733950080.0980613,1.9604687690734863,0,{Overflow_bugs},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733961693.0223892,6.95335841178894,0,"{Concurrency_bug,Overflow_bugs,Underflow_bugs}",{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,osiris,solidity,2023/02/27,20241211_1551,1733964863.2680736,7.1912453174591064,0,"{Concurrency_bug,Overflow_bugs,Underflow_bugs}",{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733957776.4893577,1.0789549350738525,0,{},{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,osiris,solidity,2023/02/27,20241211_1551,1733968693.4307034,2.0061867237091064,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733961200.1633663,492.857408285141,0,"{Callstack_bug,Overflow_bugs}",{incomplete push instruction},{SYMBOLIC EXECUTION TIMEOUT},{}
+samples/Rubixi.sol,Rubixi.sol,osiris,solidity,2023/02/27,20241211_1551,1733956002.9357088,40.195605754852295,0,"{Callstack_bug,Concurrency_bug,Overflow_bugs,Underflow_bugs}",{incomplete push instruction},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733946717.9443216,2.4361212253570557,0,"{Callstack_bug,Overflow_bugs,Reentrancy_bug,Underflow_bugs}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,osiris,solidity,2023/02/27,20241211_1551,1733942741.7386448,1.59025239944458,0,"{Callstack_bug,Overflow_bugs,Reentrancy_bug,Underflow_bugs}",{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,osiris,runtime,2023/02/27,20241211_1551,1733945080.6331823,482.3064534664154,0,"{Concurrency_bug,Overflow_bugs,Truncation_bugs,Underflow_bugs}",{},{SYMBOLIC EXECUTION TIMEOUT},{}
+samples/SmartBillions.sol,SmartBillions.sol,osiris,solidity,2023/02/27,20241211_1551,1733956529.6831439,482.6496229171753,0,"{Concurrency_bug,Overflow_bugs,Truncation_bugs,Underflow_bugs}",{},{SYMBOLIC EXECUTION TIMEOUT},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733963587.8502488,5.8050923347473145,0,{},{},{},{}
+samples/BecToken.sol,BecToken.sol,oyente,solidity,2023/02/27,20241211_1551,1733963572.320527,15.528967380523682,0,"{Integer_Overflow,Integer_Underflow}",{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733936616.1622603,5.006328821182251,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,oyente,solidity,2023/02/27,20241211_1551,1733965207.155616,4.697061538696289,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733937831.1431723,1.119370698928833,0,{},{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,oyente,solidity,2023/02/27,20241211_1551,1733966220.9002514,2.062415599822998,0,{},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733944878.53389,4.971179962158203,1,"{Callstack_Depth_Attack_Vulnerability,Timestamp_Dependency}",{incomplete push instruction},{},{}
+samples/Government.sol,Government.sol,oyente,solidity,2023/02/27,20241211_1551,1733958149.9981852,4.142782211303711,1,"{Callstack_Depth_Attack_Vulnerability,Integer_Overflow,Integer_Underflow,Timestamp_Dependency}",{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733946134.1680036,1.5999248027801514,0,{},{},{},{}
+samples/MyToken.sol,MyToken.sol,oyente,solidity,2023/02/27,20241211_1551,1733948927.917311,2.5277769565582275,0,{Integer_Overflow},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733962881.9378428,10.910141468048096,1,{Transaction_Ordering_Dependence_TOD},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,oyente,solidity,2023/02/27,20241211_1551,1733971112.7133536,12.887842416763306,1,"{Integer_Underflow,Transaction_Ordering_Dependence_TOD}",{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733941377.9075422,1.8667271137237549,0,{},{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,oyente,solidity,2023/02/27,20241211_1551,1733959505.2307878,2.0361168384552,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733948938.416659,5.44838285446167,1,{Callstack_Depth_Attack_Vulnerability},{incomplete push instruction},{},{}
+samples/Rubixi.sol,Rubixi.sol,oyente,solidity,2023/02/27,20241211_1551,1733941878.8065822,3.2759392261505127,1,"{Callstack_Depth_Attack_Vulnerability,Integer_Overflow,Integer_Underflow}",{incomplete push instruction},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733941882.0834286,1.7133617401123047,1,"{Callstack_Depth_Attack_Vulnerability,Re_Entrancy_Vulnerability}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,oyente,solidity,2023/02/27,20241211_1551,1733942730.8405216,1.918189525604248,1,"{Callstack_Depth_Attack_Vulnerability,Integer_Overflow,Re_Entrancy_Vulnerability}",{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,oyente,runtime,2023/02/27,20241211_1551,1733944351.3531635,50.33131742477417,1,{Transaction_Ordering_Dependence_TOD},{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,oyente,solidity,2023/02/27,20241211_1551,1733962904.6292603,72.3144223690033,1,"{Integer_Overflow,Integer_Underflow,Transaction_Ordering_Dependence_TOD}",{},{},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733963767.2587838,610.7638199329376,,{},{analysis incomplete},{},{DOCKER_TIMEOUT}
+samples/ERC20.rt.hex,ERC20.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733967803.372448,160.1869204044342,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733950093.8272102,3.9521899223327637,0,{},{},{},{}
+samples/Government.rt.hex,Government.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733955106.2648978,586.5057981014252,0,{},{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733963598.238254,108.53463506698608,0,{},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733956486.280714,43.401740074157715,0,{},{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733950069.5568497,5.210256576538086,0,{},{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733942103.187024,610.8812329769135,,{},{analysis incomplete},{},{DOCKER_TIMEOUT}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733939546.6381187,106.98065137863159,0,{},{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,pakala,runtime,2023/02/27,20241211_1551,1733951717.1598516,377.95445442199707,137,{},{analysis incomplete},{},{DOCKER_KILL_OOM}
+samples/BecToken.rt.hex,BecToken.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733968640.100817,52.096229553222656,0,{},{},{},{}
+samples/BecToken.sol,BecToken.sol,securify,solidity,2022/11/17,20241211_1551,1733939661.051203,187.1427412033081,0,{},{},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733959465.7897866,34.56587529182434,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,securify,solidity,2022/11/17,20241211_1551,1733944635.620758,34.342164039611816,0,{},{},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733964870.4602737,3.665583372116089,0,"{DAOConstantGas,TODAmount,UnrestrictedEtherFlow}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,securify,solidity,2022/11/17,20241211_1551,1733943229.9162204,3.7950258255004883,0,"{DAOConstantGas,TODAmount,UnrestrictedEtherFlow}",{},{},{}
+samples/Government.rt.hex,Government.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733968692.1976826,1.2319786548614502,0,{},{},{decompilation error},{}
+samples/Government.sol,Government.sol,securify,solidity,2022/11/17,20241211_1551,1733950068.067781,1.4865026473999023,0,{},{},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733955104.2615843,2.00046706199646,0,{},{},{},{}
+samples/MyToken.sol,MyToken.sol,securify,solidity,2022/11/17,20241211_1551,1733952160.3310025,2.339965581893921,0,{},{},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733944783.0755656,34.88109111785889,0,{},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,securify,solidity,2022/11/17,20241211_1551,1733959376.0177538,36.2995400428772,0,{},{},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733959776.0515084,2.9699647426605225,0,"{MissingInputValidation,UnhandledException}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,securify,solidity,2022/11/17,20241211_1551,1733966657.5980313,4.290984869003296,0,"{MissingInputValidation,UnhandledException}",{},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733944600.2633007,35.35683798789978,0,"{DAOConstantGas,TODAmount,TODReceiver,UnhandledException}",{},{},{}
+samples/Rubixi.sol,Rubixi.sol,securify,solidity,2022/11/17,20241211_1551,1733941042.064228,49.20459294319153,137,"{DAOConstantGas,UnhandledException}",{analysis incomplete},{},{DOCKER_KILL_OOM}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733950062.261079,5.805973052978516,0,"{DAO,MissingInputValidation,UnhandledException}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,securify,solidity,2022/11/17,20241211_1551,1733950097.7813766,5.097919225692749,0,"{DAO,MissingInputValidation,UnhandledException}",{},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,securify,runtime,2022/11/17,20241211_1551,1733937834.713104,610.9338901042938,,{},{analysis incomplete},{},{DOCKER_TIMEOUT}
+samples/SmartBillions.sol,SmartBillions.sol,securify,solidity,2022/11/17,20241211_1551,1733965380.269685,347.39128160476685,0,"{DAOConstantGas,TODAmount}",{},{},{}
+samples/BecToken.sol,BecToken.sol,semgrep,solidity,2023/08/21,20241211_1551,1733944875.0959313,2.543657064437866,0,"{init_variables_with_default_value,unnecessary_checked_arithmetic_in_loop,use_multiple_require,use_ownable2step,use_prefix_increment_not_postfix}",{},{},{}
+samples/ERC20.sol,ERC20.sol,semgrep,solidity,2023/08/21,20241211_1551,1733941369.3670812,3.443488359451294,0,{non_payable_constructor},{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,semgrep,solidity,2023/08/21,20241211_1551,1733953893.0759804,3.7282729148864746,0,{inefficient_state_variable_increment},{},{},{}
+samples/Government.sol,Government.sol,semgrep,solidity,2023/08/21,20241211_1551,1733971015.2396097,4.055286407470703,0,"{array_length_outside_loop,inefficient_state_variable_increment,state_variable_read_in_a_loop,unnecessary_checked_arithmetic_in_loop,use_prefix_increment_not_postfix}",{},{},{}
+samples/MyToken.sol,MyToken.sol,semgrep,solidity,2023/08/21,20241211_1551,1733971174.261954,3.102560520172119,0,{},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,semgrep,solidity,2023/08/21,20241211_1551,1733948170.4408212,4.236921787261963,0,{use_nested_if},{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,semgrep,solidity,2023/08/21,20241211_1551,1733948935.3492684,3.0667169094085693,0,{},{},{},{}
+samples/Rubixi.sol,Rubixi.sol,semgrep,solidity,2023/08/21,20241211_1551,1733946129.1103256,3.618919610977173,0,"{inefficient_state_variable_increment,init_variables_with_default_value,state_variable_read_in_a_loop}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,semgrep,solidity,2023/08/21,20241211_1551,1733944669.963616,2.3701300621032715,0,{},{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,semgrep,solidity,2023/08/21,20241211_1551,1733944402.8291445,2.8361542224884033,0,"{array_length_outside_loop,inefficient_state_variable_increment,init_variables_with_default_value,state_variable_read_in_a_loop,use_multiple_require,use_nested_if,use_prefix_increment_not_postfix}",{},{},{}
+samples/BecToken.sol,BecToken.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733962295.654848,583.4091482162476,0,{},{},{},{}
+samples/ERC20.sol,ERC20.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733952616.6101785,598.8399007320404,0,{},{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733955692.7712657,307.99578404426575,137,"{Gasless_Send,Timestamp_Dependency}",{},{},"{DOCKER_KILL_OOM,exception (Killed)}"
+samples/Government.sol,Government.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733960424.140243,732.9473974704742,,"{Exception_Disorder,Gasless_Send,Timestamp_Dependency}",{},{},{DOCKER_TIMEOUT}
+samples/MyToken.sol,MyToken.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733959780.5584679,599.0819938182831,0,{},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733954401.5470517,599.4814739227295,0,"{Block_Number_Dependency,Gasless_Send,Integer_Underflow,Timestamp_Dependency}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733939848.1957178,600.571042060852,0,"{Exception_Disorder,Reentrancy}",{},{},{}
+samples/Rubixi.sol,Rubixi.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733966842.3641996,959.1186287403107,,{},{},{},{DOCKER_TIMEOUT}
+samples/SimpleDAO.sol,SimpleDAO.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733937232.1376615,599.0047714710236,0,"{Exception_Disorder,Reentrancy}",{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,sfuzz,solidity,2023/03/02,20241211_1551,1733946397.703469,320.17076778411865,0,{Block_Number_Dependency},{},{},{}
+samples/BecToken.sol,BecToken.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733960422.1478457,1.9913456439971924,255,"{constable_states,external_function,naming_convention,solc_version,too_many_digits}",{},{},{}
+samples/ERC20.sol,ERC20.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733943860.0548522,0.9856739044189453,255,"{constable_states,solc_version,unused_state}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733944849.3323703,1.015345573425293,255,"{arbitrary_send_eth,deprecated_standards,incorrect_equality,reentrancy_unlimited_gas,solc_version,timestamp,weak_prng}",{},{},{}
+samples/Government.sol,Government.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733941379.776975,1.9553484916687012,255,"{cache_array_length,controlled_array_length,missing_zero_check,reentrancy_unlimited_gas,solc_version,timestamp,unchecked_send}",{},{},{}
+samples/MyToken.sol,MyToken.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733967801.496382,1.8735575675964355,255,{solc_version},{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733944401.6850848,1.1432867050170898,255,"{boolean_equal,constable_states,deprecated_standards,incorrect_equality,naming_convention,reentrancy_unlimited_gas,solc_version,timestamp,uninitialized_storage,weak_prng}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733936600.2189221,1.7514667510986328,255,"{low_level_calls,missing_zero_check,solc_version,unchecked_lowlevel}",{},{},{}
+samples/Rubixi.sol,Rubixi.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733950060.4738746,1.7859103679656982,255,"{controlled_array_length,deprecated_standards,divide_before_multiply,events_access,events_maths,incorrect_modifier,missing_zero_check,naming_convention,reentrancy_unlimited_gas,solc_version,unchecked_send}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733958164.286316,1.4849748611450195,255,"{low_level_calls,reentrancy_eth,solc_version}",{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,slither-0.10.4,solidity,2024/04/30,20241211_1551,1733944855.92482,2.289522886276245,255,"{cache_array_length,constable_states,controlled_array_length,costly_loop,deprecated_standards,divide_before_multiply,erc20_interface,events_access,events_maths,incorrect_equality,naming_convention,reentrancy_unlimited_gas,shadowing_local,solc_version,too_many_digits}",{},{},{}
+samples/BecToken.sol,BecToken.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733950076.630345,3.465711832046509,0,"{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_ERC20_APPROVE,SOLIDITY_GAS_LIMIT_IN_LOOPS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_REDUNDANT_FALLBACK_REJECT,SOLIDITY_SAFEMATH,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}",{},{},{}
+samples/ERC20.sol,ERC20.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733958255.4380488,2.65431547164917,0,"{SOLIDITY_ERC20_APPROVE,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_SAFEMATH,SOLIDITY_VISIBILITY}",{},{},{}
+samples/EtherLotto.sol,EtherLotto.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733949442.8834448,3.293074369430542,0,"{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VAR,SOLIDITY_VISIBILITY}",{},{},{}
+samples/Government.sol,Government.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733953904.440598,2.51328182220459,0,"{SOLIDITY_EXTRA_GAS_IN_LOOPS,SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}",{},{},{}
+samples/MyToken.sol,MyToken.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733958146.7572517,3.237576484680176,0,"{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_TX_ORIGIN,SOLIDITY_VISIBILITY}",{},{},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733962976.9447076,3.3365695476531982,0,"{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}",{},{},{}
+samples/ReturnValue.sol,ReturnValue.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733971839.5637147,3.468197822570801,0,"{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_UNCHECKED_CALL,SOLIDITY_UPGRADE_TO_050}",{},{},{}
+samples/Rubixi.sol,Rubixi.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733953882.86348,3.4700253009796143,0,"{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_DIV_MUL,SOLIDITY_EXTRA_GAS_IN_LOOPS,SOLIDITY_GAS_LIMIT_IN_LOOPS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_REVERT_REQUIRE,SOLIDITY_UNCHECKED_CALL,SOLIDITY_VISIBILITY}",{},{},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733972346.068143,2.8640575408935547,0,"{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}",{},{},{}
+samples/SmartBillions.sol,SmartBillions.sol,smartcheck,solidity,2022/11/14,20241211_1551,1733972561.632224,3.9572460651397705,0,"{SOLIDITY_ADDRESS_HARDCODED,SOLIDITY_ARRAY_LENGTH_MANIPULATION,SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_DIV_MUL,SOLIDITY_ERC20_APPROVE,SOLIDITY_EXTRA_GAS_IN_LOOPS,SOLIDITY_OVERPOWERED_ROLE,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_SAFEMATH,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}",{},{},{}
+samples/BecToken.sol,BecToken.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733972344.1319187,1.9354500770568848,1,"{compiler_version,func_visibility,payable_fallback,quotes,reason_string,state_visibility,visibility_modifier_order}",{},{EXIT_CODE_1},{}
+samples/ERC20.sol,ERC20.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733953906.956418,1.3817427158355713,1,"{compiler_version,func_visibility,reason_string}",{},{EXIT_CODE_1},{}
+samples/EtherLotto.sol,EtherLotto.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733946989.5285788,1.7215754985809326,1,"{avoid_sha3,compiler_version,func_visibility,not_rely_on_time,reentrancy,state_visibility}",{},{EXIT_CODE_1},{}
+samples/Government.sol,Government.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733958870.703409,2.2027599811553955,1,"{check_send_result,compiler_version,func_visibility,multiple_sends,not_rely_on_time,payable_fallback,reentrancy,state_visibility}",{},{EXIT_CODE_1},{}
+samples/MyToken.sol,MyToken.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733941352.3631012,1.459733009338379,1,"{avoid_tx_origin,compiler_version,func_visibility,state_visibility}",{},{EXIT_CODE_1},{}
+samples/OpenAddressLottery.sol,OpenAddressLottery.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733953832.6868675,1.9577836990356445,1,"{compiler_version,func_visibility,not_rely_on_block_hash,not_rely_on_time,reason_string,state_visibility,var_name_mixedcase}",{},{EXIT_CODE_1},{}
+samples/ReturnValue.sol,ReturnValue.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733948873.094456,1.1232640743255615,1,"{avoid_low_level_calls,compiler_version,reason_string}",{},{EXIT_CODE_1},{}
+samples/Rubixi.sol,Rubixi.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733944817.957494,1.4483752250671387,1,"{avoid_throw,check_send_result,compiler_version,func_name_mixedcase,func_visibility,multiple_sends,payable_fallback,quotes,reentrancy,var_name_mixedcase}",{},{EXIT_CODE_1},{}
+samples/SimpleDAO.sol,SimpleDAO.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733941091.272979,1.8900444507598877,1,"{avoid_call_value,avoid_low_level_calls,compiler_version,func_visibility,no_unused_vars}",{},{EXIT_CODE_1},{}
+samples/SmartBillions.sol,SmartBillions.sol,solhint-3.3.8,solidity,2023/02/12,20241211_1551,1733966669.6171193,2.1670761108398438,1,"{avoid_sha3,compiler_version,const_name_snakecase,func_visibility,max_states_count,no_complex_fallback,not_rely_on_block_hash,reason_string,reentrancy,state_visibility,visibility_modifier_order}",{},{EXIT_CODE_1},{}
+samples/BecToken.rt.hex,BecToken.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733953834.6456661,1.644209384918213,0,{},{No state-dependent critical path found},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733963766.0807288,1.176070213317871,0,{},{No state-dependent critical path found},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733936399.3536885,4.222215414047241,0,{},{Could not exploit any RETURN+CALL},{},{}
+samples/Government.rt.hex,Government.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733948174.6783857,610.8484485149384,,{},{analysis incomplete},{Failed path due to Precompiled contract 0 not implemented},{DOCKER_TIMEOUT}
+samples/MyToken.rt.hex,MyToken.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733937231.143548,0.9932632446289062,0,{},{No state-dependent critical path found},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733946915.5920684,2.9021666049957275,0,{},{Could not exploit any RETURN+CALL},{Failed path due to symbolic blockhash index},{exception (z3.z3types.Z3Exception: b'Sorts (_ BitVec 232) and (_ BitVec 256) are incompatible')}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733953896.8048756,0.9827022552490234,0,{},{No state-dependent critical path found},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733938445.6476645,610.9092206954956,,{},{analysis incomplete},{},{DOCKER_TIMEOUT}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733948930.4457436,3.322216033935547,0,{},{Could not exploit any RETURN+CALL},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,teether,runtime,2023/02/24,20241211_1551,1733971228.6679037,610.8948204517365,,{},{analysis incomplete},{},{DOCKER_TIMEOUT}
+samples/BecToken.rt.hex,BecToken.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733966661.8909225,7.725275993347168,1,{},{Warning: Deprecated type declaration},{},{}
+samples/ERC20.rt.hex,ERC20.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733948926.8324618,1.0838451385498047,1,{},{Warning: Deprecated type declaration},{},{}
+samples/EtherLotto.rt.hex,EtherLotto.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733944877.6403258,0.892963171005249,0,"{CheckedCallStateUpdate,UncheckedCall}",{Warning: Deprecated type declaration},{},{}
+samples/Government.rt.hex,Government.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733951711.1202424,2.1057868003845215,0,{UncheckedCall},{Warning: Deprecated type declaration},{},{}
+samples/MyToken.rt.hex,MyToken.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733943229.043659,0.8719866275787354,1,{},{Warning: Deprecated type declaration},{},{}
+samples/OpenAddressLottery.rt.hex,OpenAddressLottery.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733946291.1259806,1.1070783138275146,0,{UncheckedCall},{Warning: Deprecated type declaration},{},{}
+samples/ReturnValue.rt.hex,ReturnValue.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733941376.5923948,1.3128116130828857,0,"{ReentrantCall,UncheckedCall}",{Warning: Deprecated type declaration},{},{}
+samples/Rubixi.rt.hex,Rubixi.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733958253.692762,1.744640588760376,0,{UncheckedCall},{Warning: Deprecated type declaration},{},{}
+samples/SimpleDAO.rt.hex,SimpleDAO.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733947513.327832,1.2789030075073242,0,"{ReentrantCall,UncheckedCall}",{Warning: Deprecated type declaration},{},{}
+samples/SmartBillions.rt.hex,SmartBillions.rt.hex,vandal,runtime,2023/02/27,20241211_1551,1733944858.221841,16.873440265655518,0,"{CheckedCallStateUpdate,UncheckedCall}",{Warning: Deprecated type declaration},{},{}

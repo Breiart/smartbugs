@@ -1,6 +1,0 @@
-call bug:
-    classification: SWC-105, DASP-2
-delegatecall bug:
-    classification: SWC-112
-selfdestruct bug:
-    classification: SWC-105, DASP-2
