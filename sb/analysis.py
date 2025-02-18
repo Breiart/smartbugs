@@ -66,12 +66,12 @@ def execute(task):
                     tool_args = tool_params.get(base_tool_id, "").strip()
 
                     if not tool_args:
-                        print(f"DEBUG: tool_command for {task.tool.id} is None or empty")
+                        #print(f"DEBUG: tool_command for {task.tool.id} is None or empty")
                         raise sb.errors.SmartBugsError(f"Invalid parameters for tool {tool}")
 
                     task.tool.args = tool_args
 
-                    print(f"DEBUG: Assigned params to {tool} (base: {base_tool_id}) -> {task.tool.args}")
+                    #print(f"DEBUG: Assigned params to {tool} (base: {base_tool_id}) -> {task.tool.args}")
 
                     exit_code = sb.docker.execute(task)
                     duration = time.time() - start_time

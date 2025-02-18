@@ -97,6 +97,12 @@ def collect_tasks(files, tools, settings):
                 exceptions.append(f"Contract '{contract}' not found in {absfn}")
 
         for tool in sorted(tools, key=operator.attrgetter("id", "mode")):
+
+            #print(f"DEBUG: Checking tool {tool.id} entrypoint: {tool.entrypoint('/samples/SimpleDAO.sol', 300, '/sb/bin', None)}")
+
+            if not tool.entrypoint:
+                print(f"DEBUG: Tool {tool.id} has no entrypoint.")
+
             if ((is_sol and tool.mode=="solidity") or
                 (is_byc and tool.mode=="bytecode") or
                 (is_rtc and tool.mode=="runtime")):

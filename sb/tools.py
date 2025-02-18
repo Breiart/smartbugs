@@ -9,6 +9,7 @@ FIELDS = ("id","mode","image","name","origin","version","info","parser",
 class Tool():
 
     def __init__(self, cfg):
+        #print(f"DEBUG: Tool configuration loaded -> {cfg}")  # Debugging
         for k in FIELDS:
             v = cfg.get(k)
             if v is not None:
@@ -56,9 +57,12 @@ class Tool():
             self.parser = sb.cfg.TOOL_PARSER
         if self.bin:
             self.absbin = os.path.join(sb.cfg.TOOLS_HOME,self.id,self.bin)
+        #print(f"DEBUG: Loaded tool {self.id}, entrypoint = {self._entrypoint}")
 
 
     def command(self, filename, timeout, bin, main):
+        cmd = self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main) if self._command else None
+        #print(f"DEBUG: Running command -> {cmd}")  # Debugging
         try:
             return self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main) if self._command else None
         except KeyError as e:
@@ -66,6 +70,15 @@ class Tool():
 
 
     def entrypoint(self, filename, timeout, bin, main):
+        if self._entrypoint:
+            substituted_entrypoint = self._entrypoint.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main)
+            print(f"DEBUG: Entrypoint substitution - Original: {self._entrypoint.template}")
+            print(f"DEBUG: Entrypoint substitution - Values -> filename={filename}, timeout={timeout}, bin={bin}, main={main}")
+            print(f"DEBUG: Entrypoint substitution - Result: {substituted_entrypoint}")
+            return substituted_entrypoint
+        else:
+            print("DEBUG: Entrypoint is None")
+            return None
         try:
             return self._entrypoint.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main) if self._entrypoint else None
         except KeyError as e:
