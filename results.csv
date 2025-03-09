@@ -1,10 +1,1 @@
 filename,basename,toolid,toolmode,parser_version,runid,start,duration,exit_code,findings,infos,errors,fails
-samples/SimpleDAO.sol,SimpleDAO.sol,confuzzius,solidity,2022/12/31,20250218_1917,1739911124.8156013,3.543959617614746,0,{},{},{},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,echidna,solidity,2024/04/30,20250218_1917,1739910333.3224971,0.7233381271362305,2,{},{},{EXIT_CODE_2},"{""Error parsing Echidna results: file could not be opened successfully:
-- method gz: ReadError('empty file')
-- method bz2: ReadError('not a bzip2 file')
-- method xz: ReadError('not an lzma file')
-- method tar: ReadError('empty file')""}"
-samples/SimpleDAO.sol,SimpleDAO.sol,maian,solidity,2022/11/11,20250218_1917,1739909339.9337702,30.874125480651855,0,"{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}",{},{},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,mythril-0.24.7,solidity,2024/03/24,20250218_1917,1739908113.4237351,39.24517631530762,1,"{External_Call_To_User_Supplied_Address_SWC_107,State_access_after_external_call_SWC_107,Unchecked_return_value_from_external_call_SWC_104,Unprotected_Ether_Withdrawal_SWC_105}",{},{},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,slither-0.10.4,solidity,2024/04/30,20250218_1917,1739907028.315121,1.123030185699463,255,"{low_level_calls,reentrancy_eth,solc_version}",{},{},{}

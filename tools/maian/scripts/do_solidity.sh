@@ -3,6 +3,7 @@
 FILENAME="$1"
 BIN="$2"
 MAIN="$3"
+ARGS="$4"  # Prendi dal quarto al sesto parametro
 
 export PATH="$BIN:$PATH"
 chmod +x $BIN/solc
@@ -20,9 +21,16 @@ if [ "$MAIN" -eq 1 ]; then
     fi
 fi
 
-cd /MAIAN/tool; 
+cd /MAIAN/tool
+
 for CONTRACT in $CONTRACTS; do
-    for c in 0 1 2; do
-        python3 maian.py -c "$c" -s "$FILENAME" "$CONTRACT"
-    done
+    if echo "$ARGS" | grep -q "\-s"; then
+        python3 maian.py -c 0 -s "$FILENAME" "$CONTRACT"
+    fi
+    if echo "$ARGS" | grep -q "\-g"; then
+        python3 maian.py -c 2 -s "$FILENAME" "$CONTRACT"
+    fi
+    if echo "$ARGS" | grep -q "\-p"; then
+        python3 maian.py -c 1 -s "$FILENAME" "$CONTRACT"
+    fi
 done

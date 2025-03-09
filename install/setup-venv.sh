@@ -7,7 +7,9 @@ source venv/bin/activate
 
 # avoid spurious errors/warnings; the next two lines could be omitted
 pip install --upgrade pip
-pip install wheel
+pip install wheel 
+
+pip install pygments
 
 # install the packages needed by smartbugs
 pip install pyyaml colorama requests semantic_version docker py-cpuinfo

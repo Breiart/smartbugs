@@ -56,18 +56,24 @@ def execute(task):
 
     # Execute tools in order with retry mechanism
     for tool in tool_order:
+        #LOG - Tool execution
+        
         if task.tool.id.startswith(tool):
-            sb.logging.message(f"Running {tool} with parameters: {tool_params.get(tool, '')}", "INFO")
+            sb.logging.message(f"\033[93mRunning {tool} with parameters: {tool_params.get(tool, '')}\033[0m", "INFO")
             for i in range(3):
                 try:
                     start_time = time.time()
                     #task.tool.args = tool_params.get(tool, "")
                     base_tool_id = tool.split("-")[0]
+                    
+                    #SECTION - TOOL ARGUMENTS
                     tool_args = tool_params.get(base_tool_id, "").strip()
 
                     if not tool_args:
-                        #print(f"DEBUG: tool_command for {task.tool.id} is None or empty")
+                        sb.logging.message(f"\033[91mERROR: tool_command for {task.tool.id} is None or empty\033[0m")
                         raise sb.errors.SmartBugsError(f"Invalid parameters for tool {tool}")
+                    else: 
+                        sb.logging.message(f"\033[93mDEBUG: tool_command for {task.tool.id} is {tool_args}\033[0m")
 
                     task.tool.args = tool_args
 
@@ -166,6 +172,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
         remaining_tasks = tasks_total - tasks_completed_value
         if timeout:
             # Assume that the first round of processes all ran into a timeout
+            sb.logging.message(f"\033[95mConsidering timeout for ETC calculation\033[0m", "INFO")
             completed_tasks += no_processes
             time_so_far += timeout*no_processes
         etc = time_so_far / completed_tasks * remaining_tasks / no_processes
