@@ -60,21 +60,21 @@ class Tool():
         #print(f"DEBUG: Loaded tool {self.id}, entrypoint = {self._entrypoint}")
 
 
-    def command(self, filename, timeout, bin, main):
-        cmd = self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main) if self._command else None
-        #print(f"DEBUG: Running command -> {cmd}")  # Debugging
+    def command(self, filename, timeout, bin, main, args=""):
+        cmd = self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main, ARGS=args) if self._command else None
+        print(f"DEBUG: Running command -> {cmd}")  # Debugging
         try:
-            return self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main) if self._command else None
+            return self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main, ARGS=args) if self._command else None
         except KeyError as e:
             raise sb.errors.SmartBugsError(f"Unknown variable '{e}' in command of tool {self.id}/{self.mode}")
 
 
-    def entrypoint(self, filename, timeout, bin, main):
+    def entrypoint(self, filename, timeout, bin, main, args=""):
         if self._entrypoint:
-            substituted_entrypoint = self._entrypoint.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main)
-            print(f"DEBUG: Entrypoint substitution - Original: {self._entrypoint.template}")
-            print(f"DEBUG: Entrypoint substitution - Values -> filename={filename}, timeout={timeout}, bin={bin}, main={main}")
-            print(f"DEBUG: Entrypoint substitution - Result: {substituted_entrypoint}")
+            substituted_entrypoint = self._entrypoint.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main, ARGS=args)
+            # print(f"DEBUG: Entrypoint substitution - Original: {self._entrypoint.template}")
+            # print(f"DEBUG: Entrypoint substitution - Values -> filename={filename}, timeout={timeout}, bin={bin}, main={main}", "args={args}")
+            # print(f"DEBUG: Entrypoint substitution - Result: {substituted_entrypoint}")
             return substituted_entrypoint
         else:
             print("DEBUG: Entrypoint is None")

@@ -1,4 +1,4 @@
-import docker, os, shutil, tempfile, requests, traceback
+import docker, os, shutil, tempfile, requests, traceback, json
 import sb.io, sb.errors, sb.cfg
 import sb.logging
 
@@ -68,33 +68,11 @@ def __docker_volume(task):
 
 
 
-def __prettify_task_log(task):
-    #Typeof task: <class 'sb.task.Task'>
-    task = str(task) 
-    try:
-        parsed = json.loads(task)
-        pretty = json.dumps(task, indent=4, sort_keys=True)
-        # Colorare il JSON usando pygments (assicurarsi che il pacchetto pygments sia installato)
-        colorful = highlight(pretty, lexers.JsonLexer(), formatters.TerminalFormatter())
-        return colorful
-    except Exception:
-        #Fai il log del messaggio di errore con l'eccezione
-
-        sb.logging.message(f"Error in __prettify_task_log() -> {task}", "ERROR")
-        return task
-
-import os
-import json
-from pygments import highlight, lexers, formatters
-import sb.errors
-
 def __docker_args(task, sbdir):
-    print(f"DEBUG: Entering __docker_args() with task -> {__prettify_task_log(task)}")
-
     # Define default tool parameters
     tool_params = {
         "mythril": "--execution-timeout 1 --max-depth 64",
-        "maian": "-s",
+        "maian": 0,
         "echidna": "--config config.yaml",
         "confuzzius": "--epochs 100"
     }
@@ -107,8 +85,6 @@ def __docker_args(task, sbdir):
         
     }
 
-    print(f"DEBUG: Step 1 - Initialized args -> {args}")
-
     # Assign tool-specific settings
     for k in ("image", "cpu_quota", "mem_limit"):
         v = getattr(task.tool, k, None)
@@ -119,52 +95,51 @@ def __docker_args(task, sbdir):
         if v is not None:
             args[k] = v
 
-    print(f"DEBUG: Step 2 - Assigned resource limits -> {args}")
-
     # Extract execution parameters
     filename = f"/sb/{os.path.split(task.absfn)[1]}"
     timeout = task.settings.timeout or "0"
     main = 1 if task.settings.main else 0
 
-    print(f"\033[95mDEBUG: Step 3 - Extracted execution parameters -> filename: {filename}, timeout: {timeout}, main: {main}\033[0m")
+    #print(f"\033[95mDEBUG: Step 1 - Extracted execution parameters -> filename: {filename}, timeout: {timeout}, main: {main}\033[0m")
 
     # Verify if the tool has a valid command function
     tool_command = None
-    print(f"\033[92mDEBUG: Step 4 - task.tool -> {task.tool}\033[0m")
+    #print(f"\033[92mDEBUG: Step 2 - task.tool -> {task.tool}\033[0m")
     if hasattr(task.tool, "command") and callable(task.tool.command):
+        print(f"\033[92mDEBUG: Tool {task.tool.id} has a command and it is callable: {task.tool.command}\033[0m")
         try:
-            tool_command = task.tool.command(filename, timeout, "/sb/bin", main)
+            tool_command = task.tool.command(filename, timeout, "/sb/bin", main, 1)
         except Exception as e:
             print(f"ERROR: Failed to generate tool command -> {e}")
 
 
-    #print log di tool_command in colore verde
-    
-    print(f"\033[92mDEBUG: Step 4 - Generated tool_command -> {tool_command}\033[0m")
+    print(f"DEBUG: Step 3 - Generated tool_command -> {tool_command}")
+
+    # Assign tool parameters
+    base_tool_id = task.tool.id.split("-")[0]
+    tool_params_value = tool_params.get(base_tool_id, "")
+
+    #print(f"DEBUG: Step 4 - Extracted tool parameters for {task.tool.id} -> {tool_params_value}")
 
     # If tool_command is None or empty, check if entrypoint is available
     if not tool_command or tool_command.strip() == "":
         if hasattr(task.tool, "entrypoint") and task.tool.entrypoint:
-            print(f"WARNING: tool_command is empty, falling back to entrypoint for {task.tool.id}")
-            args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main)
-            print(f"\033[91mDEBUG: Step 4 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
+            args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, tool_params_value)
+            print(f"\033[91mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
         else:
             print(f"ERROR: No valid command or entrypoint found for tool {task.tool.id}")
             raise sb.errors.SmartBugsError(f"Invalid execution setup for tool {task.tool.id}")
 
-    # Assign tool parameters
-    base_tool_id = task.tool.id.split("-")[0]
-    tool_params_str = tool_params.get(base_tool_id, "")
-
-    print(f"DEBUG: Step 5 - Extracted tool parameters for {task.tool.id} -> {tool_params_str}")
+    # Print Docker arguments in blue
+    #print(f"\033[94mDEBUG: Docker arguments -> {json.dumps(args, indent=2)}\033[0m")
 
     # Assign the final command if present
     if tool_command:
-        args["command"] = f"{tool_command} {tool_params_str}".strip()
+        args["command"] = f"{tool_command} {tool_params_value}".strip()
         print(f"DEBUG: Step 6 - Docker command set -> {args['command']}")
 
     # Print final Docker execution details
-    print(f"DEBUG: Step 7 - FINAL DOCKER will execute -> {args}")
+    #print(f"DEBUG: Step 7 - FINAL DOCKER will execute -> {args}")
 
     return args
 
@@ -174,7 +149,6 @@ def execute(task):
     sbdir = __docker_volume(task)
     #print(f"DEBUG: Calling __docker_args() with task -> {task}")
     args = __docker_args(task, sbdir)
-    print(f"DEBUG: __docker_args() returned -> {args}")
 
     exit_code,logs,output,container = None,[],None,None
     try:
@@ -211,12 +185,13 @@ def execute(task):
     finally:
         try:
             container.kill()
-        except Exception:
+        except Exception as e:
             pass
         try:
             container.remove()
         except Exception:
             pass
         shutil.rmtree(sbdir)
+    
 
     return exit_code, logs, output, args

@@ -26,14 +26,6 @@ def execute(task):
     ME: Execute the different tools in the predefined order with predefined configurations
     """
     tool_order = ["slither", "mythril", "maian", "echidna", "confuzzius"]
-    tool_params = {
-        "slither": "--reentrancy-eth",
-        "mythril": "--execution-timeout 300 --max-depth 64",
-        "maian": "-s",  # Only suicidal contract detection
-        "echidna": "--config config.yaml",
-        "confuzzius": "--epochs 100"
-    }
-
 
     # create result dir if it doesn't exist
     os.makedirs(task.rdir, exist_ok=True)
@@ -59,34 +51,24 @@ def execute(task):
         #LOG - Tool execution
         
         if task.tool.id.startswith(tool):
-            sb.logging.message(f"\033[93mRunning {tool} with parameters: {tool_params.get(tool, '')}\033[0m", "INFO")
             for i in range(3):
+                sb.logging.message(f"\033[93mAttempt {i+1} of running {tool}\033[0m", "INFO")
                 try:
                     start_time = time.time()
-                    #task.tool.args = tool_params.get(tool, "")
-                    base_tool_id = tool.split("-")[0]
-                    
-                    #SECTION - TOOL ARGUMENTS
-                    tool_args = tool_params.get(base_tool_id, "").strip()
 
-                    if not tool_args:
-                        sb.logging.message(f"\033[91mERROR: tool_command for {task.tool.id} is None or empty\033[0m")
-                        raise sb.errors.SmartBugsError(f"Invalid parameters for tool {tool}")
-                    else: 
-                        sb.logging.message(f"\033[93mDEBUG: tool_command for {task.tool.id} is {tool_args}\033[0m")
-
-                    task.tool.args = tool_args
-
-                    #print(f"DEBUG: Assigned params to {tool} (base: {base_tool_id}) -> {task.tool.args}")
-
-                    exit_code = sb.docker.execute(task)
+                    exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)
                     duration = time.time() - start_time
                     if exit_code == 0:
                         break
                 except sb.errors.SmartBugsError as e:
                     if i == 2:
                         raise
-                time.sleep(random.randint(3, 8) * 60)  # Wait before retry
+                
+                sleep_duration = random.randint(1, 2) * 30
+                sb.logging.message(f"\033[93mSleeping for {sleep_duration} seconds before retry...\033[0m", "INFO")
+                sleep_start_time = time.time()
+                sb.logging.message(f"\033[93mSleep started at {datetime.datetime.fromtimestamp(sleep_start_time)}\033[0m", "INFO")
+                time.sleep(sleep_duration)
             if exit_code != 0:
                 sb.logging.message(f"{tool} execution failed with exit code {exit_code}", "WARNING")
 
@@ -94,7 +76,6 @@ def execute(task):
     sb.logging.message("All tools executed in the predefined order.", "INFO")
 
     
-
     # check whether result dir is empty,
     # and if not, whether we are going to overwrite it
     fn_task_log = os.path.join(task.rdir, sb.cfg.TASK_LOG)
@@ -109,21 +90,6 @@ def execute(task):
                 f" ({old_toolid}/{old_mode}, {old_fn})")
         if not task.settings.overwrite:
             return 0.0
-
-    # perform analysis
-    # Docker causes spurious connection errors
-    # try three times before giving up
-    for i in range(3):
-        try:
-            start_time = time.time()
-            exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)
-            duration = time.time() - start_time
-            break
-        except sb.errors.SmartBugsError as e:
-            if i == 2:
-                raise
-        # wait 3 to 8 minutes
-        time.sleep(random.randint(3,8)*60)
 
     # write result to files
     task_log = task_log_dict(task, start_time, duration, exit_code, tool_log, tool_output, docker_args)
