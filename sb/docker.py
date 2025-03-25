@@ -70,12 +70,15 @@ def __docker_volume(task):
 
 def __docker_args(task, sbdir):
     # Define default tool parameters
-    tool_params = {
-        "mythril": "--execution-timeout 1 --max-depth 64",
-        "maian": 0,
-        "echidna": "--config config.yaml",
-        "confuzzius": "--epochs 100"
-    }
+    # tool_params = {
+    #     "mythril": "--execution-timeout 1 --max-depth 64",
+    #     "maian": 1,
+    #     "echidna": "--config config.yaml",
+    #     "confuzzius": "--epochs 100"
+    # }
+    
+    task.tool = task.tool.__class__.load_configuration(task.tool.id, getattr(task, "metadata", None))
+
 
     # Initialize Docker arguments
     args = {
@@ -106,7 +109,7 @@ def __docker_args(task, sbdir):
     tool_command = None
     #print(f"\033[92mDEBUG: Step 2 - task.tool -> {task.tool}\033[0m")
     if hasattr(task.tool, "command") and callable(task.tool.command):
-        print(f"\033[92mDEBUG: Tool {task.tool.id} has a command and it is callable: {task.tool.command}\033[0m")
+        print(f"\033[92mDEBUG: Tool {task.tool.id} has a command and it is callable: {task.tool.command.__annotations__}\033[0m")
         try:
             tool_command = task.tool.command(filename, timeout, "/sb/bin", main, 1)
         except Exception as e:
@@ -116,15 +119,22 @@ def __docker_args(task, sbdir):
     print(f"DEBUG: Step 3 - Generated tool_command -> {tool_command}")
 
     # Assign tool parameters
-    base_tool_id = task.tool.id.split("-")[0]
-    tool_params_value = tool_params.get(base_tool_id, "")
+    # base_tool_id = task.tool.id.split("-")[0]
+    # tool_params_value = tool_params.get(base_tool_id, "")
 
-    #print(f"DEBUG: Step 4 - Extracted tool parameters for {task.tool.id} -> {tool_params_value}")
+    # print(f"DEBUG: Step 4 - Extracted tool parameters for {task.tool.id} -> {tool_params_value}")
+
+
+
+    # Use the default_params from the tool configuration.
+    default_params = getattr(task.tool, "default_params", "")
+    print(f"DEBUG: Step 4 - Extracted default_params for {task.tool.id} -> {default_params}")
+
 
     # If tool_command is None or empty, check if entrypoint is available
     if not tool_command or tool_command.strip() == "":
         if hasattr(task.tool, "entrypoint") and task.tool.entrypoint:
-            args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, tool_params_value)
+            args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, default_params)
             print(f"\033[91mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
         else:
             print(f"ERROR: No valid command or entrypoint found for tool {task.tool.id}")
@@ -135,7 +145,7 @@ def __docker_args(task, sbdir):
 
     # Assign the final command if present
     if tool_command:
-        args["command"] = f"{tool_command} {tool_params_value}".strip()
+        args["command"] = f"{tool_command} {default_params}".strip()
         print(f"DEBUG: Step 6 - Docker command set -> {args['command']}")
 
     # Print final Docker execution details

@@ -20,6 +20,28 @@ def task_log_dict(task, start_time, duration, exit_code, log, output, docker_arg
     }
 
 
+def update_task_for_next_tool(task, parsed_result, next_tool):
+    """
+    Analyze the parsed_result from tool n and update task with the
+    intelligence required for tool n+1. For example, if the parsed_result
+    indicates certain vulnerability patterns, store them in task.metadata.
+    Later, next_tool's configuration can adapt based on this metadata.
+    """
+    # Example: Save findings into task metadata (note: adjust keys as needed)
+    if not hasattr(task, "metadata"):
+        task.metadata = {}
+    task.metadata["vulnerabilities"] = parsed_result.get("vulnerabilities", [])
+    
+    # Optionally, log this extra info
+    sb.logging.message(f"Updated task metadata with vulnerabilities: {task.metadata['vulnerabilities']}", "DEBUG")
+    
+    # Load configuration for the next tool. You’ll need to implement a function
+    # that returns an updated tool configuration based on next_tool and/or task.metadata.
+    task.tool = task.tool.__class__.load_tool_configuration(next_tool, task.metadata)
+    
+    return task
+
+
 
 def execute(task):
     """
@@ -57,6 +79,7 @@ def execute(task):
                     start_time = time.time()
 
                     exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)
+                    sb.logging.message(f"\033[93mDocker arguments: {docker_args}\033[0m", "DEBUG")
                     duration = time.time() - start_time
                     if exit_code == 0:
                         break

@@ -4,7 +4,7 @@ import sb.io, sb.cfg, sb.errors
 
 
 FIELDS = ("id","mode","image","name","origin","version","info","parser",
-    "output","bin","solc","cpu_quota","mem_limit","command","entrypoint")
+    "output","bin", "default_params", "solc","cpu_quota","mem_limit","command","entrypoint")
 
 class Tool():
 
@@ -12,6 +12,11 @@ class Tool():
         #print(f"DEBUG: Tool configuration loaded -> {cfg}")  # Debugging
         for k in FIELDS:
             v = cfg.get(k)
+
+            # For default_params, if not provided, default to empty string.
+            if k == "default_params":
+                v = str(v) if v is not None else ""
+            
             if v is not None:
                 if k in ("solc"):
                     try:
@@ -103,6 +108,52 @@ class Tool():
     def __str__(self):
         l = [ f"{k}: {str(v)}" for k,v in self.dict().items() ]
         return f"{{{', '.join(l)}}}"
+        
+
+    @classmethod
+    def load_configuration(cls, tool_name, metadata=None):
+        """
+        Load and return a Tool instance for the given tool_name.
+        Optionally adjust the configuration using metadata.
+
+        For this example, we assume that each tool has a default YAML configuration file
+        in sb.cfg.TOOLS_HOME/{tool_name}/{sb.cfg.TOOL_CONFIG}.
+        """
+
+        toolpath = os.path.join(sb.cfg.TOOLS_HOME, tool_name)
+        fn = os.path.join(toolpath, sb.cfg.TOOL_CONFIG)
+        cfg = sb.io.read_yaml(fn)
+
+        # If the configuration uses an "alias", load that instead.
+        if cfg.get("alias"):
+            return cls.load_configuration(cfg["alias"], metadata)
+
+        # Set the tool id for later use
+        cfg["id"] = tool_name
+
+        # Select a mode; here, you might choose based on context. For example:
+        for mode in ("solidity", "bytecode", "runtime"):
+            if mode in cfg:
+                cfg_copy = cfg.copy()
+                for m in ("solidity", "bytecode", "runtime"):
+                    cfg_copy.pop(m, None)
+                cfg_copy["mode"] = mode
+                cfg_copy.update(cfg[mode])
+                cfg = cfg_copy
+                break
+
+        # Adjust configuration based on metadata if necessary.
+        if metadata and metadata.get("vulnerabilities"):
+            vulns = metadata["vulnerabilities"]
+            # Example: if many vulnerabilities were found, add an extra flag to the command.
+            extra_flag = "--deep-analysis" if len(vulns) > 3 else ""
+            if "command" in cfg:
+                command_template = string.Template(cfg["command"])
+                # You might embed extra_flag into the command. This is just one approach.
+                cfg["command"] = command_template.template.replace("$ARGS", f"$ARGS {extra_flag}")
+
+        return cls(cfg)
+
 
 
 
