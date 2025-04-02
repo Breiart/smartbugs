@@ -41,7 +41,7 @@ def update_task_for_next_tool(task, parsed_result, next_tool):
     
     return task
 
-
+#TODO: set up a second tool and test the update_task_for_next_tool function
 
 def execute(task):
     """
@@ -80,10 +80,13 @@ def execute(task):
 
                     exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)
                     sb.logging.message(f"\033[93mDocker arguments: {docker_args}\033[0m", "DEBUG")
+                    
                     duration = time.time() - start_time
-                    if exit_code == 0:
-                        break
+                    print(f"\033[93mDEBUG: Exit code: {exit_code}\033[0m")
+                    break
+                
                 except sb.errors.SmartBugsError as e:
+                    sb.logging.message(sb.colors.error(f"Error while running {tool}: {e}"), "ERROR")
                     if i == 2:
                         raise
                 
@@ -92,8 +95,6 @@ def execute(task):
                 sleep_start_time = time.time()
                 sb.logging.message(f"\033[93mSleep started at {datetime.datetime.fromtimestamp(sleep_start_time)}\033[0m", "INFO")
                 time.sleep(sleep_duration)
-            if exit_code != 0:
-                sb.logging.message(f"{tool} execution failed with exit code {exit_code}", "WARNING")
 
     
     sb.logging.message("All tools executed in the predefined order.", "INFO")

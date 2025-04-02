@@ -135,7 +135,7 @@ def __docker_args(task, sbdir):
     if not tool_command or tool_command.strip() == "":
         if hasattr(task.tool, "entrypoint") and task.tool.entrypoint:
             args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, default_params)
-            print(f"\033[91mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
+            print(f"\033[93mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
         else:
             print(f"ERROR: No valid command or entrypoint found for tool {task.tool.id}")
             raise sb.errors.SmartBugsError(f"Invalid execution setup for tool {task.tool.id}")

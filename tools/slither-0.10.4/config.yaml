@@ -6,6 +6,8 @@ info: Slither is a Solidity static analysis framework written in Python 3. It ru
 image: smartbugs/slither:0.10.4
 output: /output.json
 bin: scripts
+default_params: ""
 solidity:
-    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN'"
+    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$ARGS'"
     solc: yes
+    default_params: ""

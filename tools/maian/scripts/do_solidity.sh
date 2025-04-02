@@ -3,7 +3,7 @@
 FILENAME="$1"
 BIN="$2"
 MAIN="$3"
-ARGS="${4:-0}"  # Prendi dal quarto al sesto parametro
+ARGS="${4:-}"
 
 export PATH="$BIN:$PATH"
 chmod +x $BIN/solc
@@ -25,10 +25,11 @@ cd /MAIAN/tool
 
 
 for CONTRACT in $CONTRACTS; do
-    if [ "$ARGS" -ge 0 ] && [ "$ARGS" -le 2 ]; then
-        python3 maian.py -s "$FILENAME" "$CONTRACT" -c "$ARGS"
+    if [ -n "$ARGS" ]; then
+        python3 maian.py -s "$FILENAME" "$CONTRACT" "$ARGS"
     else
-        echo "Invalid argument: $ARGS. Please provide 0, 1, or 2."
-        exit 1
+        for c in 0 1 2; do
+            python3 maian.py -c "$c" -s "$FILENAME" "$CONTRACT"
+        done
     fi
 done

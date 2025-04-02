@@ -5,13 +5,12 @@ info: Echidna is a smart contract fuzzer built by Trail of Bits.
 image: trailofbits/echidna:latest
 
 solidity:
-    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$BIN'"
-    solc: true
-    bin: scripts
+  entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$BIN'"
+  solc: true
+  bin: scripts
 
 runtime:
-    entrypoint: '["echidna-test", "/data/$FILENAME", "--config", "/data/echidna.yaml"]'
+  entrypoint: '["echidna-test", "/data/$FILENAME", "--config", "/data/echidna.yaml"]'
 
 bytecode:
-    entrypoint: '["echidna-test", "/data/$FILENAME", "--contract", "ContractName", "--config", "/data/echidna.yaml"]'
-
+  entrypoint: '["echidna-test", "/data/$FILENAME", "--contract", "ContractName", "--config", "/data/echidna.yaml"]'
