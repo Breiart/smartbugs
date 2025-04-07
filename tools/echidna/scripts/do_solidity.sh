@@ -7,6 +7,9 @@ MAIN="$3"
 export PATH="$BIN:$PATH"
 chmod +x "$BIN"/solc
 
+# TODO: FIX THIS SCRIPT
+
+
 # Extract contract names from the file
 CONTRACT="${FILENAME%.sol}"
 CONTRACT="${CONTRACT##*/}"

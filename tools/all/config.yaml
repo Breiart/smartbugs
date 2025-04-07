@@ -1,6 +1,9 @@
 alias:
     - confuzzius
-    - maian
-    - mythril
-    - slither
     - echidna
+    - maian
+    - manticore
+    - mythril
+    - securify
+    - slither
+    - smartcheck

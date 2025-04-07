@@ -1,4 +1,5 @@
 import multiprocessing, random, time, datetime, os, random
+import json
 import sb.logging, sb.colors, sb.docker, sb.cfg, sb.io, sb.parsing, sb.sarif, sb.errors
 
 
@@ -20,6 +21,7 @@ def task_log_dict(task, start_time, duration, exit_code, log, output, docker_arg
     }
 
 
+#TODO: This function will need to be replaced by the tool manager
 def update_task_for_next_tool(task, parsed_result, next_tool):
     """
     Analyze the parsed_result from tool n and update task with the
@@ -41,13 +43,13 @@ def update_task_for_next_tool(task, parsed_result, next_tool):
     
     return task
 
-#TODO: set up a second tool and test the update_task_for_next_tool function
+#TODO: test the update_task_for_next_tool function
 
 def execute(task):
     """
     ME: Execute the different tools in the predefined order with predefined configurations
     """
-    tool_order = ["slither", "mythril", "maian", "echidna", "confuzzius"]
+    tool_order = ["slither", "mythril", "maian", "smartcheck", "manticore", "securify", "confuzzius"]
 
     # create result dir if it doesn't exist
     os.makedirs(task.rdir, exist_ok=True)
@@ -117,6 +119,7 @@ def execute(task):
 
     # write result to files
     task_log = task_log_dict(task, start_time, duration, exit_code, tool_log, tool_output, docker_args)
+    print(f"\033[93mDEBUG: Task log: {json.dumps(task_log, indent=4)}\033[0m")
     if tool_log:
         sb.io.write_txt(fn_tool_log, tool_log)
     if tool_output:
@@ -196,7 +199,7 @@ def run(tasks, settings):
         start_time = time.time()
 
         # ME: Define the specific order of tools to be used
-        tool_order = ['slither', 'mythril', 'maian', 'echidna', 'confuzzius']
+        tool_order = ['slither', 'mythril', 'maian', 'manticore', 'confuzzius']
 
         # fill task queue
         taskqueue = mp.Queue()
