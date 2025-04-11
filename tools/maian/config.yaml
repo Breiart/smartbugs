@@ -9,7 +9,7 @@ default_params: 0
 solidity:
   entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$BIN' '$MAIN' '$ARGS'"
   solc: yes
-  default_params: "-c 0"
+  default_params: ""
 bytecode:
   entrypoint: "'$BIN/do_bytecode.sh' '$FILENAME'"
   default_params: 0
