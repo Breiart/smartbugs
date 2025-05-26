@@ -47,6 +47,7 @@ def reparser(taskqueue, sarif, verbose):
 
 
 def main():
+    print("REPARSE CALLED")
     argparser = argparse.ArgumentParser(
         prog="reparse",
         description=f"Parse the tool output ({sb.cfg.TOOL_LOG}, {sb.cfg.TOOL_OUTPUT}) into {sb.cfg.PARSER_OUTPUT}.")

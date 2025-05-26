@@ -109,14 +109,14 @@ def __docker_args(task, sbdir):
     tool_command = None
     #print(f"\033[92mDEBUG: Step 2 - task.tool -> {task.tool}\033[0m")
     if hasattr(task.tool, "command") and callable(task.tool.command):
-        print(f"\033[92mDEBUG: Tool {task.tool.id} has a command and it is callable: {task.tool.command.__annotations__}\033[0m")
+        #print(f"\033[92mDEBUG: Tool {task.tool.id} has a command and it is callable: {task.tool.command.__annotations__}\033[0m")
         try:
             tool_command = task.tool.command(filename, timeout, "/sb/bin", main, 1)
         except Exception as e:
             print(f"ERROR: Failed to generate tool command -> {e}")
 
 
-    print(f"DEBUG: Step 3 - Generated tool_command -> {tool_command}")
+    #print(f"DEBUG: Step 3 - Generated tool_command -> {tool_command}")
 
     # Assign tool parameters
     # base_tool_id = task.tool.id.split("-")[0]
@@ -128,14 +128,14 @@ def __docker_args(task, sbdir):
 
     # Use the default_params from the tool configuration.
     default_params = getattr(task.tool, "default_params", "")
-    print(f"DEBUG: Step 4 - Extracted default_params for {task.tool.id} -> {default_params}")
+    #print(f"DEBUG: Step 4 - Extracted default_params for {task.tool.id} -> {default_params}")
 
 
     # If tool_command is None or empty, check if entrypoint is available
     if not tool_command or tool_command.strip() == "":
         if hasattr(task.tool, "entrypoint") and task.tool.entrypoint:
             args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, default_params)
-            print(f"\033[93mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
+            #print(f"\033[93mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
         else:
             print(f"ERROR: No valid command or entrypoint found for tool {task.tool.id}")
             raise sb.errors.SmartBugsError(f"Invalid execution setup for tool {task.tool.id}")
@@ -162,7 +162,7 @@ def execute(task):
 
     exit_code,logs,output,container = None,[],None,None
     try:
-        print(f"DEBUG: Docker execution arguments -> {args}")
+        #print(f"DEBUG: Docker execution arguments -> {args}")
         try:
             container = client().containers.run(**args)
         except Exception as e:

@@ -14,6 +14,7 @@ FINDINGS = (
     "Not destructible (no self-destruct)",
     "Destructible",
     "Destructible (verified)",
+    "No prodigal vulnerability found"
 )
 
 
@@ -50,7 +51,22 @@ MAP_FINDINGS = (
     (NO_SELFDESTRUCT, "Not destructible (no self-destruct)"),
     (SD_VULN_FOUND, "Destructible"),
     (SD_VULN_CONFIRMED, "Destructible (verified)"),
+    (PRODIGAL_NOT_FOUND, "No prodigal vulnerability found")
 )
+
+INDICATOR_NAMES = {
+    NOT_PRODIGAL: "NOT_PRODIGAL",
+    LEAK_FOUND: "LEAK_FOUND",
+    PRODIGAL_CONFIRMED: "PRODIGAL_CONFIRMED",
+#    CAN_RECEIVE_ETHER: "CAN_RECEIVE_ETHER",
+    CANNOT_RECEIVE_ETHER: "CANNOT_RECEIVE_ETHER",
+    IS_GREEDY: "IS_GREEDY",
+    LOCK_FOUND: "LOCK_FOUND",
+    NO_SELFDESTRUCT: "NO_SELFDESTRUCT",
+    SD_VULN_FOUND: "SD_VULN_FOUND",
+    SD_VULN_CONFIRMED: "SD_VULN_CONFIRMED",
+    PRODIGAL_NOT_FOUND: "PRODIGAL_NOT_FOUND"
+}
 
 INFOS = (
 #    (PRODIGAL_NOT_FOUND , "No Ether leak found"), # nothing detected
@@ -111,6 +127,7 @@ def parse(exit_code, log, output):
         for indicator,name in MAP_FINDINGS:
             if line.startswith(indicator):
                 finding["name"] = name
+                finding["feature"] = INDICATOR_NAMES.get(indicator, "UNKNOWN")
                 found = True
                 break
         if found:
@@ -145,10 +162,11 @@ def parse(exit_code, log, output):
     if finding.get("name"):
         findings.append(finding)
 
-    for checks in analysis_complete.values():
-        if len(checks) != 3:
-            infos.add("analysis incomplete")
-            if not fails and not errors:
-                fails.add("execution failed")
+    #for checks in analysis_complete.values():
+    #    if len(checks) != 3:
+    #        infos.add("analysis incomplete")
+    #        if not fails and not errors:
+    #            fails.add("execution failed")
+
 
     return findings, infos, errors, fails

@@ -67,7 +67,6 @@ class Tool():
 
     def command(self, filename, timeout, bin, main, args=""):
         cmd = self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main, ARGS=args) if self._command else None
-        print(f"DEBUG: Running command -> {cmd}")  # Debugging
         try:
             return self._command.substitute(FILENAME=filename, TIMEOUT=timeout, BIN=bin, MAIN=main, ARGS=args) if self._command else None
         except KeyError as e:
