@@ -69,23 +69,13 @@ def __docker_volume(task):
 
 
 def __docker_args(task, sbdir):
-    # Define default tool parameters
-    # tool_params = {
-    #     "mythril": "--execution-timeout 1 --max-depth 64",
-    #     "maian": 1,
-    #     "echidna": "--config config.yaml",
-    #     "confuzzius": "--epochs 100"
-    # }
-    
     task.tool = task.tool.__class__.load_configuration(task.tool.id, getattr(task, "metadata", None))
-
-
+    
     # Initialize Docker arguments
     args = {
         "volumes": {sbdir: {"bind": "/sb", "mode": "rw"}},
         "detach": True,
-        "user": 0,
-        
+        "user": 0,        
     }
 
     # Assign tool-specific settings
@@ -103,53 +93,31 @@ def __docker_args(task, sbdir):
     timeout = task.settings.timeout or "0"
     main = 1 if task.settings.main else 0
 
-    #print(f"\033[95mDEBUG: Step 1 - Extracted execution parameters -> filename: {filename}, timeout: {timeout}, main: {main}\033[0m")
+    tool_args = task.tool_args
+    if tool_args and tool_args.strip() != "":
+        sb.logging.message(f"DEBUG: Docker execute obtained tool args: {tool_args}", "INFO")
+
 
     # Verify if the tool has a valid command function
     tool_command = None
-    #print(f"\033[92mDEBUG: Step 2 - task.tool -> {task.tool}\033[0m")
     if hasattr(task.tool, "command") and callable(task.tool.command):
-        #print(f"\033[92mDEBUG: Tool {task.tool.id} has a command and it is callable: {task.tool.command.__annotations__}\033[0m")
         try:
-            tool_command = task.tool.command(filename, timeout, "/sb/bin", main, 1)
+            tool_command = task.tool.command(filename, timeout, "/sb/bin", main, tool_args)
         except Exception as e:
-            print(f"ERROR: Failed to generate tool command -> {e}")
-
-
-    #print(f"DEBUG: Step 3 - Generated tool_command -> {tool_command}")
-
-    # Assign tool parameters
-    # base_tool_id = task.tool.id.split("-")[0]
-    # tool_params_value = tool_params.get(base_tool_id, "")
-
-    # print(f"DEBUG: Step 4 - Extracted tool parameters for {task.tool.id} -> {tool_params_value}")
-
-
-
-    # Use the default_params from the tool configuration.
-    default_params = getattr(task.tool, "default_params", "")
-    #print(f"DEBUG: Step 4 - Extracted default_params for {task.tool.id} -> {default_params}")
-
+            sb.logging.message(f"ERROR: Failed to generate tool command -> {e}", "ERROR")
 
     # If tool_command is None or empty, check if entrypoint is available
     if not tool_command or tool_command.strip() == "":
         if hasattr(task.tool, "entrypoint") and task.tool.entrypoint:
-            args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, default_params)
-            #print(f"\033[93mDEBUG: Step 5 - Fallback to entrypoint -> {args['entrypoint']}\033[0m") 
+            args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main, tool_args) 
         else:
-            print(f"ERROR: No valid command or entrypoint found for tool {task.tool.id}")
+            sb.logging.message(f"ERROR: No valid command or entrypoint found for tool {task.tool.id}", "ERROR")
             raise sb.errors.SmartBugsError(f"Invalid execution setup for tool {task.tool.id}")
 
-    # Print Docker arguments in blue
-    #print(f"\033[94mDEBUG: Docker arguments -> {json.dumps(args, indent=2)}\033[0m")
-
-    # Assign the final command if present
+    # Assign the tool command if present
     if tool_command:
-        args["command"] = f"{tool_command} {default_params}".strip()
-        print(f"DEBUG: Step 6 - Docker command set -> {args['command']}")
-
-    # Print final Docker execution details
-    #print(f"DEBUG: Step 7 - FINAL DOCKER will execute -> {args}")
+        args["command"] = f"{tool_command} {tool_args}".strip()
+        sb.logging.message(f"DEBUG: Docker command set -> {args['command']}", "INFO")
 
     return args
 
@@ -157,18 +125,16 @@ def __docker_args(task, sbdir):
 
 def execute(task):
     sbdir = __docker_volume(task)
-    #print(f"DEBUG: Calling __docker_args() with task -> {task}")
     args = __docker_args(task, sbdir)
 
     exit_code,logs,output,container = None,[],None,None
     try:
-        #print(f"DEBUG: Docker execution arguments -> {args}")
         try:
             container = client().containers.run(**args)
         except Exception as e:
             print(f"ERROR: Failed to start Docker container -> {e}")
             raise
-        print(f"DEBUG: Docker container started -> {container}")
+        print(f"Docker container started: {container}")
         try:
             result = container.wait(timeout=task.settings.timeout)
             exit_code = result["StatusCode"]
@@ -186,11 +152,8 @@ def execute(task):
                 pass
 
     except Exception as e:
-        #raise sb.errors.SmartBugsError(f"Problem running Docker container: {e})")
         logs = container.logs().decode("utf8").splitlines() if container else []
-        raise sb.errors.SmartBugsError(
-            f"Docker execution failed for {task.tool.id}\nError: {e}\nLogs:\n" + "\n".join(logs)
-        )
+        raise sb.errors.SmartBugsError(f"Docker execution failed for {task.tool.id}\nError: {e}\nLogs:\n" + "\n".join(logs))
 
     finally:
         try:
@@ -202,6 +165,5 @@ def execute(task):
         except Exception:
             pass
         shutil.rmtree(sbdir)
-    
 
     return exit_code, logs, output, args

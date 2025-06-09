@@ -1,6 +1,6 @@
 alias:
     - confuzzius
-    - echidna
+    #- echidna
     - maian
     - manticore
     - mythril

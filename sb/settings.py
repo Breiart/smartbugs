@@ -2,7 +2,7 @@ import os, string, time
 import sb.io, sb.logging, sb.cfg, sb.errors
 
 HOME = os.path.expanduser("~") # cross-plattform safe
-NOW = time.gmtime() # only use in main process, value may be different in sub-processes
+NOW = time.localtime()  # only use in main process, value may be different in sub-processes
 PID = os.getpid()   # only use in main process, value may be different in sub-processes
 
 class Settings:

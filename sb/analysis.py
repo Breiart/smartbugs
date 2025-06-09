@@ -2,7 +2,6 @@ import multiprocessing, random, time, datetime, os, random, subprocess
 import json
 import sb.logging, sb.colors, sb.docker, sb.cfg, sb.io, sb.parsing, sb.sarif, sb.errors
 import sb.smartbugs
-import sb.tools
 
 
 def task_log_dict(task, start_time, duration, exit_code, log, output, docker_args):
@@ -22,155 +21,87 @@ def task_log_dict(task, start_time, duration, exit_code, log, output, docker_arg
     }
 
 
-def call_reparse(smartbugs_root, results_directory, processes=1, generate_sarif=False, verbose=True):
-    # Calls the existing reparse script after each tool execution
-    reparse_script = os.path.join(smartbugs_root, 'reparse')
-
-    if not os.path.isfile(reparse_script):
-        raise FileNotFoundError(f"Reparse script not found at {reparse_script}")
-
-    if not os.access(reparse_script, os.X_OK):
-        raise PermissionError(f"Reparse script is not executable: {reparse_script}")
-
-    cmd = [
-        reparse_script,
-        "--processes", str(processes)
-    ]
-
-    if generate_sarif:
-        cmd.append("--sarif")
-    if verbose:
-        cmd.append("-v")
-
-    cmd.append(results_directory)
-
+def call_reparse(results_directory):
     try:
-        completed_process = subprocess.run(
-            cmd,
+        result = subprocess.run(
+            ["python3", "-m", "sb.reparse", results_directory],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             check=True,
-            capture_output=True,
-            text=True,
-            cwd=smartbugs_root  # Important: run inside project root
+            text=True
         )
-
-        if completed_process.stderr:
-            sb.logging.message(f"Reparse stderr:\n{completed_process.stderr}", "WARNING")
-
-        parser_output_path = os.path.join(results_directory, sb.cfg.PARSER_OUTPUT)
-        if os.path.exists(parser_output_path):
-            parsed_output = sb.io.read_json(parser_output_path)
-            sb.logging.message(f"Parsed output successfully read from {parser_output_path}", "INFO")
-            return parsed_output
-        else:
-            sb.logging.message(f"Parsed output file not found at {parser_output_path}", "ERROR")
-            return None
-
+        if result.stderr:
+            sb.logging.message(f"DEBUG Reparse stderr:\n{result.stderr}", "DEBUG")
     except subprocess.CalledProcessError as e:
-        sb.logging.message(f"Reparse subprocess failed:\n{e.stderr}", "ERROR")
-        return None
-    except json.JSONDecodeError as e:
-        sb.logging.message(f"Failed to parse JSON output: {e}", "ERROR")
+        sb.logging.message(f"[ERROR] Reparse failed: {e.stderr}", "ERROR")
         return None
 
+    parsed_path = os.path.join(results_directory, sb.cfg.PARSER_OUTPUT)
+    if os.path.exists(parsed_path):
+        return sb.io.read_json(parsed_path)
 
-def save_execution_results(task, tool_log, tool_output, docker_args, exit_code, start_time, duration):
-    """Save tool execution results immediately after running a tool."""
-
-    def sanitize_bytes(obj):
-        if isinstance(obj, bytes):
-            return obj.decode("utf-8", errors="replace")  # Convert bytes to str
-        if isinstance(obj, dict):
-            return {k: sanitize_bytes(v) for k, v in obj.items()}  # Recursively clean values
-        if isinstance(obj, list):
-            return [sanitize_bytes(i) for i in obj]  # Recursively clean list elements
-        return obj  # Return as-is if not bytes, list, or dict
-
-    # Step 0: Ensure result directory exists
-    if not os.path.exists(task.rdir):
-        os.makedirs(task.rdir, exist_ok=True)
-        sb.logging.message(f"Result directory {task.rdir} created.", "DEBUG")
-
-    # Step 1: Check if we are overwriting old data (optional but good)
-    tool_log_path = os.path.join(task.rdir, sb.cfg.TOOL_LOG)
-    tool_output_path = os.path.join(task.rdir, sb.cfg.TOOL_OUTPUT)
-    task_log_path = os.path.join(task.rdir, sb.cfg.TASK_LOG)
-
-    if any(os.path.exists(p) for p in (tool_log_path, tool_output_path, task_log_path)):
-        sb.logging.message(f"Warning: Overwriting existing tool result files in {task.rdir}", "WARNING")
-
-    # Step 2: Save tool log (join lines and write text)
-    tool_log_text = "\n".join(tool_log)
-    sb.io.write_txt(tool_log_path, tool_log_text)
-    
-    # Step 3: Sanitize and then save tool output (JSON)
-    safe_tool_output = sanitize_bytes(tool_output)
-    sb.io.write_json(tool_output_path, safe_tool_output)
-
-    # Step 4: Save task log (JSON)
-    task_log_dict_obj = task_log_dict(
-        task=task,
-        start_time=start_time,
-        duration=duration,
-        exit_code=exit_code,
-        log=bool(tool_log),
-        output=bool(tool_output),
-        docker_args=docker_args
-    )
-    sb.io.write_json(task_log_path, task_log_dict_obj)
-
-    sb.logging.message(f"Execution results saved to {task.rdir}", "DEBUG")
+    sb.logging.message("Parsed output not found after reparse.", "ERROR")
+    return None
 
 
 def analyze_parsed_results(parsed_output):
-    # Placeholder analysis implementation
-    # TODO implement logic to analyze the parsed output. This logic has to be passed to choose_next_tool
-
-    parser_id = parsed_output["parser"]["id"]
-    
-    if parser_id == "mythril-0.24.7":
-        return "mythril"
-    elif parser_id == "slither-0.10.4":
-        return "slither"
-    
-    sb.logging.message(f"Warning: No analysis rule defined for parser ID '{parser_id}'", "WARNING")
-    return None
-
-def choose_next_tool(analysis):
-    # Placeholder logic for future next tool selection 
-    # Future logic to choose next tool based on the analysis of the parsed output
-    # TODO implement logic to choose the next tool based on the parsed output
-    
-    if analysis == "slither":
-        return "mythril"
-    elif analysis == "mythril":
-        return "maian"
-    
-    return None
-
-def update_task_for_next_tool(task, parsed_result, next_tool, tool_order):
     """
-    Update task for the next tool based on parsed results.
-    Currently a placeholder
-    # TODO implement logic to update the task for the next tool
+    Analyze parsed output and extract a list of detected vulnerability types.
+    Returns:
+        list: List of detected vulnerability types, e.g. ["REENTRANCY", "SUICIDAL"]
+    """
+    vulnerabilities = set()
+
+    findings = parsed_output.get("findings", [])
+    
+    for finding in findings:
+        name = finding.get("name")
+        severity = finding.get("severity")
+
+        if name:
+            vulnerabilities.add(name.upper())
+
+    if not vulnerabilities:
+        sb.logging.message("No vulnerabilities detected in parsed output.", "DEBUG")
+    
+    print(f"Vulnerabilities: {list(vulnerabilities)}")
+
+    return list(vulnerabilities) if vulnerabilities else None
+
+
+def route_next_tool(vuln_list):
+    """
+    Route to the next tool based on the list of detected vulnerabilities.
+    Returns:
+        str or None: Tool name or None if no mapping is found.
     """
 
-    #if next_tool not in task.settings.tools:
-    existing_base_ids = {t.split("-")[0] for t in task.settings.tools}
-    if next_tool.split("-")[0] not in existing_base_ids:
-        task.settings.tools.append(next_tool)
-    if next_tool not in tool_order:
-        tool_order.append(next_tool)
+    #FIXME Questo è solo un esempio di alto livello, non un esempio di implementazione
+    VULN_TOOL_MAP = {
+        "REENTRANCY": "mythril",
+        "TOD": "maian",
+        "SUICIDAL": "maian",
+        "GREEDY": "maian",
+        "PRODIGAL": "maian",
+        "UNRESTRICTED_WRITE": "slither"
+    }
+    
 
-    return task
+    #FIXME Il return è (None, "") se voglio eliminare il routing dinamico dei tool, per ora è (mythril, ExternalCalls) per testare
+    return "mythril", "--modules ExternalCalls"
+    for vuln in vuln_list:
+        tool = VULN_TOOL_MAP.get(vuln)
+        if tool:
+            return tool, ""
 
 
-
-def execute(task, taskqueue, tasks_total):    
+def execute(task):    
     # create result dir if it doesn't exist
-    os.makedirs(task.rdir, exist_ok=True)
-    if not os.path.isdir(task.rdir):
-        raise sb.errors.SmartBugsError(f"Cannot create result directory {task.rdir}")
-    
+    if not os.path.exists(task.rdir):
+        os.makedirs(task.rdir, exist_ok=True)
+        if not os.path.isdir(task.rdir):
+            raise sb.errors.SmartBugsError(f"Cannot create result directory {task.rdir}")
+     
     # === Smart early exit ===
     fn_task_log = os.path.join(task.rdir, sb.cfg.TASK_LOG)
     if os.path.exists(fn_task_log):
@@ -180,7 +111,7 @@ def execute(task, taskqueue, tasks_total):
                 previous["tool"]["id"] == task.tool.id and
                 previous["filename"] == task.relfn):
                 sb.logging.message(f"Skipping {task.tool.id} on {task.relfn} (already completed)", "INFO")
-                return 0.0, False
+                return 0.0
         except Exception:
             pass  # fallback to running the tool
 
@@ -198,67 +129,33 @@ def execute(task, taskqueue, tasks_total):
         if os.path.exists(fn):
             raise sb.errors.SmartBugsError(f"Cannot clear old output {fn}")
 
-    # Execute tool with retry mechanism
+    # Docker causes spurious connection errors
+    # Therefore try each tool 3 times before giving up
     base_tool = task.tool.id.split("-")[0]
     executed = False
-    total_duration = 0.0
-    new_tool_added = False
+    tool_duration = 0.0
     tool_log = tool_output = docker_args = None
-       
     for attempt in range(3):
         sb.logging.message(f"\033[93mAttempt {attempt+1} of running {base_tool}\033[0m", "INFO")
         try:
             start_time = time.time()                    
             exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)                    
             duration = time.time() - start_time
-            total_duration += duration
+            tool_duration += duration
             executed = True
 
-            sb.logging.message(f"{base_tool} executed in: {total_duration} seconds with exit code {exit_code}", "INFO")
-
-            # Save outputs to disk
-            save_execution_results(task, tool_log, tool_output, docker_args, exit_code, start_time, duration)
-                    
-            # Call reparse after tool execution
-            smartbugs_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            tool_parsed_output = call_reparse(
-                smartbugs_root=smartbugs_root,
-                results_directory=task.rdir,
-                generate_sarif=False,
-                verbose=True
-            )
-
-            # Analyze the parsed results and select next tool
-            analysis = analyze_parsed_results(tool_parsed_output)
-            next_tool = choose_next_tool(analysis)
-
-            # Prevent dynamic task duplication
-            existing_base_tools = {t.split("-")[0] for t in task.settings.tools}
-            if next_tool and next_tool.split("-")[0] not in existing_base_tools:
-                new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings)
-                if new_task:
-                    taskqueue.put(new_task)
-                    with tasks_total.get_lock():
-                        tasks_total.value += 1
-                    new_tool_added = True
-
-            if next_tool:
-                sb.logging.message(f"{base_tool} selected next tool: {next_tool}", "INFO")
-            else:
-                sb.logging.message("No next tool selected.", "INFO")
-
-            break
-                
+            sb.logging.message(f"{base_tool} executed in: {tool_duration} seconds with exit code {exit_code}", "INFO")
+            break       
+        
         except sb.errors.SmartBugsError as e:
             sb.logging.message(sb.colors.error(f"Error while running {base_tool}: {e}"), "ERROR")
             if attempt == 2:
-                raise               
-            
+                raise                   
             sleep_duration = 15
             sb.logging.message(f"\033[93mSleeping for {sleep_duration} seconds before retry...\033[0m", "INFO")
             time.sleep(sleep_duration)    
 
-    if executed:       
+    if executed:
         # Check whether result dir is empty,
         # and if not, whether we are going to overwrite it
         if os.path.exists(fn_task_log):
@@ -270,8 +167,6 @@ def execute(task, taskqueue, tasks_total):
                 raise sb.errors.SmartBugsError(
                     f"Result directory {task.rdir} occupied by another task"
                     f" ({old_toolid}/{old_mode}, {old_fn})")
-            #if os.path.exists(fn_task_log) and not task.settings.overwrite:
-            #    return 0.0, False
 
         # write result to files
         task_log = task_log_dict(task, start_time, duration, exit_code, tool_log, tool_output, docker_args)
@@ -294,11 +189,7 @@ def execute(task, taskqueue, tasks_total):
                 sarif_result = sb.sarif.sarify(task_log["tool"], parsed_result["findings"])
                 sb.io.write_json(fn_sarif_output, sarif_result)
 
-    sb.logging.message(f"TOOL {base_tool} completed execution.", "INFO")
-    print(total_duration)
-    print(new_tool_added)
-
-    return total_duration, new_tool_added
+    return tool_duration
 
 
 
@@ -318,7 +209,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             tasks_completed.value = tasks_completed_value
             time_completed_value = time_completed.value + duration
             time_completed.value = time_completed_value
-        # estimated time to completion = time_so_far / completed_tasks * remaining_tasks / no_processes
+        # estimated time to completion evaluated as time_so_far / completed_tasks * remaining_tasks / no_processes
         completed_tasks = tasks_completed_value
         time_so_far = time_completed_value
         with tasks_total.get_lock(), tasks_completed.get_lock():
@@ -342,9 +233,28 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
         pre_analysis()
         try:
             duration = 0.0
-            run_duration, new_tool_added = execute(task, taskqueue, tasks_total)
-            print(f"[{task.tool.id}] received run_duration: {run_duration}, and added {new_tool_added}")
+            run_duration = execute(task)
             duration += run_duration
+
+            # Call reparse after tool execution
+            tool_parsed_output = call_reparse(task.rdir)
+
+            # Analyze the parsed results and select next tool
+            vuln_list = analyze_parsed_results(tool_parsed_output)
+            next_tool, tool_args = route_next_tool(vuln_list)
+
+            # Prevent dynamic task duplication
+            new_tool_added = False
+            existing_base_tools = {t.split("-")[0] for t in task.settings.tools}
+            if next_tool and next_tool.split("-")[0] not in existing_base_tools:
+                new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, tool_args)
+                if new_task:
+                    taskqueue.put(new_task)
+                    with tasks_total.get_lock():
+                        tasks_total.value += 1
+                    new_tool_added = True
+
+            sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
  
         except sb.errors.SmartBugsError as e:
             duration = 0.0

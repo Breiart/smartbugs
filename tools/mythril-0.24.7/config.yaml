@@ -5,7 +5,7 @@ info: Mythril analyses EVM bytecode using symbolic analysis, taint analysis and 
 image: smartbugs/mythril:0.24.7
 bin: scripts
 solidity:
-    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'"
+    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN' '$ARGS'"
     solc: yes
 bytecode:
     entrypoint: "'$BIN/do_bytecode.sh' '$FILENAME' '$TIMEOUT'"

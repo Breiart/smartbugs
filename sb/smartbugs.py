@@ -26,7 +26,7 @@ def collect_files(patterns):
     return files
 
 
-def collect_single_task(absfn, relfn, tool_name, settings):
+def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
     """
     Creates a new Task object for a dynamically added tool if it hasn't already been scheduled.
     """
@@ -44,12 +44,13 @@ def collect_single_task(absfn, relfn, tool_name, settings):
     except Exception as e:
         raise sb.errors.SmartBugsError(f"Could not load tool '{tool_name}': {e}")
     
-    print(f"\033[94m[DEBUG] Loaded tool.id = {tool}\033[0m")
+    #print(f"\033[94m[DEBUG] Loaded tool.id = {tool}\033[0m")
     
     # Prevent duplicates based on tool name
+    #FIXME Prevent duplicates should instead work on tool name AND args tuple
     base_tool_name = tool.id.split("-")[0]
     existing_base_names = {t.split("-")[0] for t in settings.tools}
-    print(f"[DEBUG] Comparing base_tool_name = {base_tool_name} with {existing_base_names}")
+    sb.logging.message(f"[DEBUG] Comparing base_tool_name = {base_tool_name} with {existing_base_names}", "INFO")
     if base_tool_name in existing_base_names:
         sb.logging.message(f"\033[93m[collect_single_task] Tool '{tool_name}' already scheduled. Skipping.\033[0m", "INFO")
         return None
@@ -91,12 +92,12 @@ def collect_single_task(absfn, relfn, tool_name, settings):
     ensure_loaded(tool.image)
 
     # Update tool list on settings
-    print(f"[DEBUG] Appending tool to settings.tools: {tool.id}")
+    #print(f"[DEBUG] Appending tool to settings.tools: {tool.id}")
     settings.tools.append(tool.id)
 
     # Return a Task object updated with the new tool
     rdir = settings.resultdir(tool.id, tool.mode, absfn, relfn)
-    return sb.tasks.Task(absfn, relfn, rdir, solc_version, solc_path, tool, settings)
+    return sb.tasks.Task(absfn, relfn, rdir, solc_version, solc_path, tool, settings, tool_args)
 
 
 def collect_tasks(files, tools, settings):
