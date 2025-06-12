@@ -1,8 +1,9 @@
-import multiprocessing, random, time, datetime, os, random, subprocess
-import json
+import multiprocessing, time, datetime, os, subprocess
 import sb.logging, sb.colors, sb.docker, sb.cfg, sb.io, sb.parsing, sb.sarif, sb.errors
-import sb.smartbugs
+import sb.smartbugs, sb.vulnerability
 
+#FIXME Placeholder in attesa di una logica migliore
+CORE_TOOLS = {"slither", "mythril", "smartcheck", "manticore", "maian", "confuzzius"}
 
 def task_log_dict(task, start_time, duration, exit_code, log, output, docker_args):
     return {
@@ -50,49 +51,94 @@ def analyze_parsed_results(parsed_output):
     Returns:
         list: List of detected vulnerability types, e.g. ["REENTRANCY", "SUICIDAL"]
     """
-    vulnerabilities = set()
-
-    findings = parsed_output.get("findings", [])
+    if parsed_output is None:
+        return []
+    vulnerabilities = set()    
     
-    for finding in findings:
-        name = finding.get("name")
-        severity = finding.get("severity")
-
-        if name:
-            vulnerabilities.add(name.upper())
-
-    if not vulnerabilities:
-        sb.logging.message("No vulnerabilities detected in parsed output.", "DEBUG")
     
-    print(f"Vulnerabilities: {list(vulnerabilities)}")
+    tool_id = parsed_output.get("parser", {}).get("id")
+    
+    analyzer = sb.vulnerability.VulnerabilityAnalyzer()
+    vuln_list = analyzer.analyze(tool_id, parsed_output)
 
-    return list(vulnerabilities) if vulnerabilities else None
+    print(f"DEBUG: VULN LIST: {vuln_list}")
+    return vuln_list
 
 
-def route_next_tool(vuln_list):
+def route_next_tool(vuln_list, task_settings=None):
     """
     Route to the next tool based on the list of detected vulnerabilities.
     Returns:
         str or None: Tool name or None if no mapping is found.
     """
-
-    #FIXME Questo è solo un esempio di alto livello, non un esempio di implementazione
-    VULN_TOOL_MAP = {
-        "REENTRANCY": "mythril",
-        "TOD": "maian",
-        "SUICIDAL": "maian",
-        "GREEDY": "maian",
-        "PRODIGAL": "maian",
-        "UNRESTRICTED_WRITE": "slither"
-    }
+    if not vuln_list:
+        return []
     
+    #FIXME Questa vuln tool map prima o poi verrà sostituita da un'implementazione di più alto livello
+    VULN_TOOL_MAP = {
+        # Reentrancy-related
+        "REENTRANCY": ("mythril", "--modules ExternalCalls"),
+        "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth"),
+        #"REENTRANCY_NO_GUARD": ("slither", "--reentrancy-no-guard"),
 
-    #FIXME Il return è (None, "") se voglio eliminare il routing dinamico dei tool, per ora è (mythril, ExternalCalls) per testare
-    return "mythril", "--modules ExternalCalls"
+        # Transaction order
+        "TOD": ("slither", "--detect out-of-order-retryable"),
+
+        # Access control
+        "SUICIDAL": ("maian", "-c 0"),
+        "PRODIGAL": ("maian", "-c 1"),
+        "GREEDY": ("maian", "-c 2"),
+        "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth"),
+
+        # Arithmetic
+        "OVERFLOW": ("mythril", "--modules IntegerArithmetics"),
+        "UNDERFLOW": ("mythril", "--modules IntegerArithmetics"),
+
+        # Visibility / authorization
+        "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage"),
+        "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state"),
+        
+
+        # Deprecated or unsafe patterns
+        "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls"),
+        "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall"),
+        "SELFDESTRUCT": ("maian", "-c 0"),
+
+        # Information disclosure
+        "LEAK": ("slither", "--detect uninitialized-storage"),
+
+        # Versioning & other
+        "OUTDATED_COMPILER": ("slither", "--detect solc-version"),
+
+        #TODO Needs to be correctly categorized
+        #"UNRESTRICTED_WRITE": ("slither", ""),
+    }
+
+    scheduled = []
+    seen_tools = set()
+
+    existing_base_names = set()
+
+    if task_settings:
+        existing_base_names = {t.split("-")[0] for t in task_settings.tools}
+
+
     for vuln in vuln_list:
-        tool = VULN_TOOL_MAP.get(vuln)
-        if tool:
-            return tool, ""
+        for category in vuln.get("categories", []):
+            tool_entry = VULN_TOOL_MAP.get(category)
+            if tool_entry:
+                base_name = tool_entry[0].split("-")[0]
+                if base_name not in seen_tools and base_name not in existing_base_names:
+                    scheduled.append(tool_entry)
+                    #sb.logging.message(f"ROUTE NEXT TOOL: SCHEDULED {tool_entry}", "DEBUG")
+                    seen_tools.add(base_name)
+
+    sb.logging.message(f"Routing to tools: {scheduled}", "DEBUG")
+
+
+
+
+    return scheduled
 
 
 def execute(task):    
@@ -193,7 +239,7 @@ def execute(task):
 
 
 
-def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed):
+def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed, scheduled_tools):
         
     def pre_analysis():
         with tasks_started.get_lock():
@@ -241,28 +287,67 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
 
             # Analyze the parsed results and select next tool
             vuln_list = analyze_parsed_results(tool_parsed_output)
-            next_tool, tool_args = route_next_tool(vuln_list)
+            next_tools = route_next_tool(vuln_list, task.settings)
 
             # Prevent dynamic task duplication
             new_tool_added = False
             existing_base_tools = {t.split("-")[0] for t in task.settings.tools}
-            if next_tool and next_tool.split("-")[0] not in existing_base_tools:
-                new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, tool_args)
+            #if next_tool and next_tool.split("-")[0] not in existing_base_tools:
+            #    new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, tool_args)
+            for tool_name, tool_args in next_tools:
+                base_name = tool_name.split("-")[0]
+                tool_key = f"{tool_name}|{tool_args.strip()}"
+                if base_name in existing_base_tools:
+                    continue
+                if tool_key in scheduled_tools:
+                    continue
+                new_task = sb.smartbugs.collect_single_task(
+                    task.absfn, task.relfn, tool_name, task.settings, tool_args
+                )
                 if new_task:
                     taskqueue.put(new_task)
+                    scheduled_tools.append(tool_key)
+                    new_tool_added = True
                     with tasks_total.get_lock():
                         tasks_total.value += 1
-                    new_tool_added = True
+                        existing_base_tools.add(base_name)
 
-            sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
+            added_info = ', '.join(t[0] for t in next_tools) if next_tools else 'no tool'
+            #sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
+            sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {added_info}.", "INFO")
  
         except sb.errors.SmartBugsError as e:
             duration = 0.0
             sb.logging.message(sb.colors.error(f"While analyzing {task.absfn} with {task.tool.id}:\n{e}"), "", logqueue)
         
         finally:
+
+            #FIXME Soluzione temporanea per assicurarmi che i core tool runnino tutti
+            if not new_tool_added:
+                # Ensure core tools are scheduled at least once
+                scheduled_base_tools = {t.split("-")[0] for t in task.settings.tools}
+                missing_core_tools = CORE_TOOLS - scheduled_base_tools
+                
+                #TODO Aggiungere i tool mancanti uno ad uno, così da aumentare la possibilità che i successivi vengano chiamati con dei flag che ne consentano un'esecuzione mirata
+                for missing_tool in missing_core_tools:
+                    core_tool_key = f"{missing_tool}|"
+                    if core_tool_key in scheduled_tools:
+                        continue                    
+                    new_task = sb.smartbugs.collect_single_task(
+                        task.absfn, task.relfn, missing_tool, task.settings, ""
+                    )
+                    if new_task:
+                        sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {missing_tool}", "DEBUG")
+                        taskqueue.put(new_task)
+                        scheduled_tools.append(core_tool_key)                        
+                        with tasks_total.get_lock():
+                            tasks_total.value += 1
+                            existing_base_tools.add(missing_tool)        
+            
             # Always mark task as complete
             taskqueue.task_done()
+        
+        
 
         post_analysis(duration, task.settings.processes, task.settings.timeout)
 
@@ -290,8 +375,14 @@ def run(tasks, settings):
         tasks_completed = mp.Value('L', 0)
         time_completed = mp.Value('f', 0.0)
 
+        # Use a multiprocessing.Manager for shared list
+        #TODO Assicurarsi che il manager sia a conoscenza di tutti i tool mentre vengono schedulati. Questo deve includere il tool di lancio
+        manager = mp.Manager()
+        scheduled_tools = manager.list()
+
+
         # start analysers
-        shared = (logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed)
+        shared = (logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed, scheduled_tools)
         analysers = [ mp.Process(target=analyser, args=shared) for _ in range(settings.processes) ]
         
         for a in analysers:
