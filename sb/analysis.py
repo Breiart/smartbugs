@@ -17,6 +17,7 @@ def task_log_dict(task, start_time, duration, exit_code, log, output, docker_arg
             "output": sb.cfg.TOOL_OUTPUT if output else None},
         "solc": str(task.solc_version) if task.solc_version else None,
         "tool": task.tool.dict(),
+        "tool_args": task.tool_args,
         "docker": docker_args,
         "platform": sb.cfg.PLATFORM,
     }
@@ -61,16 +62,20 @@ def analyze_parsed_results(parsed_output):
     analyzer = sb.vulnerability.VulnerabilityAnalyzer()
     vuln_list = analyzer.analyze(tool_id, parsed_output)
 
-    print(f"DEBUG: VULN LIST: {vuln_list}")
+    #print(f"DEBUG: VULN LIST: {vuln_list}")
     return vuln_list
 
 
-def route_next_tool(vuln_list, task_settings=None):
+def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
+    """ Determine additional tools to run based on detected vulnerabilities.
+
+        Multiple findings may map to the same tool with different arguments.  In
+        such cases the arguments are merged so that a tool is scheduled only once
+        with the union of all requested options.  Duplicate argument sets are
+        ignored and a previous run without arguments prevents any further runs of
+        that tool when 'skip_after_no_args' is enabled.
     """
-    Route to the next tool based on the list of detected vulnerabilities.
-    Returns:
-        str or None: Tool name or None if no mapping is found.
-    """
+
     if not vuln_list:
         return []
     
@@ -114,29 +119,70 @@ def route_next_tool(vuln_list, task_settings=None):
         #"UNRESTRICTED_WRITE": ("slither", ""),
     }
 
-    scheduled = []
-    seen_tools = set()
+    # Map base tool names to their requested argument sets
+    tool_args_map = {}
 
-    existing_base_names = set()
+    existing_tool_keys = set()
+    scheduled_tool_keys = set(scheduled_tools) if scheduled_tools else set()
+    skip_after_no_args = False
+    seen_tool_keys = set()
 
     if task_settings:
-        existing_base_names = {t.split("-")[0] for t in task_settings.tools}
+        existing_tool_keys = getattr(task_settings, "tool_keys", set())
+        skip_after_no_args = getattr(task_settings, "skip_after_no_args", False)
 
-
+    # Collection of the requested argument sets in tool_args_map
     for vuln in vuln_list:
         for category in vuln.get("categories", []):
             tool_entry = VULN_TOOL_MAP.get(category)
-            if tool_entry:
-                base_name = tool_entry[0].split("-")[0]
-                if base_name not in seen_tools and base_name not in existing_base_names:
-                    scheduled.append(tool_entry)
-                    #sb.logging.message(f"ROUTE NEXT TOOL: SCHEDULED {tool_entry}", "DEBUG")
-                    seen_tools.add(base_name)
+            if not tool_entry:
+                continue
+            
+            base_name = tool_entry[0].split("-")[0]
+            args = tool_entry[1].strip()
+            base_key = f"{base_name}|"
+            tool_key = f"{base_name}|{args}"
+
+            if skip_after_no_args and (base_key in existing_tool_keys or base_key in scheduled_tool_keys):
+                continue
+            
+            if tool_key in existing_tool_keys or tool_key in scheduled_tool_keys:
+                continue
+            
+            arg_set = tool_args_map.setdefault(base_name, set())
+            if args:
+                arg_set.add(args)
+            else:
+                # A no-argument run overrides any flagged variants
+                arg_set.clear()
+        
+        # Elaboration of the collected sets to create tool args
+        scheduled = []
+        for base_name, args_set in tool_args_map.items():
+            # If a tool has no args, schedule it with just its base name
+            if not args_set:    
+                scheduled.append((base_name, ""))
+                continue
+            
+            # Otherwise, group its args into a single command
+            flag_groups = {}
+            for arg in sorted(args_set):
+                if " " in arg:
+                    prefix, value = arg.split(" ", 1)
+                else:
+                    prefix, value = arg, ""
+                flag_groups.setdefault(prefix, []).append(value)
+
+            combined_parts = []
+            for prefix, values in flag_groups.items():
+                if values and values[0]:
+                    combined_parts.append(f"{prefix} {', '.join(values)}")
+                else:
+                    combined_parts.append(prefix)
+
+            scheduled.append((base_name, " ".join(combined_parts)))
 
     sb.logging.message(f"Routing to tools: {scheduled}", "DEBUG")
-
-
-
 
     return scheduled
 
@@ -153,9 +199,11 @@ def execute(task):
     if os.path.exists(fn_task_log):
         try:
             previous = sb.io.read_json(fn_task_log)
-            if (not task.settings.overwrite and
-                previous["tool"]["id"] == task.tool.id and
-                previous["filename"] == task.relfn):
+            if (not task.settings.overwrite
+                and previous["tool"]["id"] == task.tool.id
+                and previous["filename"] == task.relfn
+                and previous.get("tool_args", "") == task.tool_args
+            ):
                 sb.logging.message(f"Skipping {task.tool.id} on {task.relfn} (already completed)", "INFO")
                 return 0.0
         except Exception:
@@ -182,7 +230,8 @@ def execute(task):
     tool_duration = 0.0
     tool_log = tool_output = docker_args = None
     for attempt in range(3):
-        sb.logging.message(f"\033[93mAttempt {attempt+1} of running {base_tool}\033[0m", "INFO")
+        args_message = f"args: {task.tool_args}" if task.tool_args.strip() else "no args"
+        sb.logging.message(f"\033[93mAttempt {attempt+1} of running {base_tool} with {args_message}\033[0m", "INFO")
         try:
             start_time = time.time()                    
             exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)                    
@@ -209,10 +258,13 @@ def execute(task):
             old_fn = old["filename"]
             old_toolid = old["tool"]["id"]
             old_mode = old["tool"]["mode"]
-            if task.relfn != old_fn or task.tool.id != old_toolid or task.tool.mode != old_mode:
-                raise sb.errors.SmartBugsError(
-                    f"Result directory {task.rdir} occupied by another task"
-                    f" ({old_toolid}/{old_mode}, {old_fn})")
+            old_args = old.get("tool_args", "")
+            if (task.relfn != old_fn 
+                or task.tool.id != old_toolid 
+                or task.tool.mode != old_mode 
+                or task.tool_args != old_args
+            ):
+                raise sb.errors.SmartBugsError(f"Result directory {task.rdir} occupied by another task: ({old_toolid}/{old_mode}, {old_fn})")
 
         # write result to files
         task_log = task_log_dict(task, start_time, duration, exit_code, tool_log, tool_output, docker_args)
@@ -287,32 +339,33 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
 
             # Analyze the parsed results and select next tool
             vuln_list = analyze_parsed_results(tool_parsed_output)
-            next_tools = route_next_tool(vuln_list, task.settings)
+            next_tools = route_next_tool(vuln_list, task.settings, scheduled_tools)
 
             # Prevent dynamic task duplication
             new_tool_added = False
-            existing_base_tools = {t.split("-")[0] for t in task.settings.tools}
-            #if next_tool and next_tool.split("-")[0] not in existing_base_tools:
-            #    new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, tool_args)
+            existing_tool_keys = getattr(task.settings, "tool_keys", set())
+            skip_after_no_args = getattr(task.settings, "skip_after_no_args", False)
             for tool_name, tool_args in next_tools:
                 base_name = tool_name.split("-")[0]
-                tool_key = f"{tool_name}|{tool_args.strip()}"
-                if base_name in existing_base_tools:
+                tool_key = f"{base_name}|{tool_args.strip()}"
+                if skip_after_no_args and (f"{base_name}|" in existing_tool_keys or f"{base_name}|" in scheduled_tools):
+                    sb.logging.message(f"Routing of {base_name} skipped: previous more complete execution already performed", "DEBUG")
                     continue
-                if tool_key in scheduled_tools:
+                if tool_key in existing_tool_keys or tool_key in scheduled_tools:
                     continue
+
                 new_task = sb.smartbugs.collect_single_task(
                     task.absfn, task.relfn, tool_name, task.settings, tool_args
                 )
                 if new_task:
                     taskqueue.put(new_task)
                     scheduled_tools.append(tool_key)
+                    existing_tool_keys.add(tool_key)
                     new_tool_added = True
                     with tasks_total.get_lock():
                         tasks_total.value += 1
-                        existing_base_tools.add(base_name)
 
-            added_info = ', '.join(t[0] for t in next_tools) if next_tools else 'no tool'
+            added_info = ', '.join(f"{t[0]}|{t[1]}" for t in next_tools) if next_tools else 'no tool'
             #sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
             sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {added_info}.", "INFO")
  
@@ -325,24 +378,23 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             #FIXME Soluzione temporanea per assicurarmi che i core tool runnino tutti
             if not new_tool_added:
                 # Ensure core tools are scheduled at least once
-                scheduled_base_tools = {t.split("-")[0] for t in task.settings.tools}
+                scheduled_base_tools = {k.split("|")[0] for k in getattr(task.settings, "tool_keys", set())}
+                scheduled_base_tools.update(k.split("|")[0] for k in scheduled_tools)
                 missing_core_tools = CORE_TOOLS - scheduled_base_tools
+                next_tool = sorted(missing_core_tools)[0]
                 
-                #TODO Aggiungere i tool mancanti uno ad uno, così da aumentare la possibilità che i successivi vengano chiamati con dei flag che ne consentano un'esecuzione mirata
-                for missing_tool in missing_core_tools:
-                    core_tool_key = f"{missing_tool}|"
-                    if core_tool_key in scheduled_tools:
-                        continue                    
-                    new_task = sb.smartbugs.collect_single_task(
-                        task.absfn, task.relfn, missing_tool, task.settings, ""
-                    )
-                    if new_task:
-                        sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {missing_tool}", "DEBUG")
-                        taskqueue.put(new_task)
-                        scheduled_tools.append(core_tool_key)                        
-                        with tasks_total.get_lock():
-                            tasks_total.value += 1
-                            existing_base_tools.add(missing_tool)        
+                core_tool_key = f"{next_tool}|"
+                if core_tool_key in scheduled_tools:
+                    continue                    
+                
+                new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, "")
+                if new_task:
+                    sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}", "DEBUG")
+                    taskqueue.put(new_task)
+                    scheduled_tools.append(core_tool_key)                        
+                    with tasks_total.get_lock():
+                        tasks_total.value += 1
+                        existing_tool_keys.add(core_tool_key)
             
             # Always mark task as complete
             taskqueue.task_done()

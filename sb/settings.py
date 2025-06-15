@@ -13,6 +13,15 @@ class Settings:
         self.main = False
         self.runtime = False
         self.tools = []
+        # Track combinations of tool name and arguments to avoid duplicates
+        self.tool_keys = set()
+        # Track which argument values have been used per tool for subset checks
+        # e.g., {'mythril': {'--modules': {'ExternalCalls', 'DelegateCall'}}}
+        self.tool_arg_history = {}
+        # When True, a tool scheduled without arguments prevents further
+        # executions of the same tool with any arguments.        
+        self.skip_after_no_args = True
+
         self.runid = "${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
         self.overwrite = False
         self.processes = 1
@@ -132,7 +141,7 @@ class Settings:
                     root_specs.append((root,spec))
                 setattr(self, k, root_specs)
 
-            elif k in ("main", "runtime", "overwrite", "quiet", "json", "sarif"):
+            elif k in ("main", "runtime", "overwrite", "quiet", "json", "sarif", "skip_after_no_args"):
                 try:
                     assert isinstance(v, bool)
                     setattr(self, k, v)

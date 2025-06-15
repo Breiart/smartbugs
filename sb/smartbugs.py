@@ -2,6 +2,38 @@ import glob, os, operator
 import sb.tools, sb.solidity, sb.tasks, sb.docker, sb.analysis, sb.colors, sb.logging, sb.cfg, sb.io, sb.settings, sb.errors
 
 
+def _parse_arg_map(arg_str: str):
+    """Return a mapping of flag prefixes to sets of values.
+
+    This helper is used to check if a new set of arguments is a subset of a
+    previously executed one. Flags without values are stored with an empty
+    string in the value set.
+    """
+    arg_map = {}
+    if not arg_str:
+        return arg_map
+    
+    tokens = arg_str.strip().split()
+    i = 0
+    while i < len(tokens):
+        token = tokens[i]
+        if token.startswith('-'):
+            prefix = token
+            values = set()
+            # look ahead for a value that does not start with '-'
+            if i + 1 < len(tokens) and not tokens[i + 1].startswith('-'):
+                i += 1
+                for val in tokens[i].split(','):
+                    val = val.strip().strip(',')
+                    if val:
+                        values.add(val)
+            else:
+                values.add('')
+            existing = arg_map.setdefault(prefix, set())
+            existing.update(values)
+        i += 1
+
+    return arg_map
 
 def collect_files(patterns):
     files = []
@@ -46,13 +78,37 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
     
     #print(f"\033[94m[DEBUG] Loaded tool.id = {tool}\033[0m")
     
-    # Prevent duplicates based on tool name
-    #FIXME Prevent duplicates should instead work on tool name AND args tuple
+    # Prevent duplicates based on (tool name, arguments) tuple
     base_tool_name = tool.id.split("-")[0]
-    existing_base_names = {t.split("-")[0] for t in settings.tools}
-    sb.logging.message(f"[DEBUG] Comparing base_tool_name = {base_tool_name} with {existing_base_names}", "INFO")
-    if base_tool_name in existing_base_names:
-        sb.logging.message(f"\033[93m[collect_single_task] Tool '{tool_name}' already scheduled. Skipping.\033[0m", "INFO")
+    clean_args = tool_args.strip()
+    tool_key = f"{base_tool_name}|{tool_args.strip()}"
+    existing_keys = getattr(settings, "tool_keys", set())
+
+    sb.logging.message(f"[DEBUG] Comparing tool_key = {tool_key} with {existing_keys}", "INFO")
+    
+    # Skip scheduling if the exact tool/args pair was already seen
+    if tool_key in existing_keys:
+        sb.logging.message(f"\033[93m[collect_single_task] Tool '{tool_name}' with args '{tool_args}' already scheduled. Skipping.\033[0m", "INFO")
+        return None
+    
+    # Skip scheduling if the argument set is a subset of a previously executed one
+    existing_arg_history = getattr(settings, "tool_arg_history", {})
+    new_arg_map = _parse_arg_map(clean_args)
+    old_map = existing_arg_history.get(base_tool_name, {})
+    if new_arg_map:
+        subset = True
+        for flag, values in new_arg_map.items():
+            if not values <= old_map.get(flag, set()):
+                subset = False
+                break
+        if subset:
+            sb.logging.message(f"\033[93m[collect_single_task] Tool '{tool_name}' with args '{tool_args}' is subset of previous run. Skipping.\033[0m", "INFO")
+            return None
+    
+    # If a run without arguments has been scheduled and the feature is enabled,
+    # avoid scheduling further runs of the tool with any arguments.
+    if (getattr(settings, "skip_after_no_args", False) and f"{base_tool_name}|" in existing_keys):
+        sb.logging.message(f"\033[93m[collect_single_task] Tool '{tool_name}' already scheduled without args. Skipping additional run.\033[0m","INFO")
         return None
 
 
@@ -91,9 +147,13 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
 
     ensure_loaded(tool.image)
 
-    # Update tool list on settings
-    #print(f"[DEBUG] Appending tool to settings.tools: {tool.id}")
     settings.tools.append(tool.id)
+    if hasattr(settings, "tool_keys"):
+        settings.tool_keys.add(tool_key)
+    if hasattr(settings, "tool_arg_history"):
+        hist = settings.tool_arg_history.setdefault(base_tool_name, {})
+        for flag, values in new_arg_map.items():
+            hist.setdefault(flag, set()).update(values)
 
     # Return a Task object updated with the new tool
     rdir = settings.resultdir(tool.id, tool.mode, absfn, relfn)
@@ -197,6 +257,9 @@ def collect_tasks(files, tools, settings):
 
                 task = sb.tasks.Task(absfn,relfn,rdir,solc_version,solc_path,tool,settings)
                 tasks.append(task)
+                if hasattr(settings, "tool_keys"):
+                    base_tool_name = tool.id.split("-")[0]
+                    settings.tool_keys.add(f"{base_tool_name}|")
 
     report_collisions()
     if exceptions:
