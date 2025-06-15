@@ -19,20 +19,32 @@ def _parse_arg_map(arg_str: str):
         token = tokens[i]
         if token.startswith('-'):
             prefix = token
-            values = set()
-            # look ahead for a value that does not start with '-'
-            if i + 1 < len(tokens) and not tokens[i + 1].startswith('-'):
+            values = []
+            value_tokens = []
+            
+            # handle --flag=value or -f=value forms
+            if '=' in token:
+                prefix, after = token.split('=', 1)
+                if after:
+                    value_tokens.append(after)
+            else:
+                # look ahead for a value that does not start with '-'
                 i += 1
-                for val in tokens[i].split(','):
+                while i < len(tokens) and not tokens[i].startswith('-'):
+                    value_tokens.append(tokens[i])
+                    i += 1
+            for vt in value_tokens:
+                for val in vt.split(','):
                     val = val.strip().strip(',')
                     if val:
-                        values.add(val)
-            else:
-                values.add('')
+                        values.append(val)
+            if not values:
+                values = ['']
             existing = arg_map.setdefault(prefix, set())
             existing.update(values)
+            continue
         i += 1
-
+        
     return arg_map
 
 def collect_files(patterns):
