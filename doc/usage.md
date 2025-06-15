@@ -3,11 +3,12 @@
 SmartBugs provides a command-line interface. Run it without arguments for a short description.
 For details, see [SmartBugs' wiki](https://github.com/smartbugs/smartbugs/wiki/The-command-line-interface).
 
+Dynamic scheduling of additional tools is enabled by default. Use `--no-dynamic` to run only the specified tools.
 
 ```console
 ./smartbugs
 usage: smartbugs [-c FILE] [-t TOOL [TOOL ...]] [-f PATTERN [PATTERN ...]] [--main] [--runtime]
-                 [--processes N] [--timeout N] [--cpu-quota N] [--mem-limit MEM]
+                 [--processes N] [--timeout N] [--cpu-quota N] [--mem-limit MEM] [--no-dynamic]
                  [--runid ID] [--results DIR] [--log FILE] [--overwrite] [--json] [--sarif] [--quiet] 
                  [--version] [-h]
 ...

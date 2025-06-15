@@ -343,40 +343,43 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             run_duration = execute(task)
             duration += run_duration
 
-            # Call reparse after tool execution
-            tool_parsed_output = call_reparse(task.rdir)
+            if task.settings.dynamic:
+                # Call reparse after tool execution
+                tool_parsed_output = call_reparse(task.rdir)
 
-            # Analyze the parsed results and select next tool
-            vuln_list = analyze_parsed_results(tool_parsed_output)
-            next_tools = route_next_tool(vuln_list, task.settings, scheduled_tools)
+                # Analyze the parsed results and select next tool
+                vuln_list = analyze_parsed_results(tool_parsed_output)
+                next_tools = route_next_tool(vuln_list, task.settings, scheduled_tools)
 
-            # Prevent dynamic task duplication
-            new_tool_added = False
-            existing_tool_keys = getattr(task.settings, "tool_keys", set())
-            skip_after_no_args = getattr(task.settings, "skip_after_no_args", False)
-            for tool_name, tool_args in next_tools:
-                base_name = tool_name.split("-")[0]
-                tool_key = f"{base_name}|{tool_args.strip()}"
-                if skip_after_no_args and (f"{base_name}|" in existing_tool_keys or f"{base_name}|" in scheduled_tools):
-                    sb.logging.message(f"Routing of {base_name} skipped: previous more complete execution already performed", "DEBUG")
-                    continue
-                if tool_key in existing_tool_keys or tool_key in scheduled_tools:
-                    continue
+                # Prevent dynamic task duplication
+                new_tool_added = False
+                existing_tool_keys = getattr(task.settings, "tool_keys", set())
+                skip_after_no_args = getattr(task.settings, "skip_after_no_args", False)
+                for tool_name, tool_args in next_tools:
+                    base_name = tool_name.split("-")[0]
+                    tool_key = f"{base_name}|{tool_args.strip()}"
+                    if skip_after_no_args and (f"{base_name}|" in existing_tool_keys or f"{base_name}|" in scheduled_tools):
+                        sb.logging.message(f"Routing of {base_name} skipped: previous more complete execution already performed", "DEBUG")
+                        continue
+                    if tool_key in existing_tool_keys or tool_key in scheduled_tools:
+                        continue
 
-                new_task = sb.smartbugs.collect_single_task(
-                    task.absfn, task.relfn, tool_name, task.settings, tool_args
-                )
-                if new_task:
-                    taskqueue.put(new_task)
-                    scheduled_tools.append(tool_key)
-                    existing_tool_keys.add(tool_key)
-                    new_tool_added = True
-                    with tasks_total.get_lock():
-                        tasks_total.value += 1
+                    new_task = sb.smartbugs.collect_single_task(
+                        task.absfn, task.relfn, tool_name, task.settings, tool_args
+                    )
+                    if new_task:
+                        taskqueue.put(new_task)
+                        scheduled_tools.append(tool_key)
+                        existing_tool_keys.add(tool_key)
+                        new_tool_added = True
+                        with tasks_total.get_lock():
+                            tasks_total.value += 1
 
-            added_info = ', '.join(f"{t[0]}|{t[1]}" for t in next_tools) if next_tools else 'no tool'
-            #sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
-            sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {added_info}.", "INFO")
+                added_info = ', '.join(f"{t[0]}|{t[1]}" for t in next_tools) if next_tools else 'no tool'
+                #sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
+                sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {added_info}.", "INFO")
+            else:
+                sb.logging.message(f"[{task.tool.id}] executed in {run_duration}.", "INFO")
  
         except sb.errors.SmartBugsError as e:
             duration = 0.0
@@ -388,22 +391,24 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             # Ensure core tools are scheduled at least once
             scheduled_base_tools = {k.split("|")[0] for k in getattr(task.settings, "tool_keys", set())}
             scheduled_base_tools.update(k.split("|")[0] for k in scheduled_tools)
-            missing_core_tools = CORE_TOOLS - scheduled_base_tools
-            
-            if not new_tool_added and missing_core_tools:
-                next_tool = sorted(missing_core_tools)[0]
-                core_tool_key = f"{next_tool}|"
-                if core_tool_key in scheduled_tools:
-                    continue                    
+
+            if task.settings.dynamic:
+                missing_core_tools = CORE_TOOLS - scheduled_base_tools
                 
-                new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, "")
-                if new_task:
-                    sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}", "DEBUG")
-                    taskqueue.put(new_task)
-                    scheduled_tools.append(core_tool_key)                        
-                    with tasks_total.get_lock():
-                        tasks_total.value += 1
-                        existing_tool_keys.add(core_tool_key)
+                if not new_tool_added and missing_core_tools:
+                    next_tool = sorted(missing_core_tools)[0]
+                    core_tool_key = f"{next_tool}|"
+                    if core_tool_key in scheduled_tools:
+                        continue                    
+                    
+                    new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, "")
+                    if new_task:
+                        sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}", "DEBUG")
+                        taskqueue.put(new_task)
+                        scheduled_tools.append(core_tool_key)                        
+                        with tasks_total.get_lock():
+                            tasks_total.value += 1
+                            existing_tool_keys.add(core_tool_key)
             
             # Always mark task as complete
             taskqueue.task_done()

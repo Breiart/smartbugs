@@ -61,6 +61,10 @@ def cli_args(defaults):
         type=str,
         metavar="MEM",
         help=f"memory quota for docker containers, like 512m or 1g{fmt_default(defaults.mem_limit)}")
+    exec.add_argument("--no-dynamic",
+        action="store_true",
+        default=None,
+        help=f"disable dynamic scheduling{fmt_default(False)}")
 
     output = parser.add_argument_group("output options")
     output.add_argument("--runid",
@@ -125,6 +129,10 @@ def cli_args(defaults):
 
 
     cfg_file = args["configuration"]
+
+    if "no_dynamic" in args and args["no_dynamic"] is not None:
+        args["dynamic"] = not args["no_dynamic"]
+        del args["no_dynamic"]
 
     del args["version"], args["configuration"], args["debug"]
     for k in [ k for k,v in args.items() if v is None ]:

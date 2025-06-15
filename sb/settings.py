@@ -21,7 +21,8 @@ class Settings:
         # When True, a tool scheduled without arguments prevents further
         # executions of the same tool with any arguments.        
         self.skip_after_no_args = True
-
+        # Enable or disable dynamic scheduling of additional tools
+        self.dynamic = True
         self.runid = "${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
         self.overwrite = False
         self.processes = 1
@@ -141,7 +142,7 @@ class Settings:
                     root_specs.append((root,spec))
                 setattr(self, k, root_specs)
 
-            elif k in ("main", "runtime", "overwrite", "quiet", "json", "sarif", "skip_after_no_args"):
+            elif k in ("main", "runtime", "overwrite", "quiet", "json", "sarif", "skip_after_no_args", "dynamic"):
                 try:
                     assert isinstance(v, bool)
                     setattr(self, k, v)
