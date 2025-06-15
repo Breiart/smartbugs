@@ -86,10 +86,11 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
         "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth"),
         #"REENTRANCY_NO_GUARD": ("slither", "--reentrancy-no-guard"),
 
-        # Transaction order
-        "TOD": ("slither", "--detect out-of-order-retryable"),
+        # Transaction order / front-running
+        #"TOD": ("slither", "--detect out-of-order-retryable"),
+        "FRONT_RUNNING": ("slither", "--detect out-of-order-retryable"),
 
-        # Access control
+        # Access control and kill paths
         "SUICIDAL": ("maian", "-c 0"),
         "PRODIGAL": ("maian", "-c 1"),
         "GREEDY": ("maian", "-c 2"),
@@ -104,16 +105,25 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
         "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state"),
         
 
-        # Deprecated or unsafe patterns
+        # Misc patterns
         "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls"),
         "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall"),
         "SELFDESTRUCT": ("maian", "-c 0"),
+        "ASSERT_VIOLATION": ("mythril", "--modules Exceptions"),
+        "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage"),
+        "BLOCK_DEPENDENCE": ("slither", "--detect timestamp"),
+        "WEAK_RANDOMNESS": ("slither", "--detect weak-prng"),
+        "VARIABLE_SHADOWING": ("slither", "--detect shadowing-state"),
+        "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards"),
+        "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state"),
+        "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther"),
 
         # Information disclosure
         "LEAK": ("slither", "--detect uninitialized-storage"),
 
         # Versioning & other
         "OUTDATED_COMPILER": ("slither", "--detect solc-version"),
+        "VERSION_PRAGMA": ("slither", "--detect solc-version"),
 
         #TODO Needs to be correctly categorized
         #"UNRESTRICTED_WRITE": ("slither", ""),
@@ -125,7 +135,6 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
     existing_tool_keys = set()
     scheduled_tool_keys = set(scheduled_tools) if scheduled_tools else set()
     skip_after_no_args = False
-    seen_tool_keys = set()
 
     if task_settings:
         existing_tool_keys = getattr(task_settings, "tool_keys", set())
@@ -376,13 +385,13 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
         finally:
 
             #FIXME Soluzione temporanea per assicurarmi che i core tool runnino tutti
-            if not new_tool_added:
-                # Ensure core tools are scheduled at least once
-                scheduled_base_tools = {k.split("|")[0] for k in getattr(task.settings, "tool_keys", set())}
-                scheduled_base_tools.update(k.split("|")[0] for k in scheduled_tools)
-                missing_core_tools = CORE_TOOLS - scheduled_base_tools
+            # Ensure core tools are scheduled at least once
+            scheduled_base_tools = {k.split("|")[0] for k in getattr(task.settings, "tool_keys", set())}
+            scheduled_base_tools.update(k.split("|")[0] for k in scheduled_tools)
+            missing_core_tools = CORE_TOOLS - scheduled_base_tools
+            
+            if not new_tool_added and missing_core_tools:
                 next_tool = sorted(missing_core_tools)[0]
-                
                 core_tool_key = f"{next_tool}|"
                 if core_tool_key in scheduled_tools:
                     continue                    

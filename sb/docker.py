@@ -117,7 +117,7 @@ def __docker_args(task, sbdir):
     # Assign the tool command if present
     if tool_command:
         args["command"] = f"{tool_command} {tool_args}".strip()
-        sb.logging.message(f"DEBUG: Docker command set -> {args['command']}", "INFO")
+        #sb.logging.message(f"DEBUG: Docker command set -> {args['command']}", "INFO")
 
     return args
 

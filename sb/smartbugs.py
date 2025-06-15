@@ -44,7 +44,7 @@ def _parse_arg_map(arg_str: str):
             existing.update(values)
             continue
         i += 1
-        
+
     return arg_map
 
 def collect_files(patterns):
@@ -96,7 +96,7 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
     tool_key = f"{base_tool_name}|{tool_args.strip()}"
     existing_keys = getattr(settings, "tool_keys", set())
 
-    sb.logging.message(f"[DEBUG] Comparing tool_key = {tool_key} with {existing_keys}", "INFO")
+    #sb.logging.message(f"[DEBUG] Comparing tool_key = {tool_key} with {existing_keys}", "INFO")
     
     # Skip scheduling if the exact tool/args pair was already seen
     if tool_key in existing_keys:
