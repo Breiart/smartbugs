@@ -9,6 +9,6 @@ chmod +x "$BIN/solc"
 mkdir /results
 
 for c in `python3 "$BIN/printContractNames.py" "${FILENAME}"`; do 
-        manticore --no-colors --thorough-mode --txlimit 2 --contract "${c}" "${FILENAME#/}"
+        manticore --no-colors --contract "${c}" "${FILENAME#/}"
         mv /mcore_* /results
 done

@@ -185,7 +185,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
             combined_parts = []
             for prefix, values in flag_groups.items():
                 if values and values[0]:
-                    combined_parts.append(f"{prefix} {', '.join(values)}")
+                    combined_parts.append(f"{prefix} {','.join(values)}")
                 else:
                     combined_parts.append(prefix)
 
