@@ -11,8 +11,8 @@ solidity:
   solc: yes
   default_params: ""
 bytecode:
-  entrypoint: "'$BIN/do_bytecode.sh' '$FILENAME'"
+  entrypoint: "'$BIN/do_bytecode.sh' '$FILENAME' '$ARGS"
   default_params: 0
 runtime:
-  entrypoint: "'$BIN/do_runtime.sh' '$FILENAME'"
+  entrypoint: "'$BIN/do_runtime.sh' '$FILENAME' '$ARGS"
   default_params: 0

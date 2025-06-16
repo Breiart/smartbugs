@@ -5,6 +5,7 @@ BIN="$2"
 MAIN="$3"
 ARGS="${4:-}"
 
+
 export PATH="$BIN:$PATH"
 chmod +x $BIN/solc
 
@@ -23,10 +24,9 @@ fi
 
 cd /MAIAN/tool
 
-
 for CONTRACT in $CONTRACTS; do
     if [ -n "$ARGS" ]; then
-        python3 maian.py -s "$FILENAME" "$CONTRACT" "$ARGS"
+        python3 maian.py -s "$FILENAME" "$CONTRACT" $ARGS
     else
         for c in 0 1 2; do
             python3 maian.py -c "$c" -s "$FILENAME" "$CONTRACT"
