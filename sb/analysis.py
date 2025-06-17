@@ -54,15 +54,12 @@ def analyze_parsed_results(parsed_output):
     """
     if parsed_output is None:
         return []
-    vulnerabilities = set()    
-    
     
     tool_id = parsed_output.get("parser", {}).get("id")
     
     analyzer = sb.vulnerability.VulnerabilityAnalyzer()
     vuln_list = analyzer.analyze(tool_id, parsed_output)
 
-    #print(f"DEBUG: VULN LIST: {vuln_list}")
     return vuln_list
 
 
@@ -79,7 +76,6 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
     if not vuln_list:
         return []
     
-    #FIXME Questa vuln tool map prima o poi verrà sostituita da un'implementazione di più alto livello
     VULN_TOOL_MAP = {
         # Reentrancy-related
         "REENTRANCY": ("mythril", "--modules ExternalCalls"),
@@ -104,7 +100,6 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
         "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage"),
         "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state"),
         
-
         # Misc patterns
         "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls"),
         "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall"),
@@ -125,8 +120,6 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
         "OUTDATED_COMPILER": ("slither", "--detect solc-version"),
         "VERSION_PRAGMA": ("slither", "--detect solc-version"),
 
-        #TODO Needs to be correctly categorized
-        #"UNRESTRICTED_WRITE": ("slither", ""),
     }
 
     # Map base tool names to their requested argument sets
@@ -376,7 +369,6 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                             tasks_total.value += 1
 
                 added_info = ', '.join(f"{t[0]}|{t[1]}" for t in next_tools) if next_tools else 'no tool'
-                #sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {next_tool if next_tool else 'no tool'}.", "INFO")
                 sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {added_info}.", "INFO")
             else:
                 sb.logging.message(f"[{task.tool.id}] executed in {run_duration}.", "INFO")
@@ -386,8 +378,6 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             sb.logging.message(sb.colors.error(f"While analyzing {task.absfn} with {task.tool.id}:\n{e}"), "", logqueue)
         
         finally:
-
-            #FIXME Soluzione temporanea per assicurarmi che i core tool runnino tutti
             # Ensure core tools are scheduled at least once
             scheduled_base_tools = {k.split("|")[0] for k in getattr(task.settings, "tool_keys", set())}
             scheduled_base_tools.update(k.split("|")[0] for k in scheduled_tools)
@@ -442,7 +432,6 @@ def run(tasks, settings):
         time_completed = mp.Value('f', 0.0)
 
         # Use a multiprocessing.Manager for shared list
-        #TODO Assicurarsi che il manager sia a conoscenza di tutti i tool mentre vengono schedulati. Questo deve includere il tool di lancio
         manager = mp.Manager()
         scheduled_tools = manager.list()
 

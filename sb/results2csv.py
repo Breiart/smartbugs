@@ -2,7 +2,7 @@ import argparse, csv, os, sys
 import sb.cfg, sb.io, sb.utils
 
 FIELDS = (
-    "filename", "basename", "toolid", "toolmode", "parser_version", "runid",
+    "filename", "basename", "toolid", "toolmode", "tool_args", "parser_version", "runid",
     "start", "duration", "exit_code",  "findings", "infos", "errors", "fails")
 
 def main():
@@ -91,6 +91,7 @@ def data2csv(task_log, parser_output, postgres, fields):
         "basename": os.path.basename(task_log["filename"]),
         "toolid": task_log["tool"]["id"],
         "toolmode": task_log["tool"]["mode"],
+        "tool_args": parser_output.get("tool_args", task_log.get("tool_args", "")),
         "parser_version": parser_output["parser"]["version"],
         "runid": task_log["runid"],
         "start": task_log["result"]["start"],

@@ -24,6 +24,7 @@ def parse(task_log, tool_log, tool_output):
     tool = task_log["tool"]
     filename = task_log["filename"]
     exit_code = task_log["result"]["exit_code"]
+    tool_args = task_log.get("tool_args", "")
 
     tool_parser = get_parser(tool)
     try:
@@ -47,6 +48,7 @@ def parse(task_log, tool_log, tool_output):
         "infos": sorted(infos),
         "errors": sorted(errors),
         "fails": sorted(fails),
+        "tool_args": tool_args,
         "parser": {
             "id": tool["id"],
             "mode": tool["mode"],
