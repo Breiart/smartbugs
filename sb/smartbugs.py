@@ -88,15 +88,11 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
     except Exception as e:
         raise sb.errors.SmartBugsError(f"Could not load tool '{tool_name}': {e}")
     
-    #print(f"\033[94m[DEBUG] Loaded tool.id = {tool}\033[0m")
-    
     # Prevent duplicates based on (tool name, arguments) tuple
     base_tool_name = tool.id.split("-")[0]
     clean_args = tool_args.strip()
     tool_key = f"{base_tool_name}|{tool_args.strip()}"
     existing_keys = getattr(settings, "tool_keys", set())
-
-    #sb.logging.message(f"[DEBUG] Comparing tool_key = {tool_key} with {existing_keys}", "INFO")
     
     # Skip scheduling if the exact tool/args pair was already seen
     if tool_key in existing_keys:
@@ -145,17 +141,20 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
     solc_version, solc_path = None, None
     if tool.solc:
         if not pragma:
-            raise sb.errors.SmartBugsError(f"{relfn}: no pragma, cannot determine solc version")
+            sb.logging.message(sb.colors.warning(f"{relfn}: no pragma, skipping {tool.id}"), "")
+            return None
         if not sb.solidity.ensure_solc_versions_loaded():
             sb.logging.message(sb.colors.warning(
                 "Failed to load list of solc versions; are we connected to the internet? Proceeding with local compilers"),
                 "")
         solc_version = sb.solidity.get_solc_version(pragma)
-        if not solc_version:
-            raise sb.errors.SmartBugsError(f"{relfn}: no compiler found that matches {pragma}")
+        if not solc_version:            
+            sb.logging.message(sb.colors.warning(f"{relfn}: pragma {pragma} requires unsupported solc, skipping {tool.id}"), "")
+            return None
         solc_path = sb.solidity.get_solc_path(solc_version)
         if not solc_path:
-            raise sb.errors.SmartBugsError(f"{relfn}: cannot load solc {solc_version} needed by {tool.id}")
+            sb.logging.message(sb.colors.warning(f"{relfn}: cannot load solc {solc_version} needed by {tool.id}, skipping"), "")
+            return None
 
     ensure_loaded(tool.image)
 
@@ -200,17 +199,20 @@ def collect_tasks(files, tools, settings):
 
     def get_solc(pragma, fn, toolid):
         if not pragma:
-            raise sb.errors.SmartBugsError(f"{fn}: no pragma, cannot determine solc version")
+            sb.logging.message(sb.colors.warning(f"{fn}: no pragma, skipping {toolid}"), "")
+            return None, None
         if not sb.solidity.ensure_solc_versions_loaded():
             sb.logging.message(sb.colors.warning(
                 "Failed to load list of solc versions; are we connected to the internet? Proceeding with local compilers"),
                 "")
         solc_version = sb.solidity.get_solc_version(pragma)
         if not solc_version:
-            raise sb.errors.SmartBugsError(f"{fn}: no compiler found that matches {pragma}")
+            sb.logging.message(sb.colors.warning(f"{fn}: pragma {pragma} requires unsupported solc, skipping {toolid}"), "")
+            return None, None
         solc_path = sb.solidity.get_solc_path(solc_version)
         if not solc_path:
-            raise sb.errors.SmartBugsError(f"{fn}: cannot load solc {solc_version} needed by {toolid}")
+            sb.logging.message(sb.colors.warning(f"{fn}: cannot load solc {solc_version} needed by {toolid}, skipping"), "")
+            return None, None
         return solc_version,solc_path
 
     def ensure_loaded(image):
@@ -243,8 +245,6 @@ def collect_tasks(files, tools, settings):
 
         for tool in sorted(tools, key=operator.attrgetter("id", "mode")):
 
-            #print(f"DEBUG: Checking tool {tool.id} entrypoint: {tool.entrypoint('/samples/SimpleDAO.sol', 300, '/sb/bin', None)}")
-
             if not tool.entrypoint:
                 print(f"DEBUG: Tool {tool.id} has no entrypoint.")
 
@@ -261,10 +261,9 @@ def collect_tasks(files, tools, settings):
                 # load resources
                 solc_version, solc_path = None,None
                 if tool.solc:
-                    try:
-                        solc_version, solc_path = get_solc(pragma, relfn, tool.id)
-                    except Exception as e:
-                        exceptions.append(e)
+                    solc_version, solc_path = get_solc(pragma, relfn, tool.id)
+                    if not solc_version or not solc_path:
+                        continue
                 ensure_loaded(tool.image)
 
                 task = sb.tasks.Task(absfn,relfn,rdir,solc_version,solc_path,tool,settings)

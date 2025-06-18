@@ -4,6 +4,7 @@ FILENAME="$1"
 TIMEOUT="$2"
 BIN="$3"
 MAIN="$4"
+ARGS="${5:-}"
 
 export PATH="$BIN:$PATH"
 chmod +x "$BIN/solc"
@@ -33,4 +34,4 @@ if [ "$TIMEOUT" -gt 0 ] && [ $TO -ge 10 ]; then
 fi
 
 touch /root/results.json
-python3 fuzzer/main.py -s "$FILENAME" --evm byzantium --results results.json --seed 1427655 $OPT_TIMEOUT $OPT_CONTRACT
+python3 fuzzer/main.py -s "$FILENAME" --evm byzantium --results results.json --seed 1427655 $OPT_TIMEOUT $OPT_CONTRACT $ARGS

@@ -76,6 +76,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
     if not vuln_list:
         return []
     
+    #TODO: aggiungere istanze per chiamare meglio i seguenti tool: confuzzius, manticore, securify, smartcheck
     VULN_TOOL_MAP = {
         # Reentrancy-related
         "REENTRANCY": ("mythril", "--modules ExternalCalls"),
@@ -112,6 +113,10 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
         "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards"),
         "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state"),
         "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther"),
+         "MISSING_INPUT_VALIDATION": ("smartcheck", ""),
+        "GREEDY_CONTRACT": ("manticore", "--thorough-mode"),
+        "ARBITRARY_JUMP": ("manticore", "--policy icount"),
+        "DOS_GAS_LIMIT": ("securify", ""),
 
         # Information disclosure
         "LEAK": ("slither", "--detect uninitialized-storage"),
