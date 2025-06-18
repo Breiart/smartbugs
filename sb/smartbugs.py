@@ -92,7 +92,15 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
     base_tool_name = tool.id.split("-")[0]
     clean_args = tool_args.strip()
     tool_key = f"{base_tool_name}|{tool_args.strip()}"
-    existing_keys = getattr(settings, "tool_keys", set())
+    
+    tool_key_map = getattr(settings, "tool_keys", {})
+    if isinstance(tool_key_map, set):
+        tool_key_map = {absfn: tool_key_map}
+        settings.tool_keys = tool_key_map
+    elif not isinstance(tool_key_map, dict):
+        tool_key_map = {}
+        settings.tool_keys = tool_key_map
+    existing_keys = tool_key_map.setdefault(absfn, set())
     
     # Skip scheduling if the exact tool/args pair was already seen
     if tool_key in existing_keys:
@@ -160,7 +168,14 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
 
     settings.tools.append(tool.id)
     if hasattr(settings, "tool_keys"):
-        settings.tool_keys.add(tool_key)
+        tool_key_map = settings.tool_keys
+        if isinstance(tool_key_map, set):
+            tool_key_map = {absfn: tool_key_map}
+            settings.tool_keys = tool_key_map
+        elif not isinstance(tool_key_map, dict):
+            tool_key_map = {}
+            settings.tool_keys = tool_key_map
+        tool_key_map.setdefault(absfn, set()).add(tool_key)
     if hasattr(settings, "tool_arg_history"):
         hist = settings.tool_arg_history.setdefault(base_tool_name, {})
         for flag, values in new_arg_map.items():
@@ -270,7 +285,14 @@ def collect_tasks(files, tools, settings):
                 tasks.append(task)
                 if hasattr(settings, "tool_keys"):
                     base_tool_name = tool.id.split("-")[0]
-                    settings.tool_keys.add(f"{base_tool_name}|")
+                    tool_key_map = settings.tool_keys
+                    if isinstance(tool_key_map, set):
+                        tool_key_map = {absfn: tool_key_map}
+                        settings.tool_keys = tool_key_map
+                    elif not isinstance(tool_key_map, dict):
+                        tool_key_map = {}
+                        settings.tool_keys = tool_key_map
+                    tool_key_map.setdefault(absfn, set()).add(f"{base_tool_name}|")
 
     report_collisions()
     if exceptions:

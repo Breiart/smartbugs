@@ -13,8 +13,10 @@ class Settings:
         self.main = False
         self.runtime = False
         self.tools = []
-        # Track combinations of tool name and arguments to avoid duplicates
-        self.tool_keys = set()
+        # Track combinations of tool name and arguments per file to avoid
+        # duplicates across different contracts. The mapping is
+        # {absfn: {"tool|args", ...}}
+        self.tool_keys = {}
         # Track which argument values have been used per tool for subset checks
         # e.g., {'mythril': {'--modules': {'ExternalCalls', 'DelegateCall'}}}
         self.tool_arg_history = {}

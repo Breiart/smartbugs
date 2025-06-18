@@ -63,7 +63,7 @@ def analyze_parsed_results(parsed_output):
     return vuln_list
 
 
-def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
+def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=None):
     """ Determine additional tools to run based on detected vulnerabilities.
 
         Multiple findings may map to the same tool with different arguments.  In
@@ -90,7 +90,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
         # Access control and kill paths
         "SUICIDAL": ("maian", "-c 0"),
         "PRODIGAL": ("maian", "-c 1"),
-        "GREEDY": ("maian", "-c 2"),
+        "GREEDY_CONTRACT": ("maian", "-c 2"),
         "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth"),
 
         # Arithmetic
@@ -131,13 +131,26 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None):
     tool_args_map = {}
 
     existing_tool_keys = set()
-    scheduled_tool_keys = set(scheduled_tools) if scheduled_tools else set()
+    scheduled_tool_keys = set()
     skip_after_no_args = False
 
-    if task_settings:
-        existing_tool_keys = getattr(task_settings, "tool_keys", set())
+    if task_settings and absfn is not None:
+        key_map = getattr(task_settings, "tool_keys", {})
+        if isinstance(key_map, set):
+            key_map = {absfn: key_map}
+            task_settings.tool_keys = key_map
+        elif not isinstance(key_map, dict):
+            key_map = {}
+            task_settings.tool_keys = key_map
+        existing_tool_keys = key_map.get(absfn, set())
         skip_after_no_args = getattr(task_settings, "skip_after_no_args", False)
 
+    if scheduled_tools is not None and absfn is not None:
+        if isinstance(scheduled_tools, list):
+            scheduled_tool_keys = set(scheduled_tools)
+        else:
+            scheduled_tool_keys = set(scheduled_tools.get(absfn, []))
+    
     # Collection of the requested argument sets in tool_args_map
     for vuln in vuln_list:
         for category in vuln.get("categories", []):
@@ -347,19 +360,27 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
 
                 # Analyze the parsed results and select next tool
                 vuln_list = analyze_parsed_results(tool_parsed_output)
-                next_tools = route_next_tool(vuln_list, task.settings, scheduled_tools)
+                next_tools = route_next_tool(vuln_list, task.settings, scheduled_tools, task.absfn)
 
                 # Prevent dynamic task duplication
                 new_tool_added = False
-                existing_tool_keys = getattr(task.settings, "tool_keys", set())
+                key_map = getattr(task.settings, "tool_keys", {})
+                if isinstance(key_map, set):
+                    key_map = {task.absfn: key_map}
+                    task.settings.tool_keys = key_map
+                elif not isinstance(key_map, dict):
+                    key_map = {}
+                    task.settings.tool_keys = key_map
+                existing_tool_keys = key_map.setdefault(task.absfn, set())
                 skip_after_no_args = getattr(task.settings, "skip_after_no_args", False)
                 for tool_name, tool_args in next_tools:
                     base_name = tool_name.split("-")[0]
                     tool_key = f"{base_name}|{tool_args.strip()}"
-                    if skip_after_no_args and (f"{base_name}|" in existing_tool_keys or f"{base_name}|" in scheduled_tools):
+                    scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
+                    if skip_after_no_args and (f"{base_name}|" in existing_tool_keys or f"{base_name}|" in scheduled_keys_for_file):
                         sb.logging.message(f"Routing of {base_name} skipped: previous more complete execution already performed", "DEBUG")
                         continue
-                    if tool_key in existing_tool_keys or tool_key in scheduled_tools:
+                    if tool_key in existing_tool_keys or tool_key in scheduled_keys_for_file:
                         continue
 
                     new_task = sb.smartbugs.collect_single_task(
@@ -367,7 +388,11 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                     )
                     if new_task:
                         taskqueue.put(new_task)
-                        scheduled_tools.append(tool_key)
+                        scheduled_keys_for_file.append(tool_key)
+                        if isinstance(scheduled_tools, list):
+                            scheduled_tools.append(tool_key)
+                        else:
+                            scheduled_tools[task.absfn] = scheduled_keys_for_file
                         existing_tool_keys.add(tool_key)
                         new_tool_added = True
                         with tasks_total.get_lock():
@@ -383,9 +408,19 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             sb.logging.message(sb.colors.error(f"While analyzing {task.absfn} with {task.tool.id}:\n{e}"), "", logqueue)
         
         finally:
-            # Ensure core tools are scheduled at least once
-            scheduled_base_tools = {k.split("|")[0] for k in getattr(task.settings, "tool_keys", set())}
-            scheduled_base_tools.update(k.split("|")[0] for k in scheduled_tools)
+            # Ensure core tools are scheduled at least once per contract
+            key_map = getattr(task.settings, "tool_keys", {})
+            if isinstance(key_map, set):
+                key_map = {task.absfn: key_map}
+                task.settings.tool_keys = key_map
+            elif not isinstance(key_map, dict):
+                key_map = {}
+                task.settings.tool_keys = key_map
+            scheduled_base_tools = {k.split("|")[0]
+                                   for key_set in key_map.values()
+                                   for k in key_set}
+            for key_set in scheduled_tools.values():
+                scheduled_base_tools.update(k.split("|")[0] for k in key_set)
 
             if task.settings.dynamic:
                 missing_core_tools = CORE_TOOLS - scheduled_base_tools
@@ -393,14 +428,19 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                 if not new_tool_added and missing_core_tools:
                     next_tool = sorted(missing_core_tools)[0]
                     core_tool_key = f"{next_tool}|"
-                    if core_tool_key in scheduled_tools:
-                        continue                    
+                    scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
+                    if core_tool_key in scheduled_keys_for_file:
+                        continue                   
                     
                     new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, "")
                     if new_task:
                         sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}", "DEBUG")
                         taskqueue.put(new_task)
-                        scheduled_tools.append(core_tool_key)                        
+                        scheduled_keys_for_file.append(core_tool_key)
+                        if isinstance(scheduled_tools, list):
+                            scheduled_tools.append(core_tool_key)
+                        else:
+                            scheduled_tools[task.absfn] = scheduled_keys_for_file
                         with tasks_total.get_lock():
                             tasks_total.value += 1
                             existing_tool_keys.add(core_tool_key)
@@ -436,9 +476,9 @@ def run(tasks, settings):
         tasks_completed = mp.Value('L', 0)
         time_completed = mp.Value('f', 0.0)
 
-        # Use a multiprocessing.Manager for shared list
+        # Use a multiprocessing.Manager for shared dict of scheduled tools per file
         manager = mp.Manager()
-        scheduled_tools = manager.list()
+        scheduled_tools = manager.dict()
 
 
         # start analysers
