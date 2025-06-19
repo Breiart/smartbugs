@@ -182,7 +182,7 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
             hist.setdefault(flag, set()).update(values)
 
     # Return a Task object updated with the new tool
-    rdir = settings.resultdir(tool.id, tool.mode, absfn, relfn)
+    rdir = settings.resultdir(tool.id, tool.mode, absfn, relfn, clean_args)
     return sb.tasks.Task(absfn, relfn, rdir, solc_version, solc_path, tool, settings, tool_args)
 
 
@@ -270,7 +270,7 @@ def collect_tasks(files, tools, settings):
                 # find unique name for result dir
                 # ought to be the same when rerunning SB with the same args,
                 # due to sorting files and tools
-                base = settings.resultdir(tool.id,tool.mode,absfn,relfn)
+                base = settings.resultdir(tool.id,tool.mode,absfn,relfn, "")
                 rdir = disambiguate(base)
 
                 # load resources

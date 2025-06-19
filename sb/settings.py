@@ -70,7 +70,7 @@ class Settings:
         self.results = string.Template(self.results)
 
 
-    def resultdir(self, toolid, toolmode, absfn, relfn):
+    def resultdir(self, toolid, toolmode, absfn, relfn, tool_args=""):
         if not self.frozen:
             raise sb.errors.InternalError("Template of result directory is accessed before settings have been frozen")
         absdir,filename = os.path.split(absfn)
@@ -78,10 +78,15 @@ class Settings:
         filebase,fileext = os.path.splitext(filename)
         fileext = fileext.replace('.','')
         try:        
-            return self.results.substitute(
+            rdir = self.results.substitute(
                 TOOL=toolid, MODE=toolmode,
                 ABSDIR=absdir, RELDIR=reldir,
                 FILENAME=filename, FILEBASE=filebase, FILEEXT=fileext)
+            args = tool_args.strip()
+            if args:
+                args = args.replace(os.path.sep, "_")
+                rdir = os.path.join(rdir, args)
+            return rdir
         except KeyError as e:
             raise sb.errors.SmartBugsError(f"Unknown variable '{e}' in template of result dir")
 

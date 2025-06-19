@@ -22,6 +22,9 @@ usage: smartbugs [-c FILE] [-t TOOL [TOOL ...]] [-f PATTERN [PATTERN ...]] [--ma
 
 The options tell SmartBugs to run two processes in parallel, with a memory limit of 4GB and max. 10 minutes computation time per task.
 By default, the results are placed in the local directory `results`.
+If a tool is run with additional arguments, these arguments are used as
+a subfolder name inside the contract's directory so runs with different
+arguments do not overwrite each other.
 
 ## Utility programs
 

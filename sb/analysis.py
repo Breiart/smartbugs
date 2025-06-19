@@ -317,8 +317,10 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
         with tasks_started.get_lock():
             tasks_started_value = tasks_started.value + 1
             tasks_started.value = tasks_started_value
+        args_str = task.tool_args.strip()
+        args_info = f" with args {args_str}" if args_str else " with no args"
         sb.logging.message(
-            f"Starting task {tasks_started_value}/{tasks_total.value}: {sb.colors.tool(task.tool.id)} and {sb.colors.file(task.relfn)}",
+            f"Starting task {tasks_started_value}/{tasks_total.value}: {sb.colors.tool(task.tool.id)}{args_info} and {sb.colors.file(task.relfn)}",
             "", logqueue)
 
     def post_analysis(duration, no_processes, timeout):
@@ -397,11 +399,15 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                         new_tool_added = True
                         with tasks_total.get_lock():
                             tasks_total.value += 1
-
+                
+                args_str = task.tool_args.strip()
+                args_info = f" with args {args_str}" if args_str else ""
                 added_info = ', '.join(f"{t[0]}|{t[1]}" for t in next_tools) if next_tools else 'no tool'
-                sb.logging.message(f"[{task.tool.id}] executed in {run_duration}, and added {added_info}.", "INFO")
+                sb.logging.message(f"[{task.tool.id}{args_info}] executed in {run_duration}, and added {added_info}.", "INFO")
             else:
-                sb.logging.message(f"[{task.tool.id}] executed in {run_duration}.", "INFO")
+                args_str = task.tool_args.strip()
+                args_info = f" with args {args_str}" if args_str else ""
+                sb.logging.message(f"[{task.tool.id}{args_info}] executed in {run_duration}.", "INFO")
  
         except sb.errors.SmartBugsError as e:
             duration = 0.0
@@ -416,11 +422,13 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             elif not isinstance(key_map, dict):
                 key_map = {}
                 task.settings.tool_keys = key_map
-            scheduled_base_tools = {k.split("|")[0]
-                                   for key_set in key_map.values()
-                                   for k in key_set}
-            for key_set in scheduled_tools.values():
-                scheduled_base_tools.update(k.split("|")[0] for k in key_set)
+
+            scheduled_base_tools = set()
+            key_set = key_map.get(task.absfn, set())
+            scheduled_base_tools.update(k.split("|")[0] for k in key_set)
+
+            file_sched = scheduled_tools.get(task.absfn, [])
+            scheduled_base_tools.update(k.split("|")[0] for k in file_sched)
 
             if task.settings.dynamic:
                 missing_core_tools = CORE_TOOLS - scheduled_base_tools

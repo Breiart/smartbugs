@@ -94,8 +94,8 @@ def __docker_args(task, sbdir):
     main = 1 if task.settings.main else 0
 
     tool_args = task.tool_args
-    if tool_args and tool_args.strip() != "":
-        sb.logging.message(f"DEBUG: Docker execute obtained tool args: {tool_args}", "INFO")
+    #if tool_args and tool_args.strip() != "":
+    #    sb.logging.message(f"DEBUG: Docker execute obtained tool args: {tool_args}", "INFO")
 
 
     # Verify if the tool has a valid command function
