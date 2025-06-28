@@ -1,7 +1,0 @@
-filename,basename,toolid,toolmode,tool_args,parser_version,runid,start,duration,exit_code,findings,infos,errors,fails
-samples/SimpleDAO.sol,SimpleDAO.sol,confuzzius,solidity,,2022/12/31,20250619_1545,1750340770.271654,2.8620731830596924,0,"{Reentrancy,Unhandled_Exception}",{},{},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,maian,solidity,,2022/11/11,20250619_1545,1750340773.431854,954.5008871555328,0,{},{},{Transaction HexBytes('0x74f9a35a5f83c5d54d1b3c2551837af17740daeb},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,manticore-0.3.7,solidity,,2022/11/17,20250619_1545,1750341728.355051,81.53843402862549,0,{},{},{},"{exception (manticore.core.state.Concretize),exception (manticore.exceptions.ManticoreError: Forking on unfeasible constraint set)}"
-samples/SimpleDAO.sol,SimpleDAO.sol,mythril-0.24.7,solidity,"--modules ArbitraryDelegateCall,ExternalCalls",2024/03/24,20250619_1545,1750340750.890213,19.0708749294281,1,{External_Call_To_User_Supplied_Address_SWC_107},{},{},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,slither-0.10.4,solidity,,2024/04/30,20250619_1545,1750340748.989323,1.3329541683197021,255,"{low_level_calls,reentrancy_eth,solc_version}",{},{},{}
-samples/SimpleDAO.sol,SimpleDAO.sol,smartcheck,solidity,,2022/11/14,20250619_1545,1750341810.239188,4.609946012496948,0,"{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}",{},{},{}

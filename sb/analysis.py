@@ -1,6 +1,8 @@
 import multiprocessing, time, datetime, os, subprocess
 import sb.logging, sb.colors, sb.docker, sb.cfg, sb.io, sb.parsing, sb.sarif, sb.errors
 import sb.smartbugs, sb.vulnerability
+#TODO togliere l'import di time
+import time
 
 #FIXME Placeholder in attesa di una logica migliore
 CORE_TOOLS = {"slither", "mythril", "smartcheck", "manticore", "maian", "confuzzius"}
@@ -250,8 +252,13 @@ def execute(task):
     tool_duration = 0.0
     tool_log = tool_output = docker_args = None
     for attempt in range(3):
+        #TODO rimuovere l'orario, serve solo per debug
+
+        now = time.localtime()
+        now_str = str(now.tm_hour).zfill(2) + ":" + str(now.tm_min).zfill(2) + ":" + str(now.tm_sec).zfill(2)
+
         args_message = f"args: {task.tool_args}" if task.tool_args.strip() else "no args"
-        sb.logging.message(f"\033[93mAttempt {attempt+1} of running {base_tool} with {args_message}\033[0m", "INFO")
+        sb.logging.message(f"\033[93mAttempt {attempt+1} of running {base_tool} with {args_message}. Current time: {now_str}\033[0m", "INFO")
         try:
             start_time = time.time()                    
             exit_code,tool_log,tool_output,docker_args = sb.docker.execute(task)                    
