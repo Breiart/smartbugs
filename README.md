@@ -85,6 +85,16 @@ As an example, the following commands analyse the contracts in the `samples` fol
 ./results2csv -p results > results.csv
 ```
 
+To visualise these results you can generate an HTML report:
+
+```console
+python generate_report/generate_report.py --input_folder . --output report.html
+```
+
+The report contains tables and graphs summarising execution time and the
+vulnerabilities found per tool and per run.
+
+
 For details, see the [usage notes](doc/usage.md) and the [SmartBugs wiki](https://github.com/smartbugs/smartbugs/wiki).
 
 ## Smart Contract Datasets

@@ -5,10 +5,12 @@ import pandas as pd
 import plotly.express as px
 from jinja2 import Template
 
-def load_csvs(input_folder):
+
+def load_csvs(input_folder: str) -> pd.DataFrame:
+    """Load all CSV files from ``input_folder`` into a single dataframe."""
     all_data = []
-    for file in os.listdir(input_folder):
-        if file.endswith(".csv"):
+    for file in sorted(os.listdir(input_folder)):
+        if file.lower().endswith(".csv"):
             path = os.path.join(input_folder, file)
             try:
                 df = pd.read_csv(path)
@@ -16,11 +18,35 @@ def load_csvs(input_folder):
                 all_data.append(df)
             except Exception as e:
                 print(f"Error reading {file}: {e}")
-    return pd.concat(all_data, ignore_index=True)
+    if not all_data:
+        raise ValueError("No CSV files found in input folder")
+    df = pd.concat(all_data, ignore_index=True)
+    # normalise column names coming from results2csv
+    rename_map = {}
+    if "toolid" in df.columns and "tool" not in df.columns:
+        rename_map["toolid"] = "tool"
+    if "duration" in df.columns and "execution_time" not in df.columns:
+        rename_map["duration"] = "execution_time"
+    if "tool_args" in df.columns and "arguments" not in df.columns:
+        rename_map["tool_args"] = "arguments"
+    if "findings" in df.columns and "vulnerabilities" not in df.columns:
+        rename_map["findings"] = "vulnerabilities"
+    df.rename(columns=rename_map, inplace=True)
+    return df
 
-def clean_and_process(df):
-    df.fillna("None", inplace=True)
-    df["Vulnerabilities Count"] = df["vulnerabilities"].apply(lambda x: len(str(x).split("|")) if x != "None" else 0)
+def _count_vulns(cell: str) -> int:
+    cell = str(cell).strip('{}[]')
+    if not cell or cell.lower() == 'none':
+        return 0
+    cell = cell.replace('|', ',')
+    return len([v for v in cell.split(',') if v.strip()])
+
+def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
+    """Prepare dataframe for report generation."""
+    df.fillna("", inplace=True)
+    if "execution_time" in df.columns:
+        df["execution_time"] = pd.to_numeric(df["execution_time"], errors="coerce").fillna(0)
+    df["Vulnerabilities Count"] = df.get("vulnerabilities", "").apply(_count_vulns)
     return df
 
 def render_html(df, output_file):
@@ -28,7 +54,7 @@ def render_html(df, output_file):
         "execution_time": "mean",
         "Execution ID": "count",
         "Vulnerabilities Count": "sum",
-        "vulnerabilities": lambda x: ", ".join(sorted(set(v for sub in x for v in str(sub).split("|") if v != "None")))
+        "vulnerabilities": lambda x: ", ".join(sorted({v.strip() for sub in x for v in str(sub).replace("|", ",").split(",") if v.strip() and v.lower() != 'none'}))
     }).reset_index().rename(columns={
         "execution_time": "Avg Exec Time (s)",
         "Execution ID": "Total Runs",

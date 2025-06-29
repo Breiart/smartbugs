@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartBugs Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .summary-table td { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>SmartBugs Report</h1>
+
+    <h2>Overall Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Total Executions</th>
+            <th>Total Time (s)</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        <tr>
+            <td>{{ overall['Total Executions'] }}</td>
+            <td>{{ '%.2f'|format(overall['Total Time']) }}</td>
+            <td>{{ overall['Total Vulns Found'] }}</td>
+        </tr>
+    </table>
+
+    <h2>Per Tool Summary</h2>
+    <table>
+        <tr>
+            <th>Tool</th>
+            <th>Avg Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+            <th>Detected Vulns</th>
+        </tr>
+        {% for row in summary %}
+        <tr>
+            <td>{{ row['tool'] }}</td>
+            <td>{{ '%.2f'|format(row['Avg Exec Time (s)']) }}</td>
+            <td>{{ row['Total Runs'] }}</td>
+            <td>{{ row['Total Vulns Found'] }}</td>
+            <td>{{ row['Detected Vulns'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Execution Details</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Tool</th>
+            <th>Arguments</th>
+            <th>Execution Time (s)</th>
+            <th>Vulnerabilities</th>
+        </tr>
+        {% for ex in executions %}
+        <tr>
+            <td>{{ ex['Execution ID'] }}</td>
+            <td>{{ ex['tool'] }}</td>
+            <td>{{ ex.get('arguments','') }}</td>
+            <td>{{ '%.2f'|format(ex.get('execution_time',0)) }}</td>
+            <td>{{ ex.get('vulnerabilities','') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Graphs</h2>
+    {{ fig_time|safe }}
+    {{ fig_vuln|safe }}
+    {{ fig_scatter|safe }}
+</body>
+</html>
