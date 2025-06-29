@@ -1,10 +1,9 @@
 # SmartBugs: A Framework for Analysing Ethereum Smart Contracts
 
-<a href="https://github.com/smartbugs/smartbugs/releases"><img alt="Smartbugs release" src="https://img.shields.io/github/release/smartbugs/smartbugs.svg"></a>
-<a href="https://github.com/smartbugs/smartbugs/blob/master/LICENSE"><img alt="Smartbugs license" src="https://img.shields.io/github/license/smartbugs/smartbugs.svg?color=blue"></a>
-<span class="badge-crypto"><a href="#support-and-donate" title="Donate to this project using Cryptocurrency"><img src="https://img.shields.io/badge/crypto-donate-red.svg" alt="crypto donate button" /></a></span>
-<a href="#Supported-Tools"><img alt="analysis tools" src="https://img.shields.io/badge/analysis tools-20-blue"></a>
-
+[![Smartbugs release](https://img.shields.io/github/release/smartbugs/smartbugs.svg)](https://github.com/smartbugs/smartbugs/releases)
+[![Smartbugs license](https://img.shields.io/github/license/smartbugs/smartbugs.svg?color=blue)](https://github.com/smartbugs/smartbugs/blob/master/LICENSE)
+[![Crypto Donate](https://img.shields.io/badge/crypto-donate-red.svg)](#support-and-donate)
+[![analysis tools](https://img.shields.io/badge/analysis%20tools-21-blue)](#supported-tools)
 
 SmartBugs is an extensible platform with a uniform interface to tools
 that analyse blockchain programs for weaknesses and other properties.
@@ -62,8 +61,6 @@ that analyse blockchain programs for weaknesses and other properties.
 | [teEther](https://github.com/nescio007/teether)      | #04adf56 |                    |                    | :heavy_check_mark: |
 | [Vandal](https://github.com/usyd-blockchain/vandal)  | #d2b0043 |                    |                    | :heavy_check_mark: |
 
-
-
 ## Installation
 
 SmartBugs has been tested with Linux, MacOS and Windows. It depends on
@@ -88,12 +85,12 @@ As an example, the following commands analyse the contracts in the `samples` fol
 To visualise these results you can generate an HTML report:
 
 ```console
-python generate_report/generate_report.py --input_folder . --output report.html
+./generate_report --input_folder results --output report.html
 ```
 
-The report contains tables and graphs summarising execution time and the
-vulnerabilities found per tool and per run.
-
+The command reads all CSV files from the chosen folder and
+creates a self‑contained HTML page with tables and graphs
+summarising execution time and detected vulnerabilities.
 
 For details, see the [usage notes](doc/usage.md) and the [SmartBugs wiki](https://github.com/smartbugs/smartbugs/wiki).
 
@@ -109,6 +106,7 @@ If you use SmartBugs or one of the datasets above, you may want to cite
 your sources. See the [list of publications](doc/academia.md) for details.
 
 ## Support and Donate
+
 You can show your appreciation for the project and support future development by donating.
 
 **🙌 ETH Donations:** `0xA4FBA2908162646197aca90b84B095BE4D16Ae53` 🙌

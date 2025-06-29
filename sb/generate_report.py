@@ -2,6 +2,7 @@
 import os
 import argparse
 import pandas as pd
+from pathlib import Path
 import plotly.express as px
 from jinja2 import Template
 
@@ -73,7 +74,7 @@ def render_html(df, output_file):
     fig_scatter = px.scatter(df, x="execution_time", y="Vulnerabilities Count", color="tool",
                              hover_data=["Execution ID"], title="Time vs Vulnerabilities Found")
 
-    template_path = os.path.join(os.path.dirname(__file__), "template.html")
+    template_path = Path(__file__).resolve().parents[1] / "templates" / "report_template.html"
     with open(template_path) as f:
         template = Template(f.read())
 
