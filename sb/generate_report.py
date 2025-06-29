@@ -44,7 +44,10 @@ def _count_vulns(cell: str) -> int:
 
 def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
     """Prepare dataframe for report generation."""
-    df.fillna("", inplace=True)
+    # Fill missing values only in object columns to avoid casting warnings
+    object_cols = df.select_dtypes(include=["object"]).columns
+    if len(object_cols):
+        df[object_cols] = df[object_cols].fillna("")
     if "execution_time" in df.columns:
         df["execution_time"] = pd.to_numeric(df["execution_time"], errors="coerce").fillna(0)
     df["Vulnerabilities Count"] = df.get("vulnerabilities", "").apply(_count_vulns)
