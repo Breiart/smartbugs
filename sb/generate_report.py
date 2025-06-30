@@ -53,18 +53,48 @@ def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
     df["Vulnerabilities Count"] = df.get("vulnerabilities", "").apply(_count_vulns)
     return df
 
+def _join_vulns(series: pd.Series) -> str:
+    values = set()
+    for sub in series:
+        for v in str(sub).replace("|", ",").split(","):
+            v = v.strip()
+            if v and v.lower() != "none":
+                values.add(v)
+    return ", ".join(sorted(values))
+
 def render_html(df, output_file):
-    per_tool = df.groupby("tool").agg({
-        "execution_time": "mean",
-        "Execution ID": "count",
-        "Vulnerabilities Count": "sum",
-        "vulnerabilities": lambda x: ", ".join(sorted({v.strip() for sub in x for v in str(sub).replace("|", ",").split(",") if v.strip() and v.lower() != 'none'}))
-    }).reset_index().rename(columns={
-        "execution_time": "Avg Exec Time (s)",
-        "Execution ID": "Total Runs",
-        "Vulnerabilities Count": "Total Vulns Found",
-        "vulnerabilities": "Detected Vulns"
-    })
+    per_tool = (
+        df.groupby(["Execution ID", "tool"])
+        .agg(
+            **{
+                "Avg Exec Time (s)": ("execution_time", "mean"),
+                "Total Runs": ("execution_time", "count"),
+                "Total Vulns Found": ("Vulnerabilities Count", "sum"),
+                "Detected Vulns": ("vulnerabilities", _join_vulns),
+                "Contracts": ("basename", lambda x: ", ".join(sorted(set(x)))),
+            }
+        )
+        .reset_index()
+    )
+
+    analysis_summary = (
+        df.groupby("Execution ID")
+          .agg({"basename": lambda x: ", ".join(sorted(set(x)))})
+          .reset_index()
+          .rename(columns={"basename": "Contracts"})
+    )
+
+    per_execution = (
+        df.groupby("Execution ID")
+          .agg(
+              **{
+                  "Total Exec Time (s)": ("execution_time", "sum"),
+                  "Total Vulns Found": ("Vulnerabilities Count", "sum"),
+                  "Total Runs": ("execution_time", "count"),
+              }
+          )
+          .reset_index()
+    )
 
     overall = {
         "Total Executions": df["Execution ID"].nunique(),
@@ -72,8 +102,23 @@ def render_html(df, output_file):
         "Total Vulns Found": df["Vulnerabilities Count"].sum()
     }
 
-    fig_time = px.bar(per_tool, x="tool", y="Avg Exec Time (s)", title="Average Execution Time per Tool")
-    fig_vuln = px.bar(per_tool, x="tool", y="Total Vulns Found", title="Total Vulnerabilities Found per Tool")
+
+    fig_time = px.bar(
+        per_tool,
+        x="tool",
+        y="Avg Exec Time (s)",
+        color="Execution ID",
+        barmode="group",
+        title="Average Execution Time per Tool",
+    )
+    fig_vuln = px.bar(
+        per_tool,
+        x="tool",
+        y="Total Vulns Found",
+        color="Execution ID",
+        barmode="group",
+        title="Total Vulnerabilities Found per Tool",
+    )
     fig_scatter = px.scatter(df, x="execution_time", y="Vulnerabilities Count", color="tool",
                              hover_data=["Execution ID"], title="Time vs Vulnerabilities Found")
 
@@ -82,14 +127,18 @@ def render_html(df, output_file):
         template = Template(f.read())
 
     with open(output_file, "w") as f:
-        f.write(template.render(
-            executions=df.to_dict(orient="records"),
-            summary=per_tool.to_dict(orient="records"),
-            overall=overall,
-            fig_time=fig_time.to_html(full_html=False, include_plotlyjs='cdn'),
-            fig_vuln=fig_vuln.to_html(full_html=False, include_plotlyjs=False),
-            fig_scatter=fig_scatter.to_html(full_html=False, include_plotlyjs=False)
-        ))
+        f.write(
+            template.render(
+                executions=df.to_dict(orient="records"),
+                analysis_summary=analysis_summary.to_dict(orient="records"),
+                summary=per_tool.to_dict(orient="records"),
+                executions_summary=per_execution.to_dict(orient="records"),
+                overall=overall,
+                fig_time=fig_time.to_html(full_html=False, include_plotlyjs="cdn"),
+                fig_vuln=fig_vuln.to_html(full_html=False, include_plotlyjs=False),
+                fig_scatter=fig_scatter.to_html(full_html=False, include_plotlyjs=False),
+            )
+        )
 
 def main():
     parser = argparse.ArgumentParser()

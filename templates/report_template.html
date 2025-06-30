@@ -28,9 +28,25 @@
         </tr>
     </table>
 
+    <h2>Analysis Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contracts</th>
+        </tr>
+        {% for row in analysis_summary %}
+        <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ row['Contracts'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
     <h2>Per Tool Summary</h2>
     <table>
         <tr>
+            <th>Execution ID</th>
+            <th>Contracts</th>
             <th>Tool</th>
             <th>Avg Exec Time (s)</th>
             <th>Total Runs</th>
@@ -39,6 +55,8 @@
         </tr>
         {% for row in summary %}
         <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ row['Contracts'] }}</td>
             <td>{{ row['tool'] }}</td>
             <td>{{ '%.2f'|format(row['Avg Exec Time (s)']) }}</td>
             <td>{{ row['Total Runs'] }}</td>
@@ -48,22 +66,44 @@
         {% endfor %}
     </table>
 
+    <h2>Per Execution Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Total Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        {% for row in executions_summary %}
+        <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ '%.2f'|format(row['Total Exec Time (s)']) }}</td>
+            <td>{{ row['Total Runs'] }}</td>
+            <td>{{ row['Total Vulns Found'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
     <h2>Execution Details</h2>
     <table>
         <tr>
             <th>Execution ID</th>
+            <th>Contract</th>
             <th>Tool</th>
             <th>Arguments</th>
             <th>Execution Time (s)</th>
             <th>Vulnerabilities</th>
+            <th>Total Vulns</th>
         </tr>
         {% for ex in executions %}
         <tr>
             <td>{{ ex['Execution ID'] }}</td>
+            <td>{{ ex['basename'] }}</td>
             <td>{{ ex['tool'] }}</td>
             <td>{{ ex.get('arguments','') }}</td>
             <td>{{ '%.2f'|format(ex.get('execution_time',0)) }}</td>
             <td>{{ ex.get('vulnerabilities','') }}</td>
+            <td>{{ ex['Vulnerabilities Count'] }}</td>
         </tr>
         {% endfor %}
     </table>
