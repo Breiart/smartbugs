@@ -12,8 +12,4 @@ pip install wheel
 pip install pygments
 
 # install the packages needed by smartbugs
-pip install pyyaml colorama requests semantic_version docker py-cpuinfo
-
-# install packages needed for the HTML report generator
-SB_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-pip install -r "$SB_DIR/generate_report/requirements.txt"
+pip install pyyaml colorama requests semantic_version docker py-cpuinfo pandas jinja2 plotly
