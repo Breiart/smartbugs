@@ -42,6 +42,24 @@
         {% endfor %}
     </table>
 
+    <h2>Per Execution Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Total Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        {% for row in executions_summary %}
+        <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ '%.2f'|format(row['Total Exec Time (s)']) }}</td>
+            <td>{{ row['Total Runs'] }}</td>
+            <td>{{ row['Total Vulns Found'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
     <h2>Per Tool Summary</h2>
     <table>
         <tr>
@@ -62,24 +80,6 @@
             <td>{{ row['Total Runs'] }}</td>
             <td>{{ row['Total Vulns Found'] }}</td>
             <td>{{ row['Detected Vulns'] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-
-    <h2>Per Execution Summary</h2>
-    <table>
-        <tr>
-            <th>Execution ID</th>
-            <th>Total Exec Time (s)</th>
-            <th>Total Runs</th>
-            <th>Total Vulns Found</th>
-        </tr>
-        {% for row in executions_summary %}
-        <tr>
-            <td>{{ row['Execution ID'] }}</td>
-            <td>{{ '%.2f'|format(row['Total Exec Time (s)']) }}</td>
-            <td>{{ row['Total Runs'] }}</td>
-            <td>{{ row['Total Vulns Found'] }}</td>
         </tr>
         {% endfor %}
     </table>

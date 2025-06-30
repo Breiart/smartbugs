@@ -8,14 +8,25 @@ from jinja2 import Template
 
 
 def load_csvs(input_folder: str) -> pd.DataFrame:
-    """Load all CSV files from ``input_folder`` into a single dataframe."""
+    """Load all CSV files from ``input_folder`` into a single dataframe.
+
+    The returned dataframe contains an ``Execution ID`` column taken from the
+    ``runid`` field of each CSV, if present.  If ``runid`` is missing, the file
+    name (without the ``.csv`` extension) is used as a fallback.  This allows
+    comparing multiple executions even when they are stored in the same CSV
+    file.
+    """
     all_data = []
     for file in sorted(os.listdir(input_folder)):
         if file.lower().endswith(".csv"):
             path = os.path.join(input_folder, file)
             try:
                 df = pd.read_csv(path)
-                df["Execution ID"] = file.replace(".csv", "")
+                runid_col = next((c for c in df.columns if c.lower() == "runid"), None)
+                if runid_col:
+                    df["Execution ID"] = df[runid_col].astype(str)
+                else:
+                    df["Execution ID"] = file.replace(".csv", "")
                 all_data.append(df)
             except Exception as e:
                 print(f"Error reading {file}: {e}")
