@@ -39,6 +39,12 @@ def reparser(taskqueue, sarif, verbose):
         except sb.errors.SmartBugsError as e:
             print(e)
             continue
+        except Exception as e:
+            print(f"Unexpected error while parsing {d}: {e}")
+            if verbose:
+                import traceback
+                traceback.print_exc()
+            continue
         sb.io.write_json(fn_json, parsed_result)
         if sarif:
             sarif_result = sb.sarif.sarify(sbj["tool"], parsed_result["findings"])
@@ -47,7 +53,6 @@ def reparser(taskqueue, sarif, verbose):
 
 
 def main():
-    print("REPARSE CALLED")
     argparser = argparse.ArgumentParser(
         prog="reparse",
         description=f"Parse the tool output ({sb.cfg.TOOL_LOG}, {sb.cfg.TOOL_OUTPUT}) into {sb.cfg.PARSER_OUTPUT}.")

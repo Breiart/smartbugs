@@ -8,15 +8,21 @@ FINDINGS = set()
 def parse_file(lines):
     findings = []
     snippet = False
+    finding = None
     for line in lines:
+        if isinstance(line, bytes):
+            line = line.decode("utf8")
         if snippet:
             snippet = False
-            l = line.split()
-            finding["line"] = int(l[0])
-            finding["code"] = c
-        elif line.startwith("  Solidity snippet:"):
+            if finding is not None:
+                l = line.split()
+                if l:
+                    code = " ".join(l[1:])
+                    finding["line"] = int(l[0])
+                    finding["code"] = code
+        elif line.startswith("  Solidity snippet:"):
             snippet = True
-        elif line[0] == "-":
+        elif line and line[0] == "-":
             finding = {
                 "name": line[1:-2].strip()
             }
