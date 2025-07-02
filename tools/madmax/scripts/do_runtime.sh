@@ -2,6 +2,7 @@
 
 FILENAME="$1"
 TIMEOUT="$2"
+ARGS="${3:-}"
 
 OPT_TIMEOUT=""
 if [ "$TIMEOUT" -ge 170 ]; then
@@ -11,4 +12,4 @@ if [ "$TIMEOUT" -ge 170 ]; then
 fi
 
 cd /MadMax
-python3 gigahorse-toolchain/gigahorse.py --reuse_datalog_bin --rerun_clients --restart $OPT_TIMEOUT -C madmax.dl "${FILENAME}"
+python3 gigahorse-toolchain/gigahorse.py --reuse_datalog_bin --rerun_clients --restart $OPT_TIMEOUT -C madmax.dl "${FILENAME}" $ARGS

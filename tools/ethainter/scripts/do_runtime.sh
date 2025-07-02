@@ -2,6 +2,7 @@
 
 FILENAME="$1"
 TIMEOUT="$2"
+ARGS="${3:-}"
 SB=$(dirname "$FILENAME")
 
 OPT_TIMEOUT=""
@@ -12,4 +13,4 @@ if [ "$TIMEOUT" -ge 170 ]; then
 fi
 
 cd /home/reviewer/gigahorse-toolchain/logic
-./analyze.py --reuse_datalog_bin --restart --rerun_clients $OPT_TIMEOUT -d "$SB" -C ../../ethainter-inlined.dl
+./analyze.py --reuse_datalog_bin --restart --rerun_clients $OPT_TIMEOUT -d "$SB" -C ../../ethainter-inlined.dl $ARGS

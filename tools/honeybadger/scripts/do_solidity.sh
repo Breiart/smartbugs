@@ -4,6 +4,7 @@ FILENAME="$1"
 TIMEOUT="$2"
 BIN="$3"
 MAIN="$4"
+ARGS="${5:-}"
 
 export PATH="$BIN:$PATH"
 chmod +x "$BIN/solc"
@@ -30,4 +31,4 @@ if [ "$TIMEOUT" -gt 0 ]; then
     OPT_TIMEOUT="-glt $TO"
 fi
 
-python honeybadger/honeybadger.py $OPT_TIMEOUT -s "$FILENAME" $OPT_CONTRACT
+python honeybadger/honeybadger.py $OPT_TIMEOUT -s "$FILENAME" $OPT_CONTRACT $ARGS
