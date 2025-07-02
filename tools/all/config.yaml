@@ -12,17 +12,22 @@ alias:
     - ethor
     - honeybadger
     - madmax
+    - oyente
+    - osiris
+    - semgrep
+    - sfuzz
+    - solhint
 
 
 # Actively supported tools:
 
-# Conkas
-# eThor
-# Ethainer
-# HoneyBadger (based on Onyente)
-# Madmax (gigahorse toolchain)
+# Conkas                                            ADDED
+# eThor                                             ADDED
+# Ethainter                                         ADDED
+# HoneyBadger (based on Onyente)                    ADDED
+# Madmax (gigahorse toolchain)                      ADDED
 # Osiris
-# Oyente
+# Oyente                                            ADDED
 # Semgrep
 # sFuzz
 # Solhint
