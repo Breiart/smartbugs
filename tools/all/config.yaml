@@ -7,3 +7,40 @@ alias:
     - securify
     - slither
     - smartcheck
+    - conkas
+    - ethainer
+    - ethor
+    - honeybadger
+    - madmax
+
+
+# Actively supported tools:
+
+# Conkas
+# eThor
+# Ethainer
+# HoneyBadger (based on Onyente)
+# Madmax (gigahorse toolchain)
+# Osiris
+# Oyente
+# Semgrep
+# sFuzz
+# Solhint
+# teEther
+# Vandal
+
+
+
+# Tools still supported but not 100%:
+
+# Manticore (Progetto in mantenimento, non verrà aggiornato per un po' ma funziona)
+
+
+
+# Tools not actively supported anymore:
+
+# Securify (rimpiazzato da securify 2.0)
+# Smartcheck (apparentemente inutili per versioni di solc > 0.6.0)
+
+
+#TODO Fare dei test sui 4 split utilizzando smartbugs originale con tutti i tool scaricati oggi
