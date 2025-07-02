@@ -5,7 +5,7 @@ origin: https://github.com/christoftorres/Osiris
 image: smartbugs/osiris:d1ecc37
 bin: scripts
 solidity:
-    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'"
+    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN' '$ARGS'"
     solc: yes
 runtime:
-    entrypoint: "'$BIN/do_runtime.sh' '$FILENAME' '$TIMEOUT'"
+    entrypoint: "'$BIN/do_runtime.sh' '$FILENAME' '$TIMEOUT' '$ARGS'"

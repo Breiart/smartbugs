@@ -4,6 +4,7 @@ FILENAME="$1"
 TIMEOUT="$2"
 BIN="$3"
 MAIN="$4"
+ARGS="${5:-}"
 
 export PATH="$BIN:$PATH"
 chmod +x "$BIN/solc"
@@ -39,4 +40,4 @@ if [ "$TIMEOUT" -eq 0 ] || [ $TO -lt 10 ]; then
   TO=120
 fi
  
-cd /home/ && ./fuzzer -g -r 1 -d $TO && chmod +x fuzzMe && ./fuzzMe
+cd /home/ && ./fuzzer -g -r 1 -d $TO $ARGS && chmod +x fuzzMe && ./fuzzMe

@@ -2,6 +2,7 @@
 
 FILENAME="$1"
 TIMEOUT="$2"
+ARGS="${3:-}"
 
 OPT_TIMEOUT=""
 if [ "$TIMEOUT" -gt 0 ]; then
@@ -11,4 +12,4 @@ if [ "$TIMEOUT" -gt 0 ]; then
     OPT_TIMEOUT="-glt $TO"
 fi
 
-python osiris/osiris.py $OPT_TIMEOUT -b -s "$FILENAME"
+python osiris/osiris.py $OPT_TIMEOUT -b -s "$FILENAME" $ARGS
