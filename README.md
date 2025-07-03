@@ -82,6 +82,16 @@ As an example, the following commands analyse the contracts in the `samples` fol
 ./results2csv -p results > results.csv
 ```
 
+> **Note:** The following script is intended for testing purposes. It may not function as expected in certain scenarios.
+If you want to execute several analyses one after another, you can use the
+`smartbugs-multi` helper script.  Separate the options for each run with `--`.
+Each run works as an independent SmartBugs execution, allowing you to analyze
+different contracts or configurations separately.
+
+```console
+./smartbugs-multi -t slither -f contracts/FirstSplit -- -t mythril -f contracts/SecondSplit1 -f contracts/SecondSplit2
+```
+
 To visualise these results you can generate an HTML report:
 
 ```console

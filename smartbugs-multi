@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+# determine SmartBugs' home directory, from the location of this script
+SOURCE=${BASH_SOURCE[0]}
+while [ -L "$SOURCE" ]; do
+  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE
+done
+SB=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
+# Parse arguments into groups separated by '--'. Each group represents a full
+# SmartBugs invocation and may contain multiple '-f' options as well as
+# different tools.
+RUNS=()
+CURRENT=()
+
+for ARG in "$@"; do
+  if [[ $ARG == "--" ]]; then
+    if [[ ${#CURRENT[@]} -gt 0 ]]; then
+      RUNS+=("$(printf '%q ' "${CURRENT[@]}")")
+      CURRENT=()
+    fi
+  else
+    CURRENT+=("$ARG")
+  fi
+done
+
+# Add the final run if any arguments were collected
+if [[ ${#CURRENT[@]} -gt 0 ]]; then
+  RUNS+=("$(printf '%q ' "${CURRENT[@]}")")
+fi
+
+if [[ ${#RUNS[@]} -eq 0 ]]; then
+  cat <<USAGE >&2
+Usage: $0 RUN1 [ -- RUN2 ... ]
+Each RUN is a set of smartbugs options. Example:
+  $0 -t slither -f contracts/FirstSplit \
+     -- -t mythril -f contracts/SecondSplit1 -f contracts/SecondSplit2
+USAGE
+  exit 1
+fi
+
+IDX=1
+TOTAL=${#RUNS[@]}
+for RUN in "${RUNS[@]}"; do
+  # Convert the stored run string back into an array of arguments
+  eval "set -- $RUN"
+  ARGS=("$@")
+  # Supply a unique runid unless the user already specified one
+  ADD_RUNID=true
+  for ARG in "${ARGS[@]}"; do
+    if [[ $ARG == --runid* ]]; then
+      ADD_RUNID=false
+      break
+    fi
+  done
+  if [[ $ADD_RUNID == true ]]; then
+    ARGS+=(--runid "$(date +%Y%m%d_%H%M)")
+  fi
+  ("$SB/smartbugs" "${ARGS[@]}")
+  STATUS=$?
+  if [[ $STATUS -ne 0 ]]; then
+    echo "SmartBugs run $IDX exited with status $STATUS" >&2
+    exit $STATUS
+  fi
+  if [[ $IDX -lt $TOTAL ]]; then
+    echo "Waiting 60 seconds before starting run $((IDX+1))..."
+    sleep 60
+  fi
+  IDX=$((IDX+1))
+done

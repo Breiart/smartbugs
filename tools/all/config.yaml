@@ -19,33 +19,20 @@ alias:
     - solhint
 
 
-# Actively supported tools:
+# Tools to adapt to the argument orchestrator
 
 # Conkas                                            ADDED
 # eThor                                             ADDED
 # Ethainter                                         ADDED
 # HoneyBadger (based on Onyente)                    ADDED
 # Madmax (gigahorse toolchain)                      ADDED
-# Osiris
+# Osiris                                            ADDED
 # Oyente                                            ADDED
-# Semgrep
-# sFuzz
-# Solhint
+# Semgrep                                           ADDED
+# sFuzz                                             ADDED
+# Solhint                                           ADDED
 # teEther
 # Vandal
 
 
-
-# Tools still supported but not 100%:
-
-# Manticore (Progetto in mantenimento, non verrà aggiornato per un po' ma funziona)
-
-
-
-# Tools not actively supported anymore:
-
-# Securify (rimpiazzato da securify 2.0)
-# Smartcheck (apparentemente inutili per versioni di solc > 0.6.0)
-
-
-#TODO Fare dei test sui 4 split utilizzando smartbugs originale con tutti i tool scaricati oggi
+#TODO Fare dei test sui 4 split utilizzando smartbugs originale con tutti i tool
