@@ -5,7 +5,7 @@ info: Find patterns of vulnerabilities in smart contracts based on actual DeFi e
 image: smartbugs/semgrep:c3a9f40
 bin: scripts
 solidity:
-    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$ARGS"
+    entrypoint: "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$ARGS'"
     solc: yes
     bin: scripts
 

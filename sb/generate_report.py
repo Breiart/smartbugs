@@ -5,6 +5,7 @@ import pandas as pd
 from pathlib import Path
 import plotly.express as px
 from jinja2 import Template
+import re
 
 
 def load_csvs(input_folder: str) -> pd.DataFrame:
@@ -73,6 +74,29 @@ def _join_vulns(series: pd.Series) -> str:
                 values.add(v)
     return ", ".join(sorted(values))
 
+def _parse_vuln_entry(entry: str):
+    """Return (name, line) tuple parsed from a vulnerability entry string.
+
+    The line is returned as a string or ``None`` if no location is found.
+    """
+    entry = entry.strip()
+    if not entry or entry.lower() == "none":
+        return None
+
+    # Common patterns where the line number is clearly separated from the name
+    patterns = [
+        r"^(?P<name>.+?)[@:]\s*(?P<line>\d+(?:,\d+)*)$",
+        r"^(?P<name>.+?)\(\s*line\s*(?P<line>\d+(?:,\d+)*)\s*\)$",
+        r"^(?P<name>.+?)\s+line\s+(?P<line>\d+(?:,\d+)*)$",
+    ]
+    for pat in patterns:
+        m = re.search(pat, entry, re.IGNORECASE)
+        if m:
+            return m.group("name").strip(), m.group("line")
+
+    return entry, None
+
+
 def render_html(df, output_file):
     per_tool = (
         df.groupby(["Execution ID", "tool"])
@@ -87,6 +111,29 @@ def render_html(df, output_file):
         )
         .reset_index()
     )
+
+    per_vuln_rows = []
+    for (exec_id, contract), group in df.groupby(["Execution ID", "basename"]):
+        vuln_tools = {}
+        for _, row in group.iterrows():
+            vulns = str(row.get("vulnerabilities", "")).replace("|", ",")
+            for v in vulns.strip('{}[]').split(','):
+                parsed = _parse_vuln_entry(v)
+                if not parsed:
+                    continue
+                name, line = parsed
+                key = (name, line or "")
+                vuln_tools.setdefault(key, set()).add(row.get("tool", ""))
+        for (name, line), tools in vuln_tools.items():
+            per_vuln_rows.append({
+                "Execution ID": exec_id,
+                "Contract": contract,
+                "Vulnerability": name,
+                "Line": line or "",
+                "Tools": ", ".join(sorted(tools))
+            })
+    per_vuln = pd.DataFrame(per_vuln_rows)
+
 
     analysis_summary = (
         df.groupby("Execution ID")
@@ -142,7 +189,7 @@ def render_html(df, output_file):
             template.render(
                 executions=df.to_dict(orient="records"),
                 analysis_summary=analysis_summary.to_dict(orient="records"),
-                summary=per_tool.to_dict(orient="records"),
+                vuln_summary=per_vuln.to_dict(orient="records"),
                 executions_summary=per_execution.to_dict(orient="records"),
                 overall=overall,
                 fig_time=fig_time.to_html(full_html=False, include_plotlyjs="cdn"),

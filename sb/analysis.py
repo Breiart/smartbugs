@@ -5,7 +5,7 @@ import sb.smartbugs, sb.vulnerability
 import time
 
 #FIXME Placeholder in attesa di una logica migliore
-CORE_TOOLS = {"slither", "mythril", "smartcheck", "manticore", "maian", "confuzzius"}
+CORE_TOOLS = {"slither", "mythril", "honeybadger", "manticore", "maian", "confuzzius"}
 
 def task_log_dict(task, start_time, duration, exit_code, log, output, docker_args):
     return {
@@ -82,6 +82,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
     VULN_TOOL_MAP = {
         # Reentrancy-related
         "REENTRANCY": ("mythril", "--modules ExternalCalls"),
+        "LOW_LEVEL_CALL": ("conkas", "-vt reentrancy"),
         "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth"),
         #"REENTRANCY_NO_GUARD": ("slither", "--reentrancy-no-guard"),
 
@@ -93,11 +94,19 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         "SUICIDAL": ("maian", "-c 0"),
         "PRODIGAL": ("maian", "-c 1"),
         "GREEDY_CONTRACT": ("maian", "-c 2"),
+        "GREEDY_CONTRACT": ("manticore", "--thorough-mode"),
         "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth"),
 
         # Arithmetic
         "OVERFLOW": ("mythril", "--modules IntegerArithmetics"),
+        "OVERFLOW": ("conkas", "-vt arithmetic"),
+        "OVERFLOW": ("osiris", ""),
+        #"OVERFLOW": ("ethor", ""),
+        
         "UNDERFLOW": ("mythril", "--modules IntegerArithmetics"),
+        "UNDERFLOW": ("conkas", "-vt arithmetic"),
+        "UNDERFLOW": ("osiris", ""),
+        #"UNDERFLOW": ("ethor", ""),
 
         # Visibility / authorization
         "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage"),
@@ -105,18 +114,22 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         
         # Misc patterns
         "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls"),
+        "LOW_LEVEL_CALL": ("conkas", "-vt unchecked_ll_calls"),
+
         "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall"),
         "SELFDESTRUCT": ("maian", "-c 0"),
         "ASSERT_VIOLATION": ("mythril", "--modules Exceptions"),
         "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage"),
         "BLOCK_DEPENDENCE": ("slither", "--detect timestamp"),
+
+        "BLOCK_DEPENDENCE": ("conkas", "-vt time_manipulation"),
         "WEAK_RANDOMNESS": ("slither", "--detect weak-prng"),
         "VARIABLE_SHADOWING": ("slither", "--detect shadowing-state"),
         "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards"),
         "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state"),
         "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther"),
-         "MISSING_INPUT_VALIDATION": ("smartcheck", ""),
-        "GREEDY_CONTRACT": ("manticore", "--thorough-mode"),
+        #"MISSING_INPUT_VALIDATION": ("smartcheck", ""),
+        
         "ARBITRARY_JUMP": ("manticore", "--policy icount"),
         "DOS_GAS_LIMIT": ("securify", ""),
 

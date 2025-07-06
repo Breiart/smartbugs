@@ -19,20 +19,13 @@ alias:
     - solhint
 
 
-# Tools to adapt to the argument orchestrator
 
-# Conkas                                            ADDED
-# eThor                                             ADDED
-# Ethainter                                         ADDED
-# HoneyBadger (based on Onyente)                    ADDED
-# Madmax (gigahorse toolchain)                      ADDED
-# Osiris                                            ADDED
-# Oyente                                            ADDED
-# Semgrep                                           ADDED
-# sFuzz                                             ADDED
-# Solhint                                           ADDED
-# teEther
-# Vandal
+#NOTE: eThor has been added in the orchestrator, but then commented out because I think it may not be necessary given the contexts in which it should be used
 
+#NOTE: For now, Semgrep and solhint have not been orchestrated. I need to investigate the results of the original smartbugs to determine exactly if and where they should be placed
+
+#NOTE: sfuzz CURRENTLY ON HOLD. I have to determine if i need another fuzzer
+
+#TODO Orchestrate Oyente
 
 #TODO Fare dei test sui 4 split utilizzando smartbugs originale con tutti i tool
