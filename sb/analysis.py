@@ -171,6 +171,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         for category in vuln.get("categories", []):
             tool_entry = VULN_TOOL_MAP.get(category)
             if not tool_entry:
+                sb.logging.message(f"No route for category {category}", "DEBUG")
                 continue
             
             base_name = tool_entry[0].split("-")[0]
