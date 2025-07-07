@@ -25,3 +25,10 @@ PLATFORM = {
 }
 
 DEBUG = False
+
+# Default timeouts (in seconds) for fuzzing tools based on the fuzz_mode
+FUZZER_TIMEOUTS = {
+    "fast": 120,
+    "normal": 300,
+    "accurate": 900,
+}

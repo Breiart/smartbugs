@@ -8,9 +8,9 @@ Dynamic scheduling of additional tools is enabled by default. Use `--no-dynamic`
 ```console
 ./smartbugs
 usage: smartbugs [-c FILE] [-t TOOL [TOOL ...]] [-f PATTERN [PATTERN ...]] [--main] [--runtime]
-                 [--processes N] [--timeout N] [--cpu-quota N] [--mem-limit MEM] [--no-dynamic]
-                 [--runid ID] [--results DIR] [--log FILE] [--overwrite] [--json] [--sarif] [--quiet] 
-                 [--version] [-h]
+                 [--processes N] [--timeout N] [--cpu-quota N] [--mem-limit MEM] [--fuzz-mode MODE]
+                 [--no-dynamic][--runid ID] [--results DIR] [--log FILE] [--overwrite] [--json] 
+                 [--sarif] [--quiet] [--version] [-h]
 ...
 ```
 
@@ -25,6 +25,8 @@ By default, the results are placed in the local directory `results`.
 If a tool is run with additional arguments, these arguments are used as
 a subfolder name inside the contract's directory so runs with different
 arguments do not overwrite each other.
+Fuzzing tools such as ConFuzzius honor the `--fuzz-mode` option, which
+controls their execution time (`fast`, `normal`, or `slow`).
 
 ## Utility programs
 

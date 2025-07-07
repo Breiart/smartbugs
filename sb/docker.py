@@ -90,7 +90,10 @@ def __docker_args(task, sbdir):
 
     # Extract execution parameters
     filename = f"/sb/{os.path.split(task.absfn)[1]}"
-    timeout = task.settings.timeout or "0"
+    timeout = getattr(task, "timeout", None)
+    if timeout is None:
+        timeout = task.settings.timeout
+    timeout = timeout or "0"
     main = 1 if task.settings.main else 0
 
     tool_args = task.tool_args

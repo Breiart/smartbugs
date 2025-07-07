@@ -4,8 +4,14 @@ import sb.smartbugs, sb.vulnerability
 #TODO togliere l'import di time
 import time
 
-#FIXME Placeholder in attesa di una logica migliore
-CORE_TOOLS = {"slither", "mythril", "honeybadger", "manticore", "maian", "confuzzius"}
+CORE_TOOLS = (
+    ("slither", ""),
+    ("smartcheck", ""),
+    ("mythril", ""),
+    ("honeybadger", ""),
+    ("maian", ""),
+    ("confuzzius", ""),
+)
 
 def task_log_dict(task, start_time, duration, exit_code, log, output, docker_args):
     return {
@@ -452,18 +458,18 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             scheduled_base_tools.update(k.split("|")[0] for k in file_sched)
 
             if task.settings.dynamic:
-                missing_core_tools = CORE_TOOLS - scheduled_base_tools
+                missing_core_tools = [pair for pair in CORE_TOOLS if pair[0] not in scheduled_base_tools]
                 
                 if not new_tool_added and missing_core_tools:
-                    next_tool = sorted(missing_core_tools)[0]
-                    core_tool_key = f"{next_tool}|"
+                    next_tool, next_args = missing_core_tools[0]
+                    core_tool_key = f"{next_tool}|{next_args.strip()}"
                     scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
                     if core_tool_key in scheduled_keys_for_file:
                         continue                   
                     
-                    new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, "")
+                    new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, next_args)
                     if new_task:
-                        sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}", "DEBUG")
+                        sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}","DEBUG",)
                         taskqueue.put(new_task)
                         scheduled_keys_for_file.append(core_tool_key)
                         if isinstance(scheduled_tools, list):
