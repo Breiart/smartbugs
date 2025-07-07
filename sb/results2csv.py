@@ -1,11 +1,9 @@
 import argparse, csv, os, sys
-import sb.cfg, sb.io, sb.utils, sb.vulnerability
-
-analyzer = sb.vulnerability.VulnerabilityAnalyzer()
+import sb.cfg, sb.io, sb.utils
 
 FIELDS = (
     "filename", "basename", "toolid", "toolmode", "tool_args", "parser_version", "runid",
-    "start", "duration", "exit_code",  "findings", "classified", "infos", "errors", "fails")
+    "start", "duration", "exit_code",  "findings", "infos", "errors", "fails")
 
 def main():
     argparser = argparse.ArgumentParser(
@@ -103,18 +101,11 @@ def data2csv(task_log, parser_output, postgres, fields):
             (sb.utils.str2label(f.get("name", "")) +
              (f"@{f['line']}" if str(f.get("line", "")).strip() else ""))
             for f in parser_output["findings"]}),
-        "classified": [],
         "infos": parser_output["infos"],
         "errors": parser_output["errors"],
         "fails": parser_output["fails"],
     }
-    for f in parser_output["findings"]:
-        res = analyzer.classify_finding(task_log["tool"]["id"], f)
-        line = f"@{res['line']}" if str(res.get('line', '')).strip() and res['line'] != -1 else ""
-        for cat in res.get("categories", []):
-            csv["classified"].append(f"{cat}{line}")
-    csv["classified"] = sorted(set(csv["classified"]))
-    for f in ("findings", "classified", "infos", "errors", "fails"):
+    for f in ("findings", "infos", "errors", "fails"):
         if postgres:
             csv[f] = list2postgres(csv[f])
         else:

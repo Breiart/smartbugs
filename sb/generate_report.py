@@ -44,8 +44,6 @@ def load_csvs(input_folder: str) -> pd.DataFrame:
         rename_map["tool_args"] = "arguments"
     if "findings" in df.columns and "vulnerabilities" not in df.columns:
         rename_map["findings"] = "vulnerabilities"
-    if "classified" in df.columns and "classified_vulns" not in df.columns:
-        rename_map["classified"] = "classified_vulns"
     df.rename(columns=rename_map, inplace=True)
     return df
 
@@ -63,9 +61,8 @@ def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
     if len(object_cols):
         df[object_cols] = df[object_cols].fillna("")
     if "execution_time" in df.columns:
-        df["execution_time"] = pd.to_numeric(df["execution_time"], errors="coerce").fillna(0)    
-    vuln_col = "classified_vulns" if "classified_vulns" in df.columns else "vulnerabilities"
-    df["Vulnerabilities Count"] = df.get(vuln_col, "").apply(_count_vulns)
+        df["execution_time"] = pd.to_numeric(df["execution_time"], errors="coerce").fillna(0)
+    df["Vulnerabilities Count"] = df.get("vulnerabilities", "").apply(_count_vulns)
     return df
 
 def _join_vulns(series: pd.Series) -> str:
