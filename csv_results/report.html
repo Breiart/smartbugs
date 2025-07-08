@@ -1,0 +1,2909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartBugs Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .summary-table td { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>SmartBugs Report</h1>
+
+    <h2>Overall Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Total Executions</th>
+            <th>Total Time (s)</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>22466.44</td>
+            <td>443</td>
+        </tr>
+    </table>
+
+    <h2>Analysis Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contracts</th>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250628_0848</td>
+            <td>BECToken.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+        </tr>
+        
+    </table>
+
+    <h2>Per Execution Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Total Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>997.94</td>
+            <td>42</td>
+            <td>77</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>996.23</td>
+            <td>42</td>
+            <td>79</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>1017.17</td>
+            <td>42</td>
+            <td>78</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>4018.79</td>
+            <td>23</td>
+            <td>44</td>
+        </tr>
+        
+        <tr>
+            <td>20250628_0848</td>
+            <td>298.44</td>
+            <td>2</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>5878.47</td>
+            <td>42</td>
+            <td>86</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>9259.40</td>
+            <td>44</td>
+            <td>75</td>
+        </tr>
+        
+    </table>
+
+    <h2>Per Tool Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contracts</th>
+            <th>Tool</th>
+            <th>Avg Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+            <th>Detected Vulns</th>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>confuzzius</td>
+            <td>3.34</td>
+            <td>7</td>
+            <td>8</td>
+            <td>Integer_Overflow}, Transaction_Order_Dependency}, Unhandled_Exception}, {Block_Dependency, {Integer_Overflow}, {Reentrancy, {Reentrancy}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>maian</td>
+            <td>41.70</td>
+            <td>7</td>
+            <td>18</td>
+            <td>No_Ether_lock_Ether_refused, No_prodigal_vulnerability_found, No_prodigal_vulnerability_found}, Not_destructible_no_self_destruct}, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_prodigal_vulnerability_found</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>76.55</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>17.37</td>
+            <td>7</td>
+            <td>5</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}, {Integer_Arithmetic_Bugs_SWC_101}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>slither-0.10.4</td>
+            <td>0.99</td>
+            <td>7</td>
+            <td>25</td>
+            <td>low_level_calls, naming_convention, redundant_statements, reentrancy_eth, reentrancy_no_eth, solc_version, solc_version}, tautology}, timestamp}, unused_state}, {deprecated_standards, {erc20_interface, {low_level_calls, {naming_convention</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>smartcheck</td>
+            <td>2.61</td>
+            <td>7</td>
+            <td>21</td>
+            <td>SOLIDITY_DEPRECATED_CONSTRUCTIONS, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_REVERT_REQUIRE, SOLIDITY_UINT_CANT_BE_NEGATIVE, SOLIDITY_UPGRADE_TO_050, SOLIDITY_UPGRADE_TO_050}, SOLIDITY_VISIBILITY}, {SOLIDITY_CALL_WITHOUT_DATA, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_PRAGMAS_VERSION, {SOLIDITY_PRAGMAS_VERSION}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>confuzzius</td>
+            <td>2.86</td>
+            <td>7</td>
+            <td>10</td>
+            <td>Integer_Overflow, Transaction_Order_Dependency}, Unhandled_Exception}, {Block_Dependency, {Integer_Overflow}, {Reentrancy, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>maian</td>
+            <td>40.55</td>
+            <td>7</td>
+            <td>18</td>
+            <td>No_Ether_lock_Ether_refused, No_prodigal_vulnerability_found, No_prodigal_vulnerability_found}, Not_destructible_no_self_destruct}, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_prodigal_vulnerability_found</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>79.07</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>16.65</td>
+            <td>7</td>
+            <td>5</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}, {Integer_Arithmetic_Bugs_SWC_101}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>slither-0.10.4</td>
+            <td>0.90</td>
+            <td>7</td>
+            <td>25</td>
+            <td>low_level_calls, naming_convention, redundant_statements, reentrancy_eth, reentrancy_no_eth, solc_version, solc_version}, tautology}, timestamp}, unused_state}, {deprecated_standards, {erc20_interface, {low_level_calls, {naming_convention</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>smartcheck</td>
+            <td>2.29</td>
+            <td>7</td>
+            <td>21</td>
+            <td>SOLIDITY_DEPRECATED_CONSTRUCTIONS, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_REVERT_REQUIRE, SOLIDITY_UINT_CANT_BE_NEGATIVE, SOLIDITY_UPGRADE_TO_050, SOLIDITY_UPGRADE_TO_050}, SOLIDITY_VISIBILITY}, {SOLIDITY_CALL_WITHOUT_DATA, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_PRAGMAS_VERSION, {SOLIDITY_PRAGMAS_VERSION}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>confuzzius</td>
+            <td>2.96</td>
+            <td>7</td>
+            <td>9</td>
+            <td>Integer_Overflow}, Transaction_Order_Dependency}, Unhandled_Exception}, {Block_Dependency, {Integer_Overflow}, {Reentrancy, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>maian</td>
+            <td>41.03</td>
+            <td>7</td>
+            <td>18</td>
+            <td>No_Ether_lock_Ether_refused, No_prodigal_vulnerability_found, No_prodigal_vulnerability_found}, Not_destructible_no_self_destruct}, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_prodigal_vulnerability_found</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>81.02</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>17.11</td>
+            <td>7</td>
+            <td>5</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}, {Integer_Arithmetic_Bugs_SWC_101}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>slither-0.10.4</td>
+            <td>0.95</td>
+            <td>7</td>
+            <td>25</td>
+            <td>low_level_calls, naming_convention, redundant_statements, reentrancy_eth, reentrancy_no_eth, solc_version, solc_version}, tautology}, timestamp}, unused_state}, {deprecated_standards, {erc20_interface, {low_level_calls, {naming_convention</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol, insecure_transfer.sol, modifier_reentrancy.sol, reentrance.sol, reentrancy_dao.sol, timelock.sol, token.sol</td>
+            <td>smartcheck</td>
+            <td>2.25</td>
+            <td>7</td>
+            <td>21</td>
+            <td>SOLIDITY_DEPRECATED_CONSTRUCTIONS, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_REVERT_REQUIRE, SOLIDITY_UINT_CANT_BE_NEGATIVE, SOLIDITY_UPGRADE_TO_050, SOLIDITY_UPGRADE_TO_050}, SOLIDITY_VISIBILITY}, {SOLIDITY_CALL_WITHOUT_DATA, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_PRAGMAS_VERSION, {SOLIDITY_PRAGMAS_VERSION}</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>confuzzius</td>
+            <td>6.39</td>
+            <td>7</td>
+            <td>4</td>
+            <td>Transaction_Order_Dependency}, {Block_Dependency, {Integer_Overflow}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, random_number_generator.sol</td>
+            <td>maian</td>
+            <td>61.90</td>
+            <td>5</td>
+            <td>12</td>
+            <td>No_Ether_lock_Ether_refused, Not_destructible_no_self_destruct}, {No_Ether_leak_no_send, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>lottery.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>28.25</td>
+            <td>1</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>insecure_transfer.sol, lottery.sol, open_address_lottery.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>1209.91</td>
+            <td>3</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>slither-0.10.4</td>
+            <td>0.94</td>
+            <td>7</td>
+            <td>28</td>
+            <td>constable_states, controlled_array_length, deprecated_standards, external_function, incorrect_equality, naming_convention, reentrancy_unlimited_gas, solc_version, solc_version}, timestamp, too_many_digits}, uninitialized_storage, weak_prng}, {boolean_equal, {cache_array_length, {constable_states, {dead_code, {erc20_interface, {solc_version}</td>
+        </tr>
+        
+        <tr>
+            <td>20250628_0848</td>
+            <td>BECToken.sol</td>
+            <td>confuzzius</td>
+            <td>35.85</td>
+            <td>1</td>
+            <td>1</td>
+            <td>{Integer_Overflow}</td>
+        </tr>
+        
+        <tr>
+            <td>20250628_0848</td>
+            <td>BECToken.sol</td>
+            <td>maian</td>
+            <td>262.60</td>
+            <td>1</td>
+            <td>3</td>
+            <td>No_Ether_lock_Ether_refused, Not_destructible_no_self_destruct}, {No_Ether_leak_no_send</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>confuzzius</td>
+            <td>488.01</td>
+            <td>7</td>
+            <td>7</td>
+            <td>Integer_Overflow}, Transaction_Order_Dependency}, {Block_Dependency, {Integer_Overflow}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>maian</td>
+            <td>60.26</td>
+            <td>7</td>
+            <td>18</td>
+            <td>No_Ether_lock_Ether_refused, No_prodigal_vulnerability_found}, Not_destructible_no_self_destruct}, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_prodigal_vulnerability_found}</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>106.19</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>181.83</td>
+            <td>7</td>
+            <td>3</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_120}, {Integer_Arithmetic_Bugs_SWC_101}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>slither-0.10.4</td>
+            <td>1.01</td>
+            <td>7</td>
+            <td>28</td>
+            <td>constable_states, controlled_array_length, deprecated_standards, external_function, incorrect_equality, naming_convention, reentrancy_unlimited_gas, solc_version, solc_version}, timestamp, too_many_digits}, uninitialized_storage, weak_prng}, {boolean_equal, {cache_array_length, {constable_states, {dead_code, {erc20_interface, {solc_version}</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol, insecure_transfer.sol, integer_overflow_1.sol, integer_overflow_add.sol, lottery.sol, open_address_lottery.sol, random_number_generator.sol</td>
+            <td>smartcheck</td>
+            <td>2.49</td>
+            <td>7</td>
+            <td>30</td>
+            <td>SOLIDITY_ERC20_APPROVE, SOLIDITY_EXTRA_GAS_IN_LOOPS, SOLIDITY_GAS_LIMIT_IN_LOOPS, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}, SOLIDITY_REDUNDANT_FALLBACK_REJECT, SOLIDITY_REVERT_REQUIRE, SOLIDITY_SAFEMATH, SOLIDITY_SEND, SOLIDITY_UPGRADE_TO_050, SOLIDITY_VISIBILITY}, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN, {SOLIDITY_PRAGMAS_VERSION, {SOLIDITY_PRAGMAS_VERSION}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>confuzzius</td>
+            <td>828.08</td>
+            <td>7</td>
+            <td>8</td>
+            <td>Leaking_Ether, Transaction_Order_Dependency}, {Assertion_Failure, {Block_Dependency}, {Leaking_Ether, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>maian</td>
+            <td>37.94</td>
+            <td>7</td>
+            <td>18</td>
+            <td>No_Ether_lock_Ether_refused, No_prodigal_vulnerability_found, No_prodigal_vulnerability_found}, Not_destructible_no_self_destruct}, {Ether_leak_verified, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_prodigal_vulnerability_found</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>327.36</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>97.94</td>
+            <td>9</td>
+            <td>5</td>
+            <td>Transaction_Order_Dependence_SWC_114, Unprotected_Ether_Withdrawal_SWC_105}, {Dependence_on_predictable_environment_variable_SWC_116, {Exception_State_SWC_110}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>slither-0.10.4</td>
+            <td>0.99</td>
+            <td>7</td>
+            <td>24</td>
+            <td>deprecated_standards, external_function, incorrect_equality, naming_convention, reentrancy_unlimited_gas, solc_version, solc_version}, timestamp, unused_state}, weak_prng}, {arbitrary_send_eth, {constable_states, {events_maths, {missing_zero_check</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>smartcheck</td>
+            <td>2.48</td>
+            <td>7</td>
+            <td>20</td>
+            <td>SOLIDITY_LOCKED_MONEY, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}, SOLIDITY_SAFEMATH, SOLIDITY_UPGRADE_TO_050}, SOLIDITY_VISIBILITY}, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_ERC20_APPROVE, {SOLIDITY_EXACT_TIME, {SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+    </table>
+
+    <h2>Execution Details</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contract</th>
+            <th>Tool</th>
+            <th>Arguments</th>
+            <th>Execution Time (s)</th>
+            <th>Vulnerabilities</th>
+            <th>Total Vulns</th>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.14</td>
+            <td>{Reentrancy}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>insecure_transfer.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.25</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.28</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrance.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.88</td>
+            <td>{Reentrancy,Unhandled_Exception}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrancy_dao.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.58</td>
+            <td>{Reentrancy,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>timelock.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.91</td>
+            <td>{Block_Dependency,Integer_Overflow}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>token.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>4.35</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.75</td>
+            <td>{Reentrancy,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>insecure_transfer.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.00</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.90</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrance.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.46</td>
+            <td>{Reentrancy,Unhandled_Exception}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrancy_dao.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.24</td>
+            <td>{Reentrancy,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>timelock.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.74</td>
+            <td>{Block_Dependency,Integer_Overflow,Transaction_Order_Dependency}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>token.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.92</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.69</td>
+            <td>{Reentrancy,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>insecure_transfer.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.10</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.07</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrance.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.10</td>
+            <td>{Reentrancy,Unhandled_Exception}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrancy_dao.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.34</td>
+            <td>{Reentrancy,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>timelock.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>4.16</td>
+            <td>{Block_Dependency,Integer_Overflow}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>token.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.27</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>27.70</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>insecure_transfer.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.85</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>integer_overflow_1.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.16</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>integer_overflow_add.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.39</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>lottery.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.59</td>
+            <td>{Block_Dependency,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>open_address_lottery.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>3.81</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>random_number_generator.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>2.25</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250628_0848</td>
+            <td>BECToken.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>35.85</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>453.67</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>insecure_transfer.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>591.90</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_1.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>592.39</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_add.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>592.19</td>
+            <td>{Integer_Overflow}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>lottery.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>592.13</td>
+            <td>{Block_Dependency,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>open_address_lottery.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>591.98</td>
+            <td>{Block_Dependency,Integer_Overflow}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>random_number_generator.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>1.81</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>442.61</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.38</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.65</td>
+            <td>{Leaking_Ether,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>891.96</td>
+            <td>{Block_Dependency}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.52</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.41</td>
+            <td>{Assertion_Failure,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.01</td>
+            <td>{Assertion_Failure,Leaking_Ether,Transaction_Order_Dependency}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>38.46</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>insecure_transfer.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>33.25</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>86.79</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrance.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>26.09</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrancy_dao.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>42.81</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>timelock.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>32.00</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>token.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>32.52</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>31.16</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>insecure_transfer.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>32.10</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>92.16</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrance.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>33.00</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrancy_dao.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>28.94</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>timelock.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>29.71</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>token.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>36.76</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>42.59</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>insecure_transfer.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>33.01</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>93.42</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrance.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>30.35</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrancy_dao.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>35.36</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>timelock.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>26.73</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>token.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>25.73</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>210.18</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>integer_overflow_1.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>25.58</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>integer_overflow_add.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>29.63</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>lottery.sol</td>
+            <td>maian</td>
+            <td>-c 0</td>
+            <td>9.73</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>random_number_generator.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>34.35</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250628_0848</td>
+            <td>BECToken.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>262.60</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>217.41</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>insecure_transfer.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>34.70</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_1.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>38.07</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_add.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>34.38</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>lottery.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>37.08</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>open_address_lottery.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>33.03</td>
+            <td>{No_prodigal_vulnerability_found}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>random_number_generator.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>27.15</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>67.76</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>33.49</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>35.62</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>35.35</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>28.77</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>26.11</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>38.45</td>
+            <td>{Ether_leak_verified,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>13.34</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>insecure_transfer.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.50</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.83</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrance.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>60.71</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrancy_dao.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>33.64</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>timelock.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>281.74</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>token.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>117.09</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>13.08</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>insecure_transfer.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.45</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.98</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrance.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>61.36</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrancy_dao.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>34.17</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>timelock.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>304.70</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>token.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>110.76</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>13.20</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>insecure_transfer.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.32</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.76</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrance.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>61.37</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrancy_dao.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>37.75</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>timelock.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>315.82</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>token.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>109.89</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>lottery.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>28.25</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>610.89</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>insecure_transfer.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>17.80</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_1.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>5.21</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_add.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>5.05</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>lottery.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>31.25</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>open_address_lottery.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>71.73</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>random_number_generator.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>1.38</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>910.76</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>910.60</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.32</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>2.33</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>4.96</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>72.95</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>375.60</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall,ExternalCalls</td>
+            <td>12.13</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>insecure_transfer.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>10.11</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>25.01</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrance.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>27.38</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrancy_dao.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>13.31</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>timelock.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>15.73</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>token.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>17.90</td>
+            <td>{Integer_Arithmetic_Bugs_SWC_101}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall,ExternalCalls</td>
+            <td>11.60</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>insecure_transfer.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>9.15</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>24.18</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrance.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>26.56</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrancy_dao.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>12.19</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>timelock.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>15.59</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>token.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>17.31</td>
+            <td>{Integer_Arithmetic_Bugs_SWC_101}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall,ExternalCalls</td>
+            <td>10.23</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>insecure_transfer.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>9.30</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>25.34</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrance.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>28.42</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrancy_dao.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>14.85</td>
+            <td>{External_Call_To_User_Supplied_Address_SWC_107}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>timelock.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>15.82</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>token.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>15.79</td>
+            <td>{Integer_Arithmetic_Bugs_SWC_101}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>insecure_transfer.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>10.35</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>lottery.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ArbitraryDelegateCall</td>
+            <td>11.26</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>open_address_lottery.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>3608.11</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>610.86</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>insecure_transfer.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>12.02</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_1.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>9.45</td>
+            <td>{Integer_Arithmetic_Bugs_SWC_101}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_add.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>8.75</td>
+            <td>{Integer_Arithmetic_Bugs_SWC_101}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>lottery.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>15.33</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_120}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>open_address_lottery.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>610.79</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>random_number_generator.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>5.60</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>200.08</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>12.07</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>14.57</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>545.27</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_116,Transaction_Order_Dependence_SWC_114,Unprotected_Ether_Withdrawal_SWC_105}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>8.42</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules Exceptions</td>
+            <td>28.50</td>
+            <td>{Exception_State_SWC_110}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>30.71</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules Exceptions</td>
+            <td>20.74</td>
+            <td>{Exception_State_SWC_110}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>21.08</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.60</td>
+            <td>{deprecated_standards,low_level_calls,reentrancy_eth,solc_version}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>insecure_transfer.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.96</td>
+            <td>{erc20_interface,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.87</td>
+            <td>{naming_convention,reentrancy_no_eth,solc_version,unused_state}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrance.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.88</td>
+            <td>{low_level_calls,naming_convention,redundant_statements,reentrancy_eth,solc_version}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrancy_dao.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.85</td>
+            <td>{low_level_calls,reentrancy_eth,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>timelock.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.93</td>
+            <td>{naming_convention,solc_version,timestamp}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>token.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.85</td>
+            <td>{naming_convention,solc_version,tautology}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.25</td>
+            <td>{deprecated_standards,low_level_calls,reentrancy_eth,solc_version}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>insecure_transfer.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.87</td>
+            <td>{erc20_interface,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.86</td>
+            <td>{naming_convention,reentrancy_no_eth,solc_version,unused_state}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrance.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.81</td>
+            <td>{low_level_calls,naming_convention,redundant_statements,reentrancy_eth,solc_version}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrancy_dao.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.81</td>
+            <td>{low_level_calls,reentrancy_eth,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>timelock.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.82</td>
+            <td>{naming_convention,solc_version,timestamp}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>token.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.88</td>
+            <td>{naming_convention,solc_version,tautology}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.52</td>
+            <td>{deprecated_standards,low_level_calls,reentrancy_eth,solc_version}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>insecure_transfer.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.90</td>
+            <td>{erc20_interface,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.85</td>
+            <td>{naming_convention,reentrancy_no_eth,solc_version,unused_state}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrance.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.81</td>
+            <td>{low_level_calls,naming_convention,redundant_statements,reentrancy_eth,solc_version}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrancy_dao.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.83</td>
+            <td>{low_level_calls,reentrancy_eth,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>timelock.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.87</td>
+            <td>{naming_convention,solc_version,timestamp}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>token.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.86</td>
+            <td>{naming_convention,solc_version,tautology}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>BECToken.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.44</td>
+            <td>{constable_states,external_function,naming_convention,solc_version,too_many_digits}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>insecure_transfer.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.92</td>
+            <td>{erc20_interface,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>integer_overflow_1.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.80</td>
+            <td>{solc_version}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>integer_overflow_add.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.76</td>
+            <td>{solc_version}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>lottery.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.82</td>
+            <td>{cache_array_length,controlled_array_length,deprecated_standards,incorrect_equality,solc_version}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>open_address_lottery.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.04</td>
+            <td>{boolean_equal,constable_states,deprecated_standards,incorrect_equality,naming_convention,reentrancy_unlimited_gas,solc_version,timestamp,uninitialized_storage,weak_prng}</td>
+            <td>10</td>
+        </tr>
+        
+        <tr>
+            <td>20250627_1542</td>
+            <td>random_number_generator.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.81</td>
+            <td>{dead_code,solc_version,weak_prng}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.53</td>
+            <td>{constable_states,external_function,naming_convention,solc_version,too_many_digits}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>insecure_transfer.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.10</td>
+            <td>{erc20_interface,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_1.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.78</td>
+            <td>{solc_version}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_add.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.78</td>
+            <td>{solc_version}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>lottery.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.94</td>
+            <td>{cache_array_length,controlled_array_length,deprecated_standards,incorrect_equality,solc_version}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>open_address_lottery.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.08</td>
+            <td>{boolean_equal,constable_states,deprecated_standards,incorrect_equality,naming_convention,reentrancy_unlimited_gas,solc_version,timestamp,uninitialized_storage,weak_prng}</td>
+            <td>10</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>random_number_generator.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.84</td>
+            <td>{dead_code,solc_version,weak_prng}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.07</td>
+            <td>{constable_states,solc_version,unused_state}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.94</td>
+            <td>{arbitrary_send_eth,deprecated_standards,external_function,solc_version}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.89</td>
+            <td>{events_maths,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.93</td>
+            <td>{arbitrary_send_eth,incorrect_equality,solc_version,timestamp,weak_prng}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.99</td>
+            <td>{missing_zero_check,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.34</td>
+            <td>{missing_zero_check,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.78</td>
+            <td>{missing_zero_check,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>etherbank.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>3.28</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_REVERT_REQUIRE,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>insecure_transfer.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.57</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.55</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrance.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.46</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>reentrancy_dao.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.45</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>timelock.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.48</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1723</td>
+            <td>token.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.50</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UINT_CANT_BE_NEGATIVE,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>etherbank.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.76</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_REVERT_REQUIRE,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>insecure_transfer.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.19</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.23</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrance.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.08</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>reentrancy_dao.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.22</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>timelock.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.30</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_1817</td>
+            <td>token.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.22</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UINT_CANT_BE_NEGATIVE,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>etherbank.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.37</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_REVERT_REQUIRE,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>insecure_transfer.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.13</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>modifier_reentrancy.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.30</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrance.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.23</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>reentrancy_dao.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.15</td>
+            <td>{SOLIDITY_CALL_WITHOUT_DATA,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>timelock.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.30</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250624_2346</td>
+            <td>token.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.24</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UINT_CANT_BE_NEGATIVE,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>BECToken.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.67</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_ERC20_APPROVE,SOLIDITY_GAS_LIMIT_IN_LOOPS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_REDUNDANT_FALLBACK_REJECT,SOLIDITY_SAFEMATH,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>8</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>insecure_transfer.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.46</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_1.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.24</td>
+            <td>{SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_VISIBILITY}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>integer_overflow_add.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.22</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>lottery.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>3.26</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_EXTRA_GAS_IN_LOOPS,SOLIDITY_GAS_LIMIT_IN_LOOPS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_REDUNDANT_FALLBACK_REJECT,SOLIDITY_REVERT_REQUIRE,SOLIDITY_SEND,SOLIDITY_VISIBILITY}</td>
+            <td>9</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>open_address_lottery.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.39</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_UPGRADE_TO_050,SOLIDITY_VISIBILITY}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250629_0053</td>
+            <td>random_number_generator.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.17</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.57</td>
+            <td>{SOLIDITY_ERC20_APPROVE,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_SAFEMATH,SOLIDITY_VISIBILITY}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.31</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.37</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.37</td>
+            <td>{SOLIDITY_EXACT_TIME,SOLIDITY_LOCKED_MONEY,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.39</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>3.09</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.29</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+    </table>
+
+    <h2>Graphs</h2>
+    <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="b2ae184b-eec2-46ed-9be3-e996e7527b93" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b2ae184b-eec2-46ed-9be3-e996e7527b93")) {                    Plotly.newPlot(                        "b2ae184b-eec2-46ed-9be3-e996e7527b93",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250624_1723\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250624_1723","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250624_1723","offsetgroup":"20250624_1723","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"btu2TRG6CkAAAAA8ztlEQCVJkr81I1NA27Ztg\u002fldMUAAAACAPavvP9u2bRvF5wRA"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250624_1817\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250624_1817","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"20250624_1817","offsetgroup":"20250624_1817","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"t23bFvPdBkBu27abR0ZEQLdt22eBxFNAt23bQi+nMEC3bdu2gtvsP27bto0FSQJA"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250624_2346\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250624_2346","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"20250624_2346","offsetgroup":"20250624_2346","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"JUmSBHqvB0Bu27bxs4NEQEmSJFsNQVRAAAAAMLAbMUC3bdu2jlbuP7dt2\u002fai+gFA"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250627_1542\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250627_1542","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"20250627_1542","offsetgroup":"20250627_1542","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4"],"xaxis":"x","y":{"dtype":"f8","bdata":"t23btl+TGUAzMzPTkvJOQAAAAFhKPzxAq6oaW5\u002fnkkBJkiTJYifuPw=="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250628_0848\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250628_0848","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"20250628_0848","offsetgroup":"20250628_0848","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAACjPsQUAAAECuimlwQA=="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250629_0053\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250629_0053","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"20250629_0053","offsetgroup":"20250629_0053","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"AADAFiyAfkBu27bfOSFOQNu2bXf1i1pAbts2f4u6ZkBu27Ztph\u002fwP0mSJEk25ANA"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250630_0203\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250630_0203","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"20250630_0203","offsetgroup":"20250630_0203","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"t23bj5\u002fgiUBu27aV6PdCQAAAAEK\u002fdXRAOY7jTSd8WEAlSZIk98TvP5IkSVJu3ANA"},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Avg Exec Time (s)"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Average Execution Time per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="dc6e701c-ffa6-4a8a-b6b4-c21ce3cf0119" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("dc6e701c-ffa6-4a8a-b6b4-c21ce3cf0119")) {                    Plotly.newPlot(                        "dc6e701c-ffa6-4a8a-b6b4-c21ce3cf0119",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250624_1723\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250624_1723","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250624_1723","offsetgroup":"20250624_1723","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"CBIABRkV"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250624_1817\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250624_1817","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"20250624_1817","offsetgroup":"20250624_1817","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"ChIABRkV"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250624_2346\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250624_2346","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"20250624_2346","offsetgroup":"20250624_2346","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"CRIABRkV"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250627_1542\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250627_1542","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"20250627_1542","offsetgroup":"20250627_1542","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4"],"xaxis":"x","y":{"dtype":"i1","bdata":"BAwAABw="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250628_0848\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250628_0848","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"20250628_0848","offsetgroup":"20250628_0848","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian"],"xaxis":"x","y":{"dtype":"i1","bdata":"AQM="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250629_0053\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250629_0053","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"20250629_0053","offsetgroup":"20250629_0053","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"BxIAAxwe"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250630_0203\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250630_0203","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"20250630_0203","offsetgroup":"20250630_0203","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"CBIABRgU"},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Vulns Found"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Total Vulnerabilities Found per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="272971ba-0d42-4b59-af3d-3b8148098a18" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("272971ba-0d42-4b59-af3d-3b8148098a18")) {                    Plotly.newPlot(                        "272971ba-0d42-4b59-af3d-3b8148098a18",                        [{"customdata":[["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250628_0848"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"]],"hovertemplate":"tool=confuzzius\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"confuzzius","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"confuzzius","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAAIGAoCUAAAAAAKf0BQAAAAGBWNApAAAAAAIsHD0AAAADgcJwEQP\u002f\u002f\u002f197SA9AAAAAMBFoEUAAAADA9QgGQAAAACBZBABAAAAAIBAsB0AAAABgp6QLQAAAAIAg7gFAAQAAwEbrDUD\u002f\u002f\u002f\u002f\u002fN1oHQAAAAEAmhQVAAAAAoFnWAEAAAAAAUYYIQAAAAICYyAhAAAAAgMqxAkAAAADwQqMQQAAAAGCcKQpAAQAAMHuyO0D\u002f\u002f\u002f9\u002fWtEGQAAAAMDBTwFAAAAAIAckA0D\u002f\u002f\u002f8fqr0MQAAAAMC3dg5AAAAAQN0BAkAAAAAKM+xBQAAAwMitWnxAAADAmDx\u002fgkAAAOCfGYOCQAAA4LSFgYJAAADgOA6BgkAAACDZ1X+CQP7\u002f\u002f3\u002fXBv0\u002fAAAA2sepe0AAAGC9D+OLQAAA4CQy5YtAAAAAsrTfi0AAAAC6H+SLQAAAIJhO44tAAACgGxTgi0A="},"xaxis":"x","y":{"dtype":"i1","bdata":"AQAAAgICAQIAAAICAwECAAACAgIBAQABAAIAAAEBAAEBAgIAAAACAQACAw=="},"yaxis":"y","type":"scatter"},{"customdata":[["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250628_0848"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"]],"hovertemplate":"tool=maian\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"maian","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"maian","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"\u002f\u002f\u002f\u002fOTI7Q0AAAAC6ZZ9AQAAAAFSQslVAAAAAkA4XOkAAAABEdmdFQAAAAHS+\u002fz9AAAAAQg5CQEAAAAA8CCo\u002fQAAAAN5VDUBAAAAAQHYKV0AAAACwln9AQAAAAHgf8TxAAAAAVKO1PUAAAACwtmFCQAAAALKmS0VAAAAAyPmAQED\u002f\u002f\u002f\u002f3I1tXQAAAAGyWWj5AAAAADPWtQUAAAAAcYLs6QAAAAMQlvDlAAACAst9FakAAAACYipU5QAAAAPjQoT1AAAAA2N90I0AAAACYeSxBQAAAQK6KaXBAAQCAGBgta0AAAADGQFlBQAAAAI5aCUNAAAAAsPAwQUAAAABIEIpCQAAAAILUg0BAAAAA3IclO0AAAADY7fBQQAEAAEwuvkBAAAAAVjHPQUAAAADg3axBQAAAANC0xTxAAAAAKCsdOkAAAADq0jlDQA=="},"xaxis":"x","y":{"dtype":"i1","bdata":"AgMEAgICAwIDBAICAgMCAwQCAgIDAwMDAAMDAwMDAwIBAwMDAwMCAgI="},"yaxis":"y","type":"scatter"},{"customdata":[["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250627_1542"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"]],"hovertemplate":"tool=manticore-0.3.7\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"manticore-0.3.7","marker":{"color":"#00cc96","symbol":"circle"},"mode":"markers","name":"manticore-0.3.7","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAAgISvKkAAAAA4vv4sQAEAAIAZqC1AAAAA7m5aTkAAAAAsj9JAQAAAwA\u002fNm3FAAAAAavlFXUABAADg+ycqQP\u002f\u002f\u002f4cf5CxAAAAAWIv1LUAAAACExa1OQAAAAAASFkFAAACAqEALc0AAAACbZrBbQAAAALC+ZypAAAAAiKejLED\u002f\u002f\u002f+fwYYtQAEAAJAKr05AAAAAQELgQkAAAMBVJb1zQAAAAMTceFtAAAAAWEo\u002fPEAAAODUGxeDQAAAAPCtyzFAAAAAsB3aFEAAAADgVzIUQAAAANS7QD9AAAAA52ruUUAAAAAAuyL2PwAA4FkQdoxAAACgZMd0jEAAAAAoa6MsQAAAACBvogJAAAAAoBLXE0AAAABLnzxSQAAAQPymeXdA"},"xaxis":"x","y":{"dtype":"i1","bdata":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"yaxis":"y","type":"scatter"},{"customdata":[["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"]],"hovertemplate":"tool=mythril-0.24.7\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"mythril-0.24.7","marker":{"color":"#ab63fa","symbol":"circle"},"mode":"markers","name":"mythril-0.24.7","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAA4JhCKEAAAACA5TkkQAAAADyxATlA\u002f\u002f\u002f\u002fd8JgO0D\u002f\u002f\u002f\u002ffjaAqQAAAALgfdy9AAAAA6EjlMUAAAABAFDEnQAAAABCzTCJA\u002f\u002f\u002f\u002fb0cuOEAAAABQjo46QAAAAMAPYihAAAAAaLotL0AAAABYrE4xQAAAAPB8dSRA\u002f\u002f\u002f\u002fZ9+ZIkAAAACUWlc5QAAAALgfazxAAAAAGMS0LUAAAADQ16UvQAAAAMi1lC9AAAAAONe0JED\u002f\u002f\u002f9flYMmQAAAEJw2MKxAAABAyOIWg0AAAACIOQgoQAAAAKiC5iJAAAAACId\u002fIUABAAAIEKouQAAAQA9cFoNAAAAAEP1pFkAAAID5rQJpQAAAABDiJShAAAAAyIclLUAAAMBrLgqBQAAAAHjV1yBAAAAAUIGAPEAAAAC8zrY+QAAAAFALvTRAAAAArE4UNUA="},"xaxis":"x","y":{"dtype":"i1","bdata":"AQABAQEAAQEAAQEBAAEBAAEBAQABAAAAAAABAQEAAAAAAAMAAQABAA=="},"yaxis":"y","type":"scatter"},{"customdata":[["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250627_1542"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"]],"hovertemplate":"tool=slither-0.10.4\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"slither-0.10.4","marker":{"color":"#FFA15A","symbol":"circle"},"mode":"markers","name":"slither-0.10.4","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAAAKeJ+T8AAAAAva\u002fuPwAAAICTyOs\u002fAAAAgJ5E7D8AAAAAxCLrP\u002f\u002f\u002f\u002f\u002f+dqO0\u002fAAAAgA8T6z8BAABAeQb0PwAAAIDd2Os\u002fAAAAgOqr6z8AAACAeQTqPwAAAADwBeo\u002fAAAAgMM46j8AAACAqyvsPwAAAMA2Yvg\u002fAAAAgF\u002fN7D8AAACAHTXrPwAAAIAQxOk\u002fAAAAgMB56j8AAACAybjrPwAAAABioOs\u002f\u002f\u002f\u002f\u002fv0cZ9z8BAACAtWjtPwAAAIC1eek\u002fAAAAgLBW6D8AAAAAQFHqPwAAAAAZovA\u002fAAAAgJYS6j8AAADAK4X4P\u002f\u002f\u002f\u002f\u002f8TnPE\u002fAAAAgHvZ6D8AAACABxPpP\u002f\u002f\u002f\u002f38y\u002fe0\u002fAAAAAIpV8T8AAAAA0ePqPwAAAMDMIvE\u002fAQAAgEkw7j8AAACAjpHsPwAAAACww+0\u002f\u002f\u002f\u002f\u002f\u002f2y27z8AAAAAR2T1PwAAAIClGOk\u002f"},"xaxis":"x","y":{"dtype":"i1","bdata":"BAMEBQMDAwQDBAUDAwMEAwQFAwMDBQMBAQUKAwUDAQEFCgMDBAMFAwMD"},"yaxis":"y","type":"scatter"},{"customdata":[["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1723"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_1817"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250624_2346"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250629_0053"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"]],"hovertemplate":"tool=smartcheck\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"smartcheck","marker":{"color":"#19d3f3","symbol":"circle"},"mode":"markers","name":"smartcheck","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAAwHk9CkAAAACgBJgEQAAAAADPYQRAAAAAICKwA0AAAACgO5gDQAAAAGCy3ANAAAAAQAb6A0AAAADAIhsGQAAAAMDdgAFA\u002f\u002f\u002f\u002f30vNAUAAAACAtqUAQAAAAMDiwQFAAAAAYLVqAkD\u002f\u002f\u002f\u002ffi8MBQAAAAAAN9QJAAQAAgAQTAUAAAACAC2wCQAAAAGBC4AFAAAAAoIQ2AUAAAADAnmACQAAAAADy7gFAAAAAAPVeBUAAAACgtbADQAAAAOAj5QFAAAAAgNvKAUAAAADg\u002fg8KQAAAAMCxFQNAAAAAYCFYAUAAAACAp40EQAAAAADgfQJAAQAA4EL0AkAAAAAAX+wCQAAAAKBjHANAAAAAgEy0CEAAAADAKkoCQA=="},"xaxis":"x","y":{"dtype":"i1","bdata":"BgECAwQBBAYBAgMEAQQGAQIDBAEECAEEAQkFAgUDAgQCAgI="},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"execution_time"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Vulnerabilities Count"}},"legend":{"title":{"text":"tool"},"tracegroupgap":0},"title":{"text":"Time vs Vulnerabilities Found"}},                        {"responsive": true}                    )                };            </script>        </div>
+</body>
+</html>

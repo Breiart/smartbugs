@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartBugs Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .summary-table td { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>SmartBugs Report</h1>
+
+    <h2>Overall Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Total Executions</th>
+            <th>Total Time (s)</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>18604.40</td>
+            <td>149</td>
+        </tr>
+    </table>
+
+    <h2>Analysis Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contracts</th>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+        </tr>
+        
+    </table>
+
+    <h2>Per Execution Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Total Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>9344.99</td>
+            <td>42</td>
+            <td>74</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>9259.40</td>
+            <td>44</td>
+            <td>75</td>
+        </tr>
+        
+    </table>
+
+    <h2>Per Tool Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contracts</th>
+            <th>Tool</th>
+            <th>Avg Exec Time (s)</th>
+            <th>Total Runs</th>
+            <th>Total Vulns Found</th>
+            <th>Detected Vulns</th>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>confuzzius</td>
+            <td>828.30</td>
+            <td>7</td>
+            <td>8</td>
+            <td>Leaking_Ether, Transaction_Order_Dependency}, {Assertion_Failure, {Block_Dependency}, {Leaking_Ether, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>maian</td>
+            <td>39.75</td>
+            <td>7</td>
+            <td>13</td>
+            <td>No_Ether_lock_Ether_refused, Not_destructible_no_self_destruct}, {Ether_leak_verified, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_Ether_lock_Ether_refused}, {Not_destructible_no_self_destruct}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>325.19</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>137.86</td>
+            <td>7</td>
+            <td>9</td>
+            <td>Transaction_Order_Dependence_SWC_114, Transaction_Order_Dependence_SWC_114}, Unprotected_Ether_Withdrawal_SWC_105}, {Dependence_on_predictable_environment_variable_SWC_116, {Exception_State_SWC_110, {Transaction_Order_Dependence_SWC_114, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>slither-0.10.4</td>
+            <td>1.07</td>
+            <td>7</td>
+            <td>24</td>
+            <td>deprecated_standards, external_function, incorrect_equality, naming_convention, reentrancy_unlimited_gas, solc_version, solc_version}, timestamp, unused_state}, weak_prng}, {arbitrary_send_eth, {constable_states, {events_maths, {missing_zero_check</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>smartcheck</td>
+            <td>2.84</td>
+            <td>7</td>
+            <td>20</td>
+            <td>SOLIDITY_LOCKED_MONEY, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}, SOLIDITY_SAFEMATH, SOLIDITY_UPGRADE_TO_050}, SOLIDITY_VISIBILITY}, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_ERC20_APPROVE, {SOLIDITY_EXACT_TIME, {SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>confuzzius</td>
+            <td>828.08</td>
+            <td>7</td>
+            <td>8</td>
+            <td>Leaking_Ether, Transaction_Order_Dependency}, {Assertion_Failure, {Block_Dependency}, {Leaking_Ether, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>maian</td>
+            <td>37.94</td>
+            <td>7</td>
+            <td>18</td>
+            <td>No_Ether_lock_Ether_refused, No_prodigal_vulnerability_found, No_prodigal_vulnerability_found}, Not_destructible_no_self_destruct}, {Ether_leak_verified, {No_Ether_leak_no_send, {No_Ether_lock_Ether_refused, {No_prodigal_vulnerability_found</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>327.36</td>
+            <td>7</td>
+            <td>0</td>
+            <td>{}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>97.94</td>
+            <td>9</td>
+            <td>5</td>
+            <td>Transaction_Order_Dependence_SWC_114, Unprotected_Ether_Withdrawal_SWC_105}, {Dependence_on_predictable_environment_variable_SWC_116, {Exception_State_SWC_110}, {}</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>slither-0.10.4</td>
+            <td>0.99</td>
+            <td>7</td>
+            <td>24</td>
+            <td>deprecated_standards, external_function, incorrect_equality, naming_convention, reentrancy_unlimited_gas, solc_version, solc_version}, timestamp, unused_state}, weak_prng}, {arbitrary_send_eth, {constable_states, {events_maths, {missing_zero_check</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol, FindThisHash.sol, eth_tx_order_dependence_minimal.sol, roulette.sol, unprotected0.sol, wallet_02_refund_nosub.sol, wallet_03_wrong_constructor.sol</td>
+            <td>smartcheck</td>
+            <td>2.48</td>
+            <td>7</td>
+            <td>20</td>
+            <td>SOLIDITY_LOCKED_MONEY, SOLIDITY_PRAGMAS_VERSION, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA, SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}, SOLIDITY_SAFEMATH, SOLIDITY_UPGRADE_TO_050}, SOLIDITY_VISIBILITY}, {SOLIDITY_DEPRECATED_CONSTRUCTIONS, {SOLIDITY_ERC20_APPROVE, {SOLIDITY_EXACT_TIME, {SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+    </table>
+
+    <h2>Execution Details</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contract</th>
+            <th>Tool</th>
+            <th>Arguments</th>
+            <th>Execution Time (s)</th>
+            <th>Vulnerabilities</th>
+            <th>Total Vulns</th>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>442.61</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.38</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.65</td>
+            <td>{Leaking_Ether,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>891.96</td>
+            <td>{Block_Dependency}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.52</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.41</td>
+            <td>{Assertion_Failure,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.01</td>
+            <td>{Assertion_Failure,Leaking_Ether,Transaction_Order_Dependency}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>67.76</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>33.49</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>35.62</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>35.35</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>28.77</td>
+            <td>{No_Ether_lock_Ether_refused,No_prodigal_vulnerability_found}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>26.11</td>
+            <td>{No_prodigal_vulnerability_found,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>38.45</td>
+            <td>{Ether_leak_verified,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>910.76</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>910.60</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>14.32</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>2.33</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>4.96</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>72.95</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>375.60</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>200.08</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>12.07</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>14.57</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>545.27</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_116,Transaction_Order_Dependence_SWC_114,Unprotected_Ether_Withdrawal_SWC_105}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>8.42</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules Exceptions</td>
+            <td>28.50</td>
+            <td>{Exception_State_SWC_110}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>30.71</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules Exceptions</td>
+            <td>20.74</td>
+            <td>{Exception_State_SWC_110}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td>--modules ExternalCalls</td>
+            <td>21.08</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.07</td>
+            <td>{constable_states,solc_version,unused_state}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.94</td>
+            <td>{arbitrary_send_eth,deprecated_standards,external_function,solc_version}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.89</td>
+            <td>{events_maths,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.93</td>
+            <td>{arbitrary_send_eth,incorrect_equality,solc_version,timestamp,weak_prng}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.99</td>
+            <td>{missing_zero_check,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.34</td>
+            <td>{missing_zero_check,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.78</td>
+            <td>{missing_zero_check,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>ERC20.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.57</td>
+            <td>{SOLIDITY_ERC20_APPROVE,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_SAFEMATH,SOLIDITY_VISIBILITY}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>FindThisHash.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.31</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.37</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>roulette.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.37</td>
+            <td>{SOLIDITY_EXACT_TIME,SOLIDITY_LOCKED_MONEY,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>unprotected0.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.39</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>3.09</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0203</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.29</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>442.59</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>FindThisHash.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.49</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.34</td>
+            <td>{Leaking_Ether,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>roulette.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.72</td>
+            <td>{Block_Dependency}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>unprotected0.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.69</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.35</td>
+            <td>{Assertion_Failure,Transaction_Order_Dependency}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>892.95</td>
+            <td>{Assertion_Failure,Leaking_Ether,Transaction_Order_Dependency}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>54.46</td>
+            <td>{No_Ether_leak_no_send,No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>FindThisHash.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>32.32</td>
+            <td>{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>32.81</td>
+            <td>{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>roulette.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>48.83</td>
+            <td>{No_Ether_lock_Ether_refused,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>unprotected0.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>35.14</td>
+            <td>{No_Ether_lock_Ether_refused}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>30.93</td>
+            <td>{Not_destructible_no_self_destruct}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>43.72</td>
+            <td>{Ether_leak_verified,Not_destructible_no_self_destruct}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>910.73</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>FindThisHash.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>910.66</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>13.75</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>roulette.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>4.52</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>unprotected0.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>5.38</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>70.89</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>360.37</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>237.53</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>FindThisHash.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>14.05</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>24.21</td>
+            <td>{Transaction_Order_Dependence_SWC_114,Unprotected_Ether_Withdrawal_SWC_105}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>roulette.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>548.99</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_116,Transaction_Order_Dependence_SWC_114,Unprotected_Ether_Withdrawal_SWC_105}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>unprotected0.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>7.86</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>77.99</td>
+            <td>{Exception_State_SWC_110,Transaction_Order_Dependence_SWC_114}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>54.34</td>
+            <td>{Exception_State_SWC_110,Transaction_Order_Dependence_SWC_114}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.83</td>
+            <td>{constable_states,solc_version,unused_state}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>FindThisHash.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.04</td>
+            <td>{arbitrary_send_eth,deprecated_standards,external_function,solc_version}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.95</td>
+            <td>{events_maths,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>roulette.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.83</td>
+            <td>{arbitrary_send_eth,incorrect_equality,solc_version,timestamp,weak_prng}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>unprotected0.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>1.11</td>
+            <td>{missing_zero_check,naming_convention,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.91</td>
+            <td>{missing_zero_check,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.84</td>
+            <td>{missing_zero_check,reentrancy_unlimited_gas,solc_version}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>ERC20.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.91</td>
+            <td>{SOLIDITY_ERC20_APPROVE,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA,SOLIDITY_SAFEMATH,SOLIDITY_VISIBILITY}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>FindThisHash.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.83</td>
+            <td>{SOLIDITY_DEPRECATED_CONSTRUCTIONS,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>eth_tx_order_dependence_minimal.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.49</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>roulette.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.91</td>
+            <td>{SOLIDITY_EXACT_TIME,SOLIDITY_LOCKED_MONEY,SOLIDITY_PRAGMAS_VERSION,SOLIDITY_UPGRADE_TO_050}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>unprotected0.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>3.05</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_02_refund_nosub.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>3.07</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>20250630_0003</td>
+            <td>wallet_03_wrong_constructor.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>2.61</td>
+            <td>{SOLIDITY_PRAGMAS_VERSION,SOLIDITY_VISIBILITY}</td>
+            <td>2</td>
+        </tr>
+        
+    </table>
+
+    <h2>Graphs</h2>
+    <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="cfe96436-4352-4b9b-b479-06cd891e00cb" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("cfe96436-4352-4b9b-b479-06cd891e00cb")) {                    Plotly.newPlot(                        "cfe96436-4352-4b9b-b479-06cd891e00cb",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250630_0003\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250630_0003","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250630_0003","offsetgroup":"20250630_0003","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"kiQpRW3iiUAAAADobN9DQAAAQOv2UnRA27btymY7YUC3bdt2yibxP27bto0dsQZA"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250630_0203\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250630_0203","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"20250630_0203","offsetgroup":"20250630_0203","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"f8","bdata":"t23bj5\u002fgiUBu27aV6PdCQAAAAEK\u002fdXRAOY7jTSd8WEAlSZIk98TvP5IkSVJu3ANA"},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Avg Exec Time (s)"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Average Execution Time per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="e343d879-a0e1-4f16-9c45-1db902b37296" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e343d879-a0e1-4f16-9c45-1db902b37296")) {                    Plotly.newPlot(                        "e343d879-a0e1-4f16-9c45-1db902b37296",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250630_0003\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250630_0003","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250630_0003","offsetgroup":"20250630_0003","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"CA0ACRgU"},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=20250630_0203\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250630_0203","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"20250630_0203","offsetgroup":"20250630_0203","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","maian","manticore-0.3.7","mythril-0.24.7","slither-0.10.4","smartcheck"],"xaxis":"x","y":{"dtype":"i1","bdata":"CBIABRgU"},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Vulns Found"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Total Vulnerabilities Found per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="f6fc2ea5-1a4c-44fd-b6d3-8cb384ed2a96" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("f6fc2ea5-1a4c-44fd-b6d3-8cb384ed2a96")) {                    Plotly.newPlot(                        "f6fc2ea5-1a4c-44fd-b6d3-8cb384ed2a96",                        [{"customdata":[["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"]],"hovertemplate":"tool=confuzzius\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"confuzzius","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"confuzzius","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAA2sepe0AAAGC9D+OLQAAA4CQy5YtAAAAAsrTfi0AAAAC6H+SLQAAAIJhO44tAAACgGxTgi0AAAEB2b6l7QAAAAIzw44tAAAAAd7Xii0AAACBRvOWLQAAAgGV95YtAAABAmsnii0AAACDVm+eLQA=="},"xaxis":"x","y":{"dtype":"i1","bdata":"AAACAQACAwAAAgEAAgM="},"yaxis":"y","type":"scatter"},{"customdata":[["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"]],"hovertemplate":"tool=maian\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"maian","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"maian","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAA2O3wUEABAABMLr5AQAAAAFYxz0FAAAAA4N2sQUAAAADQtMU8QAAAACgrHTpAAAAA6tI5Q0AAAAAgtTpLQAAAAGAYKUBAAAAAQMZnQEAAAABMrWlIQAAAADiJkkFAAQAAjNLuPkAAAADOxtxFQA=="},"xaxis":"x","y":{"dtype":"i1","bdata":"AwMDAwICAgMCAgIBAQI="},"yaxis":"y","type":"scatter"},{"customdata":[["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"]],"hovertemplate":"tool=manticore-0.3.7\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"manticore-0.3.7","marker":{"color":"#00cc96","symbol":"circle"},"mode":"markers","name":"manticore-0.3.7","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AADgWRB2jEAAAKBkx3SMQAAAAChroyxAAAAAIG+iAkAAAACgEtcTQAAAAEufPFJAAABA\u002fKZ5d0AAAKC63XWMQAAAAPpHdYxAAQAAQGiBK0AAAACgKxMSQAAAAABRghVAAAAAe8C4UUAAAECy44V2QA=="},"xaxis":"x","y":{"dtype":"i1","bdata":"AAAAAAAAAAAAAAAAAAA="},"yaxis":"y","type":"scatter"},{"customdata":[["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"]],"hovertemplate":"tool=mythril-0.24.7\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"mythril-0.24.7","marker":{"color":"#ab63fa","symbol":"circle"},"mode":"markers","name":"mythril-0.24.7","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AACA+a0CaUAAAAAQ4iUoQAAAAMiHJS1AAADAay4KgUAAAAB41dcgQAAAAFCBgDxAAAAAvM62PkAAAABQC700QAAAAKxOFDVAAACAwhmxbUAAAADw1RssQP\u002f\u002f\u002fzPfNjhAAADgLPMngUAAAABgQHUfQAAAAB9sf1NAAAAA+r4rS0A="},"xaxis":"x","y":{"dtype":"i1","bdata":"AAAAAwABAAEAAAACAwACAg=="},"yaxis":"y","type":"scatter"},{"customdata":[["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"]],"hovertemplate":"tool=slither-0.10.4\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"slither-0.10.4","marker":{"color":"#FFA15A","symbol":"circle"},"mode":"markers","name":"slither-0.10.4","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAAwMwi8T8BAACASTDuPwAAAICOkew\u002fAAAAALDD7T\u002f\u002f\u002f\u002f\u002f\u002fbLbvPwAAAABHZPU\u002fAAAAgKUY6T8AAACAbXTqPwAAAMCtk\u002fA\u002fAAAAAEps7j8AAABAXz79PwAAAMDUxfE\u002fAAAAgG4d7T8AAAAAKfHqPw=="},"xaxis":"x","y":{"dtype":"i1","bdata":"AwQDBQMDAwMEAwUDAwM="},"yaxis":"y","type":"scatter"},{"customdata":[["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0203"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"],["20250630_0003"]],"hovertemplate":"tool=smartcheck\u003cbr\u003eexecution_time=%{x}\u003cbr\u003eVulnerabilities Count=%{y}\u003cbr\u003eExecution ID=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"smartcheck","marker":{"color":"#19d3f3","symbol":"circle"},"mode":"markers","name":"smartcheck","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"AAAAgKeNBEAAAAAA4H0CQAEAAOBC9AJAAAAAAF\u002fsAkAAAACgYxwDQAAAAIBMtAhAAAAAwCpKAkAAAACgck4HQAAAAKCcpwZAAAAAQPvkA0AAAADAeT8HQAAAACDxXghAAAAAgAaGCEAAAAAAU9gEQA=="},"xaxis":"x","y":{"dtype":"i1","bdata":"BQMCBAICAgUDAgQCAgI="},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"execution_time"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Vulnerabilities Count"}},"legend":{"title":{"text":"tool"},"tracegroupgap":0},"title":{"text":"Time vs Vulnerabilities Found"}},                        {"responsive": true}                    )                };            </script>        </div>
+</body>
+</html>

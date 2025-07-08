@@ -20,4 +20,4 @@ venv/
 results/*.*
 
 #Ignore csv results folder
-csv_results/
+#csv_results/
