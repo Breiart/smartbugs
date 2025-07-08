@@ -25,7 +25,7 @@ class Settings:
         self.skip_after_no_args = True
         # Enable or disable dynamic scheduling of additional tools
         self.dynamic = True
-        self.runid = "${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
+        self.runid = "d_${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
         self.overwrite = False
         self.processes = 1
         self.timeout = None

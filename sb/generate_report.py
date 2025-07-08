@@ -8,6 +8,15 @@ from jinja2 import Template
 import re
 
 
+def _seconds_to_hms(seconds: float) -> str:
+    """Return the given duration in ``HH:MM:SS`` format."""
+    seconds = int(round(float(seconds)))
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    secs = seconds % 60
+    return f"{hours:02d}:{minutes:02d}:{secs:02d}"
+
+
 def load_csvs(input_folder: str) -> pd.DataFrame:
     """Load all CSV files from ``input_folder`` into a single dataframe.
 
@@ -146,7 +155,7 @@ def render_html(df, output_file):
         df.groupby("Execution ID")
           .agg(
               **{
-                  "Total Exec Time (s)": ("execution_time", "sum"),
+                  "Total Exec Time": ("execution_time", "sum"),
                   "Total Vulns Found": ("Vulnerabilities Count", "sum"),
                   "Total Runs": ("execution_time", "count"),
               }
@@ -156,7 +165,7 @@ def render_html(df, output_file):
 
     overall = {
         "Total Executions": df["Execution ID"].nunique(),
-        "Total Time": df["execution_time"].sum(),
+        "Total Time": _seconds_to_hms(df["execution_time"].sum()),
         "Total Vulns Found": df["Vulnerabilities Count"].sum()
     }
 
