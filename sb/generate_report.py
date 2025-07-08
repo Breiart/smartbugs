@@ -162,7 +162,8 @@ def render_html(df, output_file):
           )
           .reset_index()
     )
-
+    per_execution["Total Exec Time"] = per_execution["Total Exec Time"].apply(_seconds_to_hms)
+    
     overall = {
         "Total Executions": df["Execution ID"].nunique(),
         "Total Time": _seconds_to_hms(df["execution_time"].sum()),
