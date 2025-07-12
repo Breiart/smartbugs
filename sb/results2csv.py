@@ -3,7 +3,7 @@ import sb.cfg, sb.io, sb.utils
 
 FIELDS = (
     "filename", "basename", "toolid", "toolmode", "tool_args", "parser_version", "runid",
-    "start", "duration", "exit_code",  "findings", "infos", "errors", "fails")
+    "start", "duration", "exit_code",  "findings", "classified_findings", "infos", "errors", "fails")
 
 def main():
     argparser = argparse.ArgumentParser(
@@ -105,6 +105,7 @@ def data2csv(task_log, parser_output, postgres, fields):
         "errors": parser_output["errors"],
         "fails": parser_output["fails"],
     }
+
     for f in ("findings", "infos", "errors", "fails"):
         if postgres:
             csv[f] = list2postgres(csv[f])

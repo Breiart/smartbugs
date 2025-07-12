@@ -8,7 +8,7 @@ CORE_TOOLS = (
     ("slither", ""),
     ("smartcheck", ""),
     ("mythril", ""),
-    ("honeybadger", ""),
+    ("solhint", ""),
     ("maian", ""),
     ("confuzzius", ""),
 )

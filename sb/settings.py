@@ -58,6 +58,9 @@ class Settings:
             'ZONE':      NOW.tm_zone,               # abbreviation of timezone name
         }
 
+        if not self.dynamic:
+            self.runid = "${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
+
         try:
             self.runid = string.Template(self.runid).substitute(env)
         except KeyError as e:
