@@ -28,6 +28,26 @@
         </tr>
     </table>
 
+    <h2>Per Category Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Category</th>
+            <th>Occurrences</th>
+            <th>Contracts</th>
+            <th>Tools</th>
+        </tr>
+        {% for row in category_summary %}
+        <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ row['Category'] }}</td>
+            <td>{{ row['Occurrences'] }}</td>
+            <td>{{ row['Contracts'] }}</td>
+            <td>{{ row['Tools'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
     <h2>Analysis Summary</h2>
     <table>
         <tr>

@@ -55,3 +55,12 @@ The option `-p` tells `results2csv` to format the lists of findings, errors etc.
 ./reparse results
 ./results2csv -p results > results.csv
 ```
+
+You can then create an HTML report summarising the CSV files:
+
+```console
+./generate_report --input_folder results --output report.html
+```
+
+The report aggregates vulnerabilities by classification category to highlight
+the most common weakness types.

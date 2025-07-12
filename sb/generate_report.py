@@ -53,6 +53,8 @@ def load_csvs(input_folder: str) -> pd.DataFrame:
         rename_map["tool_args"] = "arguments"
     if "findings" in df.columns and "vulnerabilities" not in df.columns:
         rename_map["findings"] = "vulnerabilities"
+    if "classified_findings" in df.columns and "categories" not in df.columns:
+        rename_map["classified_findings"] = "categories"
     df.rename(columns=rename_map, inplace=True)
     return df
 
@@ -63,6 +65,13 @@ def _count_vulns(cell: str) -> int:
     cell = cell.replace('|', ',')
     return len([v for v in cell.split(',') if v.strip()])
 
+def _split_values(cell: str) -> list:
+    cell = str(cell).strip('{}[]')
+    if not cell or cell.lower() == 'none':
+        return []
+    cell = cell.replace('|', ',')
+    return [v.strip() for v in cell.split(',') if v.strip()]
+
 def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
     """Prepare dataframe for report generation."""
     # Fill missing values only in object columns to avoid casting warnings
@@ -72,6 +81,8 @@ def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
     if "execution_time" in df.columns:
         df["execution_time"] = pd.to_numeric(df["execution_time"], errors="coerce").fillna(0)
     df["Vulnerabilities Count"] = df.get("vulnerabilities", "").apply(_count_vulns)
+    if "categories" in df.columns:
+        df["Categories Count"] = df["categories"].apply(lambda c: len(_split_values(c)))
     return df
 
 def _join_vulns(series: pd.Series) -> str:
@@ -143,7 +154,32 @@ def render_html(df, output_file):
             })
     per_vuln = pd.DataFrame(per_vuln_rows)
 
-
+    category_map = {}
+    if "categories" in df.columns:
+        for _, row in df.iterrows():
+            for cat in _split_values(row.get("categories", "")):
+                key = (row["Execution ID"], cat)
+                entry = category_map.setdefault(key, {
+                    "Execution ID": row["Execution ID"],
+                    "Category": cat,
+                    "Occurrences": 0,
+                    "Contracts": set(),
+                    "Tools": set(),
+                })
+                entry["Occurrences"] += 1
+                entry["Contracts"].add(row.get("basename", ""))
+                entry["Tools"].add(row.get("tool", ""))
+    per_category = pd.DataFrame([
+        {
+            "Execution ID": e["Execution ID"],
+            "Category": e["Category"],
+            "Occurrences": e["Occurrences"],
+            "Contracts": ", ".join(sorted(e["Contracts"])),
+            "Tools": ", ".join(sorted(e["Tools"])),
+        }
+        for e in category_map.values()
+    ])
+    
     analysis_summary = (
         df.groupby("Execution ID")
           .agg({"basename": lambda x: ", ".join(sorted(set(x)))})
@@ -201,6 +237,7 @@ def render_html(df, output_file):
                 analysis_summary=analysis_summary.to_dict(orient="records"),
                 vuln_summary=per_vuln.to_dict(orient="records"),
                 executions_summary=per_execution.to_dict(orient="records"),
+                category_summary=per_category.to_dict(orient="records"),
                 overall=overall,
                 fig_time=fig_time.to_html(full_html=False, include_plotlyjs="cdn"),
                 fig_vuln=fig_vuln.to_html(full_html=False, include_plotlyjs=False),

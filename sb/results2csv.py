@@ -1,5 +1,5 @@
 import argparse, csv, os, sys
-import sb.cfg, sb.io, sb.utils
+import sb.cfg, sb.io, sb.utils, sb.vulnerability
 
 FIELDS = (
     "filename", "basename", "toolid", "toolmode", "tool_args", "parser_version", "runid",
@@ -101,12 +101,17 @@ def data2csv(task_log, parser_output, postgres, fields):
             (sb.utils.str2label(f.get("name", "")) +
              (f"@{f['line']}" if str(f.get("line", "")).strip() else ""))
             for f in parser_output["findings"]}),
+        "classified_findings": [],
         "infos": parser_output["infos"],
         "errors": parser_output["errors"],
         "fails": parser_output["fails"],
     }
 
-    for f in ("findings", "infos", "errors", "fails"):
+    analyzer = sb.vulnerability.VulnerabilityAnalyzer()
+    classified = analyzer.analyze(csv["toolid"], parser_output)
+    csv["classified_findings"] = sorted({c for item in classified for c in item.get("categories", [])})
+
+    for f in ("findings", "classified_findings", "infos", "errors", "fails"):
         if postgres:
             csv[f] = list2postgres(csv[f])
         else:
