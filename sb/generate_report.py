@@ -6,7 +6,9 @@ from pathlib import Path
 import plotly.express as px
 from jinja2 import Template
 import re
+import sb.vulnerability
 
+#TODO: Testare i nuovi file finding.yaml e il nuovo report
 
 def _seconds_to_hms(seconds: float) -> str:
     """Return the given duration in ``HH:MM:SS`` format."""
@@ -59,18 +61,19 @@ def load_csvs(input_folder: str) -> pd.DataFrame:
     return df
 
 def _count_vulns(cell: str) -> int:
-    cell = str(cell).strip('{}[]')
-    if not cell or cell.lower() == 'none':
+    cell = str(cell).strip("{}[]")
+    if not cell or cell.lower() == "none":
         return 0
     cell = cell.replace('|', ',')
     return len([v for v in cell.split(',') if v.strip()])
 
 def _split_values(cell: str) -> list:
-    cell = str(cell).strip('{}[]')
-    if not cell or cell.lower() == 'none':
+    cell = str(cell).strip("{}[]")
+    if not cell or cell.lower() == "none":
         return []
-    cell = cell.replace('|', ',')
-    return [v.strip() for v in cell.split(',') if v.strip()]
+    cell = cell.replace("|", ",")
+    return [v.strip() for v in cell.split(",") if v.strip()]
+
 
 def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
     """Prepare dataframe for report generation."""
@@ -137,7 +140,7 @@ def render_html(df, output_file):
         vuln_tools = {}
         for _, row in group.iterrows():
             vulns = str(row.get("vulnerabilities", "")).replace("|", ",")
-            for v in vulns.strip('{}[]').split(','):
+            for v in vulns.strip("{}[]").split(","):
                 parsed = _parse_vuln_entry(v)
                 if not parsed:
                     continue
@@ -154,31 +157,37 @@ def render_html(df, output_file):
             })
     per_vuln = pd.DataFrame(per_vuln_rows)
 
-    category_map = {}
-    if "categories" in df.columns:
-        for _, row in df.iterrows():
-            for cat in _split_values(row.get("categories", "")):
-                key = (row["Execution ID"], cat)
-                entry = category_map.setdefault(key, {
-                    "Execution ID": row["Execution ID"],
-                    "Category": cat,
-                    "Occurrences": 0,
-                    "Contracts": set(),
-                    "Tools": set(),
-                })
-                entry["Occurrences"] += 1
-                entry["Contracts"].add(row.get("basename", ""))
-                entry["Tools"].add(row.get("tool", ""))
-    per_category = pd.DataFrame([
-        {
-            "Execution ID": e["Execution ID"],
-            "Category": e["Category"],
-            "Occurrences": e["Occurrences"],
-            "Contracts": ", ".join(sorted(e["Contracts"])),
-            "Tools": ", ".join(sorted(e["Tools"])),
-        }
-        for e in category_map.values()
-    ])
+    category_rows = []
+    analyzer = sb.vulnerability.VulnerabilityAnalyzer()
+    for (exec_id, contract), group in df.groupby(["Execution ID", "basename"]):
+        cat_tools = {}
+        for _, row in group.iterrows():
+            vulns = str(row.get("vulnerabilities", "")).replace("|", ",")
+            for v in vulns.strip("{}[]").split(","):
+                parsed = _parse_vuln_entry(v)
+                if not parsed:
+                    continue
+                name, line = parsed
+                result = analyzer.classify_finding(row.get("tool", ""), {"name": name, "line": line})
+                for cat in result.get("categories", []):
+                    key = (cat, line or "")
+                    cat_tools.setdefault(key, set()).add(row.get("tool", ""))
+        for (cat, line), tools in cat_tools.items():
+            category_rows.append({
+                "Execution ID": exec_id,
+                "Contract": contract,
+                "Category": cat,
+                "Line": line or "",
+                "Tools": ", ".join(sorted(tools))
+            })
+    per_category = pd.DataFrame(category_rows)
+    
+    exec_classified = (
+        per_category.groupby("Execution ID")
+        .size()
+        .reset_index(name="Classified Vulnerabilities")
+    )
+
     
     analysis_summary = (
         df.groupby("Execution ID")
@@ -199,6 +208,11 @@ def render_html(df, output_file):
           .reset_index()
     )
     per_execution["Total Exec Time"] = per_execution["Total Exec Time"].apply(_seconds_to_hms)
+    per_execution = per_execution.merge(exec_classified, on="Execution ID", how="left")
+    if "Classified Vulnerabilities" in per_execution.columns:
+        per_execution["Classified Vulnerabilities"] = per_execution[
+            "Classified Vulnerabilities"
+        ].fillna(0).astype(int)
     
     overall = {
         "Total Executions": df["Execution ID"].nunique(),

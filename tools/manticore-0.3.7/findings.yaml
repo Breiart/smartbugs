@@ -1,0 +1,38 @@
+Warning {instruction.semantics} instruction used: {}
+Reachable selfdestruct instructions:
+    classification: SWC-106, DASP-2
+Reachable SELFDESTRUCT:
+    classification: SWC-106, DASP-2
+Reachable external call or ether leak to sender or arbitrary address: {}
+Reachable ether leak to sender via argument:
+    classification: SWC-105, DASP-2
+Reachable external call to sender via argument:
+    classification: SWC-107, DASP-1
+Reachable ether leak to user controlled address via argument:
+    classification: SWC-105, DASP-2
+Reachable external call to user controlled address via argument:
+    classification: SWC-107, DASP-5
+Reachable ether leak to sender:
+    classification: SWC-105, DASP-2
+Reachable external call to sender:
+    classification: SWC-107, DASP-1
+Delegatecall to user controlled address:
+    classification: SWC-112
+Delegatecall to user controlled function:
+    classification: SWC-112
+Potential reentrancy vulnerability:
+    classification: SWC-107, DASP-1
+Reentrancy multi-million ether bug:
+    classification: SWC-107, DASP-1
+Potentially reading uninitialized memory at instruction (address: %r, offset %r): {}
+Potentially reading uninitialized storage:
+    classification: SWC-109
+Signed integer overflow at %s instruction:
+    classification: SWC-101, DASP-3
+Unsigned integer overflow at %s instruction:
+    classification: SWC-101, DASP-3
+Returned value at {:s} instruction is not used:
+    classification: SWC-104, DASP-4
+Manipulable balance used in a strict comparison:
+    classification: SWC-132
+INVALID instruction: {}

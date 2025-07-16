@@ -62,5 +62,4 @@ You can then create an HTML report summarising the CSV files:
 ./generate_report --input_folder results --output report.html
 ```
 
-The report aggregates vulnerabilities by classification category to highlight
-the most common weakness types.
+The report lists each contract’s classified vulnerabilities with line numbers and the tools that detected them.

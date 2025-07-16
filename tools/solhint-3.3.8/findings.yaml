@@ -1,0 +1,64 @@
+array-declaration-spaces: {}
+avoid-call-value: {}
+avoid-low-level-calls:
+    classification: SWC-104, DASP-4
+avoid-sha3: {}
+avoid-suicide:
+    classification: SWC-106, DASP-2
+avoid-throw: {}
+avoid-tx-origin:
+    classification: SWC-115, DASP-2
+bracket-align: {}
+check-send-result:
+    classification: SWC-104, DASP-4
+code-complexity: {}
+compiler-fixed: {}
+compiler-gt-0_4: {}
+compiler-version: {}
+comprehensive-interface: {}
+const-name-snakecase: {}
+constructor-syntax: {}
+contract-name-camelcase: {}
+event-name-camelcase: {}
+expression-indent: {}
+func-name-mixedcase: {}
+func-order: {}
+func-param-name-mixedcase: {}
+function-max-lines: {}
+func-visibility: {}
+imports-on-top: {}
+indent: {}
+mark-callable-contracts: {}
+max-line-length: {}
+max-states-count: {}
+modifier-name-mixedcase: {}
+multiple-sends:
+    classification: SWC-113, DASP-5
+no-complex-fallback: {}
+no-console: {}
+no-empty-blocks: {}
+no-global-import: {}
+no-inline-assembly: {}
+no-mix-tabs-and-spaces: {}
+no-simple-event-func-name: {}
+no-spaces-before-semicolon: {}
+not-rely-on-block-hash:
+    classification: SWC-120, DASP-6
+not-rely-on-time:
+    classification: SWC-116, DASP-8
+no-unused-vars: {}
+ordering: {}
+payable-fallback: {}
+private-vars-leading-underscore: {}
+quotes: {}
+reason-string: {}
+reentrancy:
+    classification: SWC-107, DASP-1
+separate-by-one-line-in-contract: {}
+space-after-comma: {}
+statement-indent: {}
+state-visibility: {}
+two-lines-top-level-separator: {}
+use-forbidden-name: {}
+var-name-mixedcase: {}
+visibility-modifier-order: {}

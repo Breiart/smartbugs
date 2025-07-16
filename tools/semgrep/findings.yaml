@@ -1,6 +1,6 @@
 unnecessary-checked-arithmetic-in-loop: {}
 proxy-storage-collision:
-    classification: SWC-124, DASP-2	
+    classification: SWC-124, DASP-2
 erc20-public-burn: {}
 non-payable-constructor: {}
 use-prefix-increment-not-postfix: {}

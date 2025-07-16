@@ -28,26 +28,6 @@
         </tr>
     </table>
 
-    <h2>Per Category Summary</h2>
-    <table>
-        <tr>
-            <th>Execution ID</th>
-            <th>Category</th>
-            <th>Occurrences</th>
-            <th>Contracts</th>
-            <th>Tools</th>
-        </tr>
-        {% for row in category_summary %}
-        <tr>
-            <td>{{ row['Execution ID'] }}</td>
-            <td>{{ row['Category'] }}</td>
-            <td>{{ row['Occurrences'] }}</td>
-            <td>{{ row['Contracts'] }}</td>
-            <td>{{ row['Tools'] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-
     <h2>Analysis Summary</h2>
     <table>
         <tr>
@@ -69,6 +49,7 @@
             <th>Total Exec Time</th>
             <th>Total Runs</th>
             <th>Total Vulns Found</th>
+            <th>Classified Vulnerabilities</th>
         </tr>
         {% for row in executions_summary %}
         <tr>
@@ -76,6 +57,27 @@
              <td>{{ row['Total Exec Time'] }}</td>
             <td>{{ row['Total Runs'] }}</td>
             <td>{{ row['Total Vulns Found'] }}</td>
+            <td>{{ row.get('Classified Vulnerabilities', 0) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Per Category Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Tools</th>
+        </tr>
+        {% for row in category_summary %}
+        <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ row['Contract'] }}</td>
+            <td>{{ row['Line'] }}</td>
+            <td>{{ row['Category'] }}</td>
+            <td>{{ row['Tools'] }}</td>
         </tr>
         {% endfor %}
     </table>
