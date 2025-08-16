@@ -84,7 +84,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
     if not vuln_list:
         return []
     
-    #TODO: aggiungere istanze per chiamare meglio i seguenti tool: confuzzius, manticore, securify, smartcheck
+    # Mapping from vulnerability categories to follow-up tools
     VULN_TOOL_MAP = {
         # Reentrancy-related
         "REENTRANCY": ("mythril", "--modules ExternalCalls"),

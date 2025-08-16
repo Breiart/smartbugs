@@ -139,7 +139,8 @@ def execute(task):
             raise
         print(f"Docker container started: {container}")
         try:
-            result = container.wait(timeout=task.settings.timeout)
+            wait_timeout = task.timeout if getattr(task, "timeout", None) not in (None, 0) else task.settings.timeout
+            result = container.wait(timeout=wait_timeout)
             exit_code = result["StatusCode"]
         except (requests.exceptions.ReadTimeout,requests.exceptions.ConnectionError):
             try:
