@@ -26,7 +26,14 @@ If a tool is run with additional arguments, these arguments are used as
 a subfolder name inside the contract's directory so runs with different
 arguments do not overwrite each other.
 Fuzzing tools such as ConFuzzius honor the `--fuzz-mode` option, which
-controls their execution time (`fast`, `normal`, or `slow`).
+controls their execution time (`fast`, `normal`, or `accurate`).
+
+Follow-up analyses scheduled dynamically by SmartBugs may also define a
+timeout category (`fast`, `normal`, or `accurate`). The concrete durations for
+these categories are configured in `sb/cfg.py` through the `FOLLOWUP_TIMEOUTS`
+dictionary. Adjust those values to increase or decrease the allotted time for
+follow-up runs or to introduce new timeout profiles.
+
 
 ## Utility programs
 

@@ -72,9 +72,18 @@ def collect_files(patterns):
     return files
 
 
-def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
+def collect_single_task(absfn, relfn, tool_name, settings, tool_args, timeout=None):
     """
     Creates a new Task object for a dynamically added tool if it hasn't already been scheduled.
+
+    Parameters:
+        absfn (str): Absolute path to the contract file.
+        relfn (str): Relative path to the contract file.
+        tool_name (str): Base name of the tool to run.
+        settings (Settings): Execution settings.
+        tool_args (str): Command line arguments for the tool.
+        timeout (int|None): Optional timeout in seconds for this task. If ``None``
+            the default timeout logic is used.
     """
     
     def ensure_loaded(image):
@@ -168,10 +177,10 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
 
     ensure_loaded(tool.image)
 
-    # Determine timeout for fuzzers
-    timeout = settings.timeout
-    if not timeout and base_tool_name in FUZZER_TOOLS:
-        timeout = sb.cfg.FUZZER_TIMEOUTS.get(
+    # Determine timeout for fuzzers or use the provided custom timeout
+    effective_timeout = timeout if timeout is not None else settings.timeout
+    if not effective_timeout and base_tool_name in FUZZER_TOOLS:
+        effective_timeout = sb.cfg.FUZZER_TIMEOUTS.get(
             getattr(settings, "fuzz_mode", "normal"),
             sb.cfg.FUZZER_TIMEOUTS["normal"],
         )
@@ -193,7 +202,7 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args):
 
     # Return a Task object updated with the new tool
     rdir = settings.resultdir(tool.id, tool.mode, absfn, relfn, clean_args)
-    return sb.tasks.Task(absfn, relfn, rdir, solc_version, solc_path, tool, settings, tool_args, timeout)
+    return sb.tasks.Task(absfn, relfn, rdir, solc_version, solc_path, tool, settings, tool_args, effective_timeout)
 
 
 def collect_tasks(files, tools, settings):

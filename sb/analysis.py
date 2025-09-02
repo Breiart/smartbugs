@@ -73,83 +73,87 @@ def analyze_parsed_results(parsed_output):
 
 def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=None):
     """ Determine additional tools to run based on detected vulnerabilities.
+    Multiple findings may map to the same tool with different arguments. In
+    such cases the arguments are merged so that a tool is scheduled only once
+    with the union of all requested options. Duplicate argument sets are
+    ignored and a previous run without arguments prevents any further runs of
+    that tool when ``skip_after_no_args`` is enabled.
 
-        Multiple findings may map to the same tool with different arguments.  In
-        such cases the arguments are merged so that a tool is scheduled only once
-        with the union of all requested options.  Duplicate argument sets are
-        ignored and a previous run without arguments prevents any further runs of
-        that tool when 'skip_after_no_args' is enabled.
+    Returns:
+        list[tuple]: A list of tuples ``(tool_name, tool_args, timeout)`` where
+        ``timeout`` may be ``None`` if no custom timeout is requested.
     """
 
     if not vuln_list:
         return []
     
-    # Mapping from vulnerability categories to follow-up tools
+    # Mapping from vulnerability categories to follow-up tools and optional timeouts
     VULN_TOOL_MAP = {
         # Reentrancy-related
-        "REENTRANCY": ("mythril", "--modules ExternalCalls"),
-        "LOW_LEVEL_CALL": ("conkas", "-vt reentrancy"),
-        "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth"),
-        #"REENTRANCY_NO_GUARD": ("slither", "--reentrancy-no-guard"),
+        "REENTRANCY": ("mythril", "--modules ExternalCalls", "normal"),
+        "LOW_LEVEL_CALL": ("conkas", "-vt reentrancy", None),
+        "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth", None),
+        #"REENTRANCY_NO_GUARD": ("slither", "--reentrancy-no-guard", None),
 
         # Transaction order / front-running
-        #"TOD": ("slither", "--detect out-of-order-retryable"),
-        "FRONT_RUNNING": ("slither", "--detect out-of-order-retryable"),
+        #"TOD": ("slither", "--detect out-of-order-retryable", None),
+        "FRONT_RUNNING": ("slither", "--detect out-of-order-retryable", None),
 
         # Access control and kill paths
-        "SUICIDAL": ("maian", "-c 0"),
-        "PRODIGAL": ("maian", "-c 1"),
-        "GREEDY_CONTRACT": ("maian", "-c 2"),
-        "GREEDY_CONTRACT": ("manticore", "--thorough-mode"),
-        "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth"),
+        "SUICIDAL": ("maian", "-c 0", None),
+        "PRODIGAL": ("maian", "-c 1", None),
+        "GREEDY_CONTRACT": ("maian", "-c 2", None),
+        "GREEDY_CONTRACT": ("manticore", "--thorough-mode", None),
+        "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth", None),
 
         # Arithmetic
-        "OVERFLOW": ("mythril", "--modules IntegerArithmetics"),
-        "OVERFLOW": ("conkas", "-vt arithmetic"),
-        "OVERFLOW": ("osiris", ""),
-        #"OVERFLOW": ("ethor", ""),
+        "OVERFLOW": ("mythril", "--modules IntegerArithmetics", None),
+        "OVERFLOW": ("conkas", "-vt arithmetic", None),
+        "OVERFLOW": ("osiris", "", None),
+        #"OVERFLOW": ("ethor", "", None),
         
-        "UNDERFLOW": ("mythril", "--modules IntegerArithmetics"),
-        "UNDERFLOW": ("conkas", "-vt arithmetic"),
-        "UNDERFLOW": ("osiris", ""),
-        #"UNDERFLOW": ("ethor", ""),
+        "UNDERFLOW": ("mythril", "--modules IntegerArithmetics", None),
+        "UNDERFLOW": ("conkas", "-vt arithmetic", None),
+        "UNDERFLOW": ("osiris", "", None),
+        #"UNDERFLOW": ("ethor", "", None),
 
         # Visibility / authorization
-        "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage"),
-        "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state"),
+        "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage", None),
+        "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state", None),
         
         # Misc patterns
-        "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls"),
-        "LOW_LEVEL_CALL": ("conkas", "-vt unchecked_ll_calls"),
+        "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls", None),
+        "LOW_LEVEL_CALL": ("conkas", "-vt unchecked_ll_calls", None),
 
-        "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall"),
-        "SELFDESTRUCT": ("maian", "-c 0"),
-        "ASSERT_VIOLATION": ("mythril", "--modules Exceptions"),
-        "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage"),
-        "BLOCK_DEPENDENCE": ("slither", "--detect timestamp"),
+        "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall", None),
+        "SELFDESTRUCT": ("maian", "-c 0", None),
+        "ASSERT_VIOLATION": ("mythril", "--modules Exceptions", None),
+        "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage", None),
+        "BLOCK_DEPENDENCE": ("slither", "--detect timestamp", None),
 
-        "BLOCK_DEPENDENCE": ("conkas", "-vt time_manipulation"),
-        "WEAK_RANDOMNESS": ("slither", "--detect weak-prng"),
-        "VARIABLE_SHADOWING": ("slither", "--detect shadowing-state"),
-        "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards"),
-        "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state"),
-        "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther"),
-        #"MISSING_INPUT_VALIDATION": ("smartcheck", ""),
+        "BLOCK_DEPENDENCE": ("conkas", "-vt time_manipulation", None),
+        "WEAK_RANDOMNESS": ("slither", "--detect weak-prng", None),
+        "VARIABLE_SHADOWING": ("slither", "--detect shadowing-state", None),
+        "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards", None),
+        "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state", None),
+        "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther", None),
+        #"MISSING_INPUT_VALIDATION": ("smartcheck", "", None),
         
-        "ARBITRARY_JUMP": ("manticore", "--policy icount"),
-        "DOS_GAS_LIMIT": ("securify", ""),
+        "ARBITRARY_JUMP": ("manticore", "--policy icount", None),
+        "DOS_GAS_LIMIT": ("securify", "", None),
 
         # Information disclosure
-        "LEAK": ("slither", "--detect uninitialized-storage"),
+        "LEAK": ("slither", "--detect uninitialized-storage", None),
 
         # Versioning & other
-        "OUTDATED_COMPILER": ("slither", "--detect solc-version"),
-        "VERSION_PRAGMA": ("slither", "--detect solc-version"),
+        "OUTDATED_COMPILER": ("slither", "--detect solc-version", None),
+        "VERSION_PRAGMA": ("slither", "--detect solc-version", None),
 
     }
 
-    # Map base tool names to their requested argument sets
+    # Map base tool names to their requested argument sets and timeouts
     tool_args_map = {}
+    tool_timeout_map = {}
 
     existing_tool_keys = set()
     scheduled_tool_keys = set()
@@ -182,6 +186,10 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
             
             base_name = tool_entry[0].split("-")[0]
             args = tool_entry[1].strip()
+            timeout_id = tool_entry[2]
+            entry_timeout = (
+                sb.cfg.FOLLOWUP_TIMEOUTS.get(timeout_id) if timeout_id else None
+            )
             base_key = f"{base_name}|"
             tool_key = f"{base_name}|{args}"
 
@@ -197,13 +205,19 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
             else:
                 # A no-argument run overrides any flagged variants
                 arg_set.clear()
+            
+            if entry_timeout is not None:
+                prev = tool_timeout_map.get(base_name)
+                if prev is None or entry_timeout > prev:
+                    tool_timeout_map[base_name] = entry_timeout
         
         # Elaboration of the collected sets to create tool args
         scheduled = []
         for base_name, args_set in tool_args_map.items():
+            timeout = tool_timeout_map.get(base_name)
             # If a tool has no args, schedule it with just its base name
             if not args_set:    
-                scheduled.append((base_name, ""))
+                scheduled.append((base_name, "", timeout))
                 continue
             
             # Otherwise, group its args into a single command
@@ -222,7 +236,8 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
                 else:
                     combined_parts.append(prefix)
 
-            scheduled.append((base_name, " ".join(combined_parts)))
+            combined_args = " ".join(combined_parts)
+            scheduled.append((base_name, combined_args, timeout))
 
     sb.logging.message(f"Routing to tools: {scheduled}", "DEBUG")
 
@@ -271,6 +286,7 @@ def execute(task):
     executed = False
     tool_duration = 0.0
     tool_log = tool_output = docker_args = None
+    task.timeout = 15
     for attempt in range(3):
         #TODO rimuovere l'orario, serve solo per debug
 
@@ -402,7 +418,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                     task.settings.tool_keys = key_map
                 existing_tool_keys = key_map.setdefault(task.absfn, set())
                 skip_after_no_args = getattr(task.settings, "skip_after_no_args", False)
-                for tool_name, tool_args in next_tools:
+                for tool_name, tool_args, timeout in next_tools:
                     base_name = tool_name.split("-")[0]
                     tool_key = f"{base_name}|{tool_args.strip()}"
                     scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
@@ -413,7 +429,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                         continue
 
                     new_task = sb.smartbugs.collect_single_task(
-                        task.absfn, task.relfn, tool_name, task.settings, tool_args
+                        task.absfn, task.relfn, tool_name, task.settings, tool_args, timeout
                     )
                     if new_task:
                         taskqueue.put(new_task)

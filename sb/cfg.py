@@ -30,5 +30,15 @@ DEBUG = False
 FUZZER_TIMEOUTS = {
     "fast": 120,
     "normal": 300,
+    "accurate": 1000,
+}
+
+# Default timeouts (in seconds) for dynamically scheduled follow-up analyses.
+# Individual entries in ``VULN_TOOL_MAP`` reference these identifiers to select
+# an appropriate timeout for a follow-up run. Adjust the values here to change
+# how long fast, normal, or accurate follow-up analyses may run.
+FOLLOWUP_TIMEOUTS = {
+    "fast": 150,
+    "normal": 540,
     "accurate": 900,
 }
