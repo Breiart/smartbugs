@@ -56,7 +56,18 @@ for RUN in "${RUNS[@]}"; do
     fi
   done
   if [[ $ADD_RUNID == true ]]; then
-    ARGS+=(--runid "$(date +%Y%m%d_%H%M)")
+    DYNAMIC=true
+    for ARG in "${ARGS[@]}"; do
+      if [[ $ARG == --no-dynamic ]]; then
+        DYNAMIC=false
+        break
+      fi
+    done
+    if [[ $DYNAMIC == true ]]; then
+      ARGS+=(--runid "$(date +d_%Y%m%d_%H%M)")
+    else
+      ARGS+=(--runid "$(date +%Y%m%d_%H%M)")
+    fi
   fi
   ("$SB/smartbugs" "${ARGS[@]}")
   STATUS=$?
