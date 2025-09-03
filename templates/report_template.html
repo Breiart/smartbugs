@@ -43,49 +43,53 @@
     </table>
 
     <h2>Per Execution Summary</h2>
+    {% for group in tool_summary %}
+    <h3>Execution {{ group['Execution ID'] }} - {{ group['Tool'] }}</h3>
+    <p>Execution Time: {{ group['Exec Time'] }} | Total Vulns: {{ group['Total Vulns'] }}</p>
     <table>
         <tr>
-            <th>Execution ID</th>
-            <th>Total Exec Time</th>
-            <th>Total Runs</th>
-            <th>Total Vulns Found</th>
-            <th>Classified Vulnerabilities</th>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
         </tr>
-        {% for row in executions_summary %}
+        {% for v in group['Findings'] %}
         <tr>
-            <td>{{ row['Execution ID'] }}</td>
-             <td>{{ row['Total Exec Time'] }}</td>
-            <td>{{ row['Total Runs'] }}</td>
-            <td>{{ row['Total Vulns Found'] }}</td>
-            <td>{{ row.get('Classified Vulnerabilities', 0) }}</td>
+            <td>{{ v['Contract'] }}</td>
+            <td>{{ v['Line'] }}</td>
+            <td>{{ v['Category'] }}</td>
+            <td>{{ v['Vulnerability'] }}</td>
         </tr>
         {% endfor %}
     </table>
+    {% endfor %}
 
     <h2>Graphs</h2>
     {{ fig_time|safe }}
     {{ fig_vuln|safe }}
     {{ fig_scatter|safe }}
 
-    <h2>Per Category Summary</h2>
+    <h2>Per Tool Findings</h2>
+    {% for group in tool_summary %}
+    <h3>Execution {{ group['Execution ID'] }} - {{ group['Tool'] }}</h3>
+    <p>Execution Time: {{ group['Exec Time'] }} | Total Vulns: {{ group['Total Vulns'] }}</p>
     <table>
         <tr>
-            <th>Execution ID</th>
             <th>Contract</th>
             <th>Line</th>
             <th>Category</th>
-            <th>Tools</th>
+            <th>Vulnerability</th>
         </tr>
-        {% for row in category_summary %}
+        {% for v in group['Findings'] %}
         <tr>
-            <td>{{ row['Execution ID'] }}</td>
-            <td>{{ row['Contract'] }}</td>
-            <td>{{ row['Line'] }}</td>
-            <td>{{ row['Category'] }}</td>
-            <td>{{ row['Tools'] }}</td>
+            <td>{{ v['Contract'] }}</td>
+            <td>{{ v['Line'] }}</td>
+            <td>{{ v['Category'] }}</td>
+            <td>{{ v['Vulnerability'] }}</td>
         </tr>
         {% endfor %}
     </table>
+    {% endfor %}
 
     <h2>Per Vulnerability Summary</h2>
     <table>

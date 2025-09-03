@@ -8,8 +8,6 @@ from jinja2 import Template
 import re
 import sb.vulnerability
 
-#TODO: Testare i nuovi file finding.yaml e il nuovo report
-
 def _seconds_to_hms(seconds: float) -> str:
     """Return the given duration in ``HH:MM:SS`` format."""
     seconds = int(round(float(seconds)))
@@ -60,19 +58,15 @@ def load_csvs(input_folder: str) -> pd.DataFrame:
     df.rename(columns=rename_map, inplace=True)
     return df
 
-def _count_vulns(cell: str) -> int:
-    cell = str(cell).strip("{}[]")
-    if not cell or cell.lower() == "none":
-        return 0
-    cell = cell.replace('|', ',')
-    return len([v for v in cell.split(',') if v.strip()])
-
 def _split_values(cell: str) -> list:
     cell = str(cell).strip("{}[]")
     if not cell or cell.lower() == "none":
         return []
     cell = cell.replace("|", ",")
     return [v.strip() for v in cell.split(",") if v.strip()]
+
+def _count_vulns(cell: str) -> int:
+    return len(_split_values(cell))
 
 
 def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
@@ -91,9 +85,7 @@ def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
 def _join_vulns(series: pd.Series) -> str:
     values = set()
     for sub in series:
-        for v in str(sub).replace("|", ",").split(","):
-            v = v.strip()
-            if v and v.lower() != "none":
+        for v in _split_values(sub):
                 values.add(v)
     return ", ".join(sorted(values))
 
@@ -136,11 +128,13 @@ def render_html(df, output_file):
     )
 
     per_vuln_rows = []
+    analyzer = sb.vulnerability.VulnerabilityAnalyzer()
+    tool_summaries = []
+
     for (exec_id, contract), group in df.groupby(["Execution ID", "basename"]):
         vuln_tools = {}
         for _, row in group.iterrows():
-            vulns = str(row.get("vulnerabilities", "")).replace("|", ",")
-            for v in vulns.strip("{}[]").split(","):
+            for v in _split_values(row.get("vulnerabilities", "")):
                 parsed = _parse_vuln_entry(v)
                 if not parsed:
                     continue
@@ -157,37 +151,31 @@ def render_html(df, output_file):
             })
     per_vuln = pd.DataFrame(per_vuln_rows)
 
-    category_rows = []
-    analyzer = sb.vulnerability.VulnerabilityAnalyzer()
-    for (exec_id, contract), group in df.groupby(["Execution ID", "basename"]):
-        cat_tools = {}
+    for (exec_id, tool), group in df.groupby(["Execution ID", "tool"]):
+        total_time = group["execution_time"].sum()
+        findings = []
         for _, row in group.iterrows():
-            vulns = str(row.get("vulnerabilities", "")).replace("|", ",")
-            for v in vulns.strip("{}[]").split(","):
+            for v in _split_values(row.get("vulnerabilities", "")):
                 parsed = _parse_vuln_entry(v)
                 if not parsed:
                     continue
                 name, line = parsed
                 result = analyzer.classify_finding(row.get("tool", ""), {"name": name, "line": line})
-                for cat in result.get("categories", []):
-                    key = (cat, line or "")
-                    cat_tools.setdefault(key, set()).add(row.get("tool", ""))
-        for (cat, line), tools in cat_tools.items():
-            category_rows.append({
-                "Execution ID": exec_id,
-                "Contract": contract,
-                "Category": cat,
-                "Line": line or "",
-                "Tools": ", ".join(sorted(tools))
-            })
-    per_category = pd.DataFrame(category_rows)
-    
-    exec_classified = (
-        per_category.groupby("Execution ID")
-        .size()
-        .reset_index(name="Classified Vulnerabilities")
-    )
-
+                categories = result.get("categories", [])
+                cat_str = ", ".join(categories)
+                findings.append({
+                    "Contract": row.get("basename", ""),
+                    "Line": line or "",
+                    "Category": cat_str,
+                    "Vulnerability": name,
+                })
+        tool_summaries.append({
+            "Execution ID": exec_id,
+            "Tool": tool,
+            "Exec Time": _seconds_to_hms(total_time),
+            "Total Vulns": len(findings),
+            "Findings": findings,
+        })
     
     analysis_summary = (
         df.groupby("Execution ID")
@@ -199,13 +187,22 @@ def render_html(df, output_file):
     per_execution = (
         df.groupby("Execution ID")
           .agg(
-              **{
-                  "Total Exec Time": ("execution_time", "sum"),
-                  "Total Vulns Found": ("Vulnerabilities Count", "sum"),
-                  "Total Runs": ("execution_time", "count"),
-              }
+              total_time=("execution_time", "sum"),
+              total_vulns=("Vulnerabilities Count", "sum"),
           )
           .reset_index()
+    )
+    
+    per_execution_numeric = per_execution.rename(
+        columns={"total_time": "Total Exec Time", "total_vulns": "Total Vulns Found"}
+    )
+    
+    per_execution = per_execution.rename(
+        columns={
+            "total_time": "Total Exec Time",
+            "total_vulns": "Total Vulns Found",
+            "total_runs": "Total Runs",
+        }
     )
     per_execution["Total Exec Time"] = per_execution["Total Exec Time"].apply(_seconds_to_hms)
     per_execution = per_execution.merge(exec_classified, on="Execution ID", how="left")
@@ -237,8 +234,14 @@ def render_html(df, output_file):
         barmode="group",
         title="Total Vulnerabilities Found per Tool",
     )
-    fig_scatter = px.scatter(df, x="execution_time", y="Vulnerabilities Count", color="tool",
-                             hover_data=["Execution ID"], title="Time vs Vulnerabilities Found")
+
+    fig_scatter = px.scatter(
+        per_execution_numeric,
+        x="Total Exec Time",
+        y="Total Vulns Found",
+        hover_name="Execution ID",
+        title="Execution Time vs Vulnerabilities Found",
+    )
 
     template_path = Path(__file__).resolve().parents[1] / "templates" / "report_template.html"
     with open(template_path) as f:
@@ -250,8 +253,7 @@ def render_html(df, output_file):
                 executions=df.to_dict(orient="records"),
                 analysis_summary=analysis_summary.to_dict(orient="records"),
                 vuln_summary=per_vuln.to_dict(orient="records"),
-                executions_summary=per_execution.to_dict(orient="records"),
-                category_summary=per_category.to_dict(orient="records"),
+                tool_summary=tool_summaries,
                 overall=overall,
                 fig_time=fig_time.to_html(full_html=False, include_plotlyjs="cdn"),
                 fig_vuln=fig_vuln.to_html(full_html=False, include_plotlyjs=False),
