@@ -42,6 +42,29 @@
         {% endfor %}
     </table>
 
+    <h3>Per-Run Overview</h3>
+    <table class="summary-table">
+        <tr>
+            <th>Execution ID</th>
+            <th>Duration</th>
+            <th>Vulnerabilities Found</th>
+            <th>Classified Vulnerabilities</th>
+        </tr>
+        {% for row in per_run_summary %}
+        <tr>
+            <td>{{ row['Execution ID'] }}</td>
+            <td>{{ row['Exec Time'] }}</td>
+            <td>{{ row['Vulns Found'] }}</td>
+            <td>{{ row['Classified'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Graphs</h2>
+    {{ fig_time|safe }}
+    {{ fig_vuln|safe }}
+    {{ fig_scatter|safe }}
+
     <h2>Per Execution Summary</h2>
     {% for group in tool_summary %}
     <h3>Execution {{ group['Execution ID'] }} - {{ group['Tool'] }}</h3>
@@ -63,11 +86,6 @@
         {% endfor %}
     </table>
     {% endfor %}
-
-    <h2>Graphs</h2>
-    {{ fig_time|safe }}
-    {{ fig_vuln|safe }}
-    {{ fig_scatter|safe }}
 
     <h2>Per Tool Findings</h2>
     {% for group in tool_summary %}

@@ -59,11 +59,39 @@ def load_csvs(input_folder: str) -> pd.DataFrame:
     return df
 
 def _split_values(cell: str) -> list:
-    cell = str(cell).strip("{}[]")
-    if not cell or cell.lower() == "none":
+    """Split a delimited cell into individual values.
+
+    Handles formats like:
+    - "{a,b}" (postgres array)
+    - "{\"a\",\"b\"}" (quoted postgres array)
+    - "a,b" (plain CSV-joined)
+    - "a|b" (legacy pipe-joined)
+    """
+    s = str(cell)
+    if not s or s.lower() == "none":
         return []
-    cell = cell.replace("|", ",")
-    return [v.strip() for v in cell.split(",") if v.strip()]
+    # normalize and strip containers
+    s = s.strip().strip("{}[]")
+    s = s.replace("|", ",")
+    if not s:
+        return []
+    values = []
+    if '"' in s:
+        # Extract quoted or unquoted tokens separated by commas
+        import re as _re
+        for m in _re.finditer(r'"([^"\\]*(?:\\.[^"\\]*)*)"|([^,]+)', s):
+            token = m.group(1) if m.group(1) is not None else m.group(2)
+            if token is None:
+                continue
+            token = token.strip()
+            # Unescape quotes inside quoted strings
+            token = token.replace('\\"', '"')
+            if token:
+                values.append(token)
+    else:
+        values = [v.strip() for v in s.split(",") if v.strip()]
+    # Final cleanup: strip any surrounding single quotes
+    return [v.strip("'\"") for v in values if v]
 
 def _count_vulns(cell: str) -> int:
     return len(_split_values(cell))
@@ -77,7 +105,10 @@ def clean_and_process(df: pd.DataFrame) -> pd.DataFrame:
         df[object_cols] = df[object_cols].fillna("")
     if "execution_time" in df.columns:
         df["execution_time"] = pd.to_numeric(df["execution_time"], errors="coerce").fillna(0)
-    df["Vulnerabilities Count"] = df.get("vulnerabilities", "").apply(_count_vulns)
+    # Ensure a vulnerabilities column exists before counting
+    if "vulnerabilities" not in df.columns:
+        df["vulnerabilities"] = ""
+    df["Vulnerabilities Count"] = df["vulnerabilities"].apply(_count_vulns)
     if "categories" in df.columns:
         df["Categories Count"] = df["categories"].apply(lambda c: len(_split_values(c)))
     return df
@@ -197,25 +228,47 @@ def render_html(df, output_file):
         columns={"total_time": "Total Exec Time", "total_vulns": "Total Vulns Found"}
     )
     
+    # Prepare a human-readable version (if needed later) without relying on undefined variables
     per_execution = per_execution.rename(
         columns={
             "total_time": "Total Exec Time",
             "total_vulns": "Total Vulns Found",
-            "total_runs": "Total Runs",
         }
     )
     per_execution["Total Exec Time"] = per_execution["Total Exec Time"].apply(_seconds_to_hms)
-    per_execution = per_execution.merge(exec_classified, on="Execution ID", how="left")
-    if "Classified Vulnerabilities" in per_execution.columns:
-        per_execution["Classified Vulnerabilities"] = per_execution[
-            "Classified Vulnerabilities"
-        ].fillna(0).astype(int)
     
     overall = {
         "Total Executions": df["Execution ID"].nunique(),
         "Total Time": _seconds_to_hms(df["execution_time"].sum()),
         "Total Vulns Found": df["Vulnerabilities Count"].sum()
     }
+
+    # Build per-run summary including duration, vulnerabilities found and classified count
+    # Aggregate classified counts from tool_summaries to avoid re-parsing
+    run_classified = {}
+    run_found = {}
+    for ts in tool_summaries:
+        exec_id = ts["Execution ID"]
+        found = len(ts.get("Findings", []))
+        classified = 0
+        for f in ts.get("Findings", []):
+            cat = str(f.get("Category", "")).strip()
+            if cat and cat.upper() != "UNCLASSIFIED":
+                classified += 1
+        run_found[exec_id] = run_found.get(exec_id, 0) + found
+        run_classified[exec_id] = run_classified.get(exec_id, 0) + classified
+
+    # Merge with per_execution to get total exec time per run (already HH:MM:SS)
+    per_run_table = []
+    exec_time_map = {row["Execution ID"]: row["Total Exec Time"] for _, row in per_execution.iterrows()}
+    exec_ids = sorted(set(list(run_found.keys()) + list(exec_time_map.keys())))
+    for eid in exec_ids:
+        per_run_table.append({
+            "Execution ID": eid,
+            "Exec Time": exec_time_map.get(eid, _seconds_to_hms(0)),
+            "Vulns Found": int(run_found.get(eid, 0)),
+            "Classified": int(run_classified.get(eid, 0)),
+        })
 
 
     fig_time = px.bar(
@@ -252,6 +305,7 @@ def render_html(df, output_file):
             template.render(
                 executions=df.to_dict(orient="records"),
                 analysis_summary=analysis_summary.to_dict(orient="records"),
+                per_run_summary=per_run_table,
                 vuln_summary=per_vuln.to_dict(orient="records"),
                 tool_summary=tool_summaries,
                 overall=overall,
