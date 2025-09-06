@@ -1,0 +1,8 @@
+/sb/wallet_02_refund_nosub.sol:7:2: Compiler version ^0.4.24 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/wallet_02_refund_nosub.sol:15:6: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/wallet_02_refund_nosub.sol:17:6: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/wallet_02_refund_nosub.sol:29:10: Provide an error message for require [Warning/reason-string]
+/sb/wallet_02_refund_nosub.sol:31:10: Possible reentrancy vulnerabilities. Avoid state changes after transfer. [Warning/reentrancy]
+/sb/wallet_02_refund_nosub.sol:42:10: Provide an error message for require [Warning/reason-string]
+
+6 problems

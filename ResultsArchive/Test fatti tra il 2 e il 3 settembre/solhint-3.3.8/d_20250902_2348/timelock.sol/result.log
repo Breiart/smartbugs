@@ -1,0 +1,7 @@
+/sb/timelock.sol:8:2: Compiler version ^0.4.10 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/timelock.sol:17:33: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+/sb/timelock.sol:26:10: Provide an error message for require [Warning/reason-string]
+/sb/timelock.sol:27:10: Provide an error message for require [Warning/reason-string]
+/sb/timelock.sol:27:18: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+
+5 problems

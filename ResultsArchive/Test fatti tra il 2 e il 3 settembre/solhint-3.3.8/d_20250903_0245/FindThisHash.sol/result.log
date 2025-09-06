@@ -1,0 +1,7 @@
+/sb/FindThisHash.sol:7:1: Compiler version ^0.4.22 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/FindThisHash.sol:10:5: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+/sb/FindThisHash.sol:12:34: Code contains empty blocks [Warning/no-empty-blocks]
+/sb/FindThisHash.sol:17:9: Provide an error message for require [Warning/reason-string]
+/sb/FindThisHash.sol:17:25: Use "keccak256" instead of deprecated "sha3" [Warning/avoid-sha3]
+
+5 problems

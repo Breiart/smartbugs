@@ -1,0 +1,63 @@
+Arguments passed: ['/home/user/Documents/GitHub/smartbugs/sb/__main__.py', '-t', 'slither', '-f', 'samples/Split3/ERC20.sol', 'samples/Split3/eth_tx_order_dependence_minimal.sol', 'samples/Split3/FindThisHash.sol', 'samples/Split3/roulette.sol', 'samples/Split3/unprotected0.sol', 'samples/Split3/wallet_02_refund_nosub.sol', 'samples/Split3/wallet_03_wrong_constructor.sol']
+Settings: {files: [(None, 'samples/Split3/ERC20.sol'), (None, 'samples/Split3/eth_tx_order_dependence_minimal.sol'), (None, 'samples/Split3/FindThisHash.sol'), (None, 'samples/Split3/roulette.sol'), (None, 'samples/Split3/unprotected0.sol'), (None, 'samples/Split3/wallet_02_refund_nosub.sol'), (None, 'samples/Split3/wallet_03_wrong_constructor.sol')], main: False, runtime: False, tools: ['slither'], tool_keys: {}, tool_arg_history: {}, skip_after_no_args: True, dynamic: True, runid: d_20250903_1214, overwrite: False, processes: 1, timeout: None, cpu_quota: None, mem_limit: None, results: results/${TOOL}/d_20250903_1214/${FILENAME}, log: results/logs/d_20250903_1214.log, json: False, sarif: False, quiet: False, fuzz_mode: normal}
+Starting task 1/7: slither-0.10.4 with no args and samples/Split3/ERC20.sol
+Starting task 2/9: slither-0.10.4 with no args and samples/Split3/FindThisHash.sol
+Starting task 3/11: slither-0.10.4 with no args and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 4/14: slither-0.10.4 with no args and samples/Split3/roulette.sol
+Starting task 5/16: slither-0.10.4 with no args and samples/Split3/unprotected0.sol
+Starting task 6/18: slither-0.10.4 with no args and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 7/21: slither-0.10.4 with no args and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 8/24: osiris with no args and samples/Split3/ERC20.sol
+Starting task 9/25: conkas with args -vt time_manipulation and samples/Split3/ERC20.sol
+Starting task 10/26: osiris with no args and samples/Split3/FindThisHash.sol
+Starting task 11/27: conkas with args -vt time_manipulation and samples/Split3/FindThisHash.sol
+Starting task 12/28: osiris with no args and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 13/29: conkas with args -vt time_manipulation and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 14/30: mythril-0.24.7 with args --modules ExternalCalls and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 15/31: conkas with args -vt time_manipulation and samples/Split3/roulette.sol
+Starting task 16/32: osiris with no args and samples/Split3/roulette.sol
+Starting task 17/33: osiris with no args and samples/Split3/unprotected0.sol
+Starting task 18/34: conkas with args -vt time_manipulation and samples/Split3/unprotected0.sol
+Starting task 19/35: osiris with no args and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 20/36: conkas with args -vt time_manipulation and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 21/37: mythril-0.24.7 with args --modules ExternalCalls and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 22/38: osiris with no args and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 23/39: conkas with args -vt time_manipulation and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 24/40: mythril-0.24.7 with args --modules ExternalCalls and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 25/41: smartcheck with no args and samples/Split3/ERC20.sol
+Starting task 26/42: mythril-0.24.7 with no args and samples/Split3/ERC20.sol
+Starting task 27/43: smartcheck with no args and samples/Split3/FindThisHash.sol
+Starting task 28/44: mythril-0.24.7 with no args and samples/Split3/FindThisHash.sol
+Starting task 29/45: smartcheck with no args and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 30/46: solhint-3.3.8 with no args and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 31/46: maian with no args and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 32/46: smartcheck with no args and samples/Split3/roulette.sol
+Starting task 33/48: mythril-0.24.7 with no args and samples/Split3/roulette.sol
+Starting task 34/49: smartcheck with no args and samples/Split3/unprotected0.sol
+Starting task 35/50: mythril-0.24.7 with no args and samples/Split3/unprotected0.sol
+Starting task 36/51: smartcheck with no args and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 37/52: solhint-3.3.8 with no args and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 38/52: maian with no args and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 39/52: smartcheck with no args and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 40/53: solhint-3.3.8 with no args and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 41/53: maian with no args and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 42/53: solhint-3.3.8 with no args and samples/Split3/ERC20.sol
+Starting task 43/54: maian with no args and samples/Split3/ERC20.sol
+Starting task 44/54: solhint-3.3.8 with no args and samples/Split3/FindThisHash.sol
+Starting task 45/55: maian with no args and samples/Split3/FindThisHash.sol
+Starting task 46/55: confuzzius with no args and samples/Split3/eth_tx_order_dependence_minimal.sol
+Starting task 47/55: securify with no args and samples/Split3/roulette.sol
+Starting task 48/56: manticore-0.3.7 with args --thorough-mode and samples/Split3/roulette.sol
+Starting task 49/57: solhint-3.3.8 with no args and samples/Split3/roulette.sol
+Starting task 50/57: solhint-3.3.8 with no args and samples/Split3/unprotected0.sol
+Starting task 51/58: maian with no args and samples/Split3/unprotected0.sol
+Starting task 52/58: confuzzius with no args and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 53/59: confuzzius with no args and samples/Split3/wallet_03_wrong_constructor.sol
+Starting task 54/60: confuzzius with no args and samples/Split3/ERC20.sol
+Starting task 55/60: confuzzius with no args and samples/Split3/FindThisHash.sol
+Starting task 56/60: maian with no args and samples/Split3/roulette.sol
+Starting task 57/60: confuzzius with no args and samples/Split3/roulette.sol
+Starting task 58/60: confuzzius with no args and samples/Split3/unprotected0.sol
+Starting task 59/60: mythril-0.24.7 with args --modules Exceptions and samples/Split3/wallet_02_refund_nosub.sol
+Starting task 60/60: mythril-0.24.7 with args --modules Exceptions and samples/Split3/wallet_03_wrong_constructor.sol
+Analysis completed in 0:09:50.

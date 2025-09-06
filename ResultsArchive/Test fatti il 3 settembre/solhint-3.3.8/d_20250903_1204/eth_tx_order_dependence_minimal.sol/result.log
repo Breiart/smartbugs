@@ -1,0 +1,10 @@
+/sb/eth_tx_order_dependence_minimal.sol:7:1: Compiler version ^0.4.16 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/eth_tx_order_dependence_minimal.sol:19:9: Provide an error message for require [Warning/reason-string]
+/sb/eth_tx_order_dependence_minimal.sol:21:9: Provide an error message for require [Warning/reason-string]
+/sb/eth_tx_order_dependence_minimal.sol:24:9: Possible reentrancy vulnerabilities. Avoid state changes after transfer. [Warning/reentrancy]
+/sb/eth_tx_order_dependence_minimal.sol:27:5: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/eth_tx_order_dependence_minimal.sol:28:9: Provide an error message for require [Warning/reason-string]
+/sb/eth_tx_order_dependence_minimal.sol:29:9: Provide an error message for require [Warning/reason-string]
+/sb/eth_tx_order_dependence_minimal.sol:32:9: Possible reentrancy vulnerabilities. Avoid state changes after transfer. [Warning/reentrancy]
+
+8 problems

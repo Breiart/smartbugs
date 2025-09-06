@@ -1,0 +1,41 @@
+'solc --version' running
+'solc /sb/reentrancy_dao.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+Reentrancy in ReentrancyDAO.withdrawAll() (../../sb/reentrancy_dao.sol#13-22):
+	External calls:
+	- callResult = msg.sender.call.value(oCredit)() (../../sb/reentrancy_dao.sol#18)
+	State variables written after the call(s):
+	- credit[msg.sender] = 0 (../../sb/reentrancy_dao.sol#20)
+	ReentrancyDAO.credit (../../sb/reentrancy_dao.sol#10) can be used in cross function reentrancies:
+	- ReentrancyDAO.deposit() (../../sb/reentrancy_dao.sol#24-27)
+	- ReentrancyDAO.withdrawAll() (../../sb/reentrancy_dao.sol#13-22)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+
+Version constraint ^0.4.19 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- ^0.4.19 (../../sb/reentrancy_dao.sol#7)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Low level call in ReentrancyDAO.withdrawAll() (../../sb/reentrancy_dao.sol#13-22):
+	- callResult = msg.sender.call.value(oCredit)() (../../sb/reentrancy_dao.sol#18)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+/sb/reentrancy_dao.sol analyzed (1 contracts with 93 detectors), 4 result(s) found

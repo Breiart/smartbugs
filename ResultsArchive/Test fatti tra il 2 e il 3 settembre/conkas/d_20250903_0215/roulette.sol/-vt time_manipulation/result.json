@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 132,
+            "contract": "Roulette",
+            "filename": "samples/Split3/roulette.sol",
+            "function": "_fallthrough",
+            "line": 21,
+            "name": "Time Manipulation"
+        },
+        {
+            "address": 110,
+            "contract": "Roulette",
+            "filename": "samples/Split3/roulette.sol",
+            "function": "_fallthrough",
+            "line": 20,
+            "name": "Time Manipulation"
+        },
+        {
+            "address": 99,
+            "contract": "Roulette",
+            "filename": "samples/Split3/roulette.sol",
+            "function": "_fallthrough",
+            "line": 18,
+            "name": "Time Manipulation"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": "-vt time_manipulation"
+}

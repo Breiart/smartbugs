@@ -1,0 +1,50 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "ReentrancyDAO",
+            "filename": "samples/Split1/reentrancy_dao.sol",
+            "function": "withdrawAll",
+            "impact": "High",
+            "line": 13,
+            "line_end": 22,
+            "message": "Reentrancy in ReentrancyDAO.withdrawAll() (reentrancy_dao.sol#13-22):\n\tExternal calls:\n\t- callResult = msg.sender.call.value(oCredit)() (reentrancy_dao.sol#18)\n\tState variables written after the call(s):\n\t- credit[msg.sender] = 0 (reentrancy_dao.sol#20)\n\tReentrancyDAO.credit (reentrancy_dao.sol#10) can be used in cross function reentrancies:\n\t- ReentrancyDAO.deposit() (reentrancy_dao.sol#24-27)\n\t- ReentrancyDAO.withdrawAll() (reentrancy_dao.sol#13-22)\n",
+            "name": "reentrancy-eth"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/reentrancy_dao.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.19 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.19 (reentrancy_dao.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/reentrancy_dao.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "ReentrancyDAO",
+            "filename": "samples/Split1/reentrancy_dao.sol",
+            "function": "withdrawAll",
+            "impact": "Informational",
+            "line": 13,
+            "line_end": 22,
+            "message": "Low level call in ReentrancyDAO.withdrawAll() (reentrancy_dao.sol#13-22):\n\t- callResult = msg.sender.call.value(oCredit)() (reentrancy_dao.sol#18)\n",
+            "name": "low-level-calls"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

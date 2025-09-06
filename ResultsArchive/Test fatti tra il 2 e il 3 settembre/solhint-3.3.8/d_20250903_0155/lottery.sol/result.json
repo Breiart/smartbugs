@@ -1,0 +1,111 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 3,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "error",
+            "line": 9,
+            "message": "Compiler version ^0.4.0 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 24,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "When fallback is not payable you will not be able to receive ether",
+            "name": "payable-fallback"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 10,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 30,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 18,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 48,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 54,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 40,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 55,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 63,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 40,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 64,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        },
+        {
+            "column": 10,
+            "filename": "samples/Split2/lottery.sol",
+            "level": "warning",
+            "line": 66,
+            "message": "Use \"selfdestruct\" instead of deprecated \"suicide\"",
+            "name": "avoid-suicide"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

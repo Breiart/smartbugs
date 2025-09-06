@@ -1,0 +1,64 @@
+Arguments passed: ['/home/user/Documents/GitHub/smartbugs/sb/__main__.py', '-t', 'slither', '-f', 'samples/Split1/etherbank.sol', 'samples/Split1/insecure_transfer.sol', 'samples/Split1/modifier_reentrancy.sol', 'samples/Split1/reentrance.sol', 'samples/Split1/reentrancy_dao.sol', 'samples/Split1/timelock.sol', 'samples/Split1/token.sol']
+Settings: {files: [(None, 'samples/Split1/etherbank.sol'), (None, 'samples/Split1/insecure_transfer.sol'), (None, 'samples/Split1/modifier_reentrancy.sol'), (None, 'samples/Split1/reentrance.sol'), (None, 'samples/Split1/reentrancy_dao.sol'), (None, 'samples/Split1/timelock.sol'), (None, 'samples/Split1/token.sol')], main: False, runtime: False, tools: ['slither'], tool_keys: {}, tool_arg_history: {}, skip_after_no_args: True, dynamic: True, runid: d_20250902_2330, overwrite: False, processes: 1, timeout: None, cpu_quota: None, mem_limit: None, results: results/${TOOL}/d_20250902_2330/${FILENAME}, log: results/logs/d_20250902_2330.log, json: False, sarif: False, quiet: False, fuzz_mode: normal}
+Starting task 1/7: slither-0.10.4 with no args and samples/Split1/etherbank.sol
+Starting task 2/10: slither-0.10.4 with no args and samples/Split1/insecure_transfer.sol
+Starting task 3/13: slither-0.10.4 with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 4/16: slither-0.10.4 with no args and samples/Split1/reentrance.sol
+Starting task 5/19: slither-0.10.4 with no args and samples/Split1/reentrancy_dao.sol
+Starting task 6/22: slither-0.10.4 with no args and samples/Split1/timelock.sol
+Starting task 7/25: slither-0.10.4 with no args and samples/Split1/token.sol
+Starting task 8/27: conkas with args -vt time_manipulation,unchecked_ll_calls and samples/Split1/etherbank.sol
+Starting task 9/28: mythril-0.24.7 with args --modules ArbitraryDelegateCall,ExternalCalls and samples/Split1/etherbank.sol
+Starting task 10/29: osiris with no args and samples/Split1/etherbank.sol
+Starting task 11/30: osiris with no args and samples/Split1/insecure_transfer.sol
+Starting task 12/31: mythril-0.24.7 with args --modules ArbitraryDelegateCall and samples/Split1/insecure_transfer.sol
+Starting task 13/32: conkas with args -vt time_manipulation and samples/Split1/insecure_transfer.sol
+Starting task 14/33: mythril-0.24.7 with args --modules ExternalCalls and samples/Split1/modifier_reentrancy.sol
+Starting task 15/34: osiris with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 16/35: conkas with args -vt time_manipulation and samples/Split1/modifier_reentrancy.sol
+Starting task 17/36: conkas with args -vt time_manipulation,unchecked_ll_calls and samples/Split1/reentrance.sol
+Starting task 18/37: mythril-0.24.7 with args --modules ExternalCalls and samples/Split1/reentrance.sol
+Starting task 19/38: osiris with no args and samples/Split1/reentrance.sol
+Starting task 20/39: conkas with args -vt time_manipulation,unchecked_ll_calls and samples/Split1/reentrancy_dao.sol
+Starting task 21/40: mythril-0.24.7 with args --modules ExternalCalls and samples/Split1/reentrancy_dao.sol
+Starting task 22/41: osiris with no args and samples/Split1/reentrancy_dao.sol
+Starting task 23/42: conkas with args -vt time_manipulation and samples/Split1/timelock.sol
+Starting task 24/43: mythril-0.24.7 with args --modules ArbitraryDelegateCall and samples/Split1/timelock.sol
+Starting task 25/44: osiris with no args and samples/Split1/timelock.sol
+Starting task 26/45: osiris with no args and samples/Split1/token.sol
+Starting task 27/46: conkas with args -vt time_manipulation and samples/Split1/token.sol
+Starting task 28/47: smartcheck with no args and samples/Split1/etherbank.sol
+Starting task 29/48: securify with no args and samples/Split1/etherbank.sol
+Starting task 30/49: solhint-3.3.8 with no args and samples/Split1/etherbank.sol
+Starting task 31/50: smartcheck with no args and samples/Split1/insecure_transfer.sol
+Starting task 32/51: solhint-3.3.8 with no args and samples/Split1/insecure_transfer.sol
+Starting task 33/51: maian with no args and samples/Split1/insecure_transfer.sol
+Starting task 34/51: securify with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 35/52: smartcheck with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 36/53: solhint-3.3.8 with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 37/53: smartcheck with no args and samples/Split1/reentrance.sol
+Starting task 38/54: solhint-3.3.8 with no args and samples/Split1/reentrance.sol
+Starting task 39/55: securify with no args and samples/Split1/reentrance.sol
+Starting task 40/55: smartcheck with no args and samples/Split1/reentrancy_dao.sol
+Starting task 41/56: securify with no args and samples/Split1/reentrancy_dao.sol
+Starting task 42/57: solhint-3.3.8 with no args and samples/Split1/reentrancy_dao.sol
+Starting task 43/57: smartcheck with no args and samples/Split1/timelock.sol
+Starting task 44/58: solhint-3.3.8 with no args and samples/Split1/timelock.sol
+Starting task 45/58: maian with no args and samples/Split1/timelock.sol
+Starting task 46/58: smartcheck with no args and samples/Split1/token.sol
+Starting task 47/59: mythril-0.24.7 with no args and samples/Split1/token.sol
+Starting task 48/60: mythril-0.24.7 with args --modules Exceptions and samples/Split1/etherbank.sol
+Starting task 49/60: maian with no args and samples/Split1/etherbank.sol
+Starting task 50/60: confuzzius with no args and samples/Split1/etherbank.sol
+Starting task 51/60: confuzzius with no args and samples/Split1/insecure_transfer.sol
+Starting task 52/60: maian with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 53/60: confuzzius with no args and samples/Split1/modifier_reentrancy.sol
+Starting task 54/60: maian with no args and samples/Split1/reentrance.sol
+Starting task 55/60: confuzzius with no args and samples/Split1/reentrance.sol
+Starting task 56/60: maian with no args and samples/Split1/reentrancy_dao.sol
+Starting task 57/60: confuzzius with no args and samples/Split1/reentrancy_dao.sol
+Starting task 58/60: confuzzius with no args and samples/Split1/timelock.sol
+Starting task 59/60: solhint-3.3.8 with no args and samples/Split1/token.sol
+Starting task 60/61: maian with no args and samples/Split1/token.sol
+Starting task 61/61: confuzzius with no args and samples/Split1/token.sol
+Analysis completed in 0:09:07.

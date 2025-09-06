@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "Reentrance",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/Split1/reentrance.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "Reentrance",
+            "feature": "PRODIGAL_NOT_FOUND",
+            "filename": "samples/Split1/reentrance.sol",
+            "name": "No prodigal vulnerability found"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

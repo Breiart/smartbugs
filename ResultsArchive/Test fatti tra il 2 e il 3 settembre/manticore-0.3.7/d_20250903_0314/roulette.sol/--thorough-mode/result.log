@@ -1,0 +1,19 @@
+2025-09-03 01:22:09,080: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
+2025-09-03 01:22:09,080: [11] m.main:INFO: Beginning analysis
+2025-09-03 01:22:09,082: [11] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-03 01:22:09,326: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-03 01:22:10,065: [11] m.e.manticore:INFO: 1 alive states, 2 terminated states
+2025-09-03 01:22:10,150: [11] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-03 01:22:10,880: [11] m.e.manticore:INFO: 1 alive states, 4 terminated states
+2025-09-03 01:22:11,049: [86] m.c.manticore:INFO: Generated testcase No. 0 - RETURN(3 txs)
+2025-09-03 01:22:11,050: [86] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 01:22:11,068: [88] m.c.manticore:INFO: Generated testcase No. 1 - REVERT(2 txs)
+2025-09-03 01:22:11,069: [88] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 01:22:11,085: [90] m.c.manticore:INFO: Generated testcase No. 2 - REVERT(3 txs)
+2025-09-03 01:22:11,086: [90] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 01:22:11,118: [91] m.c.manticore:INFO: Generated testcase No. 4 - REVERT(3 txs)
+2025-09-03 01:22:11,118: [87] m.c.manticore:INFO: Generated testcase No. 3 - REVERT(2 txs)
+2025-09-03 01:22:11,119: [87] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 01:22:11,120: [91] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 01:22:12,232: [11] m.c.manticore:INFO: Results in /mcore_3rm38ydw
+2025-09-03 01:22:12,232: [11] m.c.manticore:INFO: Total time: 2.07826828956604

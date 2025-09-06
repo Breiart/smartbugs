@@ -1,0 +1,29 @@
+{
+    "errors": [
+        "Unknown operation"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "Wallet",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/Split3/wallet_02_refund_nosub.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "Wallet",
+            "feature": "PRODIGAL_NOT_FOUND",
+            "filename": "samples/Split3/wallet_02_refund_nosub.sol",
+            "name": "No prodigal vulnerability found"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

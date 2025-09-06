@@ -1,0 +1,80 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "GuessTheRandomNumberChallenge",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "function": "guess",
+            "impact": "High",
+            "line": 22,
+            "line_end": 28,
+            "message": "GuessTheRandomNumberChallenge.guess(uint8) (guess_the_random_number.sol#22-28) sends eth to arbitrary user\n\tDangerous calls:\n\t- msg.sender.transfer(2000000000000000000) (guess_the_random_number.sol#26)\n",
+            "name": "arbitrary-send-eth"
+        },
+        {
+            "confidence": "High",
+            "contract": "GuessTheRandomNumberChallenge",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "function": "guess",
+            "impact": "Medium",
+            "line": 22,
+            "line_end": 28,
+            "message": "GuessTheRandomNumberChallenge.guess(uint8) (guess_the_random_number.sol#22-28) uses a dangerous strict equality:\n\t- n == answer (guess_the_random_number.sol#25)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "GuessTheRandomNumberChallenge",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "function": "isComplete",
+            "impact": "Medium",
+            "line": 18,
+            "line_end": 20,
+            "message": "GuessTheRandomNumberChallenge.isComplete() (guess_the_random_number.sol#18-20) uses a dangerous strict equality:\n\t- address(this).balance == 0 (guess_the_random_number.sol#19)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GuessTheRandomNumberChallenge",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "function": "guess",
+            "impact": "Low",
+            "line": 22,
+            "line_end": 28,
+            "message": "GuessTheRandomNumberChallenge.guess(uint8) (guess_the_random_number.sol#22-28) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- n == answer (guess_the_random_number.sol#25)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "impact": "Informational",
+            "line": 15,
+            "message": "Deprecated standard detected answer = uint8(keccak256()(block.blockhash(block.number - 1),now)) (guess_the_random_number.sol#15):\n\t- Usage of \"block.blockhash()\" should be replaced with \"blockhash()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.21 (guess_the_random_number.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

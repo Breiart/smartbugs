@@ -1,0 +1,12 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": "-vt unchecked_ll_calls"
+}

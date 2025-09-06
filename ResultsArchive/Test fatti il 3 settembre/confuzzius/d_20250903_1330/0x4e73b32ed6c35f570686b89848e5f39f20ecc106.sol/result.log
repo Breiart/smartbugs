@@ -1,0 +1,71 @@
+2025-09-03 11:42:27,903 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-03 11:42:27,947 - Fuzzer   - INFO - [1mFuzzing contract [1mLogFile[0m[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33mSource code line:[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m/sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol:83:1[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33mMessage[] public History[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,020 - Detector - INFO - [1m[33mTransaction - History(uint256):[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33mInput:     0xa21f036895099faed9878036b54f464d7ddab642[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33m           6d6e924e32009489ade9696412026587[0m
+2025-09-03 11:42:28,021 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 11:42:28,033 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 58.99% (443/751) 	 Branch coverage: 55.56% (20/36) 	 Transactions: 7 (6 unique)   	 Time: 0.07751059532165527[0m
+2025-09-03 11:42:28,166 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 58.99% (443/751) 	 Branch coverage: 55.56% (20/36) 	 Transactions: 16 (11 unique)   	 Time: 0.2105724811553955[0m
+2025-09-03 11:42:28,452 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 58.99% (443/751) 	 Branch coverage: 55.56% (20/36) 	 Transactions: 28 (16 unique)   	 Time: 0.49681901931762695[0m
+2025-09-03 11:42:28,711 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 58.99% (443/751) 	 Branch coverage: 55.56% (20/36) 	 Transactions: 43 (22 unique)   	 Time: 0.7561683654785156[0m
+2025-09-03 11:42:28,982 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 58.99% (443/751) 	 Branch coverage: 55.56% (20/36) 	 Transactions: 61 (27 unique)   	 Time: 1.0264511108398438[0m
+2025-09-03 11:42:29,361 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 91.88% (690/751) 	 Branch coverage: 75.00% (27/36) 	 Transactions: 79 (32 unique)   	 Time: 1.405517339706421[0m
+2025-09-03 11:42:29,470 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 91.88% (690/751) 	 Branch coverage: 75.00% (27/36) 	 Transactions: 97 (36 unique)   	 Time: 1.514768123626709[0m
+2025-09-03 11:42:30,287 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 91.88% (690/751) 	 Branch coverage: 75.00% (27/36) 	 Transactions: 113 (39 unique)   	 Time: 2.3313419818878174[0m
+2025-09-03 11:42:30,975 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 91.88% (690/751) 	 Branch coverage: 75.00% (27/36) 	 Transactions: 130 (43 unique)   	 Time: 3.0202488899230957[0m
+2025-09-03 11:42:31,641 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 91.88% (690/751) 	 Branch coverage: 75.00% (27/36) 	 Transactions: 146 (46 unique)   	 Time: 3.686197519302368[0m
+2025-09-03 11:42:32,216 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 91.88% (690/751) 	 Branch coverage: 75.00% (27/36) 	 Transactions: 162 (49 unique)   	 Time: 4.260914325714111[0m
+2025-09-03 11:42:32,712 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-03 11:42:32,712 - Analysis - INFO - Number of generations: 	 10
+2025-09-03 11:42:32,712 - Analysis - INFO - Number of transactions: 	 162 (49 unique)
+2025-09-03 11:42:32,712 - Analysis - INFO - Transactions per second: 	 34
+2025-09-03 11:42:32,712 - Analysis - INFO - Total code coverage: 	 91.88% (690/751)
+2025-09-03 11:42:32,712 - Analysis - INFO - Total branch coverage: 	 75.00% (27/36)
+2025-09-03 11:42:32,712 - Analysis - INFO - Total execution time: 	 4.76 seconds
+2025-09-03 11:42:32,712 - Analysis - INFO - Total memory consumption: 	 74.94 MB
+2025-09-03 11:42:32,714 - Fuzzer   - INFO - [1mFuzzing contract [1mPRIVATE_ETH_CELL[0m[0m
+2025-09-03 11:42:32,788 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 69.77% (367/526) 	 Branch coverage: 69.05% (29/42) 	 Transactions: 17 (16 unique)   	 Time: 0.07043623924255371[0m
+2025-09-03 11:42:32,929 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 43 (28 unique)   	 Time: 0.21151947975158691[0m
+2025-09-03 11:42:33,279 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 92 (41 unique)   	 Time: 0.5609853267669678[0m
+2025-09-03 11:42:33,675 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 146 (51 unique)   	 Time: 0.9574143886566162[0m
+2025-09-03 11:42:34,081 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 197 (60 unique)   	 Time: 1.3635144233703613[0m
+2025-09-03 11:42:34,484 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 252 (69 unique)   	 Time: 1.7663729190826416[0m
+2025-09-03 11:42:34,851 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 305 (79 unique)   	 Time: 2.1336257457733154[0m
+2025-09-03 11:42:35,253 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 364 (89 unique)   	 Time: 2.53523325920105[0m
+2025-09-03 11:42:35,657 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 423 (99 unique)   	 Time: 2.9390757083892822[0m
+2025-09-03 11:42:36,093 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 486 (107 unique)   	 Time: 3.375649929046631[0m
+2025-09-03 11:42:36,494 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 70.34% (370/526) 	 Branch coverage: 71.43% (30/42) 	 Transactions: 540 (115 unique)   	 Time: 3.7759714126586914[0m
+2025-09-03 11:42:36,514 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-03 11:42:36,514 - Analysis - INFO - Number of generations: 	 10
+2025-09-03 11:42:36,514 - Analysis - INFO - Number of transactions: 	 540 (115 unique)
+2025-09-03 11:42:36,514 - Analysis - INFO - Transactions per second: 	 142
+2025-09-03 11:42:36,514 - Analysis - INFO - Total code coverage: 	 70.34% (370/526)
+2025-09-03 11:42:36,514 - Analysis - INFO - Total branch coverage: 	 71.43% (30/42)
+2025-09-03 11:42:36,514 - Analysis - INFO - Total execution time: 	 3.80 seconds
+2025-09-03 11:42:36,514 - Analysis - INFO - Total memory consumption: 	 78.81 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

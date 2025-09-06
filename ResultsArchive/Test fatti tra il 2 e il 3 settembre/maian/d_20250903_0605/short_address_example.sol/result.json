@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "MyToken",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/Split4/short_address_example.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "MyToken",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/Split4/short_address_example.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

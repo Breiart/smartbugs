@@ -1,0 +1,43 @@
+'solc --version' running
+'solc /sb/short_address_example.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/short_address_example.sol:
+/sb/short_address_example.sol:14:6: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+     function MyToken() {
+     ^ (Relevant source part starts here and spans across multiple lines).
+/sb/short_address_example.sol:22:10: Warning: Invoking events without "emit" prefix is deprecated.
+         Transfer(msg.sender, to, amount);
+         ^------------------------------^
+/sb/short_address_example.sol:14:6: Warning: No visibility specified. Defaulting to "public". 
+     function MyToken() {
+     ^ (Relevant source part starts here and spans across multiple lines).
+/sb/short_address_example.sol:18:6: Warning: No visibility specified. Defaulting to "public". 
+     function sendCoin(address to, uint amount) returns(bool sufficient) {
+     ^ (Relevant source part starts here and spans across multiple lines).
+/sb/short_address_example.sol:26:6: Warning: No visibility specified. Defaulting to "public". 
+     function getBalance(address addr) constant returns(uint) {
+     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Version constraint ^0.4.11 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- NestedArrayFunctionCallDecoder
+	- ZeroFunctionSelector
+	- DelegateCallReturnValue
+	- ECRecoverMalformedInput
+	- SkipEmptyStringLiteral.
+It is used by:
+	- ^0.4.11 (../../sb/short_address_example.sol#7)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+/sb/short_address_example.sol analyzed (1 contracts with 93 detectors), 2 result(s) found

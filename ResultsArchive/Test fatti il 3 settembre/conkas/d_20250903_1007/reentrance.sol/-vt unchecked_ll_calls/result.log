@@ -1,0 +1,4 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/reentrance.sol:Reentrance...
+Vulnerability: Unchecked Low Level Call. Maybe in function: withdraw(uint256). PC: 0x24a. Line number: 24.

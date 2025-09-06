@@ -1,0 +1,64 @@
+'solc --version' running
+'solc /sb/etherbank.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/etherbank.sol:
+/sb/etherbank.sol:21:55: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+		if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }
+		                                                    ^---^
+/sb/etherbank.sol:10:5: Warning: No visibility specified. Defaulting to "public". 
+    function getBalance(address user) constant returns(uint) {  
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/etherbank.sol:14:2: Warning: No visibility specified. Defaulting to "public". 
+	function addToBalance() {  
+ ^ (Relevant source part starts here and spans across multiple lines).
+/sb/etherbank.sol:15:31: Warning: "msg.value" used in non-payable function. Do you want to add the "payable" modifier to this function?
+		userBalances[msg.sender] += msg.value;
+		                            ^-------^
+/sb/etherbank.sol:18:2: Warning: No visibility specified. Defaulting to "public". 
+	function withdrawBalance() {  
+ ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Reentrancy in EtherBank.withdrawBalance() (../../sb/etherbank.sol#18-23):
+	External calls:
+	- ! (msg.sender.call.value(amountToWithdraw)()) (../../sb/etherbank.sol#21)
+	State variables written after the call(s):
+	- userBalances[msg.sender] = 0 (../../sb/etherbank.sol#22)
+	EtherBank.userBalances (../../sb/etherbank.sol#9) can be used in cross function reentrancies:
+	- EtherBank.addToBalance() (../../sb/etherbank.sol#14-16)
+	- EtherBank.getBalance(address) (../../sb/etherbank.sol#10-12)
+	- EtherBank.withdrawBalance() (../../sb/etherbank.sol#18-23)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+
+Deprecated standard detected THROW (../../sb/etherbank.sol#21):
+	- Usage of "throw" should be replaced with "revert()"
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#deprecated-standards
+
+Version constraint ^0.4.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- NestedArrayFunctionCallDecoder
+	- ZeroFunctionSelector
+	- DelegateCallReturnValue
+	- ECRecoverMalformedInput
+	- SkipEmptyStringLiteral
+	- ConstantOptimizerSubtraction
+	- IdentityPrecompileReturnIgnored
+	- HighOrderByteCleanStorage
+	- OptimizerStaleKnowledgeAboutSHA3
+	- LibrariesNotCallableFromPayableFunctions.
+It is used by:
+	- ^0.4.0 (../../sb/etherbank.sol#7)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Low level call in EtherBank.withdrawBalance() (../../sb/etherbank.sol#18-23):
+	- ! (msg.sender.call.value(amountToWithdraw)()) (../../sb/etherbank.sol#21)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+/sb/etherbank.sol analyzed (1 contracts with 93 detectors), 5 result(s) found

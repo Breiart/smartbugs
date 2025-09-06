@@ -1,0 +1,104 @@
+2025-09-03 09:43:24,909 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-03 09:43:24,930 - Fuzzer   - INFO - [1mFuzzing contract [1mWallet[0m[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33mSource code line:[0m
+2025-09-03 09:43:24,958 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33m/sb/wallet_02_refund_nosub.sol:24:1[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33massert(balances[msg.sender] + msg.value > balances[msg.sender])[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mTransaction - deposit():[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33mInput:     0xd0e30db0[0m
+2025-09-03 09:43:24,959 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:24,984 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 65.08% (205/315) 	 Branch coverage: 71.43% (20/28) 	 Transactions: 11 (10 unique)   	 Time: 0.0470733642578125[0m
+2025-09-03 09:43:25,045 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 65.08% (205/315) 	 Branch coverage: 71.43% (20/28) 	 Transactions: 23 (16 unique)   	 Time: 0.10806131362915039[0m
+2025-09-03 09:43:25,239 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 50 (23 unique)   	 Time: 0.30193543434143066[0m
+2025-09-03 09:43:25,425 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 80 (28 unique)   	 Time: 0.48813962936401367[0m
+2025-09-03 09:43:25,620 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 104 (31 unique)   	 Time: 0.6827418804168701[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m    !!! Transaction order dependency detected !!!    [0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mSWC-ID:   114[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mSource code line:[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m/sb/wallet_02_refund_nosub.sol:25:1[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mbalances[msg.sender] += msg.value[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mTransaction 1 - deposit():[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 09:43:25,884 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mInput:     0xd0e30db0[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mTransaction 2 - withdraw(uint256):[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mInput:     0x2e1a7d4d00000000000000000000000000000000[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33m           00000000000000000000000000000001[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mTransaction 3 - deposit():[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mInput:     0xd0e30db0[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,885 - Detector - INFO - [1m[33mTransaction 4 - refund():[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mInput:     0x590e1ae3[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mTransaction 5 - refund():[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33mInput:     0x590e1ae3[0m
+2025-09-03 09:43:25,886 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:43:25,921 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 141 (35 unique)   	 Time: 0.9834260940551758[0m
+2025-09-03 09:43:26,236 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 178 (38 unique)   	 Time: 1.2984857559204102[0m
+2025-09-03 09:43:26,543 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 219 (40 unique)   	 Time: 1.6060435771942139[0m
+2025-09-03 09:43:26,753 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 245 (41 unique)   	 Time: 1.81611967086792[0m
+2025-09-03 09:43:26,999 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 276 (44 unique)   	 Time: 2.061734914779663[0m
+2025-09-03 09:43:27,247 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 81.59% (257/315) 	 Branch coverage: 78.57% (22/28) 	 Transactions: 307 (46 unique)   	 Time: 2.3094825744628906[0m
+2025-09-03 09:43:27,293 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-03 09:43:27,293 - Analysis - INFO - Number of generations: 	 10
+2025-09-03 09:43:27,293 - Analysis - INFO - Number of transactions: 	 307 (46 unique)
+2025-09-03 09:43:27,293 - Analysis - INFO - Transactions per second: 	 130
+2025-09-03 09:43:27,293 - Analysis - INFO - Total code coverage: 	 81.59% (257/315)
+2025-09-03 09:43:27,293 - Analysis - INFO - Total branch coverage: 	 78.57% (22/28)
+2025-09-03 09:43:27,293 - Analysis - INFO - Total execution time: 	 2.36 seconds
+2025-09-03 09:43:27,293 - Analysis - INFO - Total memory consumption: 	 66.40 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

@@ -1,0 +1,10 @@
+/sb/roulette.sol:7:1: Compiler version ^0.4.25 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/roulette.sol:12:34: Code contains empty blocks [Warning/no-empty-blocks]
+/sb/roulette.sol:15:5: Fallback function must be simple [Warning/no-complex-fallback]
+/sb/roulette.sol:16:9: Provide an error message for require [Warning/reason-string]
+/sb/roulette.sol:18:9: Provide an error message for require [Warning/reason-string]
+/sb/roulette.sol:18:17: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+/sb/roulette.sol:20:25: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+/sb/roulette.sol:21:12: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+
+8 problems

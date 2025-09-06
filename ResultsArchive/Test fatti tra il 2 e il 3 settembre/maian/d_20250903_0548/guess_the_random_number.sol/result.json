@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "GuessTheRandomNumberChallenge",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "GuessTheRandomNumberChallenge",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/Split4/guess_the_random_number.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

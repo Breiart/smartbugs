@@ -1,0 +1,16 @@
+{
+    "errors": [
+        "Validation error: Sender account balance cannot afford txn (ignoring for now)"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Log",
+            "filename": "samples/Split4/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 72,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "samples/Split4/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 17,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "samples/Split4/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 17,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

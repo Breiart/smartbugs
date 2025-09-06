@@ -1,0 +1,63 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "Token",
+            "filename": "samples/Split1/token.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 18,
+            "line_end": 25,
+            "message": "Token.transfer(address,uint256) (token.sol#18-25) contains a tautology or contradiction:\n\t- require(bool)(balances[msg.sender] - _value >= 0) (token.sol#20)\n",
+            "name": "tautology"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/token.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.18 (token.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/token.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/token.sol",
+            "impact": "Informational",
+            "line": 18,
+            "message": "Parameter Token.transfer(address,uint256)._value (token.sol#18) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/token.sol",
+            "impact": "Informational",
+            "line": 27,
+            "message": "Parameter Token.balanceOf(address)._owner (token.sol#27) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/token.sol",
+            "impact": "Informational",
+            "line": 18,
+            "message": "Parameter Token.transfer(address,uint256)._to (token.sol#18) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

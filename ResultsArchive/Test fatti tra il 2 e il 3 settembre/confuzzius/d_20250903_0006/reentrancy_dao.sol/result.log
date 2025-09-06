@@ -1,0 +1,94 @@
+2025-09-02 22:15:16,721 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-02 22:15:16,740 - Fuzzer   - INFO - [1mFuzzing contract [1mReentrancyDAO[0m[0m
+2025-09-02 22:15:16,769 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 66.67% (8/12) 	 Transactions: 7 (6 unique)   	 Time: 0.02301645278930664[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31m            !!! Reentrancy detected !!!              [0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31mSWC-ID:   107[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31mSeverity: High[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31mSource code line:[0m
+2025-09-02 22:15:16,797 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m/sb/reentrancy_dao.sol:18:1[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mmsg.sender.call.value(oCredit)()[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mTransaction sequence:[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mTransaction 1 - deposit():[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mValue:     1 Wei[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mInput:     0xd0e30db0[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mTransaction 2 - withdrawAll():[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31mInput:     0x853828b6[0m
+2025-09-02 22:15:16,798 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m    !!! Transaction order dependency detected !!!    [0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mSWC-ID:   114[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mSource code line:[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m/sb/reentrancy_dao.sol:25:1[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mcredit[msg.sender] += msg.value[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mTransaction 1 - deposit():[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-02 22:15:16,799 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mInput:     0xd0e30db0[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mTransaction 2 - withdrawAll():[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33mInput:     0x853828b6[0m
+2025-09-02 22:15:16,800 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-02 22:15:16,814 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 15 (9 unique)   	 Time: 0.06833767890930176[0m
+2025-09-02 22:15:16,879 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 27 (13 unique)   	 Time: 0.13257670402526855[0m
+2025-09-02 22:15:16,935 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1705960003273192069[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:16,959 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 41 (15 unique)   	 Time: 0.21336078643798828[0m
+2025-09-02 22:15:17,054 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 56 (17 unique)   	 Time: 0.30788278579711914[0m
+2025-09-02 22:15:17,111 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-8690365463861021542[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:17,115 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 64 (18 unique)   	 Time: 0.3692481517791748[0m
+2025-09-02 22:15:17,182 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4998570016512958798[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:17,208 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 78 (19 unique)   	 Time: 0.46155667304992676[0m
+2025-09-02 22:15:17,265 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-8690365463861021542[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:17,299 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 92 (19 unique)   	 Time: 0.5525803565979004[0m
+2025-09-02 22:15:17,345 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1705960003273192069[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:17,378 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 106 (20 unique)   	 Time: 0.6320514678955078[0m
+2025-09-02 22:15:17,424 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1705960003273192069[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:17,450 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 117 (20 unique)   	 Time: 0.703880786895752[0m
+2025-09-02 22:15:17,469 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1705960003273192069[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-02 22:15:17,495 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 83.33% (10/12) 	 Transactions: 122 (20 unique)   	 Time: 0.7489633560180664[0m
+2025-09-02 22:15:17,506 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-02 22:15:17,506 - Analysis - INFO - Number of generations: 	 10
+2025-09-02 22:15:17,506 - Analysis - INFO - Number of transactions: 	 122 (20 unique)
+2025-09-02 22:15:17,506 - Analysis - INFO - Transactions per second: 	 161
+2025-09-02 22:15:17,506 - Analysis - INFO - Total code coverage: 	 97.42% (151/155)
+2025-09-02 22:15:17,506 - Analysis - INFO - Total branch coverage: 	 83.33% (10/12)
+2025-09-02 22:15:17,506 - Analysis - INFO - Total execution time: 	 0.76 seconds
+2025-09-02 22:15:17,507 - Analysis - INFO - Total memory consumption: 	 63.34 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

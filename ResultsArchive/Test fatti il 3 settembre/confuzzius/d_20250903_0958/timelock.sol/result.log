@@ -1,0 +1,35 @@
+2025-09-03 08:06:49,752 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-03 08:06:49,774 - Fuzzer   - INFO - [1mFuzzing contract [1mTimeLock[0m[0m
+2025-09-03 08:06:49,829 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 13 (12 unique)   	 Time: 0.04797053337097168[0m
+2025-09-03 08:06:49,892 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 29 (20 unique)   	 Time: 0.11115884780883789[0m
+2025-09-03 08:06:49,987 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 50 (29 unique)   	 Time: 0.20610976219177246[0m
+2025-09-03 08:06:50,090 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 76 (35 unique)   	 Time: 0.30945467948913574[0m
+2025-09-03 08:06:50,209 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2095048137626163052[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 08:06:50,218 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 105 (41 unique)   	 Time: 0.4372859001159668[0m
+2025-09-03 08:06:50,266 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7558703404679321324[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 08:06:50,350 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7326336960819377984[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 08:06:50,358 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 142 (51 unique)   	 Time: 0.5771818161010742[0m
+2025-09-03 08:06:50,414 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2702154813786239028[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 08:06:50,511 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 181 (61 unique)   	 Time: 0.7296731472015381[0m
+2025-09-03 08:06:50,541 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4650578533558047132[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 08:06:50,640 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 216 (70 unique)   	 Time: 0.8593077659606934[0m
+2025-09-03 08:06:50,820 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 258 (81 unique)   	 Time: 1.0387654304504395[0m
+2025-09-03 08:06:50,981 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 300 (90 unique)   	 Time: 1.1999626159667969[0m
+2025-09-03 08:06:51,087 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-639132264077519272[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 08:06:51,134 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 338 (98 unique)   	 Time: 1.353471279144287[0m
+2025-09-03 08:06:51,146 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-03 08:06:51,146 - Analysis - INFO - Number of generations: 	 10
+2025-09-03 08:06:51,146 - Analysis - INFO - Number of transactions: 	 338 (98 unique)
+2025-09-03 08:06:51,146 - Analysis - INFO - Transactions per second: 	 248
+2025-09-03 08:06:51,146 - Analysis - INFO - Total code coverage: 	 80.32% (253/315)
+2025-09-03 08:06:51,146 - Analysis - INFO - Total branch coverage: 	 88.46% (23/26)
+2025-09-03 08:06:51,146 - Analysis - INFO - Total execution time: 	 1.36 seconds
+2025-09-03 08:06:51,146 - Analysis - INFO - Total memory consumption: 	 64.13 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

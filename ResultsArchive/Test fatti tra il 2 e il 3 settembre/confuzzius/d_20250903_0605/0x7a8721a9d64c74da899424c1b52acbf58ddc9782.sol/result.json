@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Log",
+            "filename": "samples/Split4/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "line": 75,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "PrivateDeposit",
+            "filename": "samples/Split4/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "line": 52,
+            "message": "Classification: SWC-107",
+            "name": "Reentrancy",
+            "severity": "High"
+        },
+        {
+            "contract": "PrivateDeposit",
+            "filename": "samples/Split4/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "line": 33,
+            "message": "Classification: SWC-114",
+            "name": "Transaction Order Dependency",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

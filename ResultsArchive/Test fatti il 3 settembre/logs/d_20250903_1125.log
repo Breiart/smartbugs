@@ -1,0 +1,62 @@
+Arguments passed: ['/home/user/Documents/GitHub/smartbugs/sb/__main__.py', '-t', 'slither', '-f', 'samples/Split2/BECToken.sol', 'samples/Split2/insecure_transfer.sol', 'samples/Split2/integer_overflow_1.sol', 'samples/Split2/integer_overflow_add.sol', 'samples/Split2/lottery.sol', 'samples/Split2/open_address_lottery.sol', 'samples/Split2/random_number_generator.sol']
+Settings: {files: [(None, 'samples/Split2/BECToken.sol'), (None, 'samples/Split2/insecure_transfer.sol'), (None, 'samples/Split2/integer_overflow_1.sol'), (None, 'samples/Split2/integer_overflow_add.sol'), (None, 'samples/Split2/lottery.sol'), (None, 'samples/Split2/open_address_lottery.sol'), (None, 'samples/Split2/random_number_generator.sol')], main: False, runtime: False, tools: ['slither'], tool_keys: {}, tool_arg_history: {}, skip_after_no_args: True, dynamic: True, runid: d_20250903_1125, overwrite: False, processes: 1, timeout: None, cpu_quota: None, mem_limit: None, results: results/${TOOL}/d_20250903_1125/${FILENAME}, log: results/logs/d_20250903_1125.log, json: False, sarif: False, quiet: False, fuzz_mode: normal}
+Starting task 1/7: slither-0.10.4 with no args and samples/Split2/BECToken.sol
+Starting task 2/9: slither-0.10.4 with no args and samples/Split2/insecure_transfer.sol
+Starting task 3/12: slither-0.10.4 with no args and samples/Split2/integer_overflow_1.sol
+Starting task 4/14: slither-0.10.4 with no args and samples/Split2/integer_overflow_add.sol
+Starting task 5/16: slither-0.10.4 with no args and samples/Split2/lottery.sol
+Starting task 6/20: slither-0.10.4 with no args and samples/Split2/open_address_lottery.sol
+Starting task 7/23: slither-0.10.4 with no args and samples/Split2/random_number_generator.sol
+Starting task 8/25: conkas with args -vt time_manipulation and samples/Split2/BECToken.sol
+Starting task 9/26: osiris with no args and samples/Split2/BECToken.sol
+Starting task 10/27: osiris with no args and samples/Split2/insecure_transfer.sol
+Starting task 11/28: mythril-0.24.7 with args --modules ArbitraryDelegateCall and samples/Split2/insecure_transfer.sol
+Starting task 12/29: conkas with args -vt time_manipulation and samples/Split2/insecure_transfer.sol
+Starting task 13/30: conkas with args -vt time_manipulation and samples/Split2/integer_overflow_1.sol
+Starting task 14/31: osiris with no args and samples/Split2/integer_overflow_1.sol
+Starting task 15/32: conkas with args -vt time_manipulation and samples/Split2/integer_overflow_add.sol
+Starting task 16/33: osiris with no args and samples/Split2/integer_overflow_add.sol
+Starting task 17/34: conkas with args -vt time_manipulation and samples/Split2/lottery.sol
+Starting task 18/35: maian with args -c 0 and samples/Split2/lottery.sol
+Starting task 19/36: mythril-0.24.7 with args --modules ArbitraryDelegateCall and samples/Split2/lottery.sol
+Starting task 20/37: osiris with no args and samples/Split2/lottery.sol
+Starting task 21/37: conkas with args -vt time_manipulation and samples/Split2/open_address_lottery.sol
+Starting task 22/38: osiris with no args and samples/Split2/open_address_lottery.sol
+Starting task 23/39: mythril-0.24.7 with args --modules ExternalCalls and samples/Split2/open_address_lottery.sol
+Starting task 24/40: conkas with args -vt time_manipulation and samples/Split2/random_number_generator.sol
+Starting task 25/41: osiris with no args and samples/Split2/random_number_generator.sol
+Starting task 26/42: smartcheck with no args and samples/Split2/BECToken.sol
+Starting task 27/43: mythril-0.24.7 with no args and samples/Split2/BECToken.sol
+Starting task 28/44: smartcheck with no args and samples/Split2/insecure_transfer.sol
+Starting task 29/45: solhint-3.3.8 with no args and samples/Split2/insecure_transfer.sol
+Starting task 30/45: maian with no args and samples/Split2/insecure_transfer.sol
+Starting task 31/45: smartcheck with no args and samples/Split2/integer_overflow_1.sol
+Starting task 32/46: mythril-0.24.7 with no args and samples/Split2/integer_overflow_1.sol
+Starting task 33/47: smartcheck with no args and samples/Split2/integer_overflow_add.sol
+Starting task 34/48: mythril-0.24.7 with no args and samples/Split2/integer_overflow_add.sol
+Starting task 35/49: smartcheck with no args and samples/Split2/lottery.sol
+Starting task 36/51: solhint-3.3.8 with no args and samples/Split2/lottery.sol
+Starting task 37/51: confuzzius with no args and samples/Split2/lottery.sol
+Starting task 38/51: smartcheck with no args and samples/Split2/open_address_lottery.sol
+Starting task 39/52: solhint-3.3.8 with no args and samples/Split2/open_address_lottery.sol
+Starting task 40/52: maian with no args and samples/Split2/open_address_lottery.sol
+Starting task 41/52: smartcheck with no args and samples/Split2/random_number_generator.sol
+Starting task 42/53: mythril-0.24.7 with no args and samples/Split2/random_number_generator.sol
+Starting task 43/54: securify with no args and samples/Split2/BECToken.sol
+Starting task 44/55: solhint-3.3.8 with no args and samples/Split2/BECToken.sol
+Starting task 45/56: confuzzius with no args and samples/Split2/insecure_transfer.sol
+Starting task 46/56: solhint-3.3.8 with no args and samples/Split2/integer_overflow_1.sol
+Starting task 47/57: maian with no args and samples/Split2/integer_overflow_1.sol
+Starting task 48/57: solhint-3.3.8 with no args and samples/Split2/integer_overflow_add.sol
+Starting task 49/58: maian with no args and samples/Split2/integer_overflow_add.sol
+Starting task 50/58: securify with no args and samples/Split2/lottery.sol
+Starting task 51/58: mythril-0.24.7 with args --modules Exceptions,UnexpectedEther and samples/Split2/lottery.sol
+Starting task 52/58: confuzzius with no args and samples/Split2/open_address_lottery.sol
+Starting task 53/58: solhint-3.3.8 with no args and samples/Split2/random_number_generator.sol
+Starting task 54/59: maian with no args and samples/Split2/random_number_generator.sol
+Starting task 55/59: maian with no args and samples/Split2/BECToken.sol
+Starting task 56/59: confuzzius with no args and samples/Split2/BECToken.sol
+Starting task 57/59: confuzzius with no args and samples/Split2/integer_overflow_1.sol
+Starting task 58/59: confuzzius with no args and samples/Split2/integer_overflow_add.sol
+Starting task 59/59: confuzzius with no args and samples/Split2/random_number_generator.sol
+Analysis completed in 0:10:04.

@@ -1,0 +1,39 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "LogFile",
+            "filename": "samples/Split4/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "line": 83,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL",
+            "filename": "samples/Split4/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "line": 54,
+            "message": "Classification: SWC-107",
+            "name": "Reentrancy",
+            "severity": "High"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL",
+            "filename": "samples/Split4/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "line": 43,
+            "message": "Classification: SWC-114",
+            "name": "Transaction Order Dependency",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

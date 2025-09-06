@@ -1,0 +1,103 @@
+2025-09-03 09:20:13,590 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-03 09:20:13,617 - Fuzzer   - INFO - [1mFuzzing contract [1mLottery[0m[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32mSeverity: Low[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32mSource code line:[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m/sb/lottery.sol:38:1[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32mblock.number[0m
+2025-09-03 09:20:13,668 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mTransaction - makeBet():[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32mInput:     0x561e91a1[0m
+2025-09-03 09:20:13,669 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 09:20:13,674 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 65.10% (235/361) 	 Branch coverage: 62.50% (20/32) 	 Transactions: 9 (8 unique)   	 Time: 0.05066537857055664[0m
+2025-09-03 09:20:13,723 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 65.93% (238/361) 	 Branch coverage: 65.62% (21/32) 	 Transactions: 18 (10 unique)   	 Time: 0.09938573837280273[0m
+2025-09-03 09:20:13,787 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 65.93% (238/361) 	 Branch coverage: 68.75% (22/32) 	 Transactions: 28 (12 unique)   	 Time: 0.16328191757202148[0m
+2025-09-03 09:20:13,860 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 65.93% (238/361) 	 Branch coverage: 68.75% (22/32) 	 Transactions: 38 (15 unique)   	 Time: 0.23649859428405762[0m
+2025-09-03 09:20:13,985 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 65.93% (238/361) 	 Branch coverage: 68.75% (22/32) 	 Transactions: 56 (18 unique)   	 Time: 0.3616642951965332[0m
+2025-09-03 09:20:14,093 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 65.93% (238/361) 	 Branch coverage: 68.75% (22/32) 	 Transactions: 72 (20 unique)   	 Time: 0.46920204162597656[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m    !!! Transaction order dependency detected !!!    [0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33mSWC-ID:   114[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33mSource code line:[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m/sb/lottery.sol:42:1[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33mbets.push(Bet(msg.value, block.number, won))[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33mTransaction 1 - makeBet():[0m
+2025-09-03 09:20:14,133 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mInput:     0x561e91a1[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mTransaction 2 - getBets():[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mInput:     0xa6afd5fd[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mTransaction 3 - getBets():[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33mInput:     0xa6afd5fd[0m
+2025-09-03 09:20:14,134 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mTransaction 4 - makeBet():[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mInput:     0x561e91a1[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mTransaction 5 - getBets():[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33mInput:     0xa6afd5fd[0m
+2025-09-03 09:20:14,135 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 09:20:14,314 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 97.23% (351/361) 	 Branch coverage: 81.25% (26/32) 	 Transactions: 105 (23 unique)   	 Time: 0.6904463768005371[0m
+2025-09-03 09:20:14,530 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 97.23% (351/361) 	 Branch coverage: 81.25% (26/32) 	 Transactions: 134 (27 unique)   	 Time: 0.9065530300140381[0m
+2025-09-03 09:20:14,699 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 97.23% (351/361) 	 Branch coverage: 81.25% (26/32) 	 Transactions: 156 (29 unique)   	 Time: 1.0754408836364746[0m
+2025-09-03 09:20:14,839 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 97.23% (351/361) 	 Branch coverage: 81.25% (26/32) 	 Transactions: 173 (30 unique)   	 Time: 1.2151975631713867[0m
+2025-09-03 09:20:14,999 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 97.23% (351/361) 	 Branch coverage: 81.25% (26/32) 	 Transactions: 192 (32 unique)   	 Time: 1.3761191368103027[0m
+2025-09-03 09:20:15,030 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-03 09:20:15,030 - Analysis - INFO - Number of generations: 	 10
+2025-09-03 09:20:15,030 - Analysis - INFO - Number of transactions: 	 192 (32 unique)
+2025-09-03 09:20:15,030 - Analysis - INFO - Transactions per second: 	 137
+2025-09-03 09:20:15,030 - Analysis - INFO - Total code coverage: 	 97.23% (351/361)
+2025-09-03 09:20:15,030 - Analysis - INFO - Total branch coverage: 	 81.25% (26/32)
+2025-09-03 09:20:15,030 - Analysis - INFO - Total execution time: 	 1.41 seconds
+2025-09-03 09:20:15,031 - Analysis - INFO - Total memory consumption: 	 64.58 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

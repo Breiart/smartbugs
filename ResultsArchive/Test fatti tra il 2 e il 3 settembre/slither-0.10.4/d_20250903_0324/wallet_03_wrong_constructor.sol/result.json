@@ -1,0 +1,47 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "samples/Split3/wallet_03_wrong_constructor.sol",
+            "impact": "Low",
+            "line": 36,
+            "message": "Wallet.migrateTo(address).to (wallet_03_wrong_constructor.sol#36) lacks a zero-check on :\n\t\t- to.transfer(this.balance) (wallet_03_wrong_constructor.sol#38)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split3/wallet_03_wrong_constructor.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData.\nIt is used by:\n\t- ^0.4.24 (wallet_03_wrong_constructor.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split3/wallet_03_wrong_constructor.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Wallet",
+            "filename": "samples/Split3/wallet_03_wrong_constructor.sol",
+            "function": "withdraw",
+            "impact": "Informational",
+            "line": 28,
+            "line_end": 32,
+            "message": "Reentrancy in Wallet.withdraw(uint256) (wallet_03_wrong_constructor.sol#28-32):\n\tExternal calls:\n\t- msg.sender.transfer(amount) (wallet_03_wrong_constructor.sol#30)\n\tState variables written after the call(s):\n\t- balances[msg.sender] -= amount (wallet_03_wrong_constructor.sol#31)\n",
+            "name": "reentrancy-unlimited-gas"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

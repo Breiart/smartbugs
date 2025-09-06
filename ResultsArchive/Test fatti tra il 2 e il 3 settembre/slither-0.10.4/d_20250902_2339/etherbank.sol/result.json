@@ -1,0 +1,58 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "EtherBank",
+            "filename": "samples/Split1/etherbank.sol",
+            "function": "withdrawBalance",
+            "impact": "High",
+            "line": 18,
+            "line_end": 23,
+            "message": "Reentrancy in EtherBank.withdrawBalance() (etherbank.sol#18-23):\n\tExternal calls:\n\t- ! (msg.sender.call.value(amountToWithdraw)()) (etherbank.sol#21)\n\tState variables written after the call(s):\n\t- userBalances[msg.sender] = 0 (etherbank.sol#22)\n\tEtherBank.userBalances (etherbank.sol#9) can be used in cross function reentrancies:\n\t- EtherBank.addToBalance() (etherbank.sol#14-16)\n\t- EtherBank.getBalance(address) (etherbank.sol#10-12)\n\t- EtherBank.withdrawBalance() (etherbank.sol#18-23)\n",
+            "name": "reentrancy-eth"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/etherbank.sol",
+            "impact": "Informational",
+            "line": 21,
+            "message": "Deprecated standard detected THROW (etherbank.sol#21):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/etherbank.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput\n\t- SkipEmptyStringLiteral\n\t- ConstantOptimizerSubtraction\n\t- IdentityPrecompileReturnIgnored\n\t- HighOrderByteCleanStorage\n\t- OptimizerStaleKnowledgeAboutSHA3\n\t- LibrariesNotCallableFromPayableFunctions.\nIt is used by:\n\t- ^0.4.0 (etherbank.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/Split1/etherbank.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "EtherBank",
+            "filename": "samples/Split1/etherbank.sol",
+            "function": "withdrawBalance",
+            "impact": "Informational",
+            "line": 18,
+            "line_end": 23,
+            "message": "Low level call in EtherBank.withdrawBalance() (etherbank.sol#18-23):\n\t- ! (msg.sender.call.value(amountToWithdraw)()) (etherbank.sol#21)\n",
+            "name": "low-level-calls"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

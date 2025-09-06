@@ -1,0 +1,63 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 2,
+            "filename": "samples/Split4/short_address_example.sol",
+            "level": "error",
+            "line": 7,
+            "message": "Compiler version ^0.4.11 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split4/short_address_example.sol",
+            "level": "warning",
+            "line": 10,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split4/short_address_example.sol",
+            "level": "warning",
+            "line": 14,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 19,
+            "filename": "samples/Split4/short_address_example.sol",
+            "level": "warning",
+            "line": 15,
+            "message": "Avoid to use tx.origin",
+            "name": "avoid-tx-origin"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split4/short_address_example.sol",
+            "level": "warning",
+            "line": 18,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split4/short_address_example.sol",
+            "level": "warning",
+            "line": 26,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

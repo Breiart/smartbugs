@@ -1,0 +1,50 @@
+'solc --version' running
+'solc /sb/reentrance.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+Reentrancy in Reentrance.withdraw(uint256) (../../sb/reentrance.sol#21-29):
+	External calls:
+	- msg.sender.call.value(_amount)() (../../sb/reentrance.sol#24)
+	State variables written after the call(s):
+	- balances[msg.sender] -= _amount (../../sb/reentrance.sol#27)
+	Reentrance.balances (../../sb/reentrance.sol#11) can be used in cross function reentrancies:
+	- Reentrance.balanceOf(address) (../../sb/reentrance.sol#17-19)
+	- Reentrance.balances (../../sb/reentrance.sol#11)
+	- Reentrance.donate(address) (../../sb/reentrance.sol#13-15)
+	- Reentrance.withdraw(uint256) (../../sb/reentrance.sol#21-29)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+
+Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- ^0.4.18 (../../sb/reentrance.sol#7)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Low level call in Reentrance.withdraw(uint256) (../../sb/reentrance.sol#21-29):
+	- msg.sender.call.value(_amount)() (../../sb/reentrance.sol#24)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+Parameter Reentrance.donate(address)._to (../../sb/reentrance.sol#13) is not in mixedCase
+Parameter Reentrance.balanceOf(address)._who (../../sb/reentrance.sol#17) is not in mixedCase
+Parameter Reentrance.withdraw(uint256)._amount (../../sb/reentrance.sol#21) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+Redundant expression "_amount (../../sb/reentrance.sol#25)" inReentrance (../../sb/reentrance.sol#9-32)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#redundant-statements
+/sb/reentrance.sol analyzed (1 contracts with 93 detectors), 8 result(s) found

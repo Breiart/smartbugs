@@ -1,0 +1,6 @@
+/sb/random_number_generator.sol:7:1: Compiler version ^0.4.25 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/random_number_generator.sol:12:27: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+/sb/random_number_generator.sol:12:27: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
+/sb/random_number_generator.sol:14:34: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+
+4 problems

@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "SafeMath",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/Split4/smart_billions.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "SafeMath",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/Split4/smart_billions.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

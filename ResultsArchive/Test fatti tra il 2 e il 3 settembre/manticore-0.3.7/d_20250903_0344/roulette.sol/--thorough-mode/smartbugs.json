@@ -1,0 +1,51 @@
+{
+    "docker": {
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/roulette.sol' '/sb/bin' '--thorough-mode'",
+        "image": "smartbugs/manticore:0.3.7",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpp2m_oeek": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "samples/Split3/roulette.sol",
+    "platform": {
+        "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+        "python": "3.12.3.final.0 (64 bit)",
+        "release": "6.14.0-29-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug 14 16:52:50 UTC 2"
+    },
+    "result": {
+        "duration": 4.3413245677948,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1756864299.489416
+    },
+    "runid": "d_20250903_0344",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "default_params": "",
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$BIN' '$ARGS'",
+        "id": "manticore-0.3.7",
+        "image": "smartbugs/manticore:0.3.7",
+        "info": "Manticore is a symbolic execution tool for analysis of smart contracts and binaries.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Manticore",
+        "origin": "https://github.com/trailofbits/manticore",
+        "output": "/results",
+        "parser": "parser.py",
+        "solc": true,
+        "version": "0.3.7"
+    },
+    "tool_args": "--thorough-mode"
+}

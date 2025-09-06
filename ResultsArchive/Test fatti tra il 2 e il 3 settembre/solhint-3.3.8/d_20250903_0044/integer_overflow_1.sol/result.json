@@ -1,0 +1,31 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 2,
+            "filename": "samples/Split2/integer_overflow_1.sol",
+            "level": "error",
+            "line": 7,
+            "message": "Compiler version ^0.4.15 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 6,
+            "filename": "samples/Split2/integer_overflow_1.sol",
+            "level": "warning",
+            "line": 12,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

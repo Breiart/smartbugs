@@ -1,0 +1,5 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/timelock.sol:TimeLock...
+Vulnerability: Time Manipulation. Maybe in function: withdraw(). PC: 0x21c. Line number: 27.
+Vulnerability: Time Manipulation. Maybe in function: deposit(). PC: 0x3ec. Line number: 17.

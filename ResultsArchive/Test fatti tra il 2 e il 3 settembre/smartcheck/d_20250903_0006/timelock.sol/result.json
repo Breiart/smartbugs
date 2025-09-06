@@ -1,0 +1,20 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 17,
+            "filename": "samples/Split1/timelock.sol",
+            "line": 8,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

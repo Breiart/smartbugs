@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "Bank",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/Split1/modifier_reentrancy.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "Bank",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/Split1/modifier_reentrancy.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

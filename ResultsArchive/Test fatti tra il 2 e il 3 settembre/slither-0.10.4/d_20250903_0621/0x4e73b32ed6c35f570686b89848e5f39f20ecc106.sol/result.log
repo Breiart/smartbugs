@@ -1,0 +1,69 @@
+'solc --version' running
+'solc /sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+LogFile (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#73-97) contract sets array length with a user-controlled value:
+	- History.push(LastMsg) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#94)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#array-length-assignment
+
+Reentrancy in PRIVATE_ETH_CELL.Collect(uint256) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#47-60):
+	External calls:
+	- msg.sender.call.value(_am)() (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#54)
+	State variables written after the call(s):
+	- balances[msg.sender] -= _am (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#56)
+	PRIVATE_ETH_CELL.balances (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#11) can be used in cross function reentrancies:
+	- PRIVATE_ETH_CELL.Collect(uint256) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#47-60)
+	- PRIVATE_ETH_CELL.Deposit() (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#39-45)
+	- PRIVATE_ETH_CELL.balances (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#11)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+
+Version constraint ^0.4.19 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- ^0.4.19 (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#7)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Low level call in PRIVATE_ETH_CELL.Collect(uint256) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#47-60):
+	- msg.sender.call.value(_am)() (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#54)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+Contract PRIVATE_ETH_CELL (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#9-69) is not in CapWords
+Function PRIVATE_ETH_CELL.SetMinSum(uint256) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#19-24) is not in mixedCase
+Parameter PRIVATE_ETH_CELL.SetMinSum(uint256)._val (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#19) is not in mixedCase
+Function PRIVATE_ETH_CELL.SetLogFile(address) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#26-31) is not in mixedCase
+Parameter PRIVATE_ETH_CELL.SetLogFile(address)._log (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#26) is not in mixedCase
+Function PRIVATE_ETH_CELL.Initialized() (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#33-37) is not in mixedCase
+Function PRIVATE_ETH_CELL.Deposit() (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#39-45) is not in mixedCase
+Function PRIVATE_ETH_CELL.Collect(uint256) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#47-60) is not in mixedCase
+Parameter PRIVATE_ETH_CELL.Collect(uint256)._am (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#47) is not in mixedCase
+Variable PRIVATE_ETH_CELL.MinSum (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#13) is not in mixedCase
+Variable PRIVATE_ETH_CELL.Log (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#15) is not in mixedCase
+Function LogFile.AddMessage(address,uint256,string) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#87-95) is not in mixedCase
+Parameter LogFile.AddMessage(address,uint256,string)._adr (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#87) is not in mixedCase
+Parameter LogFile.AddMessage(address,uint256,string)._val (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#87) is not in mixedCase
+Parameter LogFile.AddMessage(address,uint256,string)._data (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#87) is not in mixedCase
+Variable LogFile.History (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#83) is not in mixedCase
+Variable LogFile.LastMsg (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#85) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+AddMessage(address,uint256,string) should be declared external:
+	- LogFile.AddMessage(address,uint256,string) (../../sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol#87-95)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol analyzed (2 contracts with 93 detectors), 23 result(s) found

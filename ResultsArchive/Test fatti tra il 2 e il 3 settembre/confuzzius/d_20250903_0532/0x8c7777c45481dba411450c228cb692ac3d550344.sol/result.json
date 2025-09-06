@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "ETH_VAULT",
+            "filename": "samples/Split4/0x8c7777c45481dba411450c228cb692ac3d550344.sol",
+            "line": 41,
+            "message": "Classification: SWC-107",
+            "name": "Reentrancy",
+            "severity": "High"
+        },
+        {
+            "contract": "ETH_VAULT",
+            "filename": "samples/Split4/0x8c7777c45481dba411450c228cb692ac3d550344.sol",
+            "line": 43,
+            "message": "Classification: SWC-114",
+            "name": "Transaction Order Dependency",
+            "severity": "Medium"
+        },
+        {
+            "contract": "Log",
+            "filename": "samples/Split4/0x8c7777c45481dba411450c228cb692ac3d550344.sol",
+            "line": 64,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}
