@@ -300,6 +300,16 @@ def render_html(df, output_file):
     with open(template_path) as f:
         template = Template(f.read())
 
+    # Use the output filename (without extension) as the report title
+    report_title = Path(output_file).name
+    try:
+        # Prefer the stem (without extension) if present
+        stem = Path(output_file).stem
+        if stem:
+            report_title = stem
+    except Exception:
+        pass
+
     with open(output_file, "w") as f:
         f.write(
             template.render(
@@ -309,6 +319,7 @@ def render_html(df, output_file):
                 vuln_summary=per_vuln.to_dict(orient="records"),
                 tool_summary=tool_summaries,
                 overall=overall,
+                report_title=report_title,
                 fig_time=fig_time.to_html(full_html=False, include_plotlyjs="cdn"),
                 fig_vuln=fig_vuln.to_html(full_html=False, include_plotlyjs=False),
                 fig_scatter=fig_scatter.to_html(full_html=False, include_plotlyjs=False),
@@ -317,7 +328,7 @@ def render_html(df, output_file):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_folder", required=True)
+    parser.add_argument("--input-folder", required=True)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 

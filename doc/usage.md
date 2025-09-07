@@ -66,7 +66,7 @@ The option `-p` tells `results2csv` to format the lists of findings, errors etc.
 You can then create an HTML report summarising the CSV files:
 
 ```console
-./generate_report --input_folder results --output report.html
+./generate_report --input-folder results --output report.html
 ```
 
 The report lists each contract’s classified vulnerabilities with line numbers and the tools that detected them.

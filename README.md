@@ -95,7 +95,7 @@ different contracts or configurations separately.
 To visualise these results you can generate an HTML report:
 
 ```console
-./generate_report --input_folder results --output report.html
+./generate_report --input-folder results --output report.html
 ```
 
 The command reads all CSV files from the chosen folder and
