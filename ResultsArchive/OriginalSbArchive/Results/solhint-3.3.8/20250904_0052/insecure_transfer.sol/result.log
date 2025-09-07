@@ -1,4 +1,0 @@
-/sb/insecure_transfer.sol:7:1: Compiler version ^0.4.10 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/insecure_transfer.sol:15:9: Provide an error message for require [Warning/reason-string]
-
-2 problems

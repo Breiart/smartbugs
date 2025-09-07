@@ -28,21 +28,25 @@
         </tr>
     </table>
 
-    <h2>Analysis Summary</h2>
+    <h2>Split Summary</h2>
     <table>
         <tr>
-            <th>Execution ID</th>
             <th>Contracts</th>
+            <th>Execution IDs</th>
+            <th>Exec ID Count</th>
         </tr>
-        {% for row in analysis_summary %}
+        {% for row in split_summary %}
         <tr>
-            <td>{{ row['Execution ID'] }}</td>
             <td>{{ row['Contracts'] }}</td>
+            <td>{{ row['Execution IDs'] }}</td>
+            <td>{{ row['Exec ID Count'] }}</td>
         </tr>
         {% endfor %}
     </table>
 
     <h3>Per-Run Overview</h3>
+    {% for group in per_run_groups %}
+    <h4>{{ group['name'] }} — {{ group['contracts'] }}</h4>
     <table class="summary-table">
         <tr>
             <th>Execution ID</th>
@@ -50,7 +54,7 @@
             <th>Vulnerabilities Found</th>
             <th>Classified Vulnerabilities</th>
         </tr>
-        {% for row in per_run_summary %}
+        {% for row in group['rows'] %}
         <tr>
             <td>{{ row['Execution ID'] }}</td>
             <td>{{ row['Exec Time'] }}</td>
@@ -59,11 +63,20 @@
         </tr>
         {% endfor %}
     </table>
+    {% endfor %}
 
-    <h2>Graphs</h2>
+    <h2>Overall Graphs</h2>
     {{ fig_time|safe }}
     {{ fig_vuln|safe }}
     {{ fig_scatter|safe }}
+
+    <h2>Graphs Per Split</h2>
+    {% for s in splits %}
+    <h3>{{ s['name'] }} — {{ s['contracts'] }}</h3>
+    {{ s['fig_time']|safe }}
+    {{ s['fig_vuln']|safe }}
+    {{ s['fig_scatter']|safe }}
+    {% endfor %}
 
     <h2>Per Execution Summary</h2>
     {% for group in tool_summary %}

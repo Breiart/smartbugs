@@ -1,4 +1,0 @@
-ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
-ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
-Analysing /sb/open_address_lottery.sol:OpenAddressLottery...
-Vulnerability: Time Manipulation. Maybe in function: _fallthrough. PC: 0x56c. Line number: 73.

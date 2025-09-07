@@ -144,6 +144,7 @@ def _parse_vuln_entry(entry: str):
 
 
 def render_html(df, output_file):
+    # Base aggregations used for some global summaries and to create split sections
     per_tool = (
         df.groupby(["Execution ID", "tool"])
         .agg(
@@ -208,12 +209,26 @@ def render_html(df, output_file):
             "Findings": findings,
         })
     
-    analysis_summary = (
-        df.groupby("Execution ID")
-          .agg({"basename": lambda x: ", ".join(sorted(set(x)))})
-          .reset_index()
-          .rename(columns={"basename": "Contracts"})
+    # Build execution -> contracts mapping and split groups by identical contract sets
+    exec_contracts = (
+        df.groupby("Execution ID")["basename"].apply(lambda x: tuple(sorted(set(x)))).to_dict()
     )
+    splits_map = {}
+    for exec_id, contracts in exec_contracts.items():
+        splits_map.setdefault(contracts, []).append(exec_id)
+    # Create a user-friendly summary of splits
+    split_summary = []
+    # Maintain deterministic order: sort by contracts then exec IDs
+    ordered_splits = sorted(
+        [(tuple(contracts), sorted(exec_ids)) for contracts, exec_ids in splits_map.items()],
+        key=lambda item: (len(item[0]), item[0], item[1])
+    )
+    for contracts, exec_ids in ordered_splits:
+        split_summary.append({
+            "Contracts": ", ".join(contracts),
+            "Execution IDs": ", ".join(exec_ids),
+            "Exec ID Count": len(exec_ids),
+        })
 
     per_execution = (
         df.groupby("Execution ID")
@@ -271,6 +286,7 @@ def render_html(df, output_file):
         })
 
 
+    # Build comprehensive/global graphs (kept for overall view)
     fig_time = px.bar(
         per_tool,
         x="tool",
@@ -296,6 +312,93 @@ def render_html(df, output_file):
         title="Execution Time vs Vulnerabilities Found",
     )
 
+    # Build per-split graphs (three per split)
+    splits_graphs = []
+    for idx, (contracts, exec_ids) in enumerate(ordered_splits, start=1):
+        # Restrict DF to this split's execution IDs and the contracts in the split
+        df_split = df[(df["Execution ID"].isin(exec_ids)) & (df["basename"].isin(contracts))]
+
+        per_tool_split = (
+            df_split.groupby(["Execution ID", "tool"])
+            .agg(
+                **{
+                    "Avg Exec Time (s)": ("execution_time", "mean"),
+                    "Total Runs": ("execution_time", "count"),
+                    "Total Vulns Found": ("Vulnerabilities Count", "sum"),
+                    "Detected Vulns": ("vulnerabilities", _join_vulns),
+                }
+            )
+            .reset_index()
+        )
+
+        per_execution_split = (
+            df_split.groupby("Execution ID")
+            .agg(
+                **{
+                    "Total Exec Time": ("execution_time", "sum"),
+                    "Total Vulns Found": ("Vulnerabilities Count", "sum"),
+                }
+            )
+            .reset_index()
+        )
+
+        fig_time_split = px.bar(
+            per_tool_split,
+            x="tool",
+            y="Avg Exec Time (s)",
+            color="Execution ID",
+            barmode="group",
+            title="Average Execution Time per Tool",
+        )
+        fig_vuln_split = px.bar(
+            per_tool_split,
+            x="tool",
+            y="Total Vulns Found",
+            color="Execution ID",
+            barmode="group",
+            title="Total Vulnerabilities Found per Tool",
+        )
+        fig_scatter_split = px.scatter(
+            per_execution_split,
+            x="Total Exec Time",
+            y="Total Vulns Found",
+            hover_name="Execution ID",
+            title="Execution Time vs Vulnerabilities Found",
+        )
+
+        splits_graphs.append({
+            "name": f"Split {idx}",
+            "contracts": ", ".join(contracts),
+            "execution_ids": exec_ids,
+            "fig_time": fig_time_split.to_html(full_html=False, include_plotlyjs=False),
+            "fig_vuln": fig_vuln_split.to_html(full_html=False, include_plotlyjs=False),
+            "fig_scatter": fig_scatter_split.to_html(full_html=False, include_plotlyjs=False),
+        })
+
+    # Build per-run overview grouped by split (based on identical contract sets)
+    per_run_groups = []
+    per_run_map = {row["Execution ID"]: row for row in per_run_table}
+    for idx, (contracts, exec_ids) in enumerate(ordered_splits, start=1):
+        rows = []
+        for eid in exec_ids:
+            row = per_run_map.get(
+                eid,
+                {
+                    "Execution ID": eid,
+                    "Exec Time": _seconds_to_hms(0),
+                    "Vulns Found": 0,
+                    "Classified": 0,
+                },
+            )
+            rows.append(row)
+        per_run_groups.append(
+            {
+                "name": f"Split {idx}",
+                "contracts": ", ".join(contracts),
+                "rows": rows,
+            }
+        )
+
     template_path = Path(__file__).resolve().parents[1] / "templates" / "report_template.html"
     with open(template_path) as f:
         template = Template(f.read())
@@ -314,12 +417,13 @@ def render_html(df, output_file):
         f.write(
             template.render(
                 executions=df.to_dict(orient="records"),
-                analysis_summary=analysis_summary.to_dict(orient="records"),
-                per_run_summary=per_run_table,
+                split_summary=split_summary,
+                per_run_groups=per_run_groups,
                 vuln_summary=per_vuln.to_dict(orient="records"),
                 tool_summary=tool_summaries,
                 overall=overall,
                 report_title=report_title,
+                splits=splits_graphs,
                 fig_time=fig_time.to_html(full_html=False, include_plotlyjs="cdn"),
                 fig_vuln=fig_vuln.to_html(full_html=False, include_plotlyjs=False),
                 fig_scatter=fig_scatter.to_html(full_html=False, include_plotlyjs=False),

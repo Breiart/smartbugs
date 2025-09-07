@@ -1,8 +1,0 @@
-/sb/short_address_example.sol:7:2: Compiler version ^0.4.11 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/short_address_example.sol:10:6: Explicitly mark visibility of state [Warning/state-visibility]
-/sb/short_address_example.sol:14:6: Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0) [Warning/func-visibility]
-/sb/short_address_example.sol:15:19: Avoid to use tx.origin [Warning/avoid-tx-origin]
-/sb/short_address_example.sol:18:6: Explicitly mark visibility in function [Warning/func-visibility]
-/sb/short_address_example.sol:26:6: Explicitly mark visibility in function [Warning/func-visibility]
-
-6 problems

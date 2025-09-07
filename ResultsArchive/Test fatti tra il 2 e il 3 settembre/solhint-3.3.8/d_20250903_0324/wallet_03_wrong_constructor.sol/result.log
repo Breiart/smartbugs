@@ -1,8 +1,0 @@
-/sb/wallet_03_wrong_constructor.sol:7:2: Compiler version ^0.4.24 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/wallet_03_wrong_constructor.sol:14:6: Explicitly mark visibility of state [Warning/state-visibility]
-/sb/wallet_03_wrong_constructor.sol:16:6: Explicitly mark visibility of state [Warning/state-visibility]
-/sb/wallet_03_wrong_constructor.sol:29:10: Provide an error message for require [Warning/reason-string]
-/sb/wallet_03_wrong_constructor.sol:31:10: Possible reentrancy vulnerabilities. Avoid state changes after transfer. [Warning/reentrancy]
-/sb/wallet_03_wrong_constructor.sol:37:10: Provide an error message for require [Warning/reason-string]
-
-6 problems

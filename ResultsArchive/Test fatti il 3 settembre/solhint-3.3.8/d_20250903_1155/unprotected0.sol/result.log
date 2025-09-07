@@ -1,4 +1,0 @@
-/sb/unprotected0.sol:7:2: Compiler version ^0.4.15 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/unprotected0.sol:13:10: Provide an error message for require [Warning/reason-string]
-
-2 problems

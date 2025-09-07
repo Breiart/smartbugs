@@ -1,8 +1,0 @@
-/sb/guess_the_random_number.sol:7:1: Compiler version ^0.4.21 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/guess_the_random_number.sol:10:5: Explicitly mark visibility of state [Warning/state-visibility]
-/sb/guess_the_random_number.sol:13:9: Provide an error message for require [Warning/reason-string]
-/sb/guess_the_random_number.sol:15:34: Do not rely on "block.blockhash". Miners can influence its value. [Warning/not-rely-on-block-hash]
-/sb/guess_the_random_number.sol:15:69: Avoid making time-based decisions in your business logic [Warning/not-rely-on-time]
-/sb/guess_the_random_number.sol:23:9: Provide an error message for require [Warning/reason-string]
-
-6 problems

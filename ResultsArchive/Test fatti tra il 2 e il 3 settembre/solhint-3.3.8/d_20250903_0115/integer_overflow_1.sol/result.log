@@ -1,4 +1,0 @@
-/sb/integer_overflow_1.sol:7:2: Compiler version ^0.4.15 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/integer_overflow_1.sol:12:6: Explicitly mark visibility in function [Warning/func-visibility]
-
-2 problems

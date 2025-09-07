@@ -1,5 +1,0 @@
-/sb/reentrance.sol:7:1: Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/reentrance.sol:24:10: Avoid to use ".call.value()()" [Warning/avoid-call-value]
-/sb/reentrance.sol:24:10: Avoid to use low level calls. [Warning/avoid-low-level-calls]
-
-3 problems

@@ -1,8 +1,0 @@
-/sb/reentrancy_dao.sol:7:1: Compiler version ^0.4.19 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/reentrancy_dao.sol:10:5: Explicitly mark visibility of state [Warning/state-visibility]
-/sb/reentrancy_dao.sol:11:5: Explicitly mark visibility of state [Warning/state-visibility]
-/sb/reentrancy_dao.sol:18:31: Avoid to use ".call.value()()" [Warning/avoid-call-value]
-/sb/reentrancy_dao.sol:18:31: Avoid to use low level calls. [Warning/avoid-low-level-calls]
-/sb/reentrancy_dao.sol:19:13: Provide an error message for require [Warning/reason-string]
-
-6 problems
