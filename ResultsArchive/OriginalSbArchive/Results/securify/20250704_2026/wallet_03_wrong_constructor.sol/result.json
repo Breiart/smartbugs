@@ -1,0 +1,28 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "name": "TODTransfer"
+        },
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "name": "DAOConstantGas"
+        },
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "name": "TODAmount"
+        },
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "name": "MissingInputValidation"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

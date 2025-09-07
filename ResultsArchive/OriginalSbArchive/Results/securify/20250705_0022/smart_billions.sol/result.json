@@ -1,0 +1,20 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "name": "DAOConstantGas"
+        },
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "name": "TODAmount"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

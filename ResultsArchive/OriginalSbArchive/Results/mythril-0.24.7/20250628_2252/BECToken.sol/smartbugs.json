@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/BECToken.sol' '600' '/sb/bin' '0'",
+        "image": "smartbugs/mythril:0.24.7",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpnors6_qi": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol",
+    "platform": {
+        "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+        "python": "3.12.3.final.0 (64 bit)",
+        "release": "6.11.0-28-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri May 23 10:31:01 UTC 2"
+    },
+    "result": {
+        "duration": 610.861430644989,
+        "exit_code": null,
+        "logs": null,
+        "output": null,
+        "start": 1751153193.7693048
+    },
+    "runid": "20250628_2252",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "id": "mythril-0.24.7",
+        "image": "smartbugs/mythril:0.24.7",
+        "info": "Mythril analyses EVM bytecode using symbolic analysis, taint analysis and control flow checking to detect a variety of security vulnerabilities.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Mythril",
+        "origin": "https://github.com/ConsenSys/mythril",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": "0.24.7"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_KILL_OOM",
+        "exception (Killed)"
+    ],
+    "findings": [
+        {
+            "contract": "FindThisHash.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol",
+            "function": "solve",
+            "name": "Integer Underflow"
+        },
+        {
+            "contract": "FindThisHash.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol",
+            "function": "",
+            "name": "Integer Underflow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

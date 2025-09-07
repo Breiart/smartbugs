@@ -1,0 +1,17 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Reentrance",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "name": "Money flow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "honeybadger",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    }
+}

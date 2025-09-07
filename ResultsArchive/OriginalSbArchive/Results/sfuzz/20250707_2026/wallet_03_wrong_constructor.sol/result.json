@@ -1,0 +1,36 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Wallet.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "function": "withdraw",
+            "name": "Gasless Send"
+        },
+        {
+            "contract": "Wallet.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "function": "initWallet",
+            "name": "Gasless Send"
+        },
+        {
+            "contract": "Wallet.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "function": "migrateTo",
+            "name": "Gasless Send"
+        },
+        {
+            "contract": "Wallet.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol",
+            "function": "deposit",
+            "name": "Gasless Send"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

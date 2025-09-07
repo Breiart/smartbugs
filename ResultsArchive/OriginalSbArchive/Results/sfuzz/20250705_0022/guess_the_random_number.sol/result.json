@@ -1,0 +1,50 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "GuessTheRandomNumberChallenge.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "function": "guess",
+            "name": "Integer Underflow"
+        },
+        {
+            "contract": "GuessTheRandomNumberChallenge.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "function": "",
+            "name": "Integer Underflow"
+        },
+        {
+            "contract": "GuessTheRandomNumberChallenge.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "function": "guess",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "GuessTheRandomNumberChallenge.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "function": "",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "GuessTheRandomNumberChallenge.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "function": "guess",
+            "name": "Timestamp Dependency"
+        },
+        {
+            "contract": "GuessTheRandomNumberChallenge.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "function": "",
+            "name": "Timestamp Dependency"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

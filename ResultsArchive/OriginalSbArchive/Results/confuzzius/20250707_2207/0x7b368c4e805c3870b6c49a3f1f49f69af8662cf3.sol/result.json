@@ -1,0 +1,60 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Log",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 72,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 17,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 17,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 26,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 29,
+            "message": "Classification: SWC-107",
+            "name": "Reentrancy",
+            "severity": "High"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "line": 16,
+            "message": "Classification: SWC-114",
+            "name": "Transaction Order Dependency",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    }
+}

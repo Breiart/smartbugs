@@ -1,0 +1,190 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "error",
+            "line": 7,
+            "message": "Compiler version ^0.4.19 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 13,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 16,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 16,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 19,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 17,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 19,
+            "message": "Avoid to use tx.origin",
+            "name": "avoid-tx-origin"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 23,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 31,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 36,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 16,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 52,
+            "message": "Avoid to use \".call.value()()\"",
+            "name": "avoid-call-value"
+        },
+        {
+            "column": 16,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 52,
+            "message": "Avoid to use low level calls.",
+            "name": "avoid-low-level-calls"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 69,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 70,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 71,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 75,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 79,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 24,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+            "level": "warning",
+            "line": 83,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    }
+}

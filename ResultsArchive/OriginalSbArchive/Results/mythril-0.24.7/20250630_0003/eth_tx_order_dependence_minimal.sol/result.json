@@ -1,0 +1,115 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 686,
+            "contract": "EthTxOrderDependenceMinimal",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x6060604052341561000f57600080fd5b5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b61031c806100616000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063228cb7331461006a5780633eb6a67e146100935780638da5cb5b1461009d578063ae169a50146100f2578063e834a83414610115575b600080fd5b341561007557600080fd5b61007d610142565b6040518082815260200191505060405180910390f35b61009b610148565b005b34156100a857600080fd5b6100b061022c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100fd57600080fd5b6101136004808035906020019091905050610251565b005b341561012057600080fd5b6101286102dd565b604051808215151515815260200191505060405180910390f35b60015481565b600060149054906101000a900460ff1615151561016457600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101bf57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6001549081150290604051600060405180830381858888f19350505050151561022257600080fd5b346001819055505b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1615151561026d57600080fd5b600a8110151561027c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc6001549081150290604051600060405180830381858888f1935050505015156102be57600080fd5b6001600060146101000a81548160ff0219169083151502179055505b50565b600060149054906101000a900460ff16815600a165627a7a72305820c69ad87ac14dfac584839b5596c3ef2306b8b4d5c8612987e213f8c5a584ddf90029",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x0"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0xae169a50",
+                        "input": "0xae169a50",
+                        "name": "claimReward(uint256)",
+                        "origin": "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+                        "resolved_input": null,
+                        "value": "0x0"
+                    }
+                ]
+            },
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "function": "claimReward(uint256)",
+            "line": 31,
+            "message": "The value of the call is dependent on balance or storage write\nThis can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call\nClassification: SWC-114",
+            "name": "Transaction Order Dependence (SWC 114)",
+            "severity": "Medium"
+        },
+        {
+            "address": 686,
+            "contract": "EthTxOrderDependenceMinimal",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x3f4002001a0000000",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x400422e",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x6060604052341561000f57600080fd5b5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b61031c806100616000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063228cb7331461006a5780633eb6a67e146100935780638da5cb5b1461009d578063ae169a50146100f2578063e834a83414610115575b600080fd5b341561007557600080fd5b61007d610142565b6040518082815260200191505060405180910390f35b61009b610148565b005b34156100a857600080fd5b6100b061022c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100fd57600080fd5b6101136004808035906020019091905050610251565b005b341561012057600080fd5b6101286102dd565b604051808215151515815260200191505060405180910390f35b60015481565b600060149054906101000a900460ff1615151561016457600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101bf57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6001549081150290604051600060405180830381858888f19350505050151561022257600080fd5b346001819055505b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1615151561026d57600080fd5b600a8110151561027c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc6001549081150290604051600060405180830381858888f1935050505015156102be57600080fd5b6001600060146101000a81548160ff0219169083151502179055505b50565b600060149054906101000a900460ff16815600a165627a7a72305820c69ad87ac14dfac584839b5596c3ef2306b8b4d5c8612987e213f8c5a584ddf90029",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x0"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0x3eb6a67e",
+                        "input": "0x3eb6a67e",
+                        "name": "setReward()",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "resolved_input": null,
+                        "value": "0x1"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0xae169a50",
+                        "input": "0xae169a50",
+                        "name": "claimReward(uint256)",
+                        "origin": "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+                        "resolved_input": null,
+                        "value": "0x0"
+                    }
+                ]
+            },
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "function": "claimReward(uint256)",
+            "line": 31,
+            "message": "Any sender can withdraw Ether from the contract account.\nArbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.\nClassification: SWC-105",
+            "name": "Unprotected Ether Withdrawal (SWC 105)",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "mythril-0.24.7",
+        "mode": "solidity",
+        "version": "2024/03/24"
+    }
+}

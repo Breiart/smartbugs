@@ -1,0 +1,80 @@
+Extract contract Wallet from /sb/wallet_02_refund_nosub.sol
+Extracted 1 contract(s) from /sb/wallet_02_refund_nosub.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+contracts/Wallet.sol:43:22: Warning: Using contract member "balance" inherited from the address type is deprecated. Convert the contract to "address" type to access the member, for example use "address(contract).balance" instead.
+         to.transfer(this.balance);
+                     ^----------^
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz Wallet
+** Write stats: 0.019962
+** Write stats: 5.00344
+** Write stats: 10.002
+** Write stats: 15.0022
+** Write stats: 20.001
+** Write stats: 25.0054
+** Write stats: 30.0058
+** Write stats: 35.006
+** Write stats: 40.0062
+** Write stats: 45.0003
+** Write stats: 50.007
+** Write stats: 55.0038
+** Write stats: 60.0066
+** Write stats: 65.0015
+** Write stats: 70.0002
+** Write stats: 75.0002
+** Write stats: 80.0067
+** Write stats: 85.0096
+** Write stats: 90.0008
+** Write stats: 95.0026
+** Write stats: 100.006
+** Write stats: 105.024
+** Write stats: 110.007
+** Write stats: 115.008
+** Write stats: 120.009
+** Write stats: 125.009
+** Write stats: 130.009
+** Write stats: 135.008
+** Write stats: 140.008
+** Write stats: 145.008
+** Write stats: 150.009
+** Write stats: 155.01
+** Write stats: 160.003
+** Write stats: 165
+** Write stats: 170.012
+** Write stats: 175.002
+** Write stats: 180.003
+** Write stats: 185.011
+** Write stats: 190.002
+** Write stats: 195.003
+** Write stats: 200.011
+** Write stats: 205.008
+** Write stats: 210.016
+** Write stats: 215.014
+** Write stats: 220
+** Write stats: 225.014
+** Write stats: 230.006
+** Write stats: 235.019
+** Write stats: 240.026
+** Write stats: 245.001
+** Write stats: 250.025
+** Write stats: 255.018
+** Write stats: 260.004
+** Write stats: 265.012
+** Write stats: 270.011
+** Write stats: 275.01
+** Write stats: 280.005
+** Write stats: 285.02
+** Write stats: 290.033
+** Write stats: 295.004
+** Write stats: 298.042

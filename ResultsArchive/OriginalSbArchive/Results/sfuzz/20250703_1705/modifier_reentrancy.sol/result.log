@@ -1,0 +1,92 @@
+Extract contract Bank from /sb/modifier_reentrancy.sol
+Extract contract ModifierEntrancy from /sb/modifier_reentrancy.sol
+Extract contract attack from /sb/modifier_reentrancy.sol
+Extracted 3 contract(s) from /sb/modifier_reentrancy.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz ModifierEntrancy
+** Write stats: 0.002583
+** Write stats: 5.00006
+** Write stats: 10.0001
+** Write stats: 15.0001
+** Write stats: 20.0002
+** Write stats: 25.0002
+** Write stats: 30.0004
+** Write stats: 35.0001
+** Write stats: 40.0001
+** Write stats: 45.0003
+** Write stats: 50.0032
+** Write stats: 55.0019
+** Write stats: 60.0006
+** Write stats: 65.0014
+** Write stats: 70.0002
+** Write stats: 75.0001
+** Write stats: 80.0001
+** Write stats: 85.0032
+** Write stats: 90.0131
+** Write stats: 95.0003
+** Write stats: 100
+** Write stats: 105.001
+** Write stats: 110.023
+** Write stats: 115
+** Write stats: 120
+** Write stats: 120.014
+>> Fuzz attack
+** Write stats: 0.002961
+** Write stats: 5.00016
+** Write stats: 10.0001
+** Write stats: 15.0002
+** Write stats: 20.0001
+** Write stats: 25.0001
+** Write stats: 30.0003
+** Write stats: 35.0003
+** Write stats: 40.0002
+** Write stats: 45.0001
+** Write stats: 50.0327
+** Write stats: 55.0001
+** Write stats: 60.0002
+** Write stats: 65.002
+** Write stats: 70.0001
+** Write stats: 75.0001
+** Write stats: 80.0001
+** Write stats: 85.0001
+** Write stats: 90.0002
+** Write stats: 95.0012
+** Write stats: 100.001
+** Write stats: 105
+** Write stats: 110
+** Write stats: 115
+** Write stats: 120
+** Write stats: 120.007
+>> Fuzz Bank
+** Write stats: 0.001474
+** Write stats: 5.00004
+** Write stats: 10.0001
+** Write stats: 15.0001
+** Write stats: 20.0001
+** Write stats: 25.0001
+** Write stats: 30.0001
+** Write stats: 35.0001
+** Write stats: 40
+** Write stats: 45
+** Write stats: 50.0001
+** Write stats: 55.0001
+** Write stats: 60
+** Write stats: 65.0001
+** Write stats: 70
+** Write stats: 75
+** Write stats: 80.0001
+** Write stats: 85
+** Write stats: 95.0001
+./fuzzMe: line 9:    27 Killed                  ./fuzzer --file contracts/Bank.sol.json --name Bank --assets assets/ --duration 120 --mode 1 --reporter 1 --log 0 --attacker ReentrancyAttacker

@@ -1,0 +1,118 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "error",
+            "line": 7,
+            "message": "Compiler version ^0.4.24 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 36,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 68,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 86,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 101,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 102,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 111,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 119,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 120,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol",
+            "level": "warning",
+            "line": 121,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    }
+}

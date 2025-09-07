@@ -1,0 +1,46 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "TimeLock",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "withdraw",
+            "impact": "Low",
+            "line": 25,
+            "line_end": 31,
+            "message": "TimeLock.withdraw() (timelock.sol#25-31) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool)(now > lockTime[msg.sender]) (timelock.sol#27)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "impact": "Informational",
+            "line": 8,
+            "message": "Version constraint ^0.4.10 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput\n\t- SkipEmptyStringLiteral\n\t- ConstantOptimizerSubtraction.\nIt is used by:\n\t- ^0.4.10 (timelock.sol#8)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "impact": "Informational",
+            "line": 20,
+            "message": "Parameter TimeLock.increaseLockTime(uint256)._secondsToIncrease (timelock.sol#20) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    }
+}

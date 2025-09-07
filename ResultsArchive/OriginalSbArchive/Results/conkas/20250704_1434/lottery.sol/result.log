@@ -1,0 +1,13 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/lottery.sol:Lottery...
+Vulnerability: Integer Overflow. Maybe in function: makeBet(). PC: 0x101. Line number: 42.
+If a = 3
+and b = 57896044618658097711589333075113120152765123903203837642399758184343438098366
+Vulnerability: Reentrancy. Maybe in function: makeBet(). PC: 0x179. Line number: 46.
+Vulnerability: Integer Underflow. Maybe in function: makeBet(). PC: 0xf4. Line number: 42.
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1
+Vulnerability: Integer Overflow. Maybe in function: makeBet(). PC: 0xe8. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1

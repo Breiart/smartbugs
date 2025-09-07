@@ -1,0 +1,47 @@
+METRICS: Using configs from the Registry (like --config=p/ci) reports pseudonymous rule metrics to semgrep.dev.
+To disable Registry rule metrics, use "--metrics=off".
+Using configs only from local files (like --config=xyz.yml) does not enable metrics.
+
+More information: https://semgrep.dev/docs/metrics
+
+               
+               
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 1 file tracked by git with 48 Code rules:
+  Scanning 1 file with 48 solidity rules.
+                  
+                  
+┌────────────────┐
+│ 1 Code Finding │
+└────────────────┘
+                                                       
+    /sb/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol 
+       solidity.performance.use-nested-if                                       
+          Using nested is cheaper than using && multiple check combinations.    
+  There are more                                                                
+          advantages, such as easier to read code and better coverage reports.  
+                                                                                
+           26┆ if( acc.balance>=MinSum && acc.balance>=_am &&                   
+  now>acc.unlockTime)                                                           
+           27┆ {
+           28┆     // <yes> <report> REENTRANCY
+           29┆     if(msg.sender.call.value(_am)())
+           30┆     {
+           31┆         acc.balance-=_am;
+           32┆         LogFile.AddMessage(msg.sender,_am,"Collect");
+           33┆     }
+           34┆ }
+
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+
+Ran 48 rules on 1 file: 1 finding.
+
+A new version of Semgrep is available. See https://semgrep.dev/docs/upgrading
+
+Versions prior to 1.76.0 are no longer supported by Semgrep.dev, please upgrade.

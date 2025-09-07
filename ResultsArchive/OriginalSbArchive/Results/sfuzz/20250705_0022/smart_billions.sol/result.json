@@ -1,0 +1,162 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "invest",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "setBetMax",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "approve",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "won",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "putHash",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "transferFrom",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "playRandom",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "playSystem",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "addHashes",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "changeAnimator",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "putHashes",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "resetBet",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "play",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "payWallet",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "changeOwner",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "transfer",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "addHashes128",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "hotStore",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "investDirect",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "coldStore",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "houseKeeping",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "payDividends",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "disinvest",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "setInvestStart",
+            "name": "Block Number Dependency"
+        },
+        {
+            "contract": "SmartBillions.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "",
+            "name": "Block Number Dependency"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

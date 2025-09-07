@@ -1,0 +1,84 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "LogFile.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "AddMessage",
+            "name": "Integer Underflow"
+        },
+        {
+            "contract": "LogFile.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "AddMessage",
+            "name": "Timestamp Dependency"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "SetLogFile",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "Collect",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "Initialized",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "SetMinSum",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "Deposit",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "SetLogFile",
+            "name": "Exception Disorder"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "Collect",
+            "name": "Exception Disorder"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "Initialized",
+            "name": "Exception Disorder"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "SetMinSum",
+            "name": "Exception Disorder"
+        },
+        {
+            "contract": "PRIVATE_ETH_CELL.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+            "function": "Deposit",
+            "name": "Exception Disorder"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

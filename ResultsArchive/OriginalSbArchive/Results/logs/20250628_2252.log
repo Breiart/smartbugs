@@ -1,0 +1,45 @@
+Arguments passed: ['/home/user/Documents/smartbugs Originale/sb/__main__.py', '-t', 'slither', 'mythril', 'smartcheck', 'manticore', 'maian', 'confuzzius', '-f', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol', '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol', '--timeout', '600']
+Settings: {files: [(None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol')], main: False, runtime: False, tools: ['slither', 'mythril', 'smartcheck', 'manticore', 'maian', 'confuzzius'], runid: 20250628_2252, overwrite: False, processes: 1, timeout: 600, cpu_quota: None, mem_limit: None, results: results/${TOOL}/20250628_2252/${FILENAME}, log: results/logs/20250628_2252.log, json: False, sarif: False, quiet: False}
+Starting task 1/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol
+Starting task 2/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol
+Starting task 3/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol
+Starting task 4/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol
+Starting task 5/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol
+Starting task 6/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol
+Starting task 7/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol
+Starting task 8/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol
+Starting task 9/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol
+Starting task 10/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol
+Starting task 11/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol
+Starting task 12/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol
+Starting task 13/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol
+Starting task 14/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol
+Starting task 15/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol
+Starting task 16/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol
+Starting task 17/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol
+Starting task 18/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol
+Starting task 19/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol
+Starting task 20/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_1.sol
+Starting task 21/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol
+Starting task 22/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol
+Starting task 23/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol
+Starting task 24/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol
+Starting task 25/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/BECToken.sol
+Starting task 26/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol
+Starting task 27/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol
+Starting task 28/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol
+Starting task 29/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol
+Starting task 30/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol
+Starting task 31/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol
+Starting task 32/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol
+Starting task 33/42: maian and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol
+Starting task 34/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/open_address_lottery.sol
+Starting task 35/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol
+Starting task 36/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/integer_overflow_add.sol
+Starting task 37/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol
+Starting task 38/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol
+Starting task 39/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol
+Starting task 40/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/random_number_generator.sol
+Starting task 41/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/insecure_transfer.sol
+Starting task 42/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/SecondoSplit/lottery.sol
+Analysis completed in 1:36:15.

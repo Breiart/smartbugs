@@ -1,0 +1,17 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Wallet",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "name": "Money flow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "honeybadger",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    }
+}

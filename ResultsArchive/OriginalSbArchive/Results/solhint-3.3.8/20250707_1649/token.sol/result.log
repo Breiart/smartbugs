@@ -1,0 +1,6 @@
+/sb/token.sol:7:2: Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/token.sol:11:4: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/token.sol:14:4: Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0) [Warning/func-visibility]
+/sb/token.sol:20:6: Provide an error message for require [Warning/reason-string]
+
+4 problems

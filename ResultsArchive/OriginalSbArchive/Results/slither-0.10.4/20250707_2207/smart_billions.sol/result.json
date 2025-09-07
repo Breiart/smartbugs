@@ -1,0 +1,740 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "High",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) contract sets array length with a user-controlled value:\n\t- dividends.push(0) (smart_billions.sol#346)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "High",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) contract sets array length with a user-controlled value:\n\t- dividends.push(0) (smart_billions.sol#187)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "High",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) contract sets array length with a user-controlled value:\n\t- dividends.push(0) (smart_billions.sol#186)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "invest",
+            "impact": "Medium",
+            "line": 399,
+            "line_end": 431,
+            "message": "SmartBillions.invest(address) (smart_billions.sol#399-431) performs a multiplication on the result of a division:\n\t- walletBalance += (investing * 5 / 100) * 2 (smart_billions.sol#416)\n",
+            "name": "divide-before-multiply"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "commitDividend",
+            "impact": "Medium",
+            "line": 459,
+            "line_end": 478,
+            "message": "SmartBillions.commitDividend(address) (smart_billions.sol#459-478) performs a multiplication on the result of a division:\n\t- share = balances[_who] * 0xffffffff / totalSupply (smart_billions.sol#468)\n\t- balance += share * dividends[last] (smart_billions.sol#471)\n",
+            "name": "divide-before-multiply"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Basic",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) has incorrect ERC20 function interface:ERC20Basic.transfer(address,uint256) (smart_billions.sol#26)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicToken",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) has incorrect ERC20 function interface:BasicToken.transfer(address,uint256) (smart_billions.sol#51-64)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "StandardToken",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "approve",
+            "impact": "Medium",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) has incorrect ERC20 function interface:StandardToken.approve(address,uint256) (smart_billions.sol#98-103)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "approve",
+            "impact": "Medium",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) has incorrect ERC20 function interface:ERC20.approve(address,uint256) (smart_billions.sol#34)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "StandardToken",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "transferFrom",
+            "impact": "Medium",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) has incorrect ERC20 function interface:StandardToken.transferFrom(address,address,uint256) (smart_billions.sol#84-92)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "transferFrom",
+            "impact": "Medium",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions (smart_billions.sol#118-771) has incorrect ERC20 function interface:ERC20.transferFrom(address,address,uint256) (smart_billions.sol#33)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "betOf",
+            "impact": "Medium",
+            "line": 513,
+            "line_end": 535,
+            "message": "SmartBillions.betOf(address) (smart_billions.sol#513-535) uses a dangerous strict equality:\n\t- (player.value == 0) || (player.blockNum <= 1) || (block.number < player.blockNum) || (block.number >= player.blockNum + (10 * hashesSize)) (smart_billions.sol#515-518)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "betOf",
+            "impact": "Medium",
+            "line": 513,
+            "line_end": 535,
+            "message": "SmartBillions.betOf(address) (smart_billions.sol#513-535) uses a dangerous strict equality:\n\t- hash == 0x1000000 (smart_billions.sol#527)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "putHash",
+            "impact": "Medium",
+            "line": 735,
+            "line_end": 756,
+            "message": "SmartBillions.putHash() (smart_billions.sol#735-756) uses a dangerous strict equality:\n\t- lastb == 0 || block.number <= lastb + 10 (smart_billions.sol#737)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "addHashes",
+            "impact": "Medium",
+            "line": 672,
+            "line_end": 689,
+            "message": "SmartBillions.addHashes(uint256) (smart_billions.sol#672-689) uses a dangerous strict equality:\n\t- require(bool)(hashFirst == 0 && _sadd > 0 && _sadd <= hashesSize) (smart_billions.sol#673)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "won",
+            "impact": "Medium",
+            "line": 540,
+            "line_end": 591,
+            "message": "SmartBillions.won() (smart_billions.sol#540-591) uses a dangerous strict equality:\n\t- (player.value == 0) || (player.blockNum == 1) (smart_billions.sol#546)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "won",
+            "impact": "Medium",
+            "line": 540,
+            "line_end": 591,
+            "message": "SmartBillions.won() (smart_billions.sol#540-591) uses a dangerous strict equality:\n\t- hash == 0x1000000 (smart_billions.sol#566)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "betPrize",
+            "impact": "Medium",
+            "line": 482,
+            "line_end": 508,
+            "message": "SmartBillions.betPrize(SmartBillions.Bet,uint24) (smart_billions.sol#482-508) uses a dangerous strict equality:\n\t- (hit & 0xF00000) == 0 (smart_billions.sol#485-491)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "won",
+            "impact": "Medium",
+            "line": 540,
+            "line_end": 591,
+            "message": "SmartBillions.won() (smart_billions.sol#540-591) uses a dangerous strict equality:\n\t- player.blockNum == 0 (smart_billions.sol#542)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Low",
+            "line": 32,
+            "message": "ERC20.allowance(address,address).owner (smart_billions.sol#32) shadows:\n\t- ERC20Basic.owner (smart_billions.sol#23) (state variable)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "changeOwner",
+            "impact": "Low",
+            "line": 267,
+            "line_end": 272,
+            "message": "SmartBillions.changeOwner(address) (smart_billions.sol#267-272) should emit an event for: \n\t- owner = _who (smart_billions.sol#271) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "changeAnimator",
+            "impact": "Low",
+            "line": 278,
+            "line_end": 283,
+            "message": "SmartBillions.changeAnimator(address) (smart_billions.sol#278-283) should emit an event for: \n\t- animator = _who (smart_billions.sol#282) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "setBetMax",
+            "impact": "Low",
+            "line": 298,
+            "line_end": 300,
+            "message": "SmartBillions.setBetMax(uint256) (smart_billions.sol#298-300) should emit an event for: \n\t- hashBetMax = _maxsum (smart_billions.sol#299) \n",
+            "name": "events-maths"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "setInvestStart",
+            "impact": "Low",
+            "line": 289,
+            "line_end": 292,
+            "message": "SmartBillions.setInvestStart(uint256) (smart_billions.sol#289-292) should emit an event for: \n\t- investStart = _when (smart_billions.sol#291) \n",
+            "name": "events-maths"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "putHash",
+            "impact": "Informational",
+            "line": 735,
+            "line_end": 756,
+            "message": "SmartBillions.putHash() (smart_billions.sol#735-756) has costly operations inside a loop:\n\t- hashLast = lastb + 10 (smart_billions.sol#754)\n",
+            "name": "costly-loop"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 560,
+            "message": "Deprecated standard detected hash = uint24(block.blockhash(player.blockNum)) (smart_billions.sol#560):\n\t- Usage of \"block.blockhash()\" should be replaced with \"blockhash()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 618,
+            "message": "Deprecated standard detected playSystem(uint256(sha3()(msg.sender,block.number)),address(0)) (smart_billions.sol#618):\n\t- Usage of \"sha3()\" should be replaced with \"keccak256()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 700,
+            "line_end": 719,
+            "message": "Deprecated standard detected ((uint256(block.blockhash(_lastb)) & 0xFFFFFF) | ((uint256(block.blockhash(_lastb + 1)) & 0xFFFFFF) << 24) | ((uint256(block.blockhash(_lastb + 2)) & 0xFFFFFF) << 48) | ((uint256(block.blockhash(_lastb + 3)) & 0xFFFFFF) << 72) | ((uint256(block.blockhash(_lastb + 4)) & 0xFFFFFF) << 96) | ((uint256(block.blockhash(_lastb + 5)) & 0xFFFFFF) << 120) | ((uint256(block.blockhash(_lastb + 6)) & 0xFFFFFF) << 144) | ((uint256(block.blockhash(_lastb + 7)) & 0xFFFFFF) << 168) | ((uint256(block.blockhash(_lastb + 8)) & 0xFFFFFF) << 192) | ((uint256(block.blockhash(_lastb + 9)) & 0xFFFFFF) << 216) | ((uint256(_delta) / hashesSize) << 240)) (smart_billions.sol#700-719):\n\t- Usage of \"block.blockhash()\" should be replaced with \"blockhash()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 523,
+            "message": "Deprecated standard detected (betPrize(player,uint24(block.blockhash(player.blockNum)))) (smart_billions.sol#523):\n\t- Usage of \"block.blockhash()\" should be replaced with \"blockhash()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 626,
+            "message": "Deprecated standard detected playSystem(uint256(sha3()(msg.sender,block.number)),_partner) (smart_billions.sol#626):\n\t- Usage of \"sha3()\" should be replaced with \"keccak256()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.13 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput.\nIt is used by:\n\t- ^0.4.13 (smart_billions.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 110,
+            "message": "Parameter StandardToken.allowance(address,address)._spender (smart_billions.sol#110) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 98,
+            "message": "Parameter StandardToken.approve(address,uint256)._value (smart_billions.sol#98) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 51,
+            "message": "Parameter BasicToken.transfer(address,uint256)._value (smart_billions.sol#51) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 110,
+            "message": "Parameter StandardToken.allowance(address,address)._owner (smart_billions.sol#110) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 513,
+            "message": "Parameter SmartBillions.betOf(address)._who (smart_billions.sol#513) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 762,
+            "message": "Parameter SmartBillions.putHashes(uint256)._num (smart_billions.sol#762) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 482,
+            "message": "Parameter SmartBillions.betPrize(SmartBillions.Bet,uint24)._player (smart_billions.sol#482) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 316,
+            "message": "Parameter SmartBillions.coldStore(uint256)._amount (smart_billions.sol#316) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 84,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._from (smart_billions.sol#84) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 203,
+            "message": "Parameter SmartBillions.walletBalanceOf(address)._owner (smart_billions.sol#203) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 84,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._to (smart_billions.sol#84) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 399,
+            "message": "Parameter SmartBillions.invest(address)._partner (smart_billions.sol#399) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 98,
+            "message": "Parameter StandardToken.approve(address,uint256)._spender (smart_billions.sol#98) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 698,
+            "message": "Parameter SmartBillions.calcHashes(uint32,uint32)._delta (smart_billions.sol#698) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 227,
+            "message": "Parameter SmartBillions.betValueOf(address)._owner (smart_billions.sol#227) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 219,
+            "message": "Parameter SmartBillions.walletBlockOf(address)._owner (smart_billions.sol#219) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 625,
+            "message": "Parameter SmartBillions.playRandom(address)._partner (smart_billions.sol#625) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 51,
+            "message": "Parameter BasicToken.transfer(address,uint256)._to (smart_billions.sol#51) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 243,
+            "message": "Parameter SmartBillions.betBlockNumberOf(address)._owner (smart_billions.sol#243) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 211,
+            "message": "Parameter SmartBillions.walletPeriodOf(address)._owner (smart_billions.sol#211) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 267,
+            "message": "Parameter SmartBillions.changeOwner(address)._who (smart_billions.sol#267) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 633,
+            "message": "Parameter SmartBillions.playSystem(uint256,address)._partner (smart_billions.sol#633) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 70,
+            "message": "Parameter BasicToken.balanceOf(address)._owner (smart_billions.sol#70) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 459,
+            "message": "Parameter SmartBillions.commitDividend(address)._who (smart_billions.sol#459) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 482,
+            "message": "Parameter SmartBillions.betPrize(SmartBillions.Bet,uint24)._hash (smart_billions.sol#482) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 289,
+            "message": "Parameter SmartBillions.setInvestStart(uint256)._when (smart_billions.sol#289) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 369,
+            "message": "Parameter SmartBillions.pay(uint256)._amount (smart_billions.sol#369) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 698,
+            "message": "Parameter SmartBillions.calcHashes(uint32,uint32)._lastb (smart_billions.sol#698) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 722,
+            "message": "Parameter SmartBillions.getHash(uint256)._block (smart_billions.sol#722) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 84,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._value (smart_billions.sol#84) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter SmartBillions.changeAnimator(address)._who (smart_billions.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 298,
+            "message": "Parameter SmartBillions.setBetMax(uint256)._maxsum (smart_billions.sol#298) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 672,
+            "message": "Parameter SmartBillions.addHashes(uint256)._sadd (smart_billions.sol#672) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 633,
+            "message": "Parameter SmartBillions.playSystem(uint256,address)._hash (smart_billions.sol#633) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Informational",
+            "line": 235,
+            "message": "Parameter SmartBillions.betHashOf(address)._owner (smart_billions.sol#235) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "playSystem",
+            "impact": "Informational",
+            "line": 633,
+            "line_end": 664,
+            "message": "Reentrancy in SmartBillions.playSystem(uint256,address) (smart_billions.sol#633-664):\n\tExternal calls:\n\t- won() (smart_billions.sol#634)\n\t\t- msg.sender.transfer(_amount) (smart_billions.sol#372)\n\t\t- msg.sender.transfer(maxpay) (smart_billions.sol#382)\n\tState variables written after the call(s):\n\t- bets[msg.sender] = Bet({value:uint192(msg.value),betHash:uint32(bethash),blockNum:uint32(hashNext)}) (smart_billions.sol#659)\n\t- dividends[dividendPeriod] += msg.value / 20 (smart_billions.sol#639)\n\t- hashBetSum = msg.value (smart_billions.sol#648)\n\t- hashBetSum = msg.value (smart_billions.sol#653)\n\t- hashBetSum += msg.value (smart_billions.sol#656)\n\t- putHash() (smart_billions.sol#662)\n\t\t- hashLast = lastb + 10 (smart_billions.sol#754)\n\t- hashNext = block.number + 3 (smart_billions.sol#647)\n\t- hashNext ++ (smart_billions.sol#652)\n\t- putHash() (smart_billions.sol#662)\n\t\t- hashes[delta % hashesSize] = calcHashes(uint32(lastb),uint32(delta)) (smart_billions.sol#753)\n\t- walletBalance += fee (smart_billions.sol#643)\n\t- wallets[_partner].balance += uint208(fee) (smart_billions.sol#644)\n\tEvent emitted after the call(s):\n\t- LogBet(msg.sender,uint256(bethash),hashNext,msg.value) (smart_billions.sol#660)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "coldStore",
+            "impact": "Informational",
+            "line": 316,
+            "line_end": 324,
+            "message": "Reentrancy in SmartBillions.coldStore(uint256) (smart_billions.sol#316-324):\n\tExternal calls:\n\t- msg.sender.transfer(_amount) (smart_billions.sol#322)\n\tState variables written after the call(s):\n\t- coldStoreLast = block.number (smart_billions.sol#323)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "invest",
+            "impact": "Informational",
+            "line": 399,
+            "line_end": 431,
+            "message": "Reentrancy in SmartBillions.invest(address) (smart_billions.sol#399-431):\n\tExternal calls:\n\t- msg.sender.transfer(msg.value.sub(investing)) (smart_billions.sol#407)\n\tState variables written after the call(s):\n\t- balances[msg.sender] += senderBalance (smart_billions.sol#423)\n\t- balances[owner] += ownerBalance (smart_billions.sol#424)\n\t- balances[animator] += animatorBalance (smart_billions.sol#425)\n\t- totalSupply += senderBalance + ownerBalance + animatorBalance (smart_billions.sol#426)\n\t- walletBalance += investing / 10 (smart_billions.sol#413)\n\t- walletBalance += (investing * 5 / 100) * 2 (smart_billions.sol#416)\n\t- wallets[owner].balance += uint208(investing / 10) (smart_billions.sol#414)\n\t- wallets[owner].balance += uint208(investing * 5 / 100) (smart_billions.sol#417)\n\t- wallets[_partner].balance += uint208(investing * 5 / 100) (smart_billions.sol#418)\n\t- wallets[msg.sender].lastDividendPeriod = uint16(dividendPeriod) (smart_billions.sol#419)\n\tEvent emitted after the call(s):\n\t- LogInvestment(msg.sender,_partner,investing) (smart_billions.sol#430)\n\t- Transfer(address(0),msg.sender,senderBalance) (smart_billions.sol#427)\n\t- Transfer(address(0),owner,ownerBalance) (smart_billions.sol#428)\n\t- Transfer(address(0),animator,animatorBalance) (smart_billions.sol#429)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "pay",
+            "impact": "Informational",
+            "line": 369,
+            "line_end": 384,
+            "message": "Reentrancy in SmartBillions.pay(uint256) (smart_billions.sol#369-384):\n\tExternal calls:\n\t- msg.sender.transfer(_amount) (smart_billions.sol#372)\n\tState variables written after the call(s):\n\t- houseKeeping() (smart_billions.sol#374)\n\t\t- dividendPeriod ++ (smart_billions.sol#349)\n\t- houseKeeping() (smart_billions.sol#374)\n\t\t- dividends.push(0) (smart_billions.sol#346)\n\t- houseKeeping() (smart_billions.sol#374)\n\t\t- investStart = 0 (smart_billions.sol#340)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "betPrize",
+            "impact": "Informational",
+            "line": 482,
+            "line_end": 508,
+            "message": "SmartBillions.betPrize(SmartBillions.Bet,uint24) (smart_billions.sol#482-508) uses literals with too many digits:\n\t- (uint256(_player.value) * 7000000) (smart_billions.sol#493)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "slitherConstructorVariables",
+            "impact": "Informational",
+            "line": 118,
+            "line_end": 771,
+            "message": "SmartBillions.slitherConstructorVariables() (smart_billions.sol#118-771) uses literals with too many digits:\n\t- investBalanceMax = 200000000000000000000000 (smart_billions.sol#144)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "betOf",
+            "impact": "Informational",
+            "line": 513,
+            "line_end": 535,
+            "message": "SmartBillions.betOf(address) (smart_billions.sol#513-535) uses literals with too many digits:\n\t- hash == 0x1000000 (smart_billions.sol#527)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "getHash",
+            "impact": "Informational",
+            "line": 722,
+            "line_end": 730,
+            "message": "SmartBillions.getHash(uint256) (smart_billions.sol#722-730) uses literals with too many digits:\n\t- (0x1000000) (smart_billions.sol#726)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "won",
+            "impact": "Informational",
+            "line": 540,
+            "line_end": 591,
+            "message": "SmartBillions.won() (smart_billions.sol#540-591) uses literals with too many digits:\n\t- hash == 0x1000000 (smart_billions.sol#566)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SmartBillions",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "function": "betPrize",
+            "impact": "Informational",
+            "line": 482,
+            "line_end": 508,
+            "message": "SmartBillions.betPrize(SmartBillions.Bet,uint24) (smart_billions.sol#482-508) uses literals with too many digits:\n\t- (hit & 0xF00000) == 0 (smart_billions.sol#485-491)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Optimization",
+            "line": 681,
+            "message": "Loop condition n < hashes.length (smart_billions.sol#681) should use cached array length instead of referencing `length` member of the storage array.\n ",
+            "name": "cache-array-length"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+            "impact": "Optimization",
+            "line": 144,
+            "message": "SmartBillions.investBalanceMax (smart_billions.sol#144) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    }
+}

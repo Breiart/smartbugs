@@ -1,0 +1,60 @@
+2025-06-26 14:51:54,112 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-06-26 14:51:54,129 - Fuzzer   - INFO - [1mFuzzing contract [1mOverflow[0m[0m
+2025-06-26 14:51:54,152 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 5 (4 unique)   	 Time: 0.018276453018188477[0m
+2025-06-26 14:51:54,165 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 9 (7 unique)   	 Time: 0.031147241592407227[0m
+2025-06-26 14:51:54,179 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m          !!! Integer overflow detected !!!          [0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mSWC-ID:   101[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mSeverity: High[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mSource code line:[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m/sb/integer_overflow_1.sol:14:1[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31msellerBalance += value[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mTransaction sequence:[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mTransaction 1 - add(uint256):[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mInput:     0x1003e2d2ffffffffffffffffffffffffffffffff[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m           fffffffffffffffffffffffffffffffe[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mTransaction 2 - add(uint256):[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31mInput:     0x1003e2d2ffffffffffffffffffffffffffffffff[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m           ffffffffffffffffffffffffffffffff[0m
+2025-06-26 14:51:54,180 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2025-06-26 14:51:54,188 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 15 (10 unique)   	 Time: 0.05446434020996094[0m
+2025-06-26 14:51:54,229 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 27 (14 unique)   	 Time: 0.09520626068115234[0m
+2025-06-26 14:51:54,269 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 39 (18 unique)   	 Time: 0.13556337356567383[0m
+2025-06-26 14:51:54,309 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 51 (22 unique)   	 Time: 0.1753387451171875[0m
+2025-06-26 14:51:54,349 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 63 (26 unique)   	 Time: 0.21514225006103516[0m
+2025-06-26 14:51:54,389 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 75 (30 unique)   	 Time: 0.2549576759338379[0m
+2025-06-26 14:51:54,429 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 87 (34 unique)   	 Time: 0.29525017738342285[0m
+2025-06-26 14:51:54,472 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 99 (38 unique)   	 Time: 0.33789873123168945[0m
+2025-06-26 14:51:54,512 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 98.55% (68/69) 	 Branch coverage: 83.33% (5/6) 	 Transactions: 111 (42 unique)   	 Time: 0.3785362243652344[0m
+2025-06-26 14:51:54,512 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-06-26 14:51:54,512 - Analysis - INFO - Number of generations: 	 10
+2025-06-26 14:51:54,512 - Analysis - INFO - Number of transactions: 	 111 (42 unique)
+2025-06-26 14:51:54,512 - Analysis - INFO - Transactions per second: 	 293
+2025-06-26 14:51:54,513 - Analysis - INFO - Total code coverage: 	 98.55% (68/69)
+2025-06-26 14:51:54,513 - Analysis - INFO - Total branch coverage: 	 83.33% (5/6)
+2025-06-26 14:51:54,513 - Analysis - INFO - Total execution time: 	 0.38 seconds
+2025-06-26 14:51:54,513 - Analysis - INFO - Total memory consumption: 	 53.92 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

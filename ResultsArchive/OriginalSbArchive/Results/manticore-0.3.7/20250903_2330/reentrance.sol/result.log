@@ -1,0 +1,39 @@
+2025-09-03 23:52:43,197: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2025-09-03 23:52:43,198: [11] m.main:INFO: Beginning analysis
+2025-09-03 23:52:43,200: [11] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-03 23:52:43,752: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-03 23:52:46,855: [11] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' -> 73138091548938366139099779971772605061518111956507126412222883840269740007539
+2025-09-03 23:52:49,405: [11] m.e.manticore:INFO: 4 alive states, 1 terminated states
+2025-09-03 23:52:49,609: [11] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-03 23:53:17,834: [11] m.e.manticore:INFO: 16 alive states, 1 terminated states
+2025-09-03 23:53:18,196: [100] m.c.manticore:INFO: Generated testcase No. 0 - STOP(3 txs)
+2025-09-03 23:53:18,200: [100] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,268: [102] m.c.manticore:INFO: Generated testcase No. 3 - STOP(3 txs)
+2025-09-03 23:53:18,269: [102] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,286: [105] m.c.manticore:INFO: Generated testcase No. 1 - STOP(3 txs)
+2025-09-03 23:53:18,294: [105] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,294: [103] m.c.manticore:INFO: Generated testcase No. 2 - STOP(3 txs)
+2025-09-03 23:53:18,301: [103] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,317: [110] m.c.manticore:INFO: Generated testcase No. 4 - STOP(3 txs)
+2025-09-03 23:53:18,321: [110] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,341: [108] m.c.manticore:INFO: Generated testcase No. 5 - STOP(3 txs)
+2025-09-03 23:53:18,342: [108] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,372: [104] m.c.manticore:INFO: Generated testcase No. 6 - STOP(3 txs)
+2025-09-03 23:53:18,376: [104] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:18,628: [109] m.c.manticore:INFO: Generated testcase No. 7 - STOP(3 txs)
+2025-09-03 23:53:18,643: [109] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:20,703: [99] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:20,890: [110] m.c.manticore:INFO: Generated testcase No. 8 - STOP(3 txs)
+2025-09-03 23:53:21,446: [98] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:22,006: [101] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:23,349: [99] m.c.manticore:INFO: Generated testcase No. 9 - STOP(3 txs)
+2025-09-03 23:53:23,673: [98] m.c.manticore:INFO: Generated testcase No. 10 - STOP(3 txs)
+2025-09-03 23:53:24,570: [108] m.c.manticore:INFO: Generated testcase No. 11 - STOP(3 txs)
+2025-09-03 23:53:24,935: [101] m.c.manticore:INFO: Generated testcase No. 12 - STOP(3 txs)
+2025-09-03 23:53:25,455: [105] m.c.manticore:INFO: Generated testcase No. 13 - STOP(3 txs)
+2025-09-03 23:53:25,653: [106] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:25,949: [102] m.c.manticore:INFO: Generated testcase No. 14 - STOP(3 txs)
+2025-09-03 23:53:30,179: [106] m.c.manticore:INFO: Generated testcase No. 15 - STOP(3 txs)
+2025-09-03 23:53:35,672: [11] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 23:53:45,103: [11] m.c.manticore:INFO: Results in /mcore__t_3460l
+2025-09-03 23:53:45,104: [11] m.c.manticore:INFO: Total time: 55.41734552383423

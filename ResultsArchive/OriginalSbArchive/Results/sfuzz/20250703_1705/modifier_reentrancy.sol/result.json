@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_KILL_OOM",
+        "exception (Killed)"
+    ],
+    "findings": [
+        {
+            "contract": "ModifierEntrancy.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/modifier_reentrancy.sol",
+            "function": "airDrop",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "attack.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/modifier_reentrancy.sol",
+            "function": "supportsToken",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "attack.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/modifier_reentrancy.sol",
+            "function": "call",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

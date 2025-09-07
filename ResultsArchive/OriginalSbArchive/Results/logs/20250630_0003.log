@@ -1,0 +1,45 @@
+Arguments passed: ['/home/user/Documents/smartbugs Originale/sb/__main__.py', '-t', 'slither', 'mythril', 'smartcheck', 'manticore', 'maian', 'confuzzius', '-f', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol', '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol', '--timeout', '900']
+Settings: {files: [(None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol'), (None, '/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol')], main: False, runtime: False, tools: ['slither', 'mythril', 'smartcheck', 'manticore', 'maian', 'confuzzius'], runid: 20250630_0003, overwrite: False, processes: 1, timeout: 900, cpu_quota: None, mem_limit: None, results: results/${TOOL}/20250630_0003/${FILENAME}, log: results/logs/20250630_0003.log, json: False, sarif: False, quiet: False}
+Starting task 1/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol
+Starting task 2/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol
+Starting task 3/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol
+Starting task 4/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol
+Starting task 5/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol
+Starting task 6/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol
+Starting task 7/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol
+Starting task 8/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol
+Starting task 9/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol
+Starting task 10/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol
+Starting task 11/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol
+Starting task 12/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol
+Starting task 13/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol
+Starting task 14/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol
+Starting task 15/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol
+Starting task 16/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol
+Starting task 17/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol
+Starting task 18/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol
+Starting task 19/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol
+Starting task 20/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol
+Starting task 21/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol
+Starting task 22/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol
+Starting task 23/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol
+Starting task 24/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol
+Starting task 25/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol
+Starting task 26/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol
+Starting task 27/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol
+Starting task 28/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol
+Starting task 29/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol
+Starting task 30/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol
+Starting task 31/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol
+Starting task 32/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol
+Starting task 33/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol
+Starting task 34/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol
+Starting task 35/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/FindThisHash.sol
+Starting task 36/42: mythril-0.24.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol
+Starting task 37/42: smartcheck and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_03_wrong_constructor.sol
+Starting task 38/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/ERC20.sol
+Starting task 39/42: confuzzius and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol
+Starting task 40/42: manticore-0.3.7 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol
+Starting task 41/42: slither-0.10.4 and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol
+Starting task 42/42: maian and /home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/roulette.sol
+Analysis completed in 2:35:46.

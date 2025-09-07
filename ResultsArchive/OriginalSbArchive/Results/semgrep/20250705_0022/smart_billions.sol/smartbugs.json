@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/smart_billions.sol' '900' '/sb/bin'",
+        "image": "smartbugs/semgrep:c3a9f40",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpleqh8_qc": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/smart_billions.sol",
+    "platform": {
+        "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+        "python": "3.12.3.final.0 (64 bit)",
+        "release": "6.11.0-29-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jun 26 14:16:59 UTC 2"
+    },
+    "result": {
+        "duration": 3.1842358112335205,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": null,
+        "start": 1751667764.392599
+    },
+    "runid": "20250705_0022",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN'",
+        "id": "semgrep",
+        "image": "smartbugs/semgrep:c3a9f40",
+        "info": "Find patterns of vulnerabilities in smart contracts based on actual DeFi exploits as well as gas optimization rules that can be used as a part of the CI pipeline.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "semgrep",
+        "origin": "https://semgrep.dev/",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": "c3a9f40"
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Reentrance",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "function": "withdraw",
+            "impact": "High",
+            "line": 21,
+            "line_end": 29,
+            "message": "Reentrancy in Reentrance.withdraw(uint256) (reentrance.sol#21-29):\n\tExternal calls:\n\t- msg.sender.call.value(_amount)() (reentrance.sol#24)\n\tState variables written after the call(s):\n\t- balances[msg.sender] -= _amount (reentrance.sol#27)\n\tReentrance.balances (reentrance.sol#11) can be used in cross function reentrancies:\n\t- Reentrance.balanceOf(address) (reentrance.sol#17-19)\n\t- Reentrance.balances (reentrance.sol#11)\n\t- Reentrance.donate(address) (reentrance.sol#13-15)\n\t- Reentrance.withdraw(uint256) (reentrance.sol#21-29)\n",
+            "name": "reentrancy-eth"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.18 (reentrance.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "Reentrance",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "function": "withdraw",
+            "impact": "Informational",
+            "line": 21,
+            "line_end": 29,
+            "message": "Low level call in Reentrance.withdraw(uint256) (reentrance.sol#21-29):\n\t- msg.sender.call.value(_amount)() (reentrance.sol#24)\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "impact": "Informational",
+            "line": 17,
+            "message": "Parameter Reentrance.balanceOf(address)._who (reentrance.sol#17) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "impact": "Informational",
+            "line": 21,
+            "message": "Parameter Reentrance.withdraw(uint256)._amount (reentrance.sol#21) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "impact": "Informational",
+            "line": 13,
+            "message": "Parameter Reentrance.donate(address)._to (reentrance.sol#13) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "impact": "Informational",
+            "line": 25,
+            "message": "Redundant expression \"_amount (reentrance.sol#25)\" inReentrance (reentrance.sol#9-32)\n",
+            "name": "redundant-statements"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    }
+}

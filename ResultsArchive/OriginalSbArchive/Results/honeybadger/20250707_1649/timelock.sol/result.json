@@ -1,0 +1,17 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "TimeLock",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "name": "Money flow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "honeybadger",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    }
+}

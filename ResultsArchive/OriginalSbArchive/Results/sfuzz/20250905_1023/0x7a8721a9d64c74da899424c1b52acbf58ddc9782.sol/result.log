@@ -1,0 +1,224 @@
+Extract contract Log from /sb/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol
+Extract contract PrivateDeposit from /sb/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol
+Extracted 2 contract(s) from /sb/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+contracts/PrivateDeposit.sol:23:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function PrivateDeposit()
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PrivateDeposit.sol:23:5: Warning: No visibility specified. Defaulting to "public". 
+    function PrivateDeposit()
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PrivateDeposit.sol:31:5: Warning: No visibility specified. Defaulting to "public". 
+    function setLog(address _lib) onlyOwner
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PrivateDeposit.sol:47:5: Warning: No visibility specified. Defaulting to "public". 
+    function CashOut(uint _am)
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Log.sol:23:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function PrivateDeposit()
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Log.sol:23:5: Warning: No visibility specified. Defaulting to "public". 
+    function PrivateDeposit()
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Log.sol:31:5: Warning: No visibility specified. Defaulting to "public". 
+    function setLog(address _lib) onlyOwner
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Log.sol:47:5: Warning: No visibility specified. Defaulting to "public". 
+    function CashOut(uint _am)
+    ^ (Relevant source part starts here and spans across multiple lines).
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz PrivateDeposit
+** Write stats: 0.010785
+** Write stats: 5.00201
+** Write stats: 10.0004
+** Write stats: 15.0039
+** Write stats: 20.0054
+** Write stats: 25.0048
+** Write stats: 30.0056
+** Write stats: 35.0049
+** Write stats: 40.0027
+** Write stats: 45.008
+** Write stats: 50.0041
+** Write stats: 55.0034
+** Write stats: 60.0049
+** Write stats: 65.0009
+** Write stats: 70.0041
+** Write stats: 75.0084
+** Write stats: 80.001
+** Write stats: 85.0047
+** Write stats: 90.0078
+** Write stats: 95.0012
+** Write stats: 100.004
+** Write stats: 105.008
+** Write stats: 110.009
+** Write stats: 115.004
+** Write stats: 120.005
+** Write stats: 125.008
+** Write stats: 130.008
+** Write stats: 135.011
+** Write stats: 140.015
+** Write stats: 145.001
+** Write stats: 150.013
+** Write stats: 155.003
+** Write stats: 160.023
+** Write stats: 165.026
+** Write stats: 170.019
+** Write stats: 175.013
+** Write stats: 180.005
+** Write stats: 185.005
+** Write stats: 190.014
+** Write stats: 195.002
+** Write stats: 200.016
+** Write stats: 205.025
+** Write stats: 210.02
+** Write stats: 215.026
+** Write stats: 220.011
+** Write stats: 225.003
+** Write stats: 230.02
+** Write stats: 235.026
+** Write stats: 240.024
+** Write stats: 245.028
+** Write stats: 250.023
+** Write stats: 255.014
+** Write stats: 260.017
+** Write stats: 265.031
+** Write stats: 270.007
+** Write stats: 275.016
+** Write stats: 280.021
+** Write stats: 285.03
+** Write stats: 290.034
+** Write stats: 295.018
+** Write stats: 300.021
+** Write stats: 305.017
+** Write stats: 310.019
+** Write stats: 315.016
+** Write stats: 320.004
+** Write stats: 325.027
+** Write stats: 330.01
+** Write stats: 335.024
+** Write stats: 340.008
+** Write stats: 345.025
+** Write stats: 350.015
+** Write stats: 355.023
+** Write stats: 360.017
+** Write stats: 365.019
+** Write stats: 370.002
+** Write stats: 375.003
+** Write stats: 380.014
+** Write stats: 385.001
+** Write stats: 390.01
+** Write stats: 395.023
+** Write stats: 400.003
+** Write stats: 405.006
+** Write stats: 410.009
+** Write stats: 415.008
+** Write stats: 420.027
+** Write stats: 425.025
+** Write stats: 430.014
+** Write stats: 435.013
+** Write stats: 440.024
+** Write stats: 445.022
+** Write stats: 448.061
+>> Fuzz Log
+** Write stats: 0.004703
+** Write stats: 5.00204
+** Write stats: 10.0169
+** Write stats: 15.0239
+** Write stats: 20.0292
+** Write stats: 25.0159
+** Write stats: 30.0125
+** Write stats: 35.0416
+** Write stats: 40.0383
+** Write stats: 45.0406
+** Write stats: 50.0252
+** Write stats: 55.0358
+** Write stats: 60.0153
+** Write stats: 65.0491
+** Write stats: 70.049
+** Write stats: 75.0621
+** Write stats: 80.0186
+** Write stats: 85.0658
+** Write stats: 90.0501
+** Write stats: 95.0188
+** Write stats: 100.004
+** Write stats: 105.024
+** Write stats: 110.071
+** Write stats: 115.054
+** Write stats: 120.057
+** Write stats: 125.067
+** Write stats: 130.034
+** Write stats: 135.038
+** Write stats: 140.006
+** Write stats: 145.024
+** Write stats: 150.002
+** Write stats: 155.055
+** Write stats: 160.084
+** Write stats: 165.01
+** Write stats: 170.075
+** Write stats: 175.083
+** Write stats: 180.053
+** Write stats: 185.042
+** Write stats: 190.07
+** Write stats: 195.01
+** Write stats: 200.006
+** Write stats: 205.053
+** Write stats: 210.033
+** Write stats: 215.075
+** Write stats: 220.014
+** Write stats: 225.008
+** Write stats: 230.113
+** Write stats: 235.052
+** Write stats: 240.003
+** Write stats: 245.109
+** Write stats: 250.021
+** Write stats: 255.067
+** Write stats: 260.054
+** Write stats: 265.059
+** Write stats: 270.112
+** Write stats: 275.072
+** Write stats: 280.061
+** Write stats: 285.064
+** Write stats: 290.083
+** Write stats: 295.1
+** Write stats: 300.089
+** Write stats: 305.085
+** Write stats: 310.068
+** Write stats: 315.036
+** Write stats: 320.052
+** Write stats: 325.107
+** Write stats: 330.026
+** Write stats: 335.116
+** Write stats: 340.089
+** Write stats: 345.107
+** Write stats: 350.013
+** Write stats: 355.135
+** Write stats: 360.001
+** Write stats: 365.02
+** Write stats: 370.052
+** Write stats: 375.053
+** Write stats: 380.072
+** Write stats: 385.06
+** Write stats: 390.09
+** Write stats: 395.149
+** Write stats: 400.023
+** Write stats: 405.083
+** Write stats: 410.028
+** Write stats: 415.008
+** Write stats: 420.01
+** Write stats: 425.027
+** Write stats: 430.087
+** Write stats: 435.017
+** Write stats: 440.071
+** Write stats: 445.123
+** Write stats: 448.078

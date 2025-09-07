@@ -1,0 +1,11 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "mythril-0.24.7",
+        "mode": "solidity",
+        "version": "2024/03/24"
+    }
+}

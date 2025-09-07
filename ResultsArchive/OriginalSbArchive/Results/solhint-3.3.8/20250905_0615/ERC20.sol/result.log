@@ -1,0 +1,15 @@
+/sb/ERC20.sol:7:1: Compiler version ^0.4.24 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/ERC20.sol:27:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:36:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:47:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:58:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:68:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:86:3: Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0) [Warning/func-visibility]
+/sb/ERC20.sol:101:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:102:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:111:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:119:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:120:5: Provide an error message for require [Warning/reason-string]
+/sb/ERC20.sol:121:5: Provide an error message for require [Warning/reason-string]
+
+13 problems

@@ -1,0 +1,120 @@
+Extract contract EthTxOrderDependenceMinimal from /sb/eth_tx_order_dependence_minimal.sol
+Extracted 1 contract(s) from /sb/eth_tx_order_dependence_minimal.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+contracts/EthTxOrderDependenceMinimal.sol:14:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function EthTxOrderDependenceMinimal() public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/EthTxOrderDependenceMinimal.sol:27:5: Warning: No visibility specified. Defaulting to "public". 
+    function claimReward(uint256 submission) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz EthTxOrderDependenceMinimal
+** Write stats: 0.016889
+** Write stats: 5.00006
+** Write stats: 10.0002
+** Write stats: 15.0001
+** Write stats: 20.0002
+** Write stats: 25.0001
+** Write stats: 30.0001
+** Write stats: 35.0002
+** Write stats: 40.0002
+** Write stats: 45.0002
+** Write stats: 50.0001
+** Write stats: 55.0003
+** Write stats: 60.0004
+** Write stats: 65.0002
+** Write stats: 70
+** Write stats: 75.0002
+** Write stats: 80.0001
+** Write stats: 85.0002
+** Write stats: 90.0002
+** Write stats: 95.0002
+** Write stats: 100.001
+** Write stats: 105
+** Write stats: 110
+** Write stats: 115.008
+** Write stats: 120
+** Write stats: 125
+** Write stats: 130
+** Write stats: 135
+** Write stats: 140
+** Write stats: 145
+** Write stats: 150
+** Write stats: 155.007
+** Write stats: 160
+** Write stats: 165
+** Write stats: 170
+** Write stats: 175
+** Write stats: 180
+** Write stats: 185
+** Write stats: 190
+** Write stats: 195
+** Write stats: 200
+** Write stats: 205
+** Write stats: 210
+** Write stats: 215.001
+** Write stats: 220.001
+** Write stats: 225
+** Write stats: 230
+** Write stats: 235
+** Write stats: 240
+** Write stats: 245
+** Write stats: 250
+** Write stats: 255.001
+** Write stats: 260
+** Write stats: 265
+** Write stats: 270
+** Write stats: 275
+** Write stats: 280
+** Write stats: 285
+** Write stats: 290.001
+** Write stats: 295
+** Write stats: 300
+** Write stats: 305
+** Write stats: 310
+** Write stats: 315.001
+** Write stats: 320
+** Write stats: 325
+** Write stats: 330
+** Write stats: 335
+** Write stats: 340
+** Write stats: 345
+** Write stats: 350
+** Write stats: 355
+** Write stats: 360
+** Write stats: 365
+** Write stats: 370.001
+** Write stats: 375
+** Write stats: 380
+** Write stats: 385.006
+** Write stats: 390
+** Write stats: 395
+** Write stats: 400
+** Write stats: 405
+** Write stats: 410
+** Write stats: 415.001
+** Write stats: 420.362
+** Write stats: 425.015
+** Write stats: 430
+** Write stats: 435
+** Write stats: 440.007
+** Write stats: 445.656
+** Write stats: 611.033
+** Write stats: 645.327
+** Write stats: 681.358
+** Write stats: 750.973
+** Write stats: 790.782
+** Write stats: 795.506
+** Write stats: 800.611
+** Write stats: 915.505

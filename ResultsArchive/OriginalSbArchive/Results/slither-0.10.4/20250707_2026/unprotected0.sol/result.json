@@ -1,0 +1,43 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol",
+            "impact": "Low",
+            "line": 25,
+            "message": "Unprotected.changeOwner(address)._newOwner (unprotected0.sol#25) lacks a zero-check on :\n\t\t- owner = _newOwner (unprotected0.sol#28)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.15 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector.\nIt is used by:\n\t- ^0.4.15 (unprotected0.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/unprotected0.sol",
+            "impact": "Informational",
+            "line": 25,
+            "message": "Parameter Unprotected.changeOwner(address)._newOwner (unprotected0.sol#25) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    }
+}

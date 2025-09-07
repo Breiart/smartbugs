@@ -1,0 +1,77 @@
+Extract contract IntegerOverflowAdd from /sb/insecure_transfer.sol
+Extracted 1 contract(s) from /sb/insecure_transfer.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz IntegerOverflowAdd
+** Write stats: 0.003287
+** Write stats: 5.00104
+** Write stats: 10.0002
+** Write stats: 15.0045
+** Write stats: 20.0005
+** Write stats: 25.0022
+** Write stats: 30.004
+** Write stats: 35.003
+** Write stats: 40.004
+** Write stats: 45.0011
+** Write stats: 50.0045
+** Write stats: 55.0005
+** Write stats: 60.0004
+** Write stats: 65.0014
+** Write stats: 70.0006
+** Write stats: 75.0021
+** Write stats: 80.0016
+** Write stats: 85.004
+** Write stats: 90.0029
+** Write stats: 95.0023
+** Write stats: 100.005
+** Write stats: 105.002
+** Write stats: 110.003
+** Write stats: 115.001
+** Write stats: 120.001
+** Write stats: 125.009
+** Write stats: 130.004
+** Write stats: 135.006
+** Write stats: 140.004
+** Write stats: 145.003
+** Write stats: 150
+** Write stats: 155.001
+** Write stats: 160.004
+** Write stats: 165.007
+** Write stats: 170.003
+** Write stats: 175.004
+** Write stats: 180.006
+** Write stats: 185.007
+** Write stats: 190.001
+** Write stats: 195.009
+** Write stats: 200.009
+** Write stats: 205
+** Write stats: 210.005
+** Write stats: 215.009
+** Write stats: 220.001
+** Write stats: 225.005
+** Write stats: 230.009
+** Write stats: 235.013
+** Write stats: 240.007
+** Write stats: 245.016
+** Write stats: 250.017
+** Write stats: 255.005
+** Write stats: 260.007
+** Write stats: 265.007
+** Write stats: 270.009
+** Write stats: 275.01
+** Write stats: 280.019
+** Write stats: 285.001
+** Write stats: 290.009
+** Write stats: 295.013
+** Write stats: 298.013

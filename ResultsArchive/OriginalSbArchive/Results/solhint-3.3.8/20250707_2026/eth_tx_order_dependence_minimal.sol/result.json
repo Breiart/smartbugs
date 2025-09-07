@@ -1,0 +1,78 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "error",
+            "line": 7,
+            "message": "Compiler version ^0.4.16 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 19,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 21,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 24,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 5,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 28,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/eth_tx_order_dependence_minimal.sol",
+            "level": "warning",
+            "line": 32,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    }
+}

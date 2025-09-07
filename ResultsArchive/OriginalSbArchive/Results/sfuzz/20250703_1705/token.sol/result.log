@@ -1,0 +1,48 @@
+Extract contract Token from /sb/token.sol
+Extracted 1 contract(s) from /sb/token.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+contracts/Token.sol:14:4: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+   function Token(uint _initialSupply) {
+   ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Token.sol:14:4: Warning: No visibility specified. Defaulting to "public". 
+   function Token(uint _initialSupply) {
+   ^ (Relevant source part starts here and spans across multiple lines).
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz Token
+** Write stats: 0.014255
+** Write stats: 5.00228
+** Write stats: 10.0035
+** Write stats: 15.0012
+** Write stats: 20.0039
+** Write stats: 25.0019
+** Write stats: 30.0019
+** Write stats: 35.0024
+** Write stats: 40.003
+** Write stats: 45
+** Write stats: 50.0066
+** Write stats: 55.0057
+** Write stats: 60.0097
+** Write stats: 65.0172
+** Write stats: 70.0667
+** Write stats: 75.0022
+** Write stats: 80.0243
+** Write stats: 85.0116
+** Write stats: 90.0223
+** Write stats: 95.0143
+** Write stats: 100.033
+** Write stats: 105.015
+** Write stats: 110.014
+** Write stats: 115.009
+** Write stats: 120.036
+** Write stats: 120.051

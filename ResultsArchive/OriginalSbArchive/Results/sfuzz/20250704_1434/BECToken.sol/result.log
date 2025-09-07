@@ -1,0 +1,551 @@
+Extract contract BasicToken from /sb/BECToken.sol
+Extract contract BecToken from /sb/BECToken.sol
+Extract contract Ownable from /sb/BECToken.sol
+Extract contract Pausable from /sb/BECToken.sol
+Extract contract PausableToken from /sb/BECToken.sol
+Extract contract SafeMath from /sb/BECToken.sol
+Extract contract StandardToken from /sb/BECToken.sol
+Extracted 7 contract(s) from /sb/BECToken.sol
+[0;32m> Created "fuzzMe"[0m
+[0;32m> To fuzz contracts:[0m
+  chmod +x fuzzMe
+  ./fuzzMe
+contracts/Pausable.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/Pausable.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/Pausable.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/Pausable.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/Pausable.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/Pausable.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/Pausable.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/Pausable.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Pausable.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/BecToken.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/BecToken.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/BecToken.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/BecToken.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/BecToken.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/BecToken.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/BecToken.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BecToken.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/Ownable.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/Ownable.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/Ownable.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/Ownable.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/Ownable.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/Ownable.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/Ownable.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/Ownable.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/BasicToken.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/BasicToken.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/BasicToken.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/BasicToken.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/BasicToken.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/BasicToken.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/BasicToken.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/BasicToken.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/StandardToken.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/StandardToken.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/StandardToken.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/StandardToken.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/StandardToken.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/StandardToken.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/StandardToken.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/StandardToken.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/PausableToken.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/PausableToken.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/PausableToken.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/PausableToken.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/PausableToken.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/PausableToken.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/PausableToken.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/PausableToken.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:171:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:297:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:72:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+contracts/SafeMath.sol:124:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+contracts/SafeMath.sol:140:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+contracts/SafeMath.sol:191:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+contracts/SafeMath.sol:229:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Pause();
+    ^-----^
+contracts/SafeMath.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Unpause();
+    ^-------^
+contracts/SafeMath.sol:271:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _receivers[i], _value);
+        ^-----------------------------------------^
+contracts/SafeMath.sol:171:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:297:5: Warning: No visibility specified. Defaulting to "public". 
+    function BecToken() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:302:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:14:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:20:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+contracts/SafeMath.sol:32:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/NormalAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+assets/ReentrancyAttacker.sol:8:7: Warning: Return value of low-level calls not used.
+      msg.sender.call(bytes4(255));
+      ^--------------------------^
+assets/ReentrancyAttacker.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function() payable {
+  ^ (Relevant source part starts here and spans across multiple lines).
+>> Fuzz Pausable
+** Write stats: 0.012392
+** Write stats: 5.00018
+** Write stats: 10.0002
+** Write stats: 15.0002
+** Write stats: 20.0002
+** Write stats: 25.0002
+** Write stats: 30.0002
+** Write stats: 35.0002
+** Write stats: 40.0002
+** Write stats: 45.0001
+** Write stats: 50.0003
+** Write stats: 55.0143
+** Write stats: 60.0004
+** Write stats: 65.0002
+** Write stats: 70.0006
+** Write stats: 75.0042
+** Write stats: 80.0001
+** Write stats: 85.0005
+** Write stats: 90.0003
+** Write stats: 95.0006
+** Write stats: 100
+** Write stats: 105.001
+** Write stats: 110
+** Write stats: 115
+** Write stats: 120
+** Write stats: 125
+** Write stats: 126.002
+>> Fuzz BecToken
+** Write stats: 0.017571
+** Write stats: 5.00581
+** Write stats: 10.0016
+** Write stats: 15.0058
+** Write stats: 20.0044
+** Write stats: 25.0094
+** Write stats: 30.0107
+** Write stats: 35.0061
+** Write stats: 40.0276
+** Write stats: 45.0207
+** Write stats: 50.0104
+** Write stats: 55.0057
+** Write stats: 60.0221
+** Write stats: 65.0042
+** Write stats: 70.0003
+** Write stats: 75.0361
+** Write stats: 80.0202
+** Write stats: 85.0322
+** Write stats: 90.0074
+** Write stats: 95.0152
+** Write stats: 100.033
+** Write stats: 105.026
+** Write stats: 110.007
+** Write stats: 115.031
+** Write stats: 120
+** Write stats: 125.002
+** Write stats: 126.386
+>> Fuzz Ownable
+** Write stats: 0.002804
+** Write stats: 5.00019
+** Write stats: 10.0001
+** Write stats: 15.0002
+** Write stats: 20.0002
+** Write stats: 25.0001
+** Write stats: 30.0001
+** Write stats: 35.0001
+** Write stats: 40.0034
+** Write stats: 45.0003
+** Write stats: 50.0001
+** Write stats: 55
+** Write stats: 60.0002
+** Write stats: 65.0001
+** Write stats: 70.0001
+** Write stats: 75.0032
+** Write stats: 80.0003
+** Write stats: 85.0047
+** Write stats: 90.0001
+** Write stats: 95.0001
+** Write stats: 100
+** Write stats: 105
+** Write stats: 110
+** Write stats: 115.003
+** Write stats: 120
+** Write stats: 125
+** Write stats: 126.002
+>> Fuzz BasicToken
+** Write stats: 0.003244
+** Write stats: 5.00011
+** Write stats: 10.0003
+** Write stats: 15
+** Write stats: 20.0001
+** Write stats: 25.0015
+** Write stats: 30.0001
+** Write stats: 35.0001
+** Write stats: 40.0088
+** Write stats: 45.0001
+** Write stats: 50.0001
+** Write stats: 55.0001
+** Write stats: 60.0003
+** Write stats: 65.0002
+** Write stats: 70.0001
+** Write stats: 75.0055
+** Write stats: 80.0003
+** Write stats: 85.0001
+** Write stats: 90.0002
+** Write stats: 95.0001
+** Write stats: 100
+** Write stats: 105
+** Write stats: 110
+** Write stats: 115
+** Write stats: 120
+** Write stats: 125
+** Write stats: 126.001
+>> Fuzz StandardToken
+** Write stats: 0.006867
+** Write stats: 5.00171
+** Write stats: 10.0023
+** Write stats: 15.0009
+** Write stats: 20.0029
+** Write stats: 25.0036
+** Write stats: 30.0008
+** Write stats: 35.0042
+** Write stats: 40.0008
+** Write stats: 45.0034
+** Write stats: 50.0013
+** Write stats: 55.0002
+** Write stats: 60.0022
+** Write stats: 65.0018
+** Write stats: 70.0027
+** Write stats: 75.0064
+** Write stats: 80.0002
+** Write stats: 85.0021
+** Write stats: 90.0021
+** Write stats: 95.0026
+** Write stats: 100.008
+** Write stats: 105.003
+** Write stats: 110.006
+** Write stats: 115.007
+** Write stats: 120.005
+** Write stats: 125.008
+** Write stats: 126.018
+>> Fuzz PausableToken
+** Write stats: 0.017111
+** Write stats: 5.00294
+** Write stats: 10.0019
+** Write stats: 15.0088
+** Write stats: 20.0136
+** Write stats: 25.0165
+** Write stats: 30.018
+** Write stats: 35.0069
+** Write stats: 40.0193
+** Write stats: 45.0185
+** Write stats: 50.0236
+** Write stats: 55.0009
+** Write stats: 60.0289
+** Write stats: 65.0222
+** Write stats: 70.0272
+** Write stats: 75.0197
+** Write stats: 80.0029
+** Write stats: 85.0589
+** Write stats: 90.0182
+** Write stats: 95.0368
+** Write stats: 100.02
+** Write stats: 105.034
+** Write stats: 110.043
+** Write stats: 115.018
+** Write stats: 120.03
+** Write stats: 125.04
+** Write stats: 126.451
+>> Fuzz SafeMath
+** Write stats: 0.001462
+** Write stats: 5.00004
+** Write stats: 10.0001
+** Write stats: 15.0001
+** Write stats: 20.0001
+** Write stats: 25.0001
+** Write stats: 30.0001
+** Write stats: 35
+** Write stats: 40.0001
+** Write stats: 45.0001
+** Write stats: 50
+** Write stats: 55.0001
+** Write stats: 60
+** Write stats: 65
+** Write stats: 70.0001
+** Write stats: 75.0001
+** Write stats: 80.0001
+** Write stats: 85.0001
+** Write stats: 90.0001
+** Write stats: 95.0001
+** Write stats: 110.005
+** Write stats: 115.002
+** Write stats: 120
+** Write stats: 125
+** Write stats: 126

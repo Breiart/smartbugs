@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/modifier_reentrancy.sol' '/sb/bin'",
+        "image": "smartbugs/solhint:3.3.8",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpfosobxta": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/modifier_reentrancy.sol",
+    "platform": {
+        "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+        "python": "3.12.3.final.0 (64 bit)",
+        "release": "6.11.0-28-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri May 23 10:31:01 UTC 2"
+    },
+    "result": {
+        "duration": 1.5322637557983398,
+        "exit_code": 1,
+        "logs": "result.log",
+        "output": null,
+        "start": 1751563753.3533003
+    },
+    "runid": "20250703_1705",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$BIN'",
+        "id": "solhint-3.3.8",
+        "image": "smartbugs/solhint:3.3.8",
+        "info": "Open source project for linting solidity code. This project provide both security and style guide validations.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Solhint",
+        "origin": "https://github.com/protofire/solhint",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": "3.3.8"
+    }
+}

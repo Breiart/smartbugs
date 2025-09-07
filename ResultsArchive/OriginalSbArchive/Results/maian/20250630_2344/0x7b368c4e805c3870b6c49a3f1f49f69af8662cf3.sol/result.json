@@ -1,0 +1,32 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Log",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "Log",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "name": "No Ether leak (no send)"
+        },
+        {
+            "contract": "Log",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "name": "No Ether lock (Ether refused)"
+        },
+        {
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "name": "Not destructible (no self-destruct)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    }
+}

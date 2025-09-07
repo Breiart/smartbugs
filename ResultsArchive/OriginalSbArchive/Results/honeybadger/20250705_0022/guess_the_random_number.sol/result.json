@@ -1,0 +1,17 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "GuessTheRandomNumberChallenge",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/guess_the_random_number.sol",
+            "name": "Money flow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "honeybadger",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    }
+}

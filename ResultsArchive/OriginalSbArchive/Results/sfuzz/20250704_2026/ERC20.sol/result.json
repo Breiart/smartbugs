@@ -1,0 +1,14 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_KILL_OOM",
+        "exception (Killed)"
+    ],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

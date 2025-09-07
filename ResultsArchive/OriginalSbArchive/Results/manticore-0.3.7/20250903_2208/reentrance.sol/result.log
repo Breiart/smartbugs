@@ -1,0 +1,38 @@
+2025-09-03 22:35:58,271: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2025-09-03 22:35:58,271: [11] m.main:INFO: Beginning analysis
+2025-09-03 22:35:58,273: [11] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-03 22:35:58,841: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-03 22:36:01,967: [11] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' -> 73138091548938366139099779971772605061518111956507126412222883840269740007539
+2025-09-03 22:36:04,496: [11] m.e.manticore:INFO: 4 alive states, 1 terminated states
+2025-09-03 22:36:04,699: [11] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-03 22:36:33,119: [11] m.e.manticore:INFO: 16 alive states, 1 terminated states
+2025-09-03 22:36:33,485: [105] m.c.manticore:INFO: Generated testcase No. 0 - STOP(3 txs)
+2025-09-03 22:36:33,486: [105] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,511: [107] m.c.manticore:INFO: Generated testcase No. 1 - STOP(3 txs)
+2025-09-03 22:36:33,512: [107] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,522: [106] m.c.manticore:INFO: Generated testcase No. 2 - STOP(3 txs)
+2025-09-03 22:36:33,523: [106] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,584: [110] m.c.manticore:INFO: Generated testcase No. 3 - STOP(3 txs)
+2025-09-03 22:36:33,585: [110] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,591: [114] m.c.manticore:INFO: Generated testcase No. 4 - STOP(3 txs)
+2025-09-03 22:36:33,593: [114] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,683: [117] m.c.manticore:INFO: Generated testcase No. 5 - STOP(3 txs)
+2025-09-03 22:36:33,687: [117] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,720: [112] m.c.manticore:INFO: Generated testcase No. 6 - STOP(3 txs)
+2025-09-03 22:36:33,729: [112] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:33,851: [118] m.c.manticore:INFO: Generated testcase No. 7 - STOP(3 txs)
+2025-09-03 22:36:33,852: [118] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:35,251: [104] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:36,307: [110] m.c.manticore:INFO: Generated testcase No. 8 - STOP(3 txs)
+2025-09-03 22:36:36,577: [109] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:36,743: [115] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:36:37,234: [104] m.c.manticore:INFO: Generated testcase No. 9 - STOP(3 txs)
+2025-09-03 22:36:39,140: [109] m.c.manticore:INFO: Generated testcase No. 10 - STOP(3 txs)
+2025-09-03 22:36:39,672: [115] m.c.manticore:INFO: Generated testcase No. 11 - STOP(3 txs)
+2025-09-03 22:36:40,014: [105] m.c.manticore:INFO: Generated testcase No. 12 - STOP(3 txs)
+2025-09-03 22:36:40,073: [117] m.c.manticore:INFO: Generated testcase No. 13 - STOP(3 txs)
+2025-09-03 22:36:42,409: [106] m.c.manticore:INFO: Generated testcase No. 14 - STOP(3 txs)
+2025-09-03 22:36:46,197: [112] m.c.manticore:INFO: Generated testcase No. 15 - STOP(3 txs)
+2025-09-03 22:37:07,570: [11] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-03 22:37:16,858: [11] m.c.manticore:INFO: Results in /mcore_k0caygp3
+2025-09-03 22:37:16,858: [11] m.c.manticore:INFO: Total time: 72.07309603691101

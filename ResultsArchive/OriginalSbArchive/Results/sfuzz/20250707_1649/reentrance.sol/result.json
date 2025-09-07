@@ -1,0 +1,36 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Reentrance.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "function": "donate",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "Reentrance.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "function": "withdraw",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "Reentrance.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "function": "donate",
+            "name": "Exception Disorder"
+        },
+        {
+            "contract": "Reentrance.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "function": "withdraw",
+            "name": "Exception Disorder"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

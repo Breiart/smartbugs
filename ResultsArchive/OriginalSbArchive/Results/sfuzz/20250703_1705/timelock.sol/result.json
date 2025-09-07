@@ -1,0 +1,66 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "withdraw",
+            "name": "Integer Overflow"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "increaseLockTime",
+            "name": "Integer Overflow"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "deposit",
+            "name": "Integer Overflow"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "withdraw",
+            "name": "Timestamp Dependency"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "increaseLockTime",
+            "name": "Timestamp Dependency"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "deposit",
+            "name": "Timestamp Dependency"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "withdraw",
+            "name": "Gasless Send"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "increaseLockTime",
+            "name": "Gasless Send"
+        },
+        {
+            "contract": "TimeLock.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "function": "deposit",
+            "name": "Gasless Send"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

@@ -1,0 +1,221 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "High",
+            "line": 62,
+            "line_end": 86,
+            "message": "Log (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#62-86) contract sets array length with a user-controlled value:\n\t- History.push(LastMsg) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#83)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "Collect",
+            "impact": "High",
+            "line": 21,
+            "line_end": 35,
+            "message": "Reentrancy in W_WALLET.Collect(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#21-35):\n\tExternal calls:\n\t- msg.sender.call.value(_am)() (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#29)\n\tState variables written after the call(s):\n\t- acc.balance -= _am (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#31)\n\tW_WALLET.Acc (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#50) can be used in cross function reentrancies:\n\t- W_WALLET.Acc (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#50)\n\t- W_WALLET.Collect(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#21-35)\n\t- W_WALLET.Put(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#11-19)\n",
+            "name": "reentrancy-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "Put",
+            "impact": "Low",
+            "line": 11,
+            "line_end": 19,
+            "message": "W_WALLET.Put(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#11-19) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- _unlockTime > now (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#17)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "Collect",
+            "impact": "Low",
+            "line": 21,
+            "line_end": 35,
+            "message": "W_WALLET.Collect(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#21-35) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- acc.balance >= MinSum && acc.balance >= _am && now > acc.unlockTime (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#26)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.25 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x.\nIt is used by:\n\t- ^0.4.25 (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "Collect",
+            "impact": "Informational",
+            "line": 21,
+            "line_end": 35,
+            "message": "Low level call in W_WALLET.Collect(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#21-35):\n\t- msg.sender.call.value(_am)() (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#29)\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 72,
+            "message": "Variable Log.History (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#72) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 74,
+            "message": "Variable Log.LastMsg (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#74) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Variable W_WALLET.LogFile (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#52) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 76,
+            "message": "Parameter Log.AddMessage(address,uint256,string)._adr (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#76) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 11,
+            "message": "Parameter W_WALLET.Put(uint256)._unlockTime (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#11) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "Log",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "AddMessage",
+            "impact": "Informational",
+            "line": 76,
+            "line_end": 84,
+            "message": "Function Log.AddMessage(address,uint256,string) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#76-84) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 50,
+            "message": "Variable W_WALLET.Acc (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#50) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 76,
+            "message": "Parameter Log.AddMessage(address,uint256,string)._data (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#76) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 54,
+            "message": "Variable W_WALLET.MinSum (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#54) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 9,
+            "line_end": 59,
+            "message": "Contract W_WALLET (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#9-59) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 21,
+            "message": "Parameter W_WALLET.Collect(uint256)._am (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#21) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Informational",
+            "line": 76,
+            "message": "Parameter Log.AddMessage(address,uint256,string)._val (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#76) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "Collect",
+            "impact": "Informational",
+            "line": 21,
+            "line_end": 35,
+            "message": "Function W_WALLET.Collect(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#21-35) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "W_WALLET",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "Put",
+            "impact": "Informational",
+            "line": 11,
+            "line_end": 19,
+            "message": "Function W_WALLET.Put(uint256) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#11-19) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "impact": "Optimization",
+            "line": 54,
+            "message": "W_WALLET.MinSum (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#54) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "Log",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/QuartoSplit/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+            "function": "AddMessage",
+            "impact": "Optimization",
+            "line": 76,
+            "line_end": 84,
+            "message": "AddMessage(address,uint256,string) should be declared external:\n\t- Log.AddMessage(address,uint256,string) (0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol#76-84)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    }
+}

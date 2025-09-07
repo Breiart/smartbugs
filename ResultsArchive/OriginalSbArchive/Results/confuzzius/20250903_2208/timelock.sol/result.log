@@ -1,0 +1,132 @@
+2025-09-03 22:25:59,769 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-03 22:25:59,800 - Fuzzer   - INFO - [1mFuzzing contract [1mTimeLock[0m[0m
+2025-09-03 22:25:59,863 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 13 (12 unique)   	 Time: 0.056174516677856445[0m
+2025-09-03 22:25:59,916 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 26 (17 unique)   	 Time: 0.10980820655822754[0m
+2025-09-03 22:26:00,056 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 56 (25 unique)   	 Time: 0.24916505813598633[0m
+2025-09-03 22:26:00,154 - Analysis - ERROR - [91m[1mValidation error in [91m[1m411527842945791540[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,269 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 90 (31 unique)   	 Time: 0.4627680778503418[0m
+2025-09-03 22:26:00,321 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7412008778292753060[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,350 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7510675590787865291[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,388 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7531833512706556708[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,404 - Analysis - ERROR - [91m[1mValidation error in [91m[1m411527842945791540[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,422 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 73.97% (233/315) 	 Branch coverage: 80.77% (21/26) 	 Transactions: 124 (36 unique)   	 Time: 0.6155073642730713[0m
+2025-09-03 22:26:00,437 - Analysis - ERROR - [91m[1mValidation error in [91m[1m725537863329656109[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,441 - Analysis - ERROR - [91m[1mValidation error in [91m[1m725537863329656109[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,491 - Analysis - ERROR - [91m[1mValidation error in [91m[1m411527842945791540[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,540 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7412008778292753060[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,601 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 155 (42 unique)   	 Time: 0.7945282459259033[0m
+2025-09-03 22:26:00,678 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4548893547307605066[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,738 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,738 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,742 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 184 (49 unique)   	 Time: 0.935823917388916[0m
+2025-09-03 22:26:00,811 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,811 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,814 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2450082091324555606[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,874 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 209 (53 unique)   	 Time: 1.0673370361328125[0m
+2025-09-03 22:26:00,891 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5959995189363155095[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,933 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,934 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:00,937 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5987872219978338923[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,067 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 240 (57 unique)   	 Time: 1.2599141597747803[0m
+2025-09-03 22:26:01,118 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2002860226458397175[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,125 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1751708999579247018[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,126 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1751708999579247018[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,159 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,159 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1218828708061422245[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,177 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4729341768318261997[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,203 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 80.32% (253/315) 	 Branch coverage: 88.46% (23/26) 	 Transactions: 266 (64 unique)   	 Time: 1.3968658447265625[0m
+2025-09-03 22:26:01,243 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3908614990772548951[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,266 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2002860226458397175[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,306 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m    !!! Transaction order dependency detected !!!    [0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mSWC-ID:   114[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mSource code line:[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m/sb/timelock.sol:16:1[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mbalances[msg.sender] += msg.value[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mTransaction 1 - deposit():[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mInput:     0xd0e30db0[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mTransaction 2 - withdraw():[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,307 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mInput:     0x3ccfd60b[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mTransaction 3 - withdraw():[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33mInput:     0x3ccfd60b[0m
+2025-09-03 22:26:01,308 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mSeverity: Low[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mSource code line:[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m/sb/timelock.sol:27:1[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mnow[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mTransaction 1 - deposit():[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 22:26:01,318 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mInput:     0xd0e30db0[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mTransaction 2 - withdraw():[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mInput:     0x3ccfd60b[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mTransaction 3 - withdraw():[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32mInput:     0x3ccfd60b[0m
+2025-09-03 22:26:01,319 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2025-09-03 22:26:01,356 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3935028850388856345[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,357 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3935028850388856345[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-03 22:26:01,395 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 97.46% (307/315) 	 Branch coverage: 96.15% (25/26) 	 Transactions: 300 (70 unique)   	 Time: 1.5880272388458252[0m
+2025-09-03 22:26:01,395 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-03 22:26:01,395 - Analysis - INFO - Number of generations: 	 10
+2025-09-03 22:26:01,395 - Analysis - INFO - Number of transactions: 	 300 (70 unique)
+2025-09-03 22:26:01,395 - Analysis - INFO - Transactions per second: 	 189
+2025-09-03 22:26:01,395 - Analysis - INFO - Total code coverage: 	 97.46% (307/315)
+2025-09-03 22:26:01,395 - Analysis - INFO - Total branch coverage: 	 96.15% (25/26)
+2025-09-03 22:26:01,395 - Analysis - INFO - Total execution time: 	 1.59 seconds
+2025-09-03 22:26:01,395 - Analysis - INFO - Total memory consumption: 	 64.07 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

@@ -1,0 +1,84 @@
+2025-09-05 07:11:58,589: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2025-09-05 07:11:58,589: [11] m.main:INFO: Beginning analysis
+2025-09-05 07:11:58,591: [11] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-05 07:11:59,210: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-05 07:12:02,082: [11] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01' -> 27376155845717860833342594873357525089589924219251518322086369159840883582034
+2025-09-05 07:12:10,765: [11] m.e.manticore:INFO: 3 alive states, 3 terminated states
+2025-09-05 07:12:11,021: [11] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-05 07:12:52,570: [11] m.e.manticore:INFO: 12 alive states, 9 terminated states
+2025-09-05 07:12:52,860: [11] m.e.manticore:INFO: Starting symbolic transaction: 2
+2025-09-05 07:16:23,974: [11] m.e.manticore:INFO: 60 alive states, 33 terminated states
+2025-09-05 07:16:24,553: [112] m.c.manticore:INFO: Generated testcase No. 0 - STOP(4 txs)
+2025-09-05 07:16:24,556: [112] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,577: [119] m.c.manticore:INFO: Generated testcase No. 1 - STOP(4 txs)
+2025-09-05 07:16:24,578: [119] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,587: [114] m.c.manticore:INFO: Generated testcase No. 2 - STOP(4 txs)
+2025-09-05 07:16:24,588: [114] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,616: [117] m.c.manticore:INFO: Generated testcase No. 3 - STOP(4 txs)
+2025-09-05 07:16:24,619: [117] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,627: [116] m.c.manticore:INFO: Generated testcase No. 4 - STOP(4 txs)
+2025-09-05 07:16:24,628: [116] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,641: [123] m.c.manticore:INFO: Generated testcase No. 7 - STOP(4 txs)
+2025-09-05 07:16:24,642: [131] m.c.manticore:INFO: Generated testcase No. 6 - STOP(4 txs)
+2025-09-05 07:16:24,642: [123] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,645: [131] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,661: [120] m.c.manticore:INFO: Generated testcase No. 5 - STOP(4 txs)
+2025-09-05 07:16:24,664: [120] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,695: [121] m.c.manticore:INFO: Generated testcase No. 8 - STOP(4 txs)
+2025-09-05 07:16:24,699: [121] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,719: [126] m.c.manticore:INFO: Generated testcase No. 9 - STOP(4 txs)
+2025-09-05 07:16:24,719: [126] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,765: [129] m.c.manticore:INFO: Generated testcase No. 10 - STOP(4 txs)
+2025-09-05 07:16:24,766: [129] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:24,996: [113] m.c.manticore:INFO: Generated testcase No. 11 - STOP(4 txs)
+2025-09-05 07:16:25,001: [113] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-05 07:16:28,491: [116] m.c.manticore:INFO: Generated testcase No. 12 - STOP(4 txs)
+2025-09-05 07:16:29,002: [117] m.c.manticore:INFO: Generated testcase No. 13 - STOP(4 txs)
+2025-09-05 07:16:29,379: [112] m.c.manticore:INFO: Generated testcase No. 14 - STOP(4 txs)
+2025-09-05 07:16:29,407: [126] m.c.manticore:INFO: Generated testcase No. 15 - STOP(4 txs)
+2025-09-05 07:16:30,047: [114] m.c.manticore:INFO: Generated testcase No. 16 - STOP(4 txs)
+2025-09-05 07:16:30,150: [131] m.c.manticore:INFO: Generated testcase No. 17 - STOP(4 txs)
+2025-09-05 07:16:30,443: [120] m.c.manticore:INFO: Generated testcase No. 18 - STOP(4 txs)
+2025-09-05 07:16:31,094: [119] m.c.manticore:INFO: Generated testcase No. 19 - STOP(4 txs)
+2025-09-05 07:16:31,431: [121] m.c.manticore:INFO: Generated testcase No. 20 - STOP(4 txs)
+2025-09-05 07:16:32,232: [113] m.c.manticore:INFO: Generated testcase No. 21 - STOP(4 txs)
+2025-09-05 07:16:32,963: [129] m.c.manticore:INFO: Generated testcase No. 22 - STOP(4 txs)
+2025-09-05 07:16:33,122: [117] m.c.manticore:INFO: Generated testcase No. 23 - STOP(4 txs)
+2025-09-05 07:16:33,343: [116] m.c.manticore:INFO: Generated testcase No. 24 - STOP(4 txs)
+2025-09-05 07:16:33,842: [123] m.c.manticore:INFO: Generated testcase No. 25 - STOP(4 txs)
+2025-09-05 07:16:34,894: [131] m.c.manticore:INFO: Generated testcase No. 26 - STOP(4 txs)
+2025-09-05 07:16:35,184: [120] m.c.manticore:INFO: Generated testcase No. 27 - STOP(4 txs)
+2025-09-05 07:16:35,250: [112] m.c.manticore:INFO: Generated testcase No. 28 - STOP(4 txs)
+2025-09-05 07:16:35,363: [126] m.c.manticore:INFO: Generated testcase No. 29 - STOP(4 txs)
+2025-09-05 07:16:35,877: [114] m.c.manticore:INFO: Generated testcase No. 30 - STOP(4 txs)
+2025-09-05 07:16:38,076: [117] m.c.manticore:INFO: Generated testcase No. 31 - STOP(4 txs)
+2025-09-05 07:16:38,308: [121] m.c.manticore:INFO: Generated testcase No. 32 - STOP(4 txs)
+2025-09-05 07:16:39,218: [123] m.c.manticore:INFO: Generated testcase No. 33 - STOP(4 txs)
+2025-09-05 07:16:41,055: [126] m.c.manticore:INFO: Generated testcase No. 34 - STOP(4 txs)
+2025-09-05 07:16:41,099: [114] m.c.manticore:INFO: Generated testcase No. 35 - STOP(4 txs)
+2025-09-05 07:16:43,062: [113] m.c.manticore:INFO: Generated testcase No. 36 - STOP(4 txs)
+2025-09-05 07:16:43,230: [131] m.c.manticore:INFO: Generated testcase No. 37 - STOP(4 txs)
+2025-09-05 07:16:43,338: [121] m.c.manticore:INFO: Generated testcase No. 38 - STOP(4 txs)
+2025-09-05 07:16:45,213: [123] m.c.manticore:INFO: Generated testcase No. 39 - STOP(4 txs)
+2025-09-05 07:16:47,330: [114] m.c.manticore:INFO: Generated testcase No. 40 - STOP(4 txs)
+2025-09-05 07:16:47,377: [116] m.c.manticore:INFO: Generated testcase No. 41 - STOP(4 txs)
+2025-09-05 07:16:47,552: [117] m.c.manticore:INFO: Generated testcase No. 42 - STOP(4 txs)
+2025-09-05 07:16:47,689: [120] m.c.manticore:INFO: Generated testcase No. 43 - STOP(4 txs)
+2025-09-05 07:16:48,197: [119] m.c.manticore:INFO: Generated testcase No. 44 - STOP(4 txs)
+2025-09-05 07:16:49,570: [121] m.c.manticore:INFO: Generated testcase No. 45 - STOP(4 txs)
+2025-09-05 07:16:50,280: [112] m.c.manticore:INFO: Generated testcase No. 46 - STOP(4 txs)
+2025-09-05 07:16:50,968: [126] m.c.manticore:INFO: Generated testcase No. 47 - STOP(4 txs)
+2025-09-05 07:16:51,219: [131] m.c.manticore:INFO: Generated testcase No. 48 - STOP(4 txs)
+2025-09-05 07:16:52,149: [113] m.c.manticore:INFO: Generated testcase No. 49 - STOP(4 txs)
+2025-09-05 07:16:55,549: [116] m.c.manticore:INFO: Generated testcase No. 50 - STOP(4 txs)
+2025-09-05 07:16:55,764: [121] m.c.manticore:INFO: Generated testcase No. 51 - STOP(4 txs)
+2025-09-05 07:16:58,238: [131] m.c.manticore:INFO: Generated testcase No. 52 - STOP(4 txs)
+2025-09-05 07:17:00,056: [112] m.c.manticore:INFO: Generated testcase No. 53 - STOP(4 txs)
+2025-09-05 07:17:00,380: [117] m.c.manticore:INFO: Generated testcase No. 54 - STOP(4 txs)
+2025-09-05 07:17:00,888: [123] m.c.manticore:INFO: Generated testcase No. 55 - STOP(4 txs)
+2025-09-05 07:17:01,900: [120] m.c.manticore:INFO: Generated testcase No. 56 - STOP(4 txs)
+2025-09-05 07:17:02,120: [121] m.c.manticore:INFO: Generated testcase No. 57 - STOP(4 txs)
+2025-09-05 07:17:05,868: [117] m.c.manticore:INFO: Generated testcase No. 58 - STOP(4 txs)
+2025-09-05 07:17:05,988: [116] m.c.manticore:INFO: Generated testcase No. 59 - STOP(4 txs)
+2025-09-05 07:17:35,651: [11] m.c.manticore:INFO: Results in /mcore_2xsfecb6
+2025-09-05 07:17:35,651: [11] m.c.manticore:INFO: Total time: 282.52026200294495

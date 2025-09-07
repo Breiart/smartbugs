@@ -1,0 +1,49 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "RandomNumberGenerator",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/random_number_generator.sol",
+            "function": "random",
+            "impact": "High",
+            "line": 14,
+            "line_end": 25,
+            "message": "RandomNumberGenerator.random(uint256) (random_number_generator.sol#14-25) uses a weak PRNG: \"uint256((h / x)) % max + 1 (random_number_generator.sol#24)\" \n",
+            "name": "weak-prng"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RandomNumberGenerator",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/random_number_generator.sol",
+            "function": "random",
+            "impact": "Informational",
+            "line": 14,
+            "line_end": 25,
+            "message": "RandomNumberGenerator.random(uint256) (random_number_generator.sol#14-25) is never used and should be removed\n",
+            "name": "dead-code"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/random_number_generator.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Version constraint ^0.4.25 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x.\nIt is used by:\n\t- ^0.4.25 (random_number_generator.sol#7)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/random_number_generator.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    }
+}

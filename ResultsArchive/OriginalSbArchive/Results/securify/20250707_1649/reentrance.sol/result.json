@@ -1,0 +1,24 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "name": "DAO"
+        },
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "name": "MissingInputValidation"
+        },
+        {
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/reentrance.sol",
+            "name": "UnhandledException"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

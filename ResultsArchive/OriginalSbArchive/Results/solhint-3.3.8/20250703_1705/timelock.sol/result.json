@@ -1,0 +1,54 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 2,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "level": "error",
+            "line": 8,
+            "message": "Compiler version ^0.4.10 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 33,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "level": "warning",
+            "line": 17,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 10,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "level": "warning",
+            "line": 26,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 10,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 18,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/timelock.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    }
+}

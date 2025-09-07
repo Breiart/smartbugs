@@ -1,0 +1,62 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 2,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "level": "error",
+            "line": 7,
+            "message": "Compiler version ^0.4.24 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 6,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "level": "warning",
+            "line": 15,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "level": "warning",
+            "line": 17,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 10,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 10,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "level": "warning",
+            "line": 31,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 10,
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/TerzoSplit/wallet_02_refund_nosub.sol",
+            "level": "warning",
+            "line": 42,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    }
+}

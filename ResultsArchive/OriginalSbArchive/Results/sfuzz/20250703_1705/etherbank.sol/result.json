@@ -1,0 +1,24 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "EtherBank.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/etherbank.sol",
+            "function": "withdrawBalance",
+            "name": "Reentrancy"
+        },
+        {
+            "contract": "EtherBank.sol",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/PrimoSplit/etherbank.sol",
+            "function": "addToBalance",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "sfuzz",
+        "mode": "solidity",
+        "version": "2023/03/02"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": "'/sb/bin/do_solidity.sh' '/sb/random_number_generator.sol' '300' '/sb/bin' '0'",
+        "detach": true,
+        "entrypoint": null,
+        "image": "smartbugs/sfuzz:48934c0",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpnqldwu2s": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/random_number_generator.sol",
+    "platform": {
+        "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+        "python": "3.12.3.final.0 (64 bit)",
+        "release": "6.11.0-29-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jun 26 14:16:59 UTC 2"
+    },
+    "result": {
+        "duration": 194.58834743499756,
+        "exit_code": 137,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1751910706.09399
+    },
+    "runid": "20250707_1847",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "cpu_quota": null,
+        "entrypoint": null,
+        "id": "sfuzz",
+        "image": "smartbugs/sfuzz:48934c0",
+        "info": "An Efficient Adaptive Fuzzer for Solidity Smart Contracts",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "sFuzz",
+        "origin": "https://github.com/duytai/sFuzz",
+        "output": "/home/contracts",
+        "parser": "parser.py",
+        "solc": true,
+        "version": null
+    }
+}

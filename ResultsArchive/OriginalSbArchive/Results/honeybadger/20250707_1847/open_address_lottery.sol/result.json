@@ -1,0 +1,31 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "OpenAddressLottery",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/open_address_lottery.sol",
+            "name": "Money flow"
+        },
+        {
+            "column": 9,
+            "contract": "OpenAddressLottery",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/open_address_lottery.sol",
+            "line": 92,
+            "name": "Uninitialised struct"
+        },
+        {
+            "column": 9,
+            "contract": "OpenAddressLottery",
+            "filename": "/home/user/Documents/GitHub/smartbugs-curated/Splits/SecondoSplit/open_address_lottery.sol",
+            "line": 95,
+            "name": "Uninitialised struct"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "honeybadger",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    }
+}
