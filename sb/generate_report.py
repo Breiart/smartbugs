@@ -183,6 +183,9 @@ def render_html(df, output_file):
             })
     per_vuln = pd.DataFrame(per_vuln_rows)
 
+    # Build per-tool summaries and collect per-run dedup info
+    # dedup_map: {exec_id: {(contract, name, line): set(categories)}}
+    dedup_map = {}
     for (exec_id, tool), group in df.groupby(["Execution ID", "tool"]):
         total_time = group["execution_time"].sum()
         findings = []
@@ -201,6 +204,12 @@ def render_html(df, output_file):
                     "Category": cat_str,
                     "Vulnerability": name,
                 })
+                # Update per-run dedup structure
+                k = (row.get("basename", ""), name, (line or ""))
+                ed = dedup_map.setdefault(exec_id, {})
+                cats = ed.setdefault(k, set())
+                for c in categories:
+                    cats.add(c)
         tool_summaries.append({
             "Execution ID": exec_id,
             "Tool": tool,
@@ -259,19 +268,18 @@ def render_html(df, output_file):
     }
 
     # Build per-run summary including duration, vulnerabilities found and classified count
-    # Aggregate classified counts from tool_summaries to avoid re-parsing
+    # Use dedup_map to count unique findings across tools per run
     run_classified = {}
     run_found = {}
-    for ts in tool_summaries:
-        exec_id = ts["Execution ID"]
-        found = len(ts.get("Findings", []))
+    for exec_id, items in dedup_map.items():
+        run_found[exec_id] = len(items)
         classified = 0
-        for f in ts.get("Findings", []):
-            cat = str(f.get("Category", "")).strip()
-            if cat and cat.upper() != "UNCLASSIFIED":
+        for (_contract, _name, _line), cats in items.items():
+            # Consider this finding classified if any category other than UNCLASSIFIED is present
+            norm_cats = {str(c).strip().upper() for c in cats}
+            if any(c != "UNCLASSIFIED" and c for c in norm_cats):
                 classified += 1
-        run_found[exec_id] = run_found.get(exec_id, 0) + found
-        run_classified[exec_id] = run_classified.get(exec_id, 0) + classified
+        run_classified[exec_id] = classified
 
     # Merge with per_execution to get total exec time per run (already HH:MM:SS)
     per_run_table = []
