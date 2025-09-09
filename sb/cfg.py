@@ -39,6 +39,6 @@ FUZZER_TIMEOUTS = {
 # how long fast, normal, or accurate follow-up analyses may run.
 FOLLOWUP_TIMEOUTS = {
     "fast": 150,
-    "normal": 700,
+    "normal": 800,
     "accurate": 900,
 }
