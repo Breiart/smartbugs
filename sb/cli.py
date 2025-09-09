@@ -1,4 +1,4 @@
-import argparse, sys, os, time
+import argparse, sys, os
 import sb.cfg, sb.colors, sb.smartbugs, sb.logging, sb.settings, sb.errors
 
 def cli_args(defaults):
@@ -165,20 +165,6 @@ def main():
         settings = cli()
         sb.logging.message(None, f"Arguments passed: {sys.argv}")
         sb.smartbugs.main(settings)
-    except KeyboardInterrupt:
-        # Graceful shutdown on Ctrl+C without noisy tracebacks
-        try:
-            sb.logging.message(sb.colors.warning("Interrupted by user (Ctrl+C). Exiting gracefully."))
-            
-            try:
-                sys.stdout.flush(); sys.stderr.flush()
-            except Exception:
-                pass
-            time.sleep(0.05)
-        except Exception:
-            pass
-        # Conventional exit code for SIGINT
-        sys.exit(130)
     except sb.errors.SmartBugsError as e:
         sb.logging.message(sb.colors.error(e))
         sys.exit(1)

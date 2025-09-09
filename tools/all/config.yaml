@@ -24,7 +24,3 @@ alias:
 #NOTE: For now, Semgrep and solhint have not been orchestrated. I need to investigate the results of the original smartbugs to determine exactly if and where they should be placed
 
 #NOTE: sfuzz CURRENTLY ON HOLD. I have to determine if i need another fuzzer
-
-#TODO Orchestrate Oyente
-
-#TODO Fare dei test sui 4 split utilizzando smartbugs originale con tutti i tool

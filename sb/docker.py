@@ -122,22 +122,6 @@ def __docker_args(task, sbdir):
         args["command"] = f"{tool_command} {tool_args}".strip()
         #sb.logging.message(f"DEBUG: Docker command set -> {args['command']}", "INFO")
 
-    # Attach labels for later cleanup on interrupts
-    try:
-        labels = {
-            "smartbugs": "1",
-            "runid": str(getattr(task.settings, "runid", "")),
-            "tool": str(getattr(task.tool, "id", "")),
-            "mode": str(getattr(task.tool, "mode", "")),
-            "file": os.path.basename(task.absfn) if task.absfn else "",
-        }
-        # Remove empty values to keep label filters simple
-        labels = {k: v for k, v in labels.items() if v}
-        if labels:
-            args["labels"] = labels
-    except Exception:
-        pass
-
     return args
 
 
@@ -187,28 +171,3 @@ def execute(task):
         shutil.rmtree(sbdir)
 
     return exit_code, logs, output, args
-
-
-def cleanup_containers(runid=None):
-    """Stop and remove all containers labeled as started by SmartBugs.
-
-    If ``runid`` is provided, limit cleanup to containers matching the runid.
-    """
-    try:
-        filters = {"label": ["smartbugs=1"]}
-        if runid:
-            filters["label"].append(f"runid={runid}")
-        containers = client().containers.list(all=True, filters=filters)
-        for c in containers:
-            try:
-                c.stop(timeout=5)
-            except Exception:
-                pass
-            try:
-                c.remove(force=True)
-            except Exception:
-                pass
-    except Exception as e:
-        # Best-effort cleanup; log only in debug
-        if sb.cfg.DEBUG:
-            sb.logging.message(f"Docker cleanup error: {e}", "DEBUG")

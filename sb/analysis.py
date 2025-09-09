@@ -1,4 +1,4 @@
-import multiprocessing, time, datetime, os, subprocess, signal, sys
+import multiprocessing, time, datetime, os, subprocess
 import sb.logging, sb.colors, sb.docker, sb.cfg, sb.io, sb.parsing, sb.sarif, sb.errors
 import sb.smartbugs, sb.vulnerability
 
@@ -172,11 +172,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         if isinstance(scheduled_tools, list):
             scheduled_tool_keys = set(scheduled_tools)
         else:
-            try:
-                scheduled_tool_keys = set(scheduled_tools.get(absfn, []))
-            except Exception:
-                # Manager likely unavailable during shutdown
-                scheduled_tool_keys = set()
+            scheduled_tool_keys = set(scheduled_tools.get(absfn, []))
     
     # Collection of the requested argument sets in tool_args_map
     for vuln in vuln_list:
@@ -288,9 +284,8 @@ def execute(task):
     executed = False
     tool_duration = 0.0
     tool_log = tool_output = docker_args = None
-    # Do not override task or settings timeouts here; use configured values
+    task.timeout = 15
     for attempt in range(3):
-        
         now = time.localtime()
         now_str = str(now.tm_hour).zfill(2) + ":" + str(now.tm_min).zfill(2) + ":" + str(now.tm_sec).zfill(2)
 
@@ -355,16 +350,7 @@ def execute(task):
 
 
 
-def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed, scheduled_tools, stop_event):
-    # In worker processes, ignore Ctrl+C and TERM; the parent coordinates shutdown
-    try:
-        signal.signal(signal.SIGINT, signal.SIG_IGN)
-    except Exception:
-        pass
-    try:
-        signal.signal(signal.SIGTERM, signal.SIG_IGN)
-    except Exception:
-        pass
+def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed, scheduled_tools):
         
     def pre_analysis():
         with tasks_started.get_lock():
@@ -409,12 +395,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             run_duration = execute(task)
             duration += run_duration
 
-            # Skip dynamic scheduling if we're shutting down
-            if stop_event.is_set():
-                args_str = task.tool_args.strip()
-                args_info = f" with args {args_str}" if args_str else ""
-                sb.logging.message(f"[{task.tool.id}{args_info}] executed in {run_duration}.", "INFO")
-            elif task.settings.dynamic:
+            if task.settings.dynamic:
                 # Call reparse after tool execution
                 tool_parsed_output = call_reparse(task.rdir)
 
@@ -436,11 +417,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                 for tool_name, tool_args, timeout in next_tools:
                     base_name = tool_name.split("-")[0]
                     tool_key = f"{base_name}|{tool_args.strip()}"
-                    try:
-                        scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
-                    except Exception:
-                        # Manager likely went away during shutdown
-                        scheduled_keys_for_file = []
+                    scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
                     if skip_after_no_args and (f"{base_name}|" in existing_tool_keys or f"{base_name}|" in scheduled_keys_for_file):
                         sb.logging.message(f"Routing of {base_name} skipped: previous more complete execution already performed", "DEBUG")
                         continue
@@ -453,19 +430,15 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                     if new_task:
                         taskqueue.put(new_task)
                         scheduled_keys_for_file.append(tool_key)
-                        try:
-                            if isinstance(scheduled_tools, list):
-                                scheduled_tools.append(tool_key)
-                            else:
-                                scheduled_tools[task.absfn] = scheduled_keys_for_file
-                        except Exception:
-                            # Manager might be down; skip recording
-                            pass
+                        if isinstance(scheduled_tools, list):
+                            scheduled_tools.append(tool_key)
+                        else:
+                            scheduled_tools[task.absfn] = scheduled_keys_for_file
                         existing_tool_keys.add(tool_key)
                         new_tool_added = True
                         with tasks_total.get_lock():
                             tasks_total.value += 1
-
+                
                 args_str = task.tool_args.strip()
                 args_info = f" with args {args_str}" if args_str else ""
                 added_info = ', '.join(f"{t[0]}|{t[1]}" for t in next_tools) if next_tools else 'no tool'
@@ -480,14 +453,6 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             sb.logging.message(sb.colors.error(f"While analyzing {task.absfn} with {task.tool.id}:\n{e}"), "", logqueue)
         
         finally:
-            # If shutting down, skip any Manager interactions to avoid races
-            if stop_event.is_set():
-                try:
-                    taskqueue.task_done()
-                except Exception:
-                    pass
-                post_analysis(duration, task.settings.processes, task.settings.timeout)
-                return
             # Ensure core tools are scheduled at least once per contract
             key_map = getattr(task.settings, "tool_keys", {})
             if isinstance(key_map, set):
@@ -501,10 +466,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             key_set = key_map.get(task.absfn, set())
             scheduled_base_tools.update(k.split("|")[0] for k in key_set)
 
-            try:
-                file_sched = scheduled_tools.get(task.absfn, [])
-            except Exception:
-                file_sched = []
+            file_sched = scheduled_tools.get(task.absfn, [])
             scheduled_base_tools.update(k.split("|")[0] for k in file_sched)
 
             if task.settings.dynamic:
@@ -513,10 +475,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                 if not new_tool_added and missing_core_tools:
                     next_tool, next_args = missing_core_tools[0]
                     core_tool_key = f"{next_tool}|{next_args.strip()}"
-                    try:
-                        scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
-                    except Exception:
-                        scheduled_keys_for_file = []
+                    scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
                     if core_tool_key in scheduled_keys_for_file:
                         continue                   
                     
@@ -525,13 +484,10 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                         sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}","DEBUG",)
                         taskqueue.put(new_task)
                         scheduled_keys_for_file.append(core_tool_key)
-                        try:
-                            if isinstance(scheduled_tools, list):
-                                scheduled_tools.append(core_tool_key)
-                            else:
-                                scheduled_tools[task.absfn] = scheduled_keys_for_file
-                        except Exception:
-                            pass
+                        if isinstance(scheduled_tools, list):
+                            scheduled_tools.append(core_tool_key)
+                        else:
+                            scheduled_tools[task.absfn] = scheduled_keys_for_file
                         with tasks_total.get_lock():
                             tasks_total.value += 1
                             existing_tool_keys.add(core_tool_key)
@@ -554,23 +510,6 @@ def run(tasks, settings):
     sb.logging.start(settings.log, settings.overwrite, logqueue)
     try:
         start_time = time.time()
-        
-        # Interrupt coordination
-        stop_event = mp.Event()
-        last_signal = {"value": None}
-
-        def _handle_signal(signum, _frame):
-            # Avoid printing inside signal handler to prevent interleaving with shell prompt
-            last_signal["value"] = signum
-            stop_event.set()
-
-        # Register handlers for Ctrl+C and TERM (e.g., gtimeout)
-        try:
-            signal.signal(signal.SIGINT, _handle_signal)
-            signal.signal(signal.SIGTERM, _handle_signal)
-        except Exception:
-            # Some platforms/process models may not support installing handlers here
-            pass
 
         # fill task queue using a joinable queue to wait for all tasks
         taskqueue = mp.JoinableQueue()
@@ -590,87 +529,26 @@ def run(tasks, settings):
 
 
         # start analysers
-        shared = (logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed, scheduled_tools, stop_event)
+        shared = (logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, time_completed, scheduled_tools)
         analysers = [ mp.Process(target=analyser, args=shared) for _ in range(settings.processes) ]
         
         for a in analysers:
             a.start()
 
-        # Wait for tasks to complete or for an interrupt
-        while True:
-            if stop_event.is_set():
-                break
-            # Check completion without blocking on JoinableQueue.join()
-            with tasks_completed.get_lock():
-                done = tasks_completed.value
-            with tasks_total.get_lock():
-                total = tasks_total.value
-            if done >= total:
-                break
-            time.sleep(0.2)
-        if stop_event.is_set():
-            _msg = "Interrupt received — stopping analysers."
-            if last_signal["value"] is not None:
-                _msg = f"Signal {last_signal['value']} received — stopping analysers."
-            sb.logging.message(sb.colors.warning(_msg), "", logqueue)
-            # Best-effort: stop any running containers from this run
-            try:
-                sb.docker.cleanup_containers(getattr(settings, "runid", None))
-            except Exception:
-                pass
-        else:
-            sb.logging.message("All tasks finished or accounted for.", "DEBUG", logqueue)
+        # wait for all tasks to be marked as done
+        taskqueue.join()
+        sb.logging.message("Join completed — all tasks finished or accounted for.", "DEBUG")
         
         # now shut down workers
         for _ in range(settings.processes):
             taskqueue.put(None)
-        # wait for analysers to finish (briefly), then force terminate if needed
+        # wait for analysers to finish
         for a in analysers:
-            a.join(timeout=5)
-        for a in analysers:
-            if a.is_alive():
-                try:
-                    a.terminate()
-                except Exception:
-                    pass
-        for a in analysers:
-            try:
-                a.join(timeout=2)
-            except Exception:
-                pass
-
-        # Final cleanup attempt after workers exit
-        if stop_event.is_set():
-            try:
-                sb.docker.cleanup_containers(getattr(settings, "runid", None))
-            except Exception:
-                pass
+            a.join()
 
         # good bye
         duration = datetime.timedelta(seconds=round(time.time()-start_time))
-        if stop_event.is_set():
-            sb.logging.message(f"Analysis interrupted after {duration}.", "", logqueue)
-        else:
-            sb.logging.message(f"Analysis completed in {duration}.", "", logqueue)
-        try:
-            sys.stdout.flush()
-            sys.stderr.flush()
-        except Exception:
-            pass
-        # Give the terminal a brief moment to render before the prompt returns
-        time.sleep(0.1)
+        sb.logging.message(f"Analysis completed in {duration}.", "", logqueue)
 
     finally:
         sb.logging.stop(logqueue)
-
-    # If we were interrupted, exit with a conventional status code
-    if stop_event.is_set():
-        exit_code = 1
-        try:
-            if last_signal["value"] == signal.SIGINT:
-                exit_code = 130  # 128 + SIGINT
-            elif last_signal["value"] == signal.SIGTERM:
-                exit_code = 143  # 128 + SIGTERM
-        except Exception:
-            pass
-        sys.exit(exit_code)
