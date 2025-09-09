@@ -1,11 +1,16 @@
-import os, argparse, multiprocessing, sys
+import os, argparse, multiprocessing, sys, signal, time, queue
 import sb.cfg, sb.io, sb.parsing, sb.sarif, sb.errors
 
 
 
-def reparser(taskqueue, sarif, verbose):
+def reparser(taskqueue, sarif, verbose, stop_event):
     while True:
-        d = taskqueue.get()
+        if stop_event.is_set():
+            break
+        try:
+            d = taskqueue.get(timeout=0.2)
+        except queue.Empty:
+            continue
         if d is None:
             break
 
@@ -45,6 +50,9 @@ def reparser(taskqueue, sarif, verbose):
                 import traceback
                 traceback.print_exc()
             continue
+        # If interrupted mid-run, stop early
+        if stop_event.is_set():
+            break
         sb.io.write_json(fn_json, parsed_result)
         if sarif:
             sarif_result = sb.sarif.sarify(sbj["tool"], parsed_result["findings"])
@@ -88,19 +96,65 @@ def main():
     mp = multiprocessing.get_context("spawn")
 
     taskqueue = mp.Queue()
+    stop_event = mp.Event()
+
+    def _handle_signal(signum, _frame):
+        try:
+            print(f"Received signal {signum}; stopping reparse ...", file=sys.stderr)
+        except Exception:
+            pass
+        stop_event.set()
+
+    try:
+        signal.signal(signal.SIGINT, _handle_signal)
+        signal.signal(signal.SIGTERM, _handle_signal)
+    except Exception:
+        pass
     for r in sorted(results):
         taskqueue.put(r)
     for _ in range(args.processes):
         taskqueue.put(None)
 
-    reparsers = [ mp.Process(target=reparser, args=(taskqueue,args.sarif,args.v)) for _ in range(args.processes) ]
+    reparsers = [ mp.Process(target=reparser, args=(taskqueue,args.sarif,args.v,stop_event)) for _ in range(args.processes) ]
     for r in reparsers:
         r.start()
-    for r in reparsers:
-        r.join()
+    # Wait for completion or interrupt
+    try:
+        while any(r.is_alive() for r in reparsers):
+            if stop_event.is_set():
+                # Nudge workers to exit promptly
+                for _ in range(args.processes):
+                    taskqueue.put(None)
+                break
+            time.sleep(0.2)
+        for r in reparsers:
+            r.join(timeout=2)
+        for r in reparsers:
+            if r.is_alive():
+                try:
+                    r.terminate()
+                except Exception:
+                    pass
+    except KeyboardInterrupt:
+        stop_event.set()
+        for _ in range(args.processes):
+            taskqueue.put(None)
+        for r in reparsers:
+            try:
+                r.terminate()
+            except Exception:
+                pass
+        for r in reparsers:
+            try:
+                r.join(timeout=2)
+            except Exception:
+                pass
+    finally:
+        if stop_event.is_set():
+            # Conventional exit code for interrupted execution
+            sys.exit(130)
 
 
 
 if __name__ == '__main__':
     main()
-
