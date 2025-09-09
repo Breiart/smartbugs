@@ -19,5 +19,8 @@ venv/
 .idea/
 results/*.*
 
+#Ignore the test_run.sh script
+test_run.sh
+
 #Ignore csv results folder
 #csv_results/
