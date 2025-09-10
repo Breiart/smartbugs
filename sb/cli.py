@@ -61,10 +61,6 @@ def cli_args(defaults):
         type=str,
         metavar="MEM",
         help=f"memory quota for docker containers, like 512m or 1g{fmt_default(defaults.mem_limit)}")
-    exec.add_argument("--fuzz-mode",
-        choices=["fast", "normal", "accurate"],
-        metavar="MODE",
-        help=f"set fuzzing speed (fast, normal, accurate){fmt_default(defaults.fuzz_mode)}")
     exec.add_argument("--no-dynamic",
         action="store_true",
         default=None,

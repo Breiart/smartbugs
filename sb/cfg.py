@@ -26,19 +26,24 @@ PLATFORM = {
 
 DEBUG = False
 
-# Default timeouts (in seconds) for fuzzing tools based on the fuzz_mode
-FUZZER_TIMEOUTS = {
-    "fast": 120,
-    "normal": 300,
-    "accurate": 1000,
-}
-
-# Default timeouts (in seconds) for dynamically scheduled follow-up analyses.
-# Individual entries in ``VULN_TOOL_MAP`` reference these identifiers to select
-# an appropriate timeout for a follow-up run. Adjust the values here to change
-# how long fast, normal, or accurate follow-up analyses may run.
-FOLLOWUP_TIMEOUTS = {
-    "fast": 150,
-    "normal": 800,
+# Unified timeout configuration (in seconds), flat mapping.
+#
+# Keys may be:
+# - Preset ids used by the orchestrator (e.g., 'fast', 'normal', 'accurate', 'maian').
+# - Tool names for first/core runs, mapped to a fixed number of seconds.
+TIMEOUTS = {
+    # Follow-up presets (used by analysis orchestrator via timeout ids)
+    "fast": 15,
+    "normal": 500,
     "accurate": 900,
+    "maian": 45,
+
+    # Tool-specific timeouts for initial/core runs (optional)
+    # "slither": 120,
+    # "mythril": 600,
+    # "confuzzius": 100,
+    # "sfuzz": 100,
+
+    # Core timeout label for ConFuzzius
+    "confuzzius_core": 50,
 }

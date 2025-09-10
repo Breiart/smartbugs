@@ -8,7 +8,8 @@ CORE_TOOLS = (
     ("mythril", ""),
     ("solhint", ""),
     ("maian", ""),
-    ("confuzzius", ""),
+    # Provide a timeout label for confuzzius via CORE_TOOLS
+    ("confuzzius", "", "confuzzius_core"),
 )
 
 def task_log_dict(task, start_time, duration, exit_code, log, output, docker_args):
@@ -98,9 +99,9 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         "FRONT_RUNNING": ("slither", "--detect out-of-order-retryable", None),
 
         # Access control and kill paths
-        "SUICIDAL": ("maian", "-c 0", None),
-        "PRODIGAL": ("maian", "-c 1", None),
-        "GREEDY_CONTRACT": ("maian", "-c 2", None),
+        "SUICIDAL": ("maian", "-c 0", "maian"),
+        "PRODIGAL": ("maian", "-c 1", "maian"),
+        "GREEDY_CONTRACT": ("maian", "-c 2", "maian"),
         "GREEDY_CONTRACT": ("manticore", "--thorough-mode", None),
         "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth", None),
 
@@ -124,7 +125,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         "LOW_LEVEL_CALL": ("conkas", "-vt unchecked_ll_calls", None),
 
         "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall", None),
-        "SELFDESTRUCT": ("maian", "-c 0", None),
+        "SELFDESTRUCT": ("maian", "-c 0", "maian"),
         "ASSERT_VIOLATION": ("mythril", "--modules Exceptions", None),
         "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage", None),
         "BLOCK_DEPENDENCE": ("slither", "--detect timestamp", None),
@@ -185,9 +186,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
             base_name = tool_entry[0].split("-")[0]
             args = tool_entry[1].strip()
             timeout_id = tool_entry[2]
-            entry_timeout = (
-                sb.cfg.FOLLOWUP_TIMEOUTS.get(timeout_id) if timeout_id else None
-            )
+            entry_timeout = sb.cfg.TIMEOUTS.get(timeout_id) if timeout_id else None
             base_key = f"{base_name}|"
             tool_key = f"{base_name}|{args}"
 
@@ -214,7 +213,7 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
         for base_name, args_set in tool_args_map.items():
             timeout = tool_timeout_map.get(base_name)
             # If a tool has no args, schedule it with just its base name
-            if not args_set:    
+            if not args_set:
                 scheduled.append((base_name, "", timeout))
                 continue
             
@@ -284,7 +283,6 @@ def execute(task):
     executed = False
     tool_duration = 0.0
     tool_log = tool_output = docker_args = None
-    task.timeout = 15
     for attempt in range(3):
         now = time.localtime()
         now_str = str(now.tm_hour).zfill(2) + ":" + str(now.tm_min).zfill(2) + ":" + str(now.tm_sec).zfill(2)
@@ -470,16 +468,29 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             scheduled_base_tools.update(k.split("|")[0] for k in file_sched)
 
             if task.settings.dynamic:
-                missing_core_tools = [pair for pair in CORE_TOOLS if pair[0] not in scheduled_base_tools]
+                missing_core_tools = [entry for entry in CORE_TOOLS if entry[0] not in scheduled_base_tools]
                 
                 if not new_tool_added and missing_core_tools:
-                    next_tool, next_args = missing_core_tools[0]
+                    entry = missing_core_tools[0]
+                    next_tool = entry[0]
+                    next_args = entry[1] if len(entry) > 1 else ""
+                    timeout_label = entry[2] if len(entry) > 2 else None
                     core_tool_key = f"{next_tool}|{next_args.strip()}"
                     scheduled_keys_for_file = scheduled_tools.get(task.absfn, [])
                     if core_tool_key in scheduled_keys_for_file:
                         continue                   
                     
-                    new_task = sb.smartbugs.collect_single_task(task.absfn, task.relfn, next_tool, task.settings, next_args)
+                    # Resolve timeout: prefer label from CORE_TOOLS, else numeric per-tool default
+                    core_timeout = None
+                    if timeout_label:
+                        core_timeout = sb.cfg.TIMEOUTS.get(timeout_label)
+                    if core_timeout is None:
+                        tcfg = sb.cfg.TIMEOUTS.get(next_tool)
+                        if isinstance(tcfg, (int, float)):
+                            core_timeout = tcfg
+                    new_task = sb.smartbugs.collect_single_task(
+                        task.absfn, task.relfn, next_tool, task.settings, next_args, core_timeout
+                    )
                     if new_task:
                         sb.logging.message(f"CORE TOOL ROUTE: SCHEDULING {next_tool}","DEBUG",)
                         taskqueue.put(new_task)

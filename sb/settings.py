@@ -36,8 +36,6 @@ class Settings:
         self.json = False
         self.sarif = False
         self.quiet = False
-        # Mode for fuzzers: fast, normal, or slow
-        self.fuzz_mode = "normal"
 
         
     def freeze(self):
@@ -160,12 +158,6 @@ class Settings:
                     setattr(self, k, v)
                 except Exception:
                     raise sb.errors.SmartBugsError(f"'{k}' needs to be a Boolean (in {settings}).")
-            
-            elif k == "fuzz_mode":
-                mode = str(v)
-                if mode not in ("fast", "normal", "slow"):
-                    raise sb.errors.SmartBugsError("'fuzz_mode' must be one of fast, normal, slow")
-                setattr(self, k, mode)
 
             elif k in ("results", "log"):
                 try:

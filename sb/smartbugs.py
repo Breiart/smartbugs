@@ -1,9 +1,6 @@
 import glob, os, operator
 import sb.tools, sb.solidity, sb.tasks, sb.docker, sb.analysis, sb.colors, sb.logging, sb.cfg, sb.io, sb.settings, sb.errors
 
-# Tools that rely on fuzzing strategies
-FUZZER_TOOLS = {"confuzzius", "sfuzz"}
-
 def _parse_arg_map(arg_str: str):
     """Return a mapping of flag prefixes to sets of values.
 
@@ -177,13 +174,15 @@ def collect_single_task(absfn, relfn, tool_name, settings, tool_args, timeout=No
 
     ensure_loaded(tool.image)
 
-    # Determine timeout for fuzzers or use the provided custom timeout
+    # Determine timeout precedence:
+    #   1) Explicit timeout argument
+    #   2) Global settings.timeout
+    #   3) Tool-specific TIMEOUTS entry (fixed numeric)
     effective_timeout = timeout if timeout is not None else settings.timeout
-    if not effective_timeout and base_tool_name in FUZZER_TOOLS:
-        effective_timeout = sb.cfg.FUZZER_TIMEOUTS.get(
-            getattr(settings, "fuzz_mode", "normal"),
-            sb.cfg.FUZZER_TIMEOUTS["normal"],
-        )
+    if not effective_timeout:
+        tcfg = sb.cfg.TIMEOUTS.get(base_tool_name)
+        if isinstance(tcfg, (int, float)):
+            effective_timeout = tcfg
 
     settings.tools.append(tool.id)
     if hasattr(settings, "tool_keys"):
@@ -301,14 +300,21 @@ def collect_tasks(files, tools, settings):
                 ensure_loaded(tool.image)
 
                 base_tool_name = tool.id.split("-")[0]
-                core_arg_map = dict(sb.analysis.CORE_TOOLS)
-                task_args = core_arg_map.get(base_tool_name, "")
+                # Determine default args and optional core timeout label from CORE_TOOLS
+                task_args = ""
+                timeout_label = None
+                for entry in sb.analysis.CORE_TOOLS:
+                    if entry[0] == base_tool_name:
+                        task_args = entry[1] if len(entry) > 1 else ""
+                        timeout_label = entry[2] if len(entry) > 2 else None
+                        break
                 task_timeout = settings.timeout
-                if not task_timeout and base_tool_name in FUZZER_TOOLS:
-                    task_timeout = sb.cfg.FUZZER_TIMEOUTS.get(
-                        getattr(settings, "fuzz_mode", "normal"),
-                        sb.cfg.FUZZER_TIMEOUTS["normal"],
-                    )
+                if not task_timeout:
+                    tcfg = sb.cfg.TIMEOUTS.get(base_tool_name)
+                    if isinstance(tcfg, (int, float)):
+                        task_timeout = tcfg
+                if not task_timeout and timeout_label:
+                    task_timeout = sb.cfg.TIMEOUTS.get(timeout_label)
 
                 task = sb.tasks.Task(absfn,relfn,rdir,solc_version,solc_path,tool,settings,task_args,task_timeout)
                 tasks.append(task)
