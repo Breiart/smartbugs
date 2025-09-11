@@ -21,6 +21,6 @@ alias:
 
 #NOTE: eThor has been added in the orchestrator, but then commented out because I think it may not be necessary given the contexts in which it should be used
 
-#NOTE: For now, Semgrep and solhint have not been orchestrated. I need to investigate the results of the original smartbugs to determine exactly if and where they should be placed
+#NOTE: Semgrep has not been orchestrated. I need to investigate the results of the original smartbugs to determine exactly if and where it should be placed
 
 #NOTE: sfuzz CURRENTLY ON HOLD. I have to determine if i need another fuzzer
