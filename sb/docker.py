@@ -137,7 +137,6 @@ def execute(task):
         except Exception as e:
             print(f"ERROR: Failed to start Docker container -> {e}")
             raise
-        print(f"Docker container started: {container}")
         try:
             wait_timeout = task.timeout if getattr(task, "timeout", None) not in (None, 0) else task.settings.timeout
             result = container.wait(timeout=wait_timeout)
