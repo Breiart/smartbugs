@@ -41,6 +41,13 @@ Budgeted second phase
   further batches are planned until the time budget is exhausted or no more
   tasks are available.
 
+In budget mode, the core (standard) orchestration also increases per‑task
+timeouts when the total budget allows it. By default, a fraction of the
+budget is translated into a per‑task base timeout for core tools so that the
+core phase can run deeper while still leaving time for the second phase. These
+fractions and minimums are configurable in `sb/cfg.py` as `CORE_BUDGET_FRACTION`,
+`BUDGET_TARGET_FRACTION`, and `BUDGET_MIN_TIMEOUT`.
+
 Example:
 ```console
 ./smartbugs -t mythril -f samples/*.sol --timeout 600 --time-budget 900
@@ -50,9 +57,8 @@ remaining time is used to run Slither per the policy above.
 
 Follow-up analyses scheduled dynamically by SmartBugs may also define a
 timeout category (`fast`, `normal`, or `accurate`). The concrete durations for
-these categories are configured in `sb/cfg.py` through the `FOLLOWUP_TIMEOUTS`
-dictionary. Adjust those values to increase or decrease the allotted time for
-follow-up runs or to introduce new timeout profiles.
+these categories are configured in `sb/cfg.py` through the `TIMEOUTS` mapping.
+Adjust those values to change minimum time for follow-ups.
 
 
 ## Utility programs

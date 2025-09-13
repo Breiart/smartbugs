@@ -316,6 +316,14 @@ def collect_tasks(files, tools, settings):
                 if not task_timeout and timeout_label:
                     task_timeout = sb.cfg.TIMEOUTS.get(timeout_label)
 
+                # In budget mode, raise core tool timeouts to at least the computed base
+                if getattr(settings, "time_budget", None) is not None:
+                    core_bases = {entry[0] for entry in sb.analysis.CORE_TOOLS}
+                    if base_tool_name in core_bases:
+                        base_boost = int(getattr(settings, "budget_core_timeout_base", 0) or 0)
+                        if base_boost > 0:
+                            task_timeout = max(int(task_timeout or 0), base_boost)
+
                 task = sb.tasks.Task(absfn,relfn,rdir,solc_version,solc_path,tool,settings,task_args,task_timeout)
                 tasks.append(task)
                 if hasattr(settings, "tool_keys"):
@@ -353,6 +361,27 @@ def main(settings: sb.settings.Settings):
     sb.logging.message(f"{len(files)} files to analyse")
 
     sb.logging.message("Assembling tasks ...")
+    # If running in time-budget mode, compute a core timeout base to deepen the core run
+    if getattr(settings, "time_budget", None) is not None:
+        try:
+            core_fraction = float(getattr(sb.cfg, "CORE_BUDGET_FRACTION", 0.2))
+        except Exception:
+            core_fraction = 0.2
+        try:
+            min_timeout = int(getattr(sb.cfg, "BUDGET_MIN_TIMEOUT", 10))
+        except Exception:
+            min_timeout = 10
+        processes = max(1, int(getattr(settings, "processes", 1)))
+        # Consider only Solidity files for core tool estimation (CORE_TOOLS are Solidity tools)
+        sol_files = [1 for (absfn, _relfn) in files if absfn.endswith('.sol')]
+        contracts_count = len(sol_files)
+        core_tools_count = len(getattr(sb.analysis, "CORE_TOOLS", []))
+        potential_core_tasks = max(1, contracts_count * max(1, core_tools_count))
+        target_worker_seconds_core = int(settings.time_budget * processes * core_fraction)
+        budget_core_timeout_base = max(min_timeout, int((target_worker_seconds_core + potential_core_tasks - 1) // potential_core_tasks))
+        setattr(settings, "budget_core_timeout_base", budget_core_timeout_base)
+        sb.logging.message(f"Budget mode: core per-task base timeout set to ~{budget_core_timeout_base}s (from {contracts_count} file(s), {core_tools_count} core tool(s), fraction {core_fraction}).", "INFO")
+
     tasks = collect_tasks(files, tools, settings)
     sb.logging.message(f"{len(tasks)} tasks to execute")
 

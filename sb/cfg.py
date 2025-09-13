@@ -26,6 +26,18 @@ PLATFORM = {
 
 DEBUG = False
 
+# Budget-mode configuration
+# - BUDGET_TARGET_FRACTION: fraction of remaining time the budget orchestrator
+#   aims to utilize when planning follow-up tasks (e.g., 0.8 => ~80%).
+# - BUDGET_MIN_TIMEOUT: lower bound for any single task's timeout in budget mode.
+BUDGET_TARGET_FRACTION = 0.8
+BUDGET_MIN_TIMEOUT = 10
+
+# Fraction of the time budget we allow the core (standard) orchestration to
+# translate into longer per-task timeouts when budget mode is enabled. The
+# remainder effectively stays available for the second phase.
+CORE_BUDGET_FRACTION = 0.2
+
 # Unified timeout configuration (in seconds), flat mapping.
 #
 # Keys may be:

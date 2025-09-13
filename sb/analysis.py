@@ -422,7 +422,6 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                         continue
                     if tool_key in existing_tool_keys or tool_key in scheduled_keys_for_file:
                         continue
-
                     new_task = sb.smartbugs.collect_single_task(
                         task.absfn, task.relfn, tool_name, task.settings, tool_args, timeout
                     )
@@ -489,6 +488,13 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
                         tcfg = sb.cfg.TIMEOUTS.get(next_tool)
                         if isinstance(tcfg, (int, float)):
                             core_timeout = tcfg
+                    # In time-budget mode, raise core timeout to at least the budget base
+                    if getattr(task.settings, "time_budget", None) is not None:
+                        base_boost = int(getattr(task.settings, "budget_core_timeout_base", 0) or 0)
+                        if isinstance(core_timeout, (int, float)):
+                            core_timeout = max(int(core_timeout), base_boost)
+                        else:
+                            core_timeout = base_boost if base_boost > 0 else None
                     new_task = sb.smartbugs.collect_single_task(
                         task.absfn, task.relfn, next_tool, task.settings, next_args, core_timeout
                     )

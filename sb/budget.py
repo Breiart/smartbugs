@@ -107,9 +107,15 @@ def plan_budget_tasks(files, settings, remaining_seconds):
     if contracts_count <= 0:
         return []
 
-    # Base slice for tasks: spread remaining time across files, keep a minimum
-    MIN_TIMEOUT = 10
-    per_contract_budget = max(MIN_TIMEOUT, int(remaining / contracts_count))
+    # Resolve configurables
+    try:
+        target_fraction = float(getattr(sb.cfg, "BUDGET_TARGET_FRACTION", 0.8))
+    except Exception:
+        target_fraction = 0.8
+    try:
+        min_timeout = int(getattr(sb.cfg, "BUDGET_MIN_TIMEOUT", 10))
+    except Exception:
+        min_timeout = 10
 
     # Incorporate any already completed tool keys from artifacts to avoid duplicates
     completed_keys = _collect_completed_keys(files, settings)
@@ -138,9 +144,24 @@ def plan_budget_tasks(files, settings, remaining_seconds):
         )
         missing_per_file[absfn] = missing
 
-    # Plan tasks round-robin across files until we saturate the budget
+    # Count potential tasks available to size per-task timeout. This includes
+    # all missing tools and, at most once per file, sFuzz as a fallback.
+    potential_tasks = 0
+    for absfn, _relfn in contracts:
+        existing = _existing_keys_for_file(settings, absfn)
+        used_bases = {k.split("|")[0] for k in existing}
+        potential_tasks += len(missing_per_file.get(absfn, []))
+        if "sfuzz" not in used_bases:
+            potential_tasks += 1
+
+    processes = max(1, int(getattr(settings, "processes", 1)))
+    # Target total worker-seconds to plan so wall-clock ≈ remaining * target_fraction
+    target_worker_seconds = int(remaining * processes * target_fraction)
+    # Base per-task timeout aiming to fill the target with available tasks
+    per_task_base = max(min_timeout, int(math.ceil(target_worker_seconds / max(1, potential_tasks))))
+
+    # Plan tasks round-robin across files until we saturate the target
     planned = []
-    worker_budget = remaining * max(1, int(getattr(settings, "processes", 1)))
     planned_worker_seconds = 0
 
     # Next index to schedule from each file's missing list
@@ -149,11 +170,13 @@ def plan_budget_tasks(files, settings, remaining_seconds):
 
     def schedule(absfn, relfn, tool_name):
         nonlocal planned_worker_seconds
-        # Compute effective timeout using per-tool numeric cap if present
-        tool_cap = sb.cfg.TIMEOUTS.get(tool_name)
-        eff_timeout = int(tool_cap) if isinstance(tool_cap, (int, float)) else int(per_contract_budget)
-        # Ensure a minimum timeout
-        eff_timeout = max(MIN_TIMEOUT, min(eff_timeout, remaining))
+        # Compute effective timeout: take per-tool minimum if configured, otherwise base slice.
+        tool_min = sb.cfg.TIMEOUTS.get(tool_name)
+        if not isinstance(tool_min, (int, float)):
+            tool_min = 0
+        eff_timeout = max(min_timeout, int(per_task_base), int(tool_min))
+        # Clamp each task timeout to the time remaining for this batch planning call
+        eff_timeout = min(eff_timeout, remaining)
         new_task = sb.smartbugs.collect_single_task(absfn, relfn, tool_name, settings, tool_args="", timeout=eff_timeout)
         if new_task:
             planned.append(new_task)
@@ -164,10 +187,6 @@ def plan_budget_tasks(files, settings, remaining_seconds):
             )
             return True
         return False
-
-    # Keep a small overfill margin to compensate for tools finishing early
-    TARGET_FACTOR = 1.15
-    target_worker_seconds = int(worker_budget * TARGET_FACTOR)
 
     progress = True
     while planned_worker_seconds < target_worker_seconds and progress:
@@ -191,9 +210,9 @@ def plan_budget_tasks(files, settings, remaining_seconds):
                 break
 
     # Log a brief summary
-    est_wall = int(math.ceil(planned_worker_seconds / max(1, int(getattr(settings, "processes", 1)))))
+    est_wall = int(math.ceil(planned_worker_seconds / max(1, processes)))
     sb.logging.message(
-        f"[budget] Planned {len(planned)} task(s) for ~{est_wall}s of wall-clock (remaining {remaining}s).",
+        f"[budget] Planned {len(planned)} task(s) for ~{est_wall}s wall-clock (target ~{int(remaining * target_fraction)}s of {remaining}s).",
         "INFO",
     )
 
