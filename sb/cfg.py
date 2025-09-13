@@ -33,12 +33,16 @@ DEBUG = False
 # - Tool names for first/core runs, mapped to a fixed number of seconds.
 TIMEOUTS = {
     # Follow-up presets (used by analysis orchestrator via timeout ids)
-    "fast": 15,
-    "normal": 500,
-    "accurate": 900,
-    "maian": 45,
+    "fast": 20,
+    "normal": 100,
+    "accurate": 480,
 
-    # Tool-specific timeouts for initial/core runs (optional)
+    # Tool-specific timeouts
+    "maian": 45,
+    
+    
+
+    
     # "slither": 120,
     # "mythril": 600,
     # "confuzzius": 100,

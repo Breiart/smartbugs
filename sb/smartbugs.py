@@ -1,4 +1,4 @@
-import glob, os, operator
+import glob, os, operator, time
 import sb.tools, sb.solidity, sb.tasks, sb.docker, sb.analysis, sb.colors, sb.logging, sb.cfg, sb.io, sb.settings, sb.errors
 
 def _parse_arg_map(arg_str: str):
@@ -356,4 +356,33 @@ def main(settings: sb.settings.Settings):
     tasks = collect_tasks(files, tools, settings)
     sb.logging.message(f"{len(tasks)} tasks to execute")
 
-    sb.analysis.run(tasks, settings)
+    total_start = time.time()
+    core_start = total_start
+    # If a time budget is configured, label the completion of the core run accordingly
+    if getattr(settings, "time_budget", None) is not None:
+        sb.analysis.run(tasks, settings, label="Core analysis")
+    else:
+        sb.analysis.run(tasks, settings)
+    core_duration = time.time() - core_start
+    try:
+        from . import budget as sb_budget
+    except Exception:
+        sb_budget = None
+
+    # Optional post-core orchestration with a time budget
+    if getattr(settings, "time_budget", None) is not None:
+        remaining = int(settings.time_budget - core_duration)
+        if remaining <= 0:
+            sb.logging.message(sb.colors.warning(
+                f"Time budget exhausted by core orchestration (core took ~{int(core_duration)}s, budget {settings.time_budget}s). Skipping second phase."))
+            # Print overall summary as part of core run already completed
+            # (will not be flushed without a subsequent run)
+            return
+        sb.logging.message(f"Core orchestration took ~{int(core_duration)}s. Remaining budget for second phase: {remaining}s.")
+        if sb_budget and hasattr(sb_budget, "run_budget_phase"):
+            try:
+                sb_budget.run_budget_phase(files, settings, remaining_seconds=remaining, total_start=total_start)
+            except Exception as e:
+                sb.logging.message(sb.colors.warning(f"Second-phase orchestration failed: {e}"))
+        else:
+            sb.logging.message(sb.colors.warning("Second-phase orchestrator not available. Skipping."))

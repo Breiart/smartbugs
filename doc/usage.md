@@ -8,7 +8,7 @@ Dynamic scheduling of additional tools is enabled by default. Use `--no-dynamic`
 ```console
 ./smartbugs
 usage: smartbugs [-c FILE] [-t TOOL [TOOL ...]] [-f PATTERN [PATTERN ...]] [--main] [--runtime]
-                 [--processes N] [--timeout N] [--cpu-quota N] [--mem-limit MEM] [--fuzz-mode MODE]
+                 [--processes N] [--timeout N] [--time-budget N] [--cpu-quota N] [--mem-limit MEM] [--fuzz-mode MODE]
                  [--no-dynamic][--runid ID] [--results DIR] [--log FILE] [--overwrite] [--json] 
                  [--sarif] [--quiet] [--version] [-h]
 ...
@@ -27,6 +27,26 @@ a subfolder name inside the contract's directory so runs with different
 arguments do not overwrite each other.
 Fuzzing tools such as ConFuzzius honor the `--fuzz-mode` option, which
 controls their execution time (`fast`, `normal`, or `accurate`).
+
+Budgeted second phase
+- `--time-budget N` reserves N seconds for a second orchestration phase after
+  the core analysis completes. If the core analysis takes longer than N,
+  nothing happens. If time remains, SmartBugs logs the remaining budget and
+  automatically schedules additional analyses sized to use the remaining time.
+  The current policy schedules missing tools for each contract in the order of
+  the `all` alias (excluding `sfuzz`, which is used as a fallback) and sizes
+  per-task timeouts from the remaining time. Tasks are planned round‑robin
+  across files so that the combined workload aims to keep all processes busy
+  for as long as possible within the budget. If the batch finishes early,
+  further batches are planned until the time budget is exhausted or no more
+  tasks are available.
+
+Example:
+```console
+./smartbugs -t mythril -f samples/*.sol --timeout 600 --time-budget 900
+```
+Runs the normal orchestration first; if it finishes in under 15 minutes, the
+remaining time is used to run Slither per the policy above.
 
 Follow-up analyses scheduled dynamically by SmartBugs may also define a
 timeout category (`fast`, `normal`, or `accurate`). The concrete durations for

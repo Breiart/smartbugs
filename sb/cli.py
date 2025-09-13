@@ -53,6 +53,10 @@ def cli_args(defaults):
         type=int,
         metavar="N",
         help=f"timeout for each task in seconds{fmt_default(defaults.timeout)}")
+    exec.add_argument("--time-budget",
+        type=int,
+        metavar="N",
+        help=f"max seconds available after core orchestration to run extra analyses{fmt_default(None)}")
     exec.add_argument("--cpu-quota",
         type=int,
         metavar="N",

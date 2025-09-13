@@ -8,7 +8,6 @@ CORE_TOOLS = (
     ("mythril", ""),
     ("solhint", ""),
     ("maian", ""),
-    # Provide a timeout label for confuzzius via CORE_TOOLS
     ("confuzzius", "", "confuzzius_core"),
 )
 
@@ -89,64 +88,64 @@ def route_next_tool(vuln_list, task_settings=None, scheduled_tools=None, absfn=N
     # Mapping from vulnerability categories to follow-up tools and optional timeouts
     VULN_TOOL_MAP = {
         # Reentrancy-related
-        "REENTRANCY": ("mythril", "--modules ExternalCalls", "normal"),
-        "LOW_LEVEL_CALL": ("conkas", "-vt reentrancy", None),
-        "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth", None),
+        "REENTRANCY": ("mythril", "--modules ExternalCalls", "fast"),
+        "LOW_LEVEL_CALL": ("conkas", "-vt reentrancy", "normal"),
+        "UNLOCKED_ETHER": ("slither", "--detect reentrancy-eth, reentrancy-events, reentrancy-no-eth", "fast"),
         #"REENTRANCY_NO_GUARD": ("slither", "--reentrancy-no-guard", None),
 
         # Transaction order / front-running
         #"TOD": ("slither", "--detect out-of-order-retryable", None),
-        "FRONT_RUNNING": ("slither", "--detect out-of-order-retryable", None),
+        "FRONT_RUNNING": ("slither", "--detect out-of-order-retryable", "fast"),
 
         # Access control and kill paths
         "SUICIDAL": ("maian", "-c 0", "maian"),
         "PRODIGAL": ("maian", "-c 1", "maian"),
         "GREEDY_CONTRACT": ("maian", "-c 2", "maian"),
-        "GREEDY_CONTRACT": ("manticore", "--thorough-mode", None),
-        "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth", None),
+        "GREEDY_CONTRACT": ("manticore", "--thorough-mode", "accurate"),
+        "ARBITRARY_SEND": ("slither", "--detect arbitrary-send-erc20, arbitrary-send-erc20-permit, arbitrary-send-eth", "fast"),
 
         # Arithmetic
-        "OVERFLOW": ("mythril", "--modules IntegerArithmetics", None),
-        "OVERFLOW": ("conkas", "-vt arithmetic", None),
-        "OVERFLOW": ("osiris", "", None),
+        "OVERFLOW": ("mythril", "--modules IntegerArithmetics", "fast"),
+        "OVERFLOW": ("conkas", "-vt arithmetic", "normal"),
+        "OVERFLOW": ("osiris", "", "fast"),
         #"OVERFLOW": ("ethor", "", None),
         
-        "UNDERFLOW": ("mythril", "--modules IntegerArithmetics", None),
-        "UNDERFLOW": ("conkas", "-vt arithmetic", None),
-        "UNDERFLOW": ("osiris", "", None),
+        "UNDERFLOW": ("mythril", "--modules IntegerArithmetics", "fast"),
+        "UNDERFLOW": ("conkas", "-vt arithmetic", "normal"),
+        "UNDERFLOW": ("osiris", "", "fast"),
         #"UNDERFLOW": ("ethor", "", None),
 
         # Visibility / authorization
-        "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage", None),
-        "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state", None),
+        "UNINITIALIZED_STORAGE_POINTER": ("slither", "--detect uninitialized-storage", "fast"),
+        "UNINITIALIZED_STORAGE": ("slither", "--detect uninitialized-state", "fast"),
         
         # Misc patterns
-        "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls", None),
-        "LOW_LEVEL_CALL": ("conkas", "-vt unchecked_ll_calls", None),
+        "LOW_LEVEL_CALL": ("slither", "--detect low-level-calls", "fast"),
+        "LOW_LEVEL_CALL": ("conkas", "-vt unchecked_ll_calls", "normal"),
 
-        "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall", None),
+        "DELEGATECALL": ("mythril", "--modules ArbitraryDelegateCall", "fast"),
         "SELFDESTRUCT": ("maian", "-c 0", "maian"),
-        "ASSERT_VIOLATION": ("mythril", "--modules Exceptions", None),
-        "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage", None),
-        "BLOCK_DEPENDENCE": ("slither", "--detect timestamp", None),
+        "ASSERT_VIOLATION": ("mythril", "--modules Exceptions", "fast"),
+        "WRITE_TO_ARBITRARY_STORAGE": ("mythril", "--modules ArbitraryStorage", "fast"),
+        "BLOCK_DEPENDENCE": ("slither", "--detect timestamp", "fast"),
 
-        "BLOCK_DEPENDENCE": ("conkas", "-vt time_manipulation", None),
-        "WEAK_RANDOMNESS": ("slither", "--detect weak-prng", None),
-        "VARIABLE_SHADOWING": ("slither", "--detect shadowing-state", None),
-        "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards", None),
-        "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state", None),
-        "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther", None),
+        "BLOCK_DEPENDENCE": ("conkas", "-vt time_manipulation", "normal"),
+        "WEAK_RANDOMNESS": ("slither", "--detect weak-prng", "fast"),
+        "VARIABLE_SHADOWING": ("slither", "--detect shadowing-state", "fast"),
+        "DEPRECATED_FUNCTION": ("slither", "--detect deprecated-standards", "fast"),
+        "UNUSED_STATE_VARIABLE": ("slither", "--detect unused-state", "fast"),
+        "STRICT_BALANCE_EQUALITY": ("mythril", "--modules UnexpectedEther", "fast"),
         #"MISSING_INPUT_VALIDATION": ("smartcheck", "", None),
         
-        "ARBITRARY_JUMP": ("manticore", "--policy icount", None),
-        "DOS_GAS_LIMIT": ("securify", "", None),
+        "ARBITRARY_JUMP": ("manticore", "--policy icount", "fast"),
+        "DOS_GAS_LIMIT": ("securify", "", "fast"),
 
         # Information disclosure
-        "LEAK": ("slither", "--detect uninitialized-storage", None),
+        "LEAK": ("slither", "--detect uninitialized-storage", "fast"),
 
         # Versioning & other
-        "OUTDATED_COMPILER": ("slither", "--detect solc-version", None),
-        "VERSION_PRAGMA": ("slither", "--detect solc-version", None),
+        "OUTDATED_COMPILER": ("slither", "--detect solc-version", "fast"),
+        "VERSION_PRAGMA": ("slither", "--detect solc-version", "fast"),
 
     }
 
@@ -356,8 +355,9 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             tasks_started.value = tasks_started_value
         args_str = task.tool_args.strip()
         args_info = f" with args {args_str}" if args_str else " with no args"
+        count_str = f"{sb.colors.count(tasks_started_value)}/{sb.colors.count(tasks_total.value)}"
         sb.logging.message(
-            f"Starting task {tasks_started_value}/{tasks_total.value}: {sb.colors.tool(task.tool.id)}{args_info} and {sb.colors.file(task.relfn)}",
+            f"Starting task {count_str}: {sb.colors.tool(task.tool.id)}{args_info} and {sb.colors.file(task.relfn)}",
             "", logqueue)
 
     def post_analysis(duration, no_processes, timeout):
@@ -378,7 +378,8 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             time_so_far += timeout*no_processes
         etc = time_completed_value / completed_tasks * remaining_tasks / no_processes
         etc_fmt = datetime.timedelta(seconds=round(etc))
-        sb.logging.message(f"{tasks_completed_value}/{tasks_total.value} completed, ETC {etc_fmt}")
+        duration_fmt = datetime.timedelta(seconds=round(duration))
+        sb.logging.message(f"{tasks_completed_value}/{tasks_total.value} completed in {duration_fmt}, ETC {etc_fmt}")
 
     while True:
         task = taskqueue.get()
@@ -512,7 +513,7 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
 
 
 
-def run(tasks, settings):
+def run(tasks, settings, label=None, extra_messages=None):
     # spawn processes (instead of forking), for identical behavior on Linux and MacOS
     mp = multiprocessing.get_context("spawn")
 
@@ -559,7 +560,21 @@ def run(tasks, settings):
 
         # good bye
         duration = datetime.timedelta(seconds=round(time.time()-start_time))
-        sb.logging.message(f"Analysis completed in {duration}.", "", logqueue)
+        if label:
+            sb.logging.message(f"{label} completed in {duration}.", "", logqueue)
+        else:
+            sb.logging.message(f"Analysis completed in {duration}.", "", logqueue)
+
+        # Optional extra footer messages to appear in the same logging session
+        if extra_messages:
+            messages = extra_messages if isinstance(extra_messages, (list, tuple)) else [extra_messages]
+            for msg in messages:
+                try:
+                    text = msg() if callable(msg) else msg
+                except Exception:
+                    text = msg
+                if text:
+                    sb.logging.message(str(text), "", logqueue)
 
     finally:
         sb.logging.stop(logqueue)

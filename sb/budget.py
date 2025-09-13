@@ -1,0 +1,244 @@
+import math, os, datetime, time
+import sb.analysis, sb.logging, sb.colors, sb.smartbugs, sb.cfg, sb.io
+
+def _read_all_tools_alias():
+    """Return the list of tool base names declared in tools/all/config.yaml.
+
+    Falls back to an empty list if the alias file cannot be read.
+    """
+    try:
+        fn = os.path.join(sb.cfg.TOOLS_HOME, "all", sb.cfg.TOOL_CONFIG)
+        data = sb.io.read_yaml(fn)
+        alias = data.get("alias", [])
+        if isinstance(alias, list):
+            return [str(x) for x in alias]
+        return []
+    except Exception:
+        return []
+
+
+def _collect_completed_keys(files, settings):
+    """Collect completed tool|args keys per contract from result artifacts.
+
+    Looks for smartbugs.json files under the default results folder and filters
+    entries for the current run id. Returns a mapping {absfn: {"tool|args", …}}.
+    """
+    completed = {}
+    # Build relfn -> absfn mapping from provided files list
+    rel_to_abs = {rel: abs for (abs, rel) in files}
+    runid = getattr(settings, "runid", None)
+    results_root = "results"
+    if not runid or not os.path.isdir(results_root):
+        return completed
+
+    for root, _dirs, files_ in os.walk(results_root):
+        if f"{os.path.sep}{runid}{os.path.sep}" not in (root + os.path.sep):
+            continue
+        for name in files_:
+            if name != sb.cfg.TASK_LOG:
+                continue
+            fn = os.path.join(root, name)
+            try:
+                data = sb.io.read_json(fn)
+                relfn = data.get("filename")
+                tool = (data.get("tool") or {}).get("id", "")
+                tool_args = (data.get("tool_args") or "").strip()
+                base = tool.split("-")[0]
+                key = f"{base}|{tool_args}"
+                absfn = rel_to_abs.get(relfn)
+                if absfn:
+                    completed.setdefault(absfn, set()).add(key)
+            except Exception:
+                # ignore unreadable entries
+                pass
+
+    return completed
+
+def _existing_keys_for_file(settings, absfn):
+    key_map = getattr(settings, "tool_keys", {})
+    if isinstance(key_map, set):
+        # Normalize older shapes into a dict keyed by absfn
+        key_map = {absfn: key_map}
+        settings.tool_keys = key_map
+    elif not isinstance(key_map, dict):
+        key_map = {}
+        settings.tool_keys = key_map
+    return set(key_map.get(absfn, set()))
+
+
+def plan_budget_tasks(files, settings, remaining_seconds):
+    """
+    Plan follow-up tasks sized to use the remaining wall-clock budget.
+
+    Strategy:
+    - Consider only Solidity files for now.
+            #TODO Incorpoorate compatibility with .hex and .rt
+    - For each file, compute the set of tools that have not yet run (based on
+      in-memory scheduling keys and existing artifacts) using the 'all' alias
+      order, excluding 'sfuzz' which is used as a final fallback per file.
+    - Schedule tasks in a round-robin across files, one tool at a time, until
+      the estimated worker-seconds of planned tasks meets or slightly exceeds
+      remaining_seconds * processes.
+    - Per-task timeouts use a fair base slice derived from the remaining time
+      and number of files, optionally capped by per-tool numeric TIMEOUTS.
+    """
+
+    remaining = int(max(0, remaining_seconds))
+    if remaining <= 0:
+        return []
+
+    # Build the list of all available tools from the 'all' alias
+    all_tools = _read_all_tools_alias()
+    if not all_tools:
+        sb.logging.message("No tool alias list found; skipping second-phase planning.", "INFO")
+        return []
+
+    # For completeness checks, exclude sFuzz: reaching full coverage then triggers sFuzz
+    coverage_tools = [t for t in all_tools if t.lower() != "sfuzz"]
+
+    # Consider only Solidity files for now
+    files_by_abs = {absfn: relfn for (absfn, relfn) in files if absfn.endswith(".sol")}
+    if not files_by_abs:
+        sb.logging.message("No Solidity files eligible for the second phase.", "INFO")
+        return []
+
+    contracts = list(files_by_abs.items())
+    contracts_count = len(contracts)
+    if contracts_count <= 0:
+        return []
+
+    # Base slice for tasks: spread remaining time across files, keep a minimum
+    MIN_TIMEOUT = 10
+    per_contract_budget = max(MIN_TIMEOUT, int(remaining / contracts_count))
+
+    # Incorporate any already completed tool keys from artifacts to avoid duplicates
+    completed_keys = _collect_completed_keys(files, settings)
+    for absfn, keys in completed_keys.items():
+        key_map = getattr(settings, "tool_keys", {})
+        if isinstance(key_map, set):
+            key_map = {absfn: key_map}
+            settings.tool_keys = key_map
+        elif not isinstance(key_map, dict):
+            key_map = {}
+            settings.tool_keys = key_map
+        existing = key_map.setdefault(absfn, set())
+        existing.update(keys)
+
+    # Build missing tools per file (preserving alias order)
+    missing_per_file = {}
+    for absfn, relfn in contracts:
+        existing = _existing_keys_for_file(settings, absfn)
+        used_bases = {k.split("|")[0] for k in existing}
+        missing = [t for t in coverage_tools if t not in used_bases]
+        existing_list = ", ".join(sorted(existing)) if existing else "none"
+        missing_list = ", ".join(missing) if missing else "none"
+        sb.logging.message(
+            f"[budget] {os.path.basename(absfn)} -> ran: {existing_list}; missing: {missing_list}",
+            "INFO",
+        )
+        missing_per_file[absfn] = missing
+
+    # Plan tasks round-robin across files until we saturate the budget
+    planned = []
+    worker_budget = remaining * max(1, int(getattr(settings, "processes", 1)))
+    planned_worker_seconds = 0
+
+    # Next index to schedule from each file's missing list
+    next_idx = {absfn: 0 for absfn in files_by_abs}
+    files_cycle = list(files_by_abs.keys())
+
+    def schedule(absfn, relfn, tool_name):
+        nonlocal planned_worker_seconds
+        # Compute effective timeout using per-tool numeric cap if present
+        tool_cap = sb.cfg.TIMEOUTS.get(tool_name)
+        eff_timeout = int(tool_cap) if isinstance(tool_cap, (int, float)) else int(per_contract_budget)
+        # Ensure a minimum timeout
+        eff_timeout = max(MIN_TIMEOUT, min(eff_timeout, remaining))
+        new_task = sb.smartbugs.collect_single_task(absfn, relfn, tool_name, settings, tool_args="", timeout=eff_timeout)
+        if new_task:
+            planned.append(new_task)
+            planned_worker_seconds += eff_timeout
+            sb.logging.message(
+                f"[budget] {os.path.basename(absfn)} -> schedule {tool_name} (timeout: {eff_timeout}s)",
+                "INFO",
+            )
+            return True
+        return False
+
+    # Keep a small overfill margin to compensate for tools finishing early
+    TARGET_FACTOR = 1.15
+    target_worker_seconds = int(worker_budget * TARGET_FACTOR)
+
+    progress = True
+    while planned_worker_seconds < target_worker_seconds and progress:
+        progress = False
+        for absfn in files_cycle:
+            relfn = files_by_abs[absfn]
+            idx = next_idx[absfn]
+            missing = missing_per_file.get(absfn, [])
+            if idx < len(missing):
+                if schedule(absfn, relfn, missing[idx]):
+                    next_idx[absfn] = idx + 1
+                    progress = True
+            elif "sfuzz" not in {k.split("|")[0] for k in _existing_keys_for_file(settings, absfn)}:
+                # Fallback: schedule sFuzz once per file if not yet used
+                if schedule(absfn, relfn, "sfuzz"):
+                    # Mark as done to avoid repeated attempts
+                    next_idx[absfn] = idx + 1
+                    progress = True
+
+            if planned_worker_seconds >= target_worker_seconds:
+                break
+
+    # Log a brief summary
+    est_wall = int(math.ceil(planned_worker_seconds / max(1, int(getattr(settings, "processes", 1)))))
+    sb.logging.message(
+        f"[budget] Planned {len(planned)} task(s) for ~{est_wall}s of wall-clock (remaining {remaining}s).",
+        "INFO",
+    )
+
+    return planned
+
+
+def run_budget_phase(files, settings, remaining_seconds, total_start=None):
+    """Run follow-up tasks while time remains, striving to use the budget.
+
+    Plans tasks sized to the remaining time and runs them. If the work finishes
+    earlier than expected (tools often complete before hitting their timeout),
+    plans another batch and continues until the budget is exhausted or no more
+    tasks are available.
+    """
+
+    remaining = int(max(0, remaining_seconds))
+    if remaining <= 0:
+        sb.logging.message("[budget] No remaining time for second phase.", "INFO")
+        return 0
+
+    # Plan one generous batch sized to fill the budget with slight oversubscription.
+    tasks = plan_budget_tasks(files, settings, remaining)
+    if not tasks:
+        sb.logging.message("[budget] No tasks planned for second phase.", "INFO")
+        return 0
+
+    # Temporarily disable dynamic scheduling for predictability in budget phase
+    prev_dynamic = getattr(settings, "dynamic", True)
+    settings.dynamic = False
+    try:
+        sb.logging.message(sb.colors.success(f"[budget] Running {len(tasks)} planned task(s) within remaining budget."))
+        start = time.time()
+
+        # Footer to print overall total at the end of this run, if total_start is provided
+        extra = None
+        if total_start is not None:
+            def footer():
+                total = datetime.timedelta(seconds=round(time.time() - total_start))
+                return f"Analysis completed in {total}."
+            extra = footer
+
+        # Execute the single planned batch and ask analysis.run to print a footer with the total time
+        sb.analysis.run(tasks, settings, label="Second phase", extra_messages=[extra] if extra else None)
+
+        total_elapsed = int(time.time() - start)
+        return total_elapsed
+    finally:
+        settings.dynamic = prev_dynamic

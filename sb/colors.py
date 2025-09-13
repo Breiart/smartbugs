@@ -18,6 +18,9 @@ def file(s):
 def tool(s):
     return color(Fore.CYAN, s)
 
+def count(s):
+    return color(Fore.MAGENTA, s)
+
 def error(s):
     return color(Fore.RED, s)
 
@@ -26,4 +29,3 @@ def warning(s):
 
 def success(s):
     return color(Fore.GREEN, s)
-

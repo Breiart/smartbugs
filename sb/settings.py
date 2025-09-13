@@ -29,6 +29,9 @@ class Settings:
         self.overwrite = False
         self.processes = 1
         self.timeout = None
+        # Optional wall-clock budget (seconds) reserved for a second orchestration
+        # phase that may run after the core orchestration completes.
+        self.time_budget = None
         self.cpu_quota = None
         self.mem_limit = None
         self.results = os.path.join("results","${TOOL}","${RUNID}","${FILENAME}")
@@ -110,10 +113,10 @@ class Settings:
             k = k.replace("-", "_")
 
             # attributes accepting None as a value
-            if k in ("timeout", "cpu_quota", "mem_limit") and v in (None, 0, "0"):
+            if k in ("timeout", "time_budget", "cpu_quota", "mem_limit") and v in (None, 0, "0"):
                setattr(self, k, None)
 
-            elif k in ("timeout", "cpu_quota", "processes"):
+            elif k in ("timeout", "time_budget", "cpu_quota", "processes"):
                 try:
                     v = int(v)
                     assert v > 0
