@@ -214,31 +214,48 @@ def run_budget_phase(files, settings, remaining_seconds, total_start=None):
         sb.logging.message("[budget] No remaining time for second phase.", "INFO")
         return 0
 
-    # Plan one generous batch sized to fill the budget with slight oversubscription.
-    tasks = plan_budget_tasks(files, settings, remaining)
-    if not tasks:
-        sb.logging.message("[budget] No tasks planned for second phase.", "INFO")
-        return 0
-
     # Temporarily disable dynamic scheduling for predictability in budget phase
     prev_dynamic = getattr(settings, "dynamic", True)
     settings.dynamic = False
+    total_elapsed = 0
+    batch_no = 1
     try:
-        sb.logging.message(sb.colors.success(f"[budget] Running {len(tasks)} planned task(s) within remaining budget."))
-        start = time.time()
+        while True:
+            time_left = max(0, remaining - total_elapsed)
+            if time_left <= 0:
+                break
 
-        # Footer to print overall total at the end of this run, if total_start is provided
-        extra = None
-        if total_start is not None:
-            def footer():
-                total = datetime.timedelta(seconds=round(time.time() - total_start))
-                return f"Analysis completed in {total}."
-            extra = footer
+            tasks = plan_budget_tasks(files, settings, time_left)
+            if not tasks:
+                if batch_no == 1:
+                    sb.logging.message("[budget] No tasks planned for second phase.", "INFO")
+                else:
+                    sb.logging.message("[budget] No further tasks to schedule within remaining time.", "INFO")
+                break
 
-        # Execute the single planned batch and ask analysis.run to print a footer with the total time
-        sb.analysis.run(tasks, settings, label="Second phase", extra_messages=[extra] if extra else None)
+            sb.logging.message(sb.colors.success(
+                f"[budget] Running batch #{batch_no} with {len(tasks)} task(s), time left ~{time_left}s."))
 
-        total_elapsed = int(time.time() - start)
+            # Footer to print overall total at the end of this run, if total_start is provided
+            extra = None
+            if total_start is not None:
+                def footer():
+                    total = datetime.timedelta(seconds=round(time.time() - total_start))
+                    return f"Analysis completed in {total}."
+                extra = footer
+
+            start = time.time()
+            sb.analysis.run(tasks, settings, label=f"Second phase (batch {batch_no})", extra_messages=[extra] if extra else None)
+            batch_elapsed = int(time.time() - start)
+            total_elapsed += batch_elapsed
+            sb.logging.message(
+                f"[budget] Batch #{batch_no} finished in ~{batch_elapsed}s. Remaining budget: ~{max(0, remaining - total_elapsed)}s.",
+                "INFO",
+            )
+
+            # If tasks finished much earlier than the planned time, iterate again
+            batch_no += 1
+
         return total_elapsed
     finally:
         settings.dynamic = prev_dynamic
