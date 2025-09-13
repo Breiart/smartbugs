@@ -355,9 +355,10 @@ def analyser(logqueue, taskqueue, tasks_total, tasks_started, tasks_completed, t
             tasks_started.value = tasks_started_value
         args_str = task.tool_args.strip()
         args_info = f" with args {args_str}" if args_str else " with no args"
+        timeout_info = f" and timeout {task.timeout}" if task.timeout else ""
         count_str = f"{sb.colors.count(tasks_started_value)}/{sb.colors.count(tasks_total.value)}"
         sb.logging.message(
-            f"Starting task {count_str}: {sb.colors.tool(task.tool.id)}{args_info} and {sb.colors.file(task.relfn)}",
+            f"Starting task {count_str}: {sb.colors.tool(task.tool.id)}{args_info}{timeout_info} on {sb.colors.file(task.relfn)}",
             "", logqueue)
 
     def post_analysis(duration, no_processes, timeout):

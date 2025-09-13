@@ -36,7 +36,8 @@ BUDGET_MIN_TIMEOUT = 10
 # Fraction of the time budget we allow the core (standard) orchestration to
 # translate into longer per-task timeouts when budget mode is enabled. The
 # remainder effectively stays available for the second phase.
-CORE_BUDGET_FRACTION = 0.2
+# Default targets ~70% of the provided budget for the core run.
+CORE_BUDGET_FRACTION = 0.7
 
 # Unified timeout configuration (in seconds), flat mapping.
 #

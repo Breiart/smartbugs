@@ -42,11 +42,12 @@ Budgeted second phase
   tasks are available.
 
 In budget mode, the core (standard) orchestration also increases per‑task
-timeouts when the total budget allows it. By default, a fraction of the
-budget is translated into a per‑task base timeout for core tools so that the
-core phase can run deeper while still leaving time for the second phase. These
-fractions and minimums are configurable in `sb/cfg.py` as `CORE_BUDGET_FRACTION`,
-`BUDGET_TARGET_FRACTION`, and `BUDGET_MIN_TIMEOUT`.
+timeouts when the total budget allows it. By default, about 70% of the
+provided budget is translated into a per‑task base timeout for core tools so
+that the core phase can run deeper while still leaving time for the second
+phase. These fractions and minimums are configurable in `sb/cfg.py` as
+`CORE_BUDGET_FRACTION` (default 0.7), `BUDGET_TARGET_FRACTION`, and
+`BUDGET_MIN_TIMEOUT`.
 
 Example:
 ```console
