@@ -50,8 +50,11 @@ TIMEOUTS = {
     "normal": 100,
     "accurate": 480,
 
-    # Tool-specific timeouts
-    "maian": 45,
+    ## TOOL-SPECIFIC TIMEOUTS
+
+    # In their study, Nikolić et al. used a 10 second timeout. 
+    # We keep it at 20 to account for Docker usage
+    "maian": 20,
     
     
 
