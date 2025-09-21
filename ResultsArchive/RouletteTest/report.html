@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .summary-table td { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>report</h1>
+
+    <h2>Overall Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Total Executions</th>
+            <th>Total Time</th>
+            <th>Total Vulns Found</th>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>00:40:53</td>
+            <td>79</td>
+        </tr>
+    </table>
+
+    <h2>Split Summary</h2>
+    <table>
+        <tr>
+            <th>Contracts</th>
+            <th>Execution IDs</th>
+            <th>Exec ID Count</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20250918_1524, d_20250918_1613, d_20250918_1707</td>
+            <td>3</td>
+        </tr>
+        
+    </table>
+
+    <h3>Per-Run Overview</h3>
+    
+    <h4>Split 1 — roulette.sol</h4>
+    <table class="summary-table">
+        <tr>
+            <th>Execution ID</th>
+            <th>Duration</th>
+            <th>Vulnerabilities Found</th>
+            <th>Classified Vulnerabilities</th>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>00:24:46</td>
+            <td>27</td>
+            <td>22</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>00:08:34</td>
+            <td>28</td>
+            <td>23</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>00:07:33</td>
+            <td>24</td>
+            <td>19</td>
+        </tr>
+        
+    </table>
+    
+
+    <h2>Overall Graphs</h2>
+    <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="492bb095-c852-4e53-b0c7-bcd3e36b538b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("492bb095-c852-4e53-b0c7-bcd3e36b538b")) {                    Plotly.newPlot(                        "492bb095-c852-4e53-b0c7-bcd3e36b538b",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250918_1524\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250918_1524","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250918_1524","offsetgroup":"20250918_1524","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","honeybadger","maian","manticore-0.3.7","mythril-0.24.7","osiris","oyente","securify","semgrep","sfuzz","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAAgBhv\u002fz8AAADAzfD3PwAAACqXQEFAAADATKAGkEAAAAAAlX8FQP\u002f\u002fP4o5JHlAAAAAwKdHBUAAAADA\u002fXUCQAAAAABl7wNAAAAA4E0eA0AAAAAAKT7rPwAAAIB0Tuo\u002fAAAAcCaGEUABAAAALR34Pw=="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1613\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1613","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"d_20250918_1613","offsetgroup":"d_20250918_1613","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAAwr0aRUD\u002f\u002f\u002f8\u002fJB\u002f1PwAAADCG9T5AAAAAAHU1E0AAAIBMMH96QAAAAMDnxwBAAQAAAK2PA0D\u002f\u002f\u002f\u002f\u002fJ9HuPwAAANCuRhFAAAAAAFrX9T8="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1707\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1707","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"d_20250918_1707","offsetgroup":"d_20250918_1707","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAA3I+BYEAAAABAkRr2PwAAgMyj6GJAAAAAMFlXE0AAAIChuNBiQAAAACDHHQFAAAAAwAziB0AAAAAAD7XtPwAAAMA6YhNAAAAAgD7S+T8="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Avg Exec Time (s)"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Average Execution Time per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="5fc88b41-406f-410d-803d-16f708747964" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5fc88b41-406f-410d-803d-16f708747964")) {                    Plotly.newPlot(                        "5fc88b41-406f-410d-803d-16f708747964",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250918_1524\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250918_1524","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250918_1524","offsetgroup":"20250918_1524","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","honeybadger","maian","manticore-0.3.7","mythril-0.24.7","osiris","oyente","securify","semgrep","sfuzz","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"i1","bdata":"AQMAAAAEAAAAAAAGBQg="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1613\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1613","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"d_20250918_1613","offsetgroup":"d_20250918_1613","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"i1","bdata":"AgMAAAQAAAYFCA=="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1707\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1707","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"d_20250918_1707","offsetgroup":"d_20250918_1707","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"i1","bdata":"AgMAAAAAAAYFCA=="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Vulns Found"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Total Vulnerabilities Found per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="055d3493-3900-4447-8e09-f1330df2e25c" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("055d3493-3900-4447-8e09-f1330df2e25c")) {                    Plotly.newPlot(                        "055d3493-3900-4447-8e09-f1330df2e25c",                        [{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eTotal Exec Time=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["20250918_1524","d_20250918_1613","d_20250918_1707"],"legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":{"dtype":"f8","bdata":"AABA3u83l0AAAGCZbxOAQAAAwHMjSXxA"},"xaxis":"x","y":{"dtype":"i1","bdata":"GxwY"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Total Exec Time"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Vulns Found"}},"legend":{"tracegroupgap":0},"title":{"text":"Execution Time vs Vulnerabilities Found"}},                        {"responsive": true}                    )                };            </script>        </div>
+
+    <h2>Graphs Per Split</h2>
+    
+    <h3>Split 1 — roulette.sol</h3>
+    <div>                            <div id="7630412c-51db-43d0-8086-07424b080f0b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("7630412c-51db-43d0-8086-07424b080f0b")) {                    Plotly.newPlot(                        "7630412c-51db-43d0-8086-07424b080f0b",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250918_1524\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250918_1524","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250918_1524","offsetgroup":"20250918_1524","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","honeybadger","maian","manticore-0.3.7","mythril-0.24.7","osiris","oyente","securify","semgrep","sfuzz","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAAgBhv\u002fz8AAADAzfD3PwAAACqXQEFAAADATKAGkEAAAAAAlX8FQP\u002f\u002fP4o5JHlAAAAAwKdHBUAAAADA\u002fXUCQAAAAABl7wNAAAAA4E0eA0AAAAAAKT7rPwAAAIB0Tuo\u002fAAAAcCaGEUABAAAALR34Pw=="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1613\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1613","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"d_20250918_1613","offsetgroup":"d_20250918_1613","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAAwr0aRUD\u002f\u002f\u002f8\u002fJB\u002f1PwAAADCG9T5AAAAAAHU1E0AAAIBMMH96QAAAAMDnxwBAAQAAAK2PA0D\u002f\u002f\u002f\u002f\u002fJ9HuPwAAANCuRhFAAAAAAFrX9T8="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1707\u003cbr\u003etool=%{x}\u003cbr\u003eAvg Exec Time (s)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1707","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"d_20250918_1707","offsetgroup":"d_20250918_1707","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"f8","bdata":"AAAA3I+BYEAAAABAkRr2PwAAgMyj6GJAAAAAMFlXE0AAAIChuNBiQAAAACDHHQFAAAAAwAziB0AAAAAAD7XtPwAAAMA6YhNAAAAAgD7S+T8="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Avg Exec Time (s)"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Average Execution Time per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="5b94f952-935b-4574-bd9e-bc99a92a1816" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5b94f952-935b-4574-bd9e-bc99a92a1816")) {                    Plotly.newPlot(                        "5b94f952-935b-4574-bd9e-bc99a92a1816",                        [{"alignmentgroup":"True","hovertemplate":"Execution ID=20250918_1524\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"20250918_1524","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"20250918_1524","offsetgroup":"20250918_1524","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","honeybadger","maian","manticore-0.3.7","mythril-0.24.7","osiris","oyente","securify","semgrep","sfuzz","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"i1","bdata":"AQMAAAAEAAAAAAAGBQg="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1613\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1613","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"d_20250918_1613","offsetgroup":"d_20250918_1613","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"i1","bdata":"AgMAAAQAAAYFCA=="},"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Execution ID=d_20250918_1707\u003cbr\u003etool=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"d_20250918_1707","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"d_20250918_1707","offsetgroup":"d_20250918_1707","orientation":"v","showlegend":true,"textposition":"auto","x":["confuzzius","conkas","maian","manticore-0.3.7","mythril-0.24.7","osiris","securify","slither-0.10.4","smartcheck","solhint-3.3.8"],"xaxis":"x","y":{"dtype":"i1","bdata":"AgMAAAAAAAYFCA=="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"tool"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Vulns Found"}},"legend":{"title":{"text":"Execution ID"},"tracegroupgap":0},"title":{"text":"Total Vulnerabilities Found per Tool"},"barmode":"group"},                        {"responsive": true}                    )                };            </script>        </div>
+    <div>                            <div id="dc7a1dfa-e41c-41e7-91ba-c916b850affb" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("dc7a1dfa-e41c-41e7-91ba-c916b850affb")) {                    Plotly.newPlot(                        "dc7a1dfa-e41c-41e7-91ba-c916b850affb",                        [{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eTotal Exec Time=%{x}\u003cbr\u003eTotal Vulns Found=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["20250918_1524","d_20250918_1613","d_20250918_1707"],"legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":{"dtype":"f8","bdata":"AABA3u83l0AAAGCZbxOAQAAAwHMjSXxA"},"xaxis":"x","y":{"dtype":"i1","bdata":"GxwY"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Total Exec Time"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Vulns Found"}},"legend":{"tracegroupgap":0},"title":{"text":"Execution Time vs Vulnerabilities Found"}},                        {"responsive": true}                    )                };            </script>        </div>
+    
+
+    <h2>Per Execution Summary</h2>
+    
+    <h3>Execution 20250918_1524 - confuzzius</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 1</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - conkas</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 3</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - honeybadger</h3>
+    <p>Execution Time: 00:00:35 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - maian</h3>
+    <p>Execution Time: 00:17:06 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - manticore-0.3.7</h3>
+    <p>Execution Time: 00:00:03 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - mythril-0.24.7</h3>
+    <p>Execution Time: 00:06:42 | Total Vulns: 4</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>TOD</td>
+            <td>Transaction_Order_Dependence_SWC_114</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>UNLOCKED_ETHER</td>
+            <td>Unprotected_Ether_Withdrawal_SWC_105</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - osiris</h3>
+    <p>Execution Time: 00:00:03 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - oyente</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - securify</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - semgrep</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - sfuzz</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - slither-0.10.4</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 6</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>ARBITRARY_SEND</td>
+            <td>arbitrary_send_eth</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>incorrect_equality</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td></td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>timestamp</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>WEAK_RANDOMNESS</td>
+            <td>weak_prng</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - smartcheck</h3>
+    <p>Execution Time: 00:00:04 | Total Vulns: 5</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>9</td>
+            <td>DOS_GAS_LIMIT, GREEDY_CONTRACT</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>OUTDATED_SOLC</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - solhint-3.3.8</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 8</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>compiler_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_complex_fallback</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>12</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_empty_blocks</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>16</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - confuzzius</h3>
+    <p>Execution Time: 00:00:42 | Total Vulns: 2</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - conkas</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 3</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - maian</h3>
+    <p>Execution Time: 00:00:31 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - manticore-0.3.7</h3>
+    <p>Execution Time: 00:00:05 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - mythril-0.24.7</h3>
+    <p>Execution Time: 00:07:04 | Total Vulns: 4</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>TOD</td>
+            <td>Transaction_Order_Dependence_SWC_114</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>UNLOCKED_ETHER</td>
+            <td>Unprotected_Ether_Withdrawal_SWC_105</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - osiris</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - securify</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - slither-0.10.4</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 6</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>ARBITRARY_SEND</td>
+            <td>arbitrary_send_eth</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>incorrect_equality</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td></td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>timestamp</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>WEAK_RANDOMNESS</td>
+            <td>weak_prng</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - smartcheck</h3>
+    <p>Execution Time: 00:00:04 | Total Vulns: 5</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>9</td>
+            <td>DOS_GAS_LIMIT, GREEDY_CONTRACT</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>OUTDATED_SOLC</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - solhint-3.3.8</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 8</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>compiler_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_complex_fallback</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>12</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_empty_blocks</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>16</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - confuzzius</h3>
+    <p>Execution Time: 00:02:12 | Total Vulns: 2</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - conkas</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 3</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - maian</h3>
+    <p>Execution Time: 00:02:31 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - manticore-0.3.7</h3>
+    <p>Execution Time: 00:00:05 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - mythril-0.24.7</h3>
+    <p>Execution Time: 00:02:31 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - osiris</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - securify</h3>
+    <p>Execution Time: 00:00:03 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - slither-0.10.4</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 6</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>ARBITRARY_SEND</td>
+            <td>arbitrary_send_eth</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>incorrect_equality</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td></td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>timestamp</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>WEAK_RANDOMNESS</td>
+            <td>weak_prng</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - smartcheck</h3>
+    <p>Execution Time: 00:00:05 | Total Vulns: 5</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>9</td>
+            <td>DOS_GAS_LIMIT, GREEDY_CONTRACT</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>OUTDATED_SOLC</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - solhint-3.3.8</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 8</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>compiler_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_complex_fallback</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>12</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_empty_blocks</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>16</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+    </table>
+    
+
+    <h2>Per Tool Findings</h2>
+    
+    <h3>Execution 20250918_1524 - confuzzius</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 1</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - conkas</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 3</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - honeybadger</h3>
+    <p>Execution Time: 00:00:35 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - maian</h3>
+    <p>Execution Time: 00:17:06 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - manticore-0.3.7</h3>
+    <p>Execution Time: 00:00:03 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - mythril-0.24.7</h3>
+    <p>Execution Time: 00:06:42 | Total Vulns: 4</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>TOD</td>
+            <td>Transaction_Order_Dependence_SWC_114</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>UNLOCKED_ETHER</td>
+            <td>Unprotected_Ether_Withdrawal_SWC_105</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - osiris</h3>
+    <p>Execution Time: 00:00:03 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - oyente</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - securify</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - semgrep</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - sfuzz</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - slither-0.10.4</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 6</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>ARBITRARY_SEND</td>
+            <td>arbitrary_send_eth</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>incorrect_equality</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td></td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>timestamp</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>WEAK_RANDOMNESS</td>
+            <td>weak_prng</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - smartcheck</h3>
+    <p>Execution Time: 00:00:04 | Total Vulns: 5</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>9</td>
+            <td>DOS_GAS_LIMIT, GREEDY_CONTRACT</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>OUTDATED_SOLC</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution 20250918_1524 - solhint-3.3.8</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 8</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>compiler_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_complex_fallback</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>12</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_empty_blocks</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>16</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - confuzzius</h3>
+    <p>Execution Time: 00:00:42 | Total Vulns: 2</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - conkas</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 3</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - maian</h3>
+    <p>Execution Time: 00:00:31 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - manticore-0.3.7</h3>
+    <p>Execution Time: 00:00:05 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - mythril-0.24.7</h3>
+    <p>Execution Time: 00:07:04 | Total Vulns: 4</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>TOD</td>
+            <td>Transaction_Order_Dependence_SWC_114</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>22</td>
+            <td>UNLOCKED_ETHER</td>
+            <td>Unprotected_Ether_Withdrawal_SWC_105</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - osiris</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - securify</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - slither-0.10.4</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 6</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>ARBITRARY_SEND</td>
+            <td>arbitrary_send_eth</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>incorrect_equality</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td></td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>timestamp</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>WEAK_RANDOMNESS</td>
+            <td>weak_prng</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - smartcheck</h3>
+    <p>Execution Time: 00:00:04 | Total Vulns: 5</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>9</td>
+            <td>DOS_GAS_LIMIT, GREEDY_CONTRACT</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>OUTDATED_SOLC</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1613 - solhint-3.3.8</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 8</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>compiler_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_complex_fallback</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>12</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_empty_blocks</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>16</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - confuzzius</h3>
+    <p>Execution Time: 00:02:12 | Total Vulns: 2</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Block_Dependency</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - conkas</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 3</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>Time_Manipulation</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - maian</h3>
+    <p>Execution Time: 00:02:31 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - manticore-0.3.7</h3>
+    <p>Execution Time: 00:00:05 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - mythril-0.24.7</h3>
+    <p>Execution Time: 00:02:31 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - osiris</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - securify</h3>
+    <p>Execution Time: 00:00:03 | Total Vulns: 0</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - slither-0.10.4</h3>
+    <p>Execution Time: 00:00:01 | Total Vulns: 6</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>ARBITRARY_SEND</td>
+            <td>arbitrary_send_eth</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>incorrect_equality</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td></td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>solc_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>timestamp</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>WEAK_RANDOMNESS</td>
+            <td>weak_prng</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - smartcheck</h3>
+    <p>Execution Time: 00:00:05 | Total Vulns: 5</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>9</td>
+            <td>DOS_GAS_LIMIT, GREEDY_CONTRACT</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>OUTDATED_SOLC</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+        </tr>
+        
+    </table>
+    
+    <h3>Execution d_20250918_1707 - solhint-3.3.8</h3>
+    <p>Execution Time: 00:00:02 | Total Vulns: 8</p>
+    <table>
+        <tr>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Category</th>
+            <th>Vulnerability</th>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>7</td>
+            <td>VERSION_PRAGMA</td>
+            <td>compiler_version</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>15</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_complex_fallback</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>12</td>
+            <td>UNCLASSIFIED</td>
+            <td>no_empty_blocks</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>20</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>21</td>
+            <td>BLOCK_DEPENDENCE</td>
+            <td>not_rely_on_time</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>16</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+        <tr>
+            <td>roulette.sol</td>
+            <td>18</td>
+            <td>UNCLASSIFIED</td>
+            <td>reason_string</td>
+        </tr>
+        
+    </table>
+    
+
+    <h2>Per Vulnerability Summary</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contract</th>
+            <th>Line</th>
+            <th>Vulnerability</th>
+            <th>Tools</th>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>Block_Dependency</td>
+            <td>confuzzius</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>22</td>
+            <td>Transaction_Order_Dependence_SWC_114</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>22</td>
+            <td>Unprotected_Ether_Withdrawal_SWC_105</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>arbitrary_send_eth</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>incorrect_equality</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td></td>
+            <td>solc_version</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>solc_version</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>timestamp</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>weak_prng</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>9</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>compiler_version</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>no_complex_fallback</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>12</td>
+            <td>no_empty_blocks</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>16</td>
+            <td>reason_string</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>reason_string</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Block_Dependency</td>
+            <td>confuzzius</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>Block_Dependency</td>
+            <td>confuzzius</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>Dependence_on_predictable_environment_variable_SWC_116</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>22</td>
+            <td>Transaction_Order_Dependence_SWC_114</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>22</td>
+            <td>Unprotected_Ether_Withdrawal_SWC_105</td>
+            <td>mythril-0.24.7</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>arbitrary_send_eth</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>incorrect_equality</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td></td>
+            <td>solc_version</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>solc_version</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>timestamp</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>weak_prng</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>9</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>compiler_version</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>no_complex_fallback</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>12</td>
+            <td>no_empty_blocks</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>16</td>
+            <td>reason_string</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>reason_string</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Block_Dependency</td>
+            <td>confuzzius</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>Block_Dependency</td>
+            <td>confuzzius</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>Time_Manipulation</td>
+            <td>conkas</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>arbitrary_send_eth</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>incorrect_equality</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td></td>
+            <td>solc_version</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>solc_version</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>timestamp</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>weak_prng</td>
+            <td>slither-0.10.4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>SOLIDITY_EXACT_TIME</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>9</td>
+            <td>SOLIDITY_LOCKED_MONEY</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>SOLIDITY_PRAGMAS_VERSION</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>SOLIDITY_UPGRADE_TO_050</td>
+            <td>smartcheck</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>7</td>
+            <td>compiler_version</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>15</td>
+            <td>no_complex_fallback</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>12</td>
+            <td>no_empty_blocks</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>20</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>21</td>
+            <td>not_rely_on_time</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>16</td>
+            <td>reason_string</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+             <td>roulette.sol</td>
+            <td>18</td>
+            <td>reason_string</td>
+            <td>solhint-3.3.8</td>
+        </tr>
+        
+    </table>
+
+    <h2>Execution Details</h2>
+    <table>
+        <tr>
+            <th>Execution ID</th>
+            <th>Contract</th>
+            <th>Tool</th>
+            <th>Arguments</th>
+            <th>Execution Time (s)</th>
+            <th>Vulnerabilities</th>
+            <th>Total Vulns</th>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>42.21</td>
+            <td>{Block_Dependency@18,Block_Dependency@20}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>conkas</td>
+            <td>-vt time_manipulation</td>
+            <td>1.32</td>
+            <td>{Time_Manipulation@18,Time_Manipulation@20,Time_Manipulation@21}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>30.96</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>--thorough-mode</td>
+            <td>4.80</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>423.95</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_116@18,Dependence_on_predictable_environment_variable_SWC_116@21,Transaction_Order_Dependence_SWC_114@22,Unprotected_Ether_Withdrawal_SWC_105@22}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>osiris</td>
+            <td></td>
+            <td>2.10</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>securify</td>
+            <td></td>
+            <td>2.45</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.96</td>
+            <td>{arbitrary_send_eth@15,incorrect_equality@15,solc_version,solc_version@7,timestamp@15,weak_prng@15}</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>4.32</td>
+            <td>{SOLIDITY_EXACT_TIME@18,SOLIDITY_EXACT_TIME@21,SOLIDITY_LOCKED_MONEY@9,SOLIDITY_PRAGMAS_VERSION@7,SOLIDITY_UPGRADE_TO_050@15}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1613</td>
+            <td>roulette.sol</td>
+            <td>solhint-3.3.8</td>
+            <td></td>
+            <td>1.37</td>
+            <td>{compiler_version@7,no_complex_fallback@15,no_empty_blocks@12,not_rely_on_time@18,not_rely_on_time@20,not_rely_on_time@21,reason_string@16,reason_string@18}</td>
+            <td>8</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>132.05</td>
+            <td>{Block_Dependency@18,Block_Dependency@20}</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>conkas</td>
+            <td>-vt time_manipulation</td>
+            <td>1.38</td>
+            <td>{Time_Manipulation@18,Time_Manipulation@20,Time_Manipulation@21}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>151.27</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>manticore-0.3.7</td>
+            <td>--thorough-mode</td>
+            <td>4.84</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>150.52</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>osiris</td>
+            <td></td>
+            <td>2.14</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>securify</td>
+            <td></td>
+            <td>2.99</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.93</td>
+            <td>{arbitrary_send_eth@15,incorrect_equality@15,solc_version,solc_version@7,timestamp@15,weak_prng@15}</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>4.85</td>
+            <td>{SOLIDITY_EXACT_TIME@18,SOLIDITY_EXACT_TIME@21,SOLIDITY_LOCKED_MONEY@9,SOLIDITY_PRAGMAS_VERSION@7,SOLIDITY_UPGRADE_TO_050@15}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>d_20250918_1707</td>
+            <td>roulette.sol</td>
+            <td>solhint-3.3.8</td>
+            <td></td>
+            <td>1.61</td>
+            <td>{compiler_version@7,no_complex_fallback@15,no_empty_blocks@12,not_rely_on_time@18,not_rely_on_time@20,not_rely_on_time@21,reason_string@16,reason_string@18}</td>
+            <td>8</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>confuzzius</td>
+            <td></td>
+            <td>1.96</td>
+            <td>{Block_Dependency@20}</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>conkas</td>
+            <td></td>
+            <td>1.50</td>
+            <td>{Time_Manipulation@18,Time_Manipulation@20,Time_Manipulation@21}</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>honeybadger</td>
+            <td></td>
+            <td>34.50</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>maian</td>
+            <td></td>
+            <td>1025.66</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>manticore-0.3.7</td>
+            <td></td>
+            <td>2.69</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>mythril-0.24.7</td>
+            <td></td>
+            <td>402.26</td>
+            <td>{Dependence_on_predictable_environment_variable_SWC_116@18,Dependence_on_predictable_environment_variable_SWC_116@21,Transaction_Order_Dependence_SWC_114@22,Unprotected_Ether_Withdrawal_SWC_105@22}</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>osiris</td>
+            <td></td>
+            <td>2.66</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>oyente</td>
+            <td></td>
+            <td>2.31</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>securify</td>
+            <td></td>
+            <td>2.49</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>semgrep</td>
+            <td></td>
+            <td>2.39</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>sfuzz</td>
+            <td></td>
+            <td>0.85</td>
+            <td>{}</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>slither-0.10.4</td>
+            <td></td>
+            <td>0.82</td>
+            <td>{arbitrary_send_eth@15,incorrect_equality@15,solc_version,solc_version@7,timestamp@15,weak_prng@15}</td>
+            <td>6</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>smartcheck</td>
+            <td></td>
+            <td>4.38</td>
+            <td>{SOLIDITY_EXACT_TIME@18,SOLIDITY_EXACT_TIME@21,SOLIDITY_LOCKED_MONEY@9,SOLIDITY_PRAGMAS_VERSION@7,SOLIDITY_UPGRADE_TO_050@15}</td>
+            <td>5</td>
+        </tr>
+        
+        <tr>
+            <td>20250918_1524</td>
+            <td>roulette.sol</td>
+            <td>solhint-3.3.8</td>
+            <td></td>
+            <td>1.51</td>
+            <td>{compiler_version@7,no_complex_fallback@15,no_empty_blocks@12,not_rely_on_time@18,not_rely_on_time@20,not_rely_on_time@21,reason_string@16,reason_string@18}</td>
+            <td>8</td>
+        </tr>
+        
+    </table>
+
+    
+</body>
+</html>
