@@ -64,6 +64,9 @@ TIMEOUTS = {
     # "confuzzius": 100,
     # "sfuzz": 100,
 
-    # Core timeout label for ConFuzzius
+    # Core timeout labels
+    "smartcheck_core": 100,
+    "mythril_core": 50,
+    "solhint_core": 35,
     "confuzzius_core": 50,
 }

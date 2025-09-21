@@ -3,11 +3,11 @@ import sb.logging, sb.colors, sb.docker, sb.cfg, sb.io, sb.parsing, sb.sarif, sb
 import sb.smartbugs, sb.vulnerability
 
 CORE_TOOLS = (
-    ("slither", ""),
-    ("smartcheck", ""),
-    ("mythril", ""),
-    ("solhint", ""),
-    ("maian", ""),
+    ("slither", "", "fast"),
+    ("smartcheck", "", "smartcheck_core"),
+    ("mythril", "", "mythril_core"),
+    ("solhint", "", "solhint_core"),
+    ("maian", "", "maian"),
     ("confuzzius", "", "confuzzius_core"),
 )
 
