@@ -1,0 +1,16 @@
+{
+    "errors": [
+        "PHI instruction need arguments but 0 was given"
+    ],
+    "fails": [
+        "exception (KeyError: 'time_manipulation,unchecked_ll_calls')"
+    ],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": "-vt time_manipulation,unchecked_ll_calls"
+}

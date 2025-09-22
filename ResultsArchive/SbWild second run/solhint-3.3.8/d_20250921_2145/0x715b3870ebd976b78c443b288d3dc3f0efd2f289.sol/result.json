@@ -1,0 +1,223 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 36,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 39,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 81,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 82,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 94,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 96,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 133,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 62,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 143,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 145,
+            "message": "Avoid to use inline assembly. It is acceptable only in rare cases",
+            "name": "no-inline-assembly"
+        },
+        {
+            "column": 25,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "error",
+            "line": 155,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 27,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "error",
+            "line": 156,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 158,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 163,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 164,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 26,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 169,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 26,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 170,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 174,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 174,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 175,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 183,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 183,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x715b3870ebd976b78c443b288d3dc3f0efd2f289.sol",
+            "level": "warning",
+            "line": 184,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

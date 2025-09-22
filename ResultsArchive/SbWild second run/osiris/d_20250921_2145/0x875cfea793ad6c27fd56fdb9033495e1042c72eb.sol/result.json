@@ -1,0 +1,31 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "column": 21,
+            "contract": "YOKOCHOCOIN",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 25,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 16,
+            "contract": "YOKOCHOCOIN",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 21,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

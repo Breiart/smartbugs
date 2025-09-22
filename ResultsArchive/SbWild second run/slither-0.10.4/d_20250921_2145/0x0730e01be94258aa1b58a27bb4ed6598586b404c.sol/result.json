@@ -1,0 +1,330 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "updateTldPrice",
+            "impact": "Medium",
+            "line": 257,
+            "line_end": 275,
+            "message": "BetterNameService.updateTldPrice(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#257-275) uses a dangerous strict equality:\n\t- price == minPrice (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#262)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.25 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x.\nIt is used by:\n\t- ^0.4.25 (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "createTopLevelDomain",
+            "impact": "Informational",
+            "line": 282,
+            "line_end": 291,
+            "message": "BetterNameService.createTopLevelDomain(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#282-291) uses literals with too many digits:\n\t- tldPrices[tld] = BnsLib.TopLevelDomain({price:5000000000000000000,lastUpdate:block.number,exists:true,min:false}) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#284-289)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "slitherConstructorVariables",
+            "impact": "Informational",
+            "line": 91,
+            "line_end": 423,
+            "message": "BetterNameService.slitherConstructorVariables() (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#91-423) uses literals with too many digits:\n\t- minPrice = 10000000000000000 (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#104)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "impact": "Optimization",
+            "line": 104,
+            "message": "BetterNameService.minPrice (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#104) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "impact": "Optimization",
+            "line": 103,
+            "message": "BetterNameService.updateAfter (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#103) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "registerSubdomain",
+            "impact": "Optimization",
+            "line": 331,
+            "line_end": 333,
+            "message": "registerSubdomain(string,string,bool) should be declared external:\n\t- BetterNameService.registerSubdomain(string,string,bool) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#331-333)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "getDomainOwner",
+            "impact": "Optimization",
+            "line": 208,
+            "line_end": 210,
+            "message": "getDomainOwner(string) should be declared external:\n\t- BetterNameService.getDomainOwner(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#208-210)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "getContent",
+            "impact": "Optimization",
+            "line": 227,
+            "line_end": 229,
+            "message": "getContent(string) should be declared external:\n\t- BetterNameService.getContent(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#227-229)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "registerSubdomainAsDomainOwner",
+            "impact": "Optimization",
+            "line": 335,
+            "line_end": 339,
+            "message": "registerSubdomainAsDomainOwner(string,string,address) should be declared external:\n\t- BetterNameService.registerSubdomainAsDomainOwner(string,string,address) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#335-339)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "closePublicDomainRegistration",
+            "impact": "Optimization",
+            "line": 401,
+            "line_end": 404,
+            "message": "closePublicDomainRegistration(string) should be declared external:\n\t- BetterNameService.closePublicDomainRegistration(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#401-404)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "setContent",
+            "impact": "Optimization",
+            "line": 351,
+            "line_end": 355,
+            "message": "setContent(string,bytes) should be declared external:\n\t- BetterNameService.setContent(string,bytes) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#351-355)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "registerDomain",
+            "impact": "Optimization",
+            "line": 320,
+            "line_end": 322,
+            "message": "registerDomain(string,bool) should be declared external:\n\t- BetterNameService.registerDomain(string,bool) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#320-322)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "isPublicDomainRegistrationOpen",
+            "impact": "Optimization",
+            "line": 212,
+            "line_end": 214,
+            "message": "isPublicDomainRegistrationOpen(string) should be declared external:\n\t- BetterNameService.isPublicDomainRegistrationOpen(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#212-214)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "setDomainStorageMany",
+            "impact": "Optimization",
+            "line": 414,
+            "line_end": 419,
+            "message": "setDomainStorageMany(string,string[2][]) should be declared external:\n\t- BetterNameService.setDomainStorageMany(string,string[2][]) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#414-419)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "disapproveForSubdomain",
+            "impact": "Optimization",
+            "line": 370,
+            "line_end": 374,
+            "message": "disapproveForSubdomain(string,address) should be declared external:\n\t- BetterNameService.disapproveForSubdomain(string,address) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#370-374)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "getTldPrice",
+            "impact": "Optimization",
+            "line": 192,
+            "line_end": 194,
+            "message": "getTldPrice(string) should be declared external:\n\t- BetterNameService.getTldPrice(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#192-194)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "isDomainInvalidated",
+            "impact": "Optimization",
+            "line": 223,
+            "line_end": 225,
+            "message": "isDomainInvalidated(string) should be declared external:\n\t- BetterNameService.isDomainInvalidated(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#223-225)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "transferDomain",
+            "impact": "Optimization",
+            "line": 346,
+            "line_end": 348,
+            "message": "transferDomain(string,address) should be declared external:\n\t- BetterNameService.transferDomain(string,address) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#346-348)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "invalidateDomain",
+            "impact": "Optimization",
+            "line": 384,
+            "line_end": 386,
+            "message": "invalidateDomain(string) should be declared external:\n\t- BetterNameService.invalidateDomain(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#384-386)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "openPublicDomainRegistration",
+            "impact": "Optimization",
+            "line": 396,
+            "line_end": 399,
+            "message": "openPublicDomainRegistration(string) should be declared external:\n\t- BetterNameService.openPublicDomainRegistration(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#396-399)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "getDomainStorageMany",
+            "impact": "Optimization",
+            "line": 238,
+            "line_end": 246,
+            "message": "getDomainStorageMany(string,string[]) should be declared external:\n\t- BetterNameService.getDomainStorageMany(string,string[]) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#238-246)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "isApprovedToRegister",
+            "impact": "Optimization",
+            "line": 216,
+            "line_end": 221,
+            "message": "isApprovedToRegister(string,address) should be declared external:\n\t- BetterNameService.isApprovedToRegister(string,address) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#216-221)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "registerDomain",
+            "impact": "Optimization",
+            "line": 324,
+            "line_end": 326,
+            "message": "registerDomain(string,string,bool) should be declared external:\n\t- BetterNameService.registerDomain(string,string,bool) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#324-326)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "deleteContent",
+            "impact": "Optimization",
+            "line": 357,
+            "line_end": 360,
+            "message": "deleteContent(string) should be declared external:\n\t- BetterNameService.deleteContent(string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#357-360)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "getDomainStorageSingle",
+            "impact": "Optimization",
+            "line": 233,
+            "line_end": 236,
+            "message": "getDomainStorageSingle(string,string) should be declared external:\n\t- BetterNameService.getDomainStorageSingle(string,string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#233-236)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "setDomainStorageSingle",
+            "impact": "Optimization",
+            "line": 409,
+            "line_end": 412,
+            "message": "setDomainStorageSingle(string,string,string) should be declared external:\n\t- BetterNameService.setDomainStorageSingle(string,string,string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#409-412)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "approveForSubdomain",
+            "impact": "Optimization",
+            "line": 365,
+            "line_end": 368,
+            "message": "approveForSubdomain(string,address) should be declared external:\n\t- BetterNameService.approveForSubdomain(string,address) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#365-368)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "function": "invalidateSubdomainAsDomainOwner",
+            "impact": "Optimization",
+            "line": 388,
+            "line_end": 391,
+            "message": "invalidateSubdomainAsDomainOwner(string,string) should be declared external:\n\t- BetterNameService.invalidateSubdomainAsDomainOwner(string,string) (0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol#388-391)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

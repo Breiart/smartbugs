@@ -1,0 +1,71 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.25 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "warning",
+            "line": 16,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "warning",
+            "line": 17,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "warning",
+            "line": 18,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "warning",
+            "line": 32,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "error",
+            "line": 48,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 18,
+            "filename": "samples/SmartbugsWild/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol",
+            "level": "error",
+            "line": 49,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

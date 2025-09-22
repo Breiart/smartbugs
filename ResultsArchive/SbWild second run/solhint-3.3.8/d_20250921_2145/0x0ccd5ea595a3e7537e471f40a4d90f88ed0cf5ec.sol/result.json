@@ -1,0 +1,271 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.12 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 4,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 7,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 13,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 14,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 18,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 19,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 20,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 22,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 28,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 32,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 36,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 37,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 46,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 48,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 49,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 50,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 59,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 69,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 60,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 66,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 70,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 73,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Fallback function must be simple",
+            "name": "no-complex-fallback"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 78,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 35,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 82,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 47,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 91,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 76,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 92,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 96,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 46,
+            "filename": "samples/SmartbugsWild/0x0ccd5ea595a3e7537e471f40a4d90f88ed0cf5ec.sol",
+            "level": "warning",
+            "line": 101,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

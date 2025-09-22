@@ -1,0 +1,40 @@
+{
+    "errors": [
+        "EXIT_CODE_254",
+        "Problem while deploying contract CappedToken using account 0xcafebabecafebabecafebabecafebabecafebabe. Error message: b''"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 43,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 51,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 52,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

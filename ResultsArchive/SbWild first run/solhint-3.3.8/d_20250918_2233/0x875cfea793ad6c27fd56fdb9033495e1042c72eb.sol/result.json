@@ -1,0 +1,343 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.23 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 43,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 60,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 48,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 108,
+            "message": "Contract has 19 states declarations but allowed no more than 15",
+            "name": "max-states-count"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 125,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 26,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 148,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 174,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 185,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 62,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 194,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 195,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 198,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 201,
+            "message": "Avoid to use \".call.value()()\"",
+            "name": "avoid-call-value"
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 201,
+            "message": "Avoid to use low level calls.",
+            "name": "avoid-low-level-calls"
+        },
+        {
+            "column": 34,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 206,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 62,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 217,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 219,
+            "message": "Avoid to use inline assembly. It is acceptable only in rare cases",
+            "name": "no-inline-assembly"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 228,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 235,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 244,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 253,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 262,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 273,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 294,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 300,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 306,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 308,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 323,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 324,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 52,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 328,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 329,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 93,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 333,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 40,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 342,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 347,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 35,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 351,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 93,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 361,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 33,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 367,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 43,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 368,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 385,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 19,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 385,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "level": "warning",
+            "line": 387,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

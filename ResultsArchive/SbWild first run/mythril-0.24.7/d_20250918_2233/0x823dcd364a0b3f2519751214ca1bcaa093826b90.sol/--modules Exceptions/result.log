@@ -1,0 +1,1 @@
+{"success": false, "error": "Solc experienced a fatal error.\n\n/sb/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol:10:47: : Expected token LBrace got reserved keyword 'Pure'\n  function mul(uint256 a, uint256 b) internal pure returns (uint256) {\r\n                                              ^\n", "issues": []}

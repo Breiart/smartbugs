@@ -1,0 +1,149 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 5,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 6,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 7,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 7,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 8,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 8,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 20,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 31,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 28,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 37,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 31,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 42,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 48,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 52,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 78,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 31,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 79,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 70,
+            "filename": "samples/SmartbugsWild/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol",
+            "level": "warning",
+            "line": 92,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

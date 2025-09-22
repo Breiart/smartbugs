@@ -1,0 +1,91 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.21 (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Informational",
+            "line": 3,
+            "line_end": 56,
+            "message": "Contract DENMARK_WINS (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#3-56) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "DENMARK_WINS",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "function": "SimpleERC20Token",
+            "impact": "Informational",
+            "line": 15,
+            "line_end": 18,
+            "message": "Function DENMARK_WINS.SimpleERC20Token() (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#15-18) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DENMARK_WINS",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "function": "slitherConstructorVariables",
+            "impact": "Informational",
+            "line": 3,
+            "line_end": 56,
+            "message": "DENMARK_WINS.slitherConstructorVariables() (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#3-56) uses literals with too many digits:\n\t- totalSupply = 1165947079929830000000000000 (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#11)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Optimization",
+            "line": 9,
+            "message": "DENMARK_WINS.decimals (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#9) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Optimization",
+            "line": 8,
+            "message": "DENMARK_WINS.symbol (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#8) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Optimization",
+            "line": 7,
+            "message": "DENMARK_WINS.name (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#7) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "impact": "Optimization",
+            "line": 11,
+            "message": "DENMARK_WINS.totalSupply (0x00c7221d5fbdaab1448675a156876efb885a6449.sol#11) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

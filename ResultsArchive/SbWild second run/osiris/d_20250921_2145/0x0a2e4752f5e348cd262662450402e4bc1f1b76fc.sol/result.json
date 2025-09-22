@@ -1,0 +1,22 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 23,
+            "contract": "DGCASH",
+            "filename": "samples/SmartbugsWild/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol",
+            "line": 68,
+            "name": "Overflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,63 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version 0.5.4 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "level": "warning",
+            "line": 28,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "level": "warning",
+            "line": 63,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "level": "warning",
+            "line": 69,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "level": "warning",
+            "line": 78,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "level": "warning",
+            "line": 115,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

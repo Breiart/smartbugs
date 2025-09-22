@@ -1,0 +1,311 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.11 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 2,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 5,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 10,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 14,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 18,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 27,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 40,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 41,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 48,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 53,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 57,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 57,
+            "message": "Fallback function must be simple",
+            "name": "no-complex-fallback"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 66,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 47,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 66,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 69,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 75,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 78,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 10,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 79,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 82,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 37,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 83,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 85,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 92,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 93,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 94,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 101,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 109,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 110,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 111,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 112,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 113,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "level": "warning",
+            "line": 120,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

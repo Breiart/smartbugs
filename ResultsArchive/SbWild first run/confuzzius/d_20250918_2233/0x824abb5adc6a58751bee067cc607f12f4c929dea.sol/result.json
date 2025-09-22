@@ -1,0 +1,69 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 19,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 24,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 25,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "TBToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 19,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "TBToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 24,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "TBToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 25,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "TBToken",
+            "filename": "samples/SmartbugsWild/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol",
+            "line": 187,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

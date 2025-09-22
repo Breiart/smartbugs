@@ -1,0 +1,145 @@
+'solc --version' running
+'solc /sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:39:15: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+              throw;
+              ^---^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:44:7: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+      function NPC() {
+      ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:5:46: Warning: This declaration shadows an existing declaration.
+    function totalSupply() constant returns (uint256 totalSupply) ;
+                                             ^-----------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:5:5: The shadowed declaration is here:
+    function totalSupply() constant returns (uint256 totalSupply) ;
+    ^-------------------------------------------------------------^
+
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:49:48: Warning: This declaration shadows an existing declaration.
+      function totalSupply() constant returns (uint256 totalSupply) {
+                                               ^-----------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:49:7: The shadowed declaration is here:
+      function totalSupply() constant returns (uint256 totalSupply) {
+      ^ (Relevant source part starts here and spans across multiple lines).
+
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:5:5: Warning: Functions in interfaces should be declared external.
+    function totalSupply() constant returns (uint256 totalSupply) ;
+    ^-------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:7:5: Warning: Functions in interfaces should be declared external.
+    function balanceOf(address _owner) constant returns (uint256 balance);
+    ^--------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:9:5: Warning: Functions in interfaces should be declared external.
+    function transfer(address _to, uint256 _value) returns (bool success);
+    ^--------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:11:5: Warning: Functions in interfaces should be declared external.
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success);
+    ^---------------------------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:13:5: Warning: Functions in interfaces should be declared external.
+    function approve(address _spender, uint256 _value) returns (bool success);
+    ^------------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:15:5: Warning: Functions in interfaces should be declared external.
+    function allowance(address _owner, address _spender) constant returns (uint256 remaining);
+    ^----------------------------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:63:15: Warning: Invoking events without "emit" prefix is deprecated.
+              Transfer(msg.sender, _to, _amount);
+              ^--------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:82:14: Warning: Invoking events without "emit" prefix is deprecated.
+             Transfer(_from, _to, _amount);
+             ^---------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:91:10: Warning: Invoking events without "emit" prefix is deprecated.
+         Approval(msg.sender, _spender, _amount);
+         ^-------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:5:5: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+    function totalSupply() constant returns (uint256 totalSupply) ;
+    ^-------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:7:5: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+    function balanceOf(address _owner) constant returns (uint256 balance);
+    ^--------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:9:5: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+    function transfer(address _to, uint256 _value) returns (bool success);
+    ^--------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:11:5: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success);
+    ^---------------------------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:13:5: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+    function approve(address _spender, uint256 _value) returns (bool success);
+    ^------------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:15:5: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+    function allowance(address _owner, address _spender) constant returns (uint256 remaining);
+    ^----------------------------------------------------------------------------------------^
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:44:7: Warning: No visibility specified. Defaulting to "public". 
+      function NPC() {
+      ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:49:7: Warning: No visibility specified. Defaulting to "public". 
+      function totalSupply() constant returns (uint256 totalSupply) {
+      ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:53:7: Warning: No visibility specified. Defaulting to "public". 
+      function balanceOf(address _owner) constant returns (uint256 balance) {
+      ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:57:7: Warning: No visibility specified. Defaulting to "public". 
+      function transfer(address _to, uint256 _amount) returns (bool success) {
+      ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:70:7: Warning: No visibility specified. Defaulting to "public". 
+      function transferFrom(
+      ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:89:6: Warning: No visibility specified. Defaulting to "public". 
+     function approve(address _spender, uint256 _amount) returns (bool success) {
+     ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol:95:6: Warning: No visibility specified. Defaulting to "public". 
+     function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
+     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+ERC20Interface.totalSupply().totalSupply (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#5) shadows:
+	- ERC20Interface.totalSupply() (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#5) (function)
+NPC.totalSupply().totalSupply (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#49) shadows:
+	- NPC.totalSupply() (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#49-51) (function)
+	- ERC20Interface.totalSupply() (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#5) (function)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#local-variable-shadowing
+
+Deprecated standard detected THROW (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#39):
+	- Usage of "throw" should be replaced with "revert()"
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#deprecated-standards
+
+Version constraint ^0.4.8 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- NestedArrayFunctionCallDecoder
+	- ZeroFunctionSelector
+	- DelegateCallReturnValue
+	- ECRecoverMalformedInput
+	- SkipEmptyStringLiteral
+	- ConstantOptimizerSubtraction.
+It is used by:
+	- ^0.4.8 (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter NPC.balanceOf(address)._owner (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#53) is not in mixedCase
+Parameter NPC.transfer(address,uint256)._to (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#57) is not in mixedCase
+Parameter NPC.transfer(address,uint256)._amount (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#57) is not in mixedCase
+Parameter NPC.transferFrom(address,address,uint256)._from (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#71) is not in mixedCase
+Parameter NPC.transferFrom(address,address,uint256)._to (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#72) is not in mixedCase
+Parameter NPC.transferFrom(address,address,uint256)._amount (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#73) is not in mixedCase
+Parameter NPC.approve(address,uint256)._spender (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#89) is not in mixedCase
+Parameter NPC.approve(address,uint256)._amount (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#89) is not in mixedCase
+Parameter NPC.allowance(address,address)._owner (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#95) is not in mixedCase
+Parameter NPC.allowance(address,address)._spender (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#95) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+NPC.slitherConstructorVariables() (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#23-99) uses literals with too many digits:
+	- _totalSupply = 200000000000000 (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#27)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+
+NPC._totalSupply (../../sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol#27) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+/sb/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol analyzed (2 contracts with 93 detectors), 17 result(s) found

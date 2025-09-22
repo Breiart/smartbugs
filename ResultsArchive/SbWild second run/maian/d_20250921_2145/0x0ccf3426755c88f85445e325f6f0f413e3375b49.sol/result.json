@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "AifiAsset",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "AifiAsset",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

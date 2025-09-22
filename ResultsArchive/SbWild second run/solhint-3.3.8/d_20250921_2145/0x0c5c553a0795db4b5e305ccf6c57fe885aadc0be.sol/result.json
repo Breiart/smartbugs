@@ -1,0 +1,223 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.24 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 57,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 85,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 206,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 233,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 243,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 252,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 261,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 270,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 277,
+            "message": "Variable \"_payee\" is unused",
+            "name": "no-unused-vars"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 319,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 10,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 319,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 347,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 373,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 374,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 377,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 433,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 436,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 437,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 438,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 440,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 456,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 465,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 478,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        },
+        {
+            "column": 41,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 485,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "level": "warning",
+            "line": 495,
+            "message": "Error message for require is too long",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

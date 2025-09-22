@@ -1,0 +1,97 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 31,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 461,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 149,
+            "name": "SOLIDITY_ERC20_APPROVE",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 287,
+            "name": "SOLIDITY_ERC20_FUNCTIONS_ALWAYS_RETURN_FALSE",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 287,
+            "name": "SOLIDITY_FUNCTIONS_RETURNS_TYPE_AND_NO_RETURN",
+            "severity": 1
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 1,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 95,
+            "name": "SOLIDITY_SAFEMATH",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 274,
+            "name": "SOLIDITY_SAFEMATH",
+            "severity": 1
+        },
+        {
+            "column": 55,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 241,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 448,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 448,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 97,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "line": 100,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,296 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "SDpay",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 37,
+            "line_end": 147,
+            "message": "SDpay (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#37-147) has incorrect ERC20 function interface:SDpay.transfer(address,uint256) (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#77-85)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "SafeMath",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "function": "assert",
+            "impact": "Low",
+            "line": 31,
+            "line_end": 35,
+            "message": "SafeMath.assert(bool) (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#31-35) (function) shadows built-in symbol\"\n",
+            "name": "shadowing-builtin"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SafeMath",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "function": "safeDiv",
+            "impact": "Informational",
+            "line": 13,
+            "line_end": 18,
+            "message": "SafeMath.safeDiv(uint256,uint256) (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#13-18) is never used and should be removed\n",
+            "name": "dead-code"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SafeMath",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "function": "safeMul",
+            "impact": "Informational",
+            "line": 7,
+            "line_end": 11,
+            "message": "SafeMath.safeMul(uint256,uint256) (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#7-11) is never used and should be removed\n",
+            "name": "dead-code"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 99,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#99):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 129,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#129):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 130,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#130):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 112,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#112):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 33,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#33):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 81,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#81):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 121,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#121):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 101,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#101):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 100,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#100):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 90,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#90):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 80,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#80):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 111,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#111):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 120,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#120):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 98,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#98):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 102,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#102):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 139,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#139):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 79,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#79):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 78,
+            "message": "Deprecated standard detected THROW (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#78):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.8 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput\n\t- SkipEmptyStringLiteral\n\t- ConstantOptimizerSubtraction.\nIt is used by:\n\t- ^0.4.8 (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 88,
+            "message": "Parameter SDpay.approve(address,uint256)._value (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#88) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 128,
+            "message": "Parameter SDpay.unfreeze(uint256)._value (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#128) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 97,
+            "message": "Parameter SDpay.transferFrom(address,address,uint256)._from (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#97) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 119,
+            "message": "Parameter SDpay.freeze(uint256)._value (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#119) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 88,
+            "message": "Parameter SDpay.approve(address,uint256)._spender (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#88) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 97,
+            "message": "Parameter SDpay.transferFrom(address,address,uint256)._to (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#97) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 97,
+            "message": "Parameter SDpay.transferFrom(address,address,uint256)._value (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#97) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 110,
+            "message": "Parameter SDpay.burn(uint256)._value (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#110) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 77,
+            "message": "Parameter SDpay.transfer(address,uint256)._value (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#77) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol",
+            "impact": "Informational",
+            "line": 77,
+            "message": "Parameter SDpay.transfer(address,uint256)._to (0x0cc4fa70a2a064ad565d82b061be5a4e5bc33879.sol#77) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "Minter",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "line": 205,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "ProsperaToken",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "line": 185,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "ProsperaToken",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "line": 192,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

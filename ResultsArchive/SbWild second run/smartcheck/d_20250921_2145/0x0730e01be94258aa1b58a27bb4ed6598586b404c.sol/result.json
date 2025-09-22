@@ -1,0 +1,377 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 54,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 33,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 54,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 55,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 33,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 55,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 56,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 33,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 56,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 57,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 72,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 39,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 72,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 73,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 39,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 73,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 74,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 39,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 74,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 75,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 39,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 75,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 21,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 78,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 40,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 78,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 23,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 83,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 44,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 83,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 39,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 135,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 44,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 224,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 37,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 307,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 43,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 314,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 36,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 380,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 51,
+            "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 70,
+            "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 82,
+            "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 241,
+            "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 416,
+            "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 51,
+            "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 70,
+            "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 82,
+            "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 241,
+            "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 416,
+            "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+            "severity": 2
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 1,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 93,
+            "name": "SOLIDITY_SAFEMATH",
+            "severity": 1
+        },
+        {
+            "column": 23,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 192,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 28,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 196,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 26,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 208,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 65,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 227,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 34,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 233,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 233,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 44,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 234,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 32,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 238,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 44,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 239,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 26,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 346,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 40,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 396,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 41,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 401,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 102,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 103,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 104,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 107,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

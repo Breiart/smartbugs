@@ -1,0 +1,21 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 4034,
+            "contract": "MyToken",
+            "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+            "function": "withdrawal(uint256)",
+            "line": 83,
+            "name": "Unchecked Low Level Call"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": "-vt unchecked_ll_calls"
+}

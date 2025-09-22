@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "SafeMath",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x731c491a30d5095601299f0e5c47a69c8f921a1f.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "SafeMath",
+            "feature": "PRODIGAL_NOT_FOUND",
+            "filename": "samples/SmartbugsWild/0x731c491a30d5095601299f0e5c47a69c8f921a1f.sol",
+            "name": "No prodigal vulnerability found"
+        },
+        {
+            "contract": "SafeMath",
+            "feature": "CANNOT_RECEIVE_ETHER",
+            "filename": "samples/SmartbugsWild/0x731c491a30d5095601299f0e5c47a69c8f921a1f.sol",
+            "name": "No Ether lock (Ether refused)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

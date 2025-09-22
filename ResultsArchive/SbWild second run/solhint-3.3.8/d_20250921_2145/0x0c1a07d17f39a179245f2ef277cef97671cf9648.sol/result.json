@@ -1,0 +1,287 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "error",
+            "line": 3,
+            "message": "Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 50,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 52,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 53,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 56,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 57,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 82,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 60,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 92,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 54,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 98,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 59,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 104,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 114,
+            "message": "Fallback function must be simple",
+            "name": "no-complex-fallback"
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 119,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 120,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 65,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 135,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 150,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 155,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 77,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 164,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 166,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 167,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 96,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 175,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 177,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 178,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 179,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 67,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 195,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 74,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 199,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 35,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 205,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 70,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 211,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 42,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 217,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 218,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 63,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 227,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol",
+            "level": "warning",
+            "line": 228,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

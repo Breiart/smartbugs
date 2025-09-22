@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "Ownable",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "Ownable",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

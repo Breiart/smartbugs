@@ -1,0 +1,49 @@
+'solc --version' running
+'solc /sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+Contract locking ether found:
+	Contract BTCGreen (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#101-225) has payable functions:
+	 - BTCGreen.fallback() (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#213-215)
+	But does not have a function to withdraw the ether
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether
+
+Owned.transferOwnership(address)._newOwner (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#85) lacks a zero-check on :
+		- newOwner = _newOwner (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#86)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData.
+It is used by:
+	- ^0.4.24 (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter Owned.transferOwnership(address)._newOwner (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#85) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+BTCGreen.constructor() (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#116-123) uses literals with too many digits:
+	- _totalSupply = 18000000 * 10 ** uint256(decimals) (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#120)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+
+receiveApproval(address,uint256,address,bytes) should be declared external:
+	- ApproveAndCallFallBack.receiveApproval(address,uint256,address,bytes) (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#63)
+approveAndCall(address,uint256,bytes) should be declared external:
+	- BTCGreen.approveAndCall(address,uint256,bytes) (../../sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol#202-207)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x823e4e669af591bd45e13164bd0de9ba5b19bc8b.sol analyzed (5 contracts with 93 detectors), 8 result(s) found

@@ -1,0 +1,63 @@
+{
+    "errors": [
+        "(0x67243482) [symbolic execution : calldatacopy ] Unknown format b'\\x00', attempted to normalize to 0x00"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "ContractReceiver",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 93,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "ContractReceiver",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 93,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "YOKOCHOCOIN",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 343,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "YOKOCHOCOIN",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 138,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "YOKOCHOCOIN",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 10,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "YOKOCHOCOIN",
+            "filename": "samples/SmartbugsWild/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol",
+            "line": 368,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

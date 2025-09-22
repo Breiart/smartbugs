@@ -1,0 +1,29 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 33,
+            "contract": "QTX",
+            "filename": "samples/SmartbugsWild/0x745fa4002332c020f6a05b3fe04bccf060e36dd3.sol",
+            "line": 90,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 16,
+            "contract": "QTX",
+            "filename": "samples/SmartbugsWild/0x745fa4002332c020f6a05b3fe04bccf060e36dd3.sol",
+            "line": 97,
+            "name": "Overflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

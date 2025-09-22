@@ -1,0 +1,178 @@
+'solc --version' running
+'solc /sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol:
+/sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol:201:45: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+            assert(_to.call.value(0)(bytes4(keccak256(_custom_fallback)), msg.sender, _value, _data));
+                                            ^-------------------------^
+/sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol:201:45: Warning: The provided argument of type string memory is not implicitly convertible to expected type bytes memory.
+            assert(_to.call.value(0)(bytes4(keccak256(_custom_fallback)), msg.sender, _value, _data));
+                                            ^-------------------------^
+
+
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[_to].push(transferInStruct(uint256(_value),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#255)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[msg.sender].push(transferInStruct(uint256(balanceOf[msg.sender]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#318)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[msg.sender].push(transferInStruct(uint256(balanceOf[msg.sender]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#236)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[addresses[j]].push(transferInStruct(uint256(amounts[j]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#313)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[_from].push(transferInStruct(uint256(balanceOf[_from]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#274)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[msg.sender].push(transferInStruct(uint256(balanceOf[msg.sender]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#207)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[msg.sender].push(transferInStruct(uint128(balanceOf[msg.sender]),uint64(now))) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#333)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[_to].push(transferInStruct(uint256(_value),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#237)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[msg.sender].push(transferInStruct(uint256(balanceOf[msg.sender]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#254)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[_to].push(transferInStruct(uint256(_value),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#275)
+YOKOCHOCOIN (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#108-396) contract sets array length with a user-controlled value:
+	- transferIns[_to].push(transferInStruct(uint256(_value),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#208)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#array-length-assignment
+
+YOKOCHOCOIN.isContract(address) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#217-224) is declared view but contains assembly code
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#constant-functions-using-assembly-code
+
+YOKOCHOCOIN.totalSupply (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#114) shadows:
+	- ERC223.totalSupply (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#57)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variable-shadowing-from-abstract-contracts
+
+YOKOCHOCOIN.transfer(address,uint256).empty (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#176) is a local variable never initialized
+ContractReceiver.tokenFallback(address,uint256,bytes).tkn (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#89) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+
+YOKOCHOCOIN.setStakeStartTime(uint256) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#323-326) should emit an event for: 
+	- stakeStartTime = timestamp (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#325) 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-events-arithmetic
+
+Reentrancy in YOKOCHOCOIN.transfer(address,uint256,bytes,string) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194-214):
+	External calls:
+	- assert(bool)(_to.call.value(0)(bytes4(keccak256()(_custom_fallback)),msg.sender,_value,_data)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#201)
+	State variables written after the call(s):
+	- delete transferIns[msg.sender] (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#205)
+	- transferIns[msg.sender].push(transferInStruct(uint256(balanceOf[msg.sender]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#207)
+	- transferIns[_to].push(transferInStruct(uint256(_value),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#208)
+Reentrancy in YOKOCHOCOIN.transferToContract(address,uint256,bytes) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#243-258):
+	External calls:
+	- receiver.tokenFallback(msg.sender,_value,_data) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#248)
+	State variables written after the call(s):
+	- delete transferIns[msg.sender] (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#252)
+	- transferIns[msg.sender].push(transferInStruct(uint256(balanceOf[msg.sender]),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#254)
+	- transferIns[_to].push(transferInStruct(uint256(_value),_now)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#255)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2
+
+Reentrancy in YOKOCHOCOIN.transfer(address,uint256,bytes,string) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194-214):
+	External calls:
+	- assert(bool)(_to.call.value(0)(bytes4(keccak256()(_custom_fallback)),msg.sender,_value,_data)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#201)
+	Event emitted after the call(s):
+	- Transfer(msg.sender,_to,_value,_data) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#202)
+	- Transfer(msg.sender,_to,_value) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#203)
+Reentrancy in YOKOCHOCOIN.transferToContract(address,uint256,bytes) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#243-258):
+	External calls:
+	- receiver.tokenFallback(msg.sender,_value,_data) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#248)
+	Event emitted after the call(s):
+	- Transfer(msg.sender,_to,_value,_data) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#249)
+	- Transfer(msg.sender,_to,_value) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#250)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+YOKOCHOCOIN.setStakeStartTime(uint256) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#323-326) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool)((stakeStartTime <= 0) && (timestamp >= chainStartTime)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#324)
+YOKOCHOCOIN.getCoinAge(address,uint256) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#371-382) uses timestamp for comparisons
+	Dangerous comparisons:
+	- _now < uint256(transferIns[_address][i].time).add(stakeMinAge) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#375)
+	- nCoinSeconds > stakeMaxAge (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#378)
+YOKOCHOCOIN.getReward(address) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#384-393) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool)((now >= stakeStartTime) && (stakeStartTime > 0)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#385)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+YOKOCHOCOIN.isContract(address) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#217-224) uses assembly
+	- INLINE ASM (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#219-223)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Version constraint ^0.4.23 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData.
+It is used by:
+	- ^0.4.23 (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Low level call in YOKOCHOCOIN.transfer(address,uint256,bytes,string) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194-214):
+	- assert(bool)(_to.call.value(0)(bytes4(keccak256()(_custom_fallback)),msg.sender,_value,_data)) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#201)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+Parameter ContractReceiver.tokenFallback(address,uint256,bytes)._from (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#88) is not in mixedCase
+Parameter ContractReceiver.tokenFallback(address,uint256,bytes)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#88) is not in mixedCase
+Parameter ContractReceiver.tokenFallback(address,uint256,bytes)._data (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#88) is not in mixedCase
+Struct YOKOCHOCOIN.transferInStruct (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#125-128) is not in CapWords
+Parameter YOKOCHOCOIN.balanceOf(address)._owner (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#168) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256)._to (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#173) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#173) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes)._to (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#184) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#184) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes)._data (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#184) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes,string)._to (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes,string)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes,string)._data (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194) is not in mixedCase
+Parameter YOKOCHOCOIN.transfer(address,uint256,bytes,string)._custom_fallback (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194) is not in mixedCase
+Parameter YOKOCHOCOIN.transferToAddress(address,uint256,bytes)._to (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#227) is not in mixedCase
+Parameter YOKOCHOCOIN.transferToAddress(address,uint256,bytes)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#227) is not in mixedCase
+Parameter YOKOCHOCOIN.transferToAddress(address,uint256,bytes)._data (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#227) is not in mixedCase
+Parameter YOKOCHOCOIN.transferToContract(address,uint256,bytes)._to (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#243) is not in mixedCase
+Parameter YOKOCHOCOIN.transferToContract(address,uint256,bytes)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#243) is not in mixedCase
+Parameter YOKOCHOCOIN.transferToContract(address,uint256,bytes)._data (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#243) is not in mixedCase
+Parameter YOKOCHOCOIN.transferFrom(address,address,uint256)._from (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#261) is not in mixedCase
+Parameter YOKOCHOCOIN.transferFrom(address,address,uint256)._to (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#261) is not in mixedCase
+Parameter YOKOCHOCOIN.transferFrom(address,address,uint256)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#261) is not in mixedCase
+Parameter YOKOCHOCOIN.approve(address,uint256)._spender (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#281) is not in mixedCase
+Parameter YOKOCHOCOIN.approve(address,uint256)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#281) is not in mixedCase
+Parameter YOKOCHOCOIN.allowance(address,address)._owner (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#288) is not in mixedCase
+Parameter YOKOCHOCOIN.allowance(address,address)._spender (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#288) is not in mixedCase
+Parameter YOKOCHOCOIN.ownerBurnToken(uint256)._value (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#328) is not in mixedCase
+Parameter YOKOCHOCOIN.getCoinAge(address,uint256)._address (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#371) is not in mixedCase
+Parameter YOKOCHOCOIN.getCoinAge(address,uint256)._now (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#371) is not in mixedCase
+Parameter YOKOCHOCOIN.getReward(address)._address (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#384) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+YOKOCHOCOIN.admin (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#130) should be constant 
+YOKOCHOCOIN.decimals (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#113) should be constant 
+YOKOCHOCOIN.develop (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#132) should be constant 
+YOKOCHOCOIN.manage (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#134) should be constant 
+YOKOCHOCOIN.name (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#111) should be constant 
+YOKOCHOCOIN.pr (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#133) should be constant 
+YOKOCHOCOIN.presale (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#131) should be constant 
+YOKOCHOCOIN.stakeMaxAge (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#120) should be constant 
+YOKOCHOCOIN.stakeMinAge (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#119) should be constant 
+YOKOCHOCOIN.symbol (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#112) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+
+transfer(address,uint256,bytes) should be declared external:
+	- ERC223.transfer(address,uint256,bytes) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#62)
+	- YOKOCHOCOIN.transfer(address,uint256,bytes) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#184-192)
+transfer(address,uint256,bytes,string) should be declared external:
+	- ERC223.transfer(address,uint256,bytes,string) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#63)
+	- YOKOCHOCOIN.transfer(address,uint256,bytes,string) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#194-214)
+tokenFallback(address,uint256,bytes) should be declared external:
+	- ContractReceiver.tokenFallback(address,uint256,bytes) (../../sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol#88-103)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x875cfea793ad6c27fd56fdb9033495e1042c72eb.sol analyzed (5 contracts with 93 detectors), 71 result(s) found

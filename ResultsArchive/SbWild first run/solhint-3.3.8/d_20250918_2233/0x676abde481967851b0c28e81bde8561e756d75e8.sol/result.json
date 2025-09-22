@@ -1,0 +1,111 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 19,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 28,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 37,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 38,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 40,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 65,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 66,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 74,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 75,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 61,
+            "filename": "samples/SmartbugsWild/0x676abde481967851b0c28e81bde8561e756d75e8.sol",
+            "level": "warning",
+            "line": 82,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

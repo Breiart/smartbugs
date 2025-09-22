@@ -1,0 +1,24 @@
+{
+    "errors": [
+        "EXIT_CODE_254",
+        "Problem while deploying contract Policy using account 0xcafebabecafebabecafebabecafebabecafebabe. Error message: Out of gas: Needed 5000"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "EmergencySafe",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "line": 83,
+            "message": "Classification: SWC-104",
+            "name": "Unhandled Exception",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

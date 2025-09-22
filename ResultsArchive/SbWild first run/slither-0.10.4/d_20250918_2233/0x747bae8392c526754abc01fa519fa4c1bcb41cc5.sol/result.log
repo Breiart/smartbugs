@@ -1,0 +1,73 @@
+'solc --version' running
+'solc /sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+CCP.isContract(address) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#71-77) is declared view but contains assembly code
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#constant-functions-using-assembly-code
+
+Contract locking ether found:
+	Contract CCP (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#23-113) has payable functions:
+	 - CCP.fallback() (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#105-107)
+	But does not have a function to withdraw the ether
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether
+
+Reentrancy in CCP.transfer(address,uint256,bytes) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#60-69):
+	External calls:
+	- ERC223ReceivingContract(_to).tokenFallback(msg.sender,_value,_data) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#66)
+	Event emitted after the call(s):
+	- Transfer(msg.sender,_to,_value,_data) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#67)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+CCP.isContract(address) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#71-77) uses assembly
+	- INLINE ASM (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#73-76)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Version constraint ^0.4.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- ^0.4.21 (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter CCP.balanceOf(address)._owner (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#46) is not in mixedCase
+Parameter CCP.transfer(address,uint256)._to (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#50) is not in mixedCase
+Parameter CCP.transfer(address,uint256)._value (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#50) is not in mixedCase
+Parameter CCP.transfer(address,uint256,bytes)._to (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#60) is not in mixedCase
+Parameter CCP.transfer(address,uint256,bytes)._value (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#60) is not in mixedCase
+Parameter CCP.transfer(address,uint256,bytes)._data (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#60) is not in mixedCase
+Parameter CCP.transferFrom(address,address,uint256)._from (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#80) is not in mixedCase
+Parameter CCP.transferFrom(address,address,uint256)._to (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#80) is not in mixedCase
+Parameter CCP.transferFrom(address,address,uint256)._value (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#80) is not in mixedCase
+Parameter CCP.approve(address,uint256)._spender (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#92) is not in mixedCase
+Parameter CCP.approve(address,uint256)._value (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#92) is not in mixedCase
+Parameter CCP.allowance(address,address)._owner (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#101) is not in mixedCase
+Parameter CCP.allowance(address,address)._spender (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#101) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+CCP.slitherConstructorConstantVariables() (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#23-113) uses literals with too many digits:
+	- _totalSupply = 2100000000e18 (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#27)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+
+transfer(address,uint256,bytes) should be declared external:
+	- CCP.transfer(address,uint256,bytes) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#60-69)
+	- ERC223.transfer(address,uint256,bytes) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#15)
+tokenFallback(address,uint256,bytes) should be declared external:
+	- ERC223ReceivingContract.tokenFallback(address,uint256,bytes) (../../sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol#20)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol analyzed (5 contracts with 93 detectors), 22 result(s) found

@@ -1,0 +1,139 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 8,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 36,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 127,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 65,
+            "name": "SOLIDITY_DEPRECATED_CONSTRUCTIONS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 66,
+            "name": "SOLIDITY_DEPRECATED_CONSTRUCTIONS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 67,
+            "name": "SOLIDITY_DEPRECATED_CONSTRUCTIONS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 126,
+            "name": "SOLIDITY_DEPRECATED_CONSTRUCTIONS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 131,
+            "name": "SOLIDITY_DEPRECATED_CONSTRUCTIONS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 162,
+            "name": "SOLIDITY_DEPRECATED_CONSTRUCTIONS",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 146,
+            "name": "SOLIDITY_ERC20_APPROVE",
+            "severity": 2
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 1,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 175,
+            "name": "SOLIDITY_REDUNDANT_FALLBACK_REJECT",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 112,
+            "name": "SOLIDITY_SAFEMATH",
+            "severity": 1
+        },
+        {
+            "column": 15,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 175,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 74,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 83,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 167,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 103,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 106,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0cc4a9231ceeea1b704bc8c6743656255753652b.sol",
+            "line": 109,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,161 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "TombOwnership",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "function": "totalSupply",
+            "impact": "High",
+            "line": 87,
+            "message": "TombBase.tombs (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#87) is never initialized. It is used in:\n\t- TombOwnership.totalSupply() (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#146-148)\n\t- TombBase.getTombByOwner(address) (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#112-122)\n\t- TombBase.getAllTombs() (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#124-130)\n\t- TombBase.getTombDetail(uint256) (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#132-134)\n",
+            "name": "uninitialized-state"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.13 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput.\nIt is used by:\n\t- ^0.4.13 (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 162,
+            "message": "Parameter TombOwnership.approve(address,uint256)._to (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#162) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 112,
+            "message": "Parameter TombBase.getTombByOwner(address)._owner (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#112) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 158,
+            "message": "Parameter TombOwnership.transfer(address,uint256)._tokenId (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#158) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 162,
+            "message": "Parameter TombOwnership.approve(address,uint256)._tokenId (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#162) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 150,
+            "message": "Parameter TombOwnership.balanceOf(address)._owner (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#150) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 167,
+            "message": "Parameter TombOwnership.transferFrom(address,address,uint256)._tokenId (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#167) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 167,
+            "message": "Parameter TombOwnership.transferFrom(address,address,uint256)._to (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#167) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 158,
+            "message": "Parameter TombOwnership.transfer(address,uint256)._to (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#158) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 154,
+            "message": "Parameter TombOwnership.ownerOf(uint256)._tokenId (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#154) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Informational",
+            "line": 167,
+            "message": "Parameter TombOwnership.transferFrom(address,address,uint256)._from (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#167) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TombAction",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "function": "changePrice",
+            "impact": "Informational",
+            "line": 190,
+            "line_end": 194,
+            "message": "TombAction.changePrice(uint256) (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#190-194) uses literals with too many digits:\n\t- gweiUnit = 1000000000 (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#192)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Optimization",
+            "line": 126,
+            "message": "Loop condition i < tombs.length (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#126) should use cached array length instead of referencing `length` member of the storage array.\n ",
+            "name": "cache-array-length"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Optimization",
+            "line": 115,
+            "message": "Loop condition i < tombs.length (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#115) should use cached array length instead of referencing `length` member of the storage array.\n ",
+            "name": "cache-array-length"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Optimization",
+            "line": 140,
+            "message": "TombOwnership.symbol (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#140) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "impact": "Optimization",
+            "line": 139,
+            "message": "TombOwnership.name (0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol#139) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

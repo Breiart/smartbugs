@@ -1,0 +1,204 @@
+2025-09-21 14:37:30,391 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-21 14:37:30,445 - Fuzzer   - INFO - [1mFuzzing contract [1mAltruism[0m[0m
+2025-09-21 14:37:30,579 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 66.24% (822/1241) 	 Branch coverage: 68.89% (62/90) 	 Transactions: 27 (26 unique)   	 Time: 0.12267208099365234[0m
+2025-09-21 14:37:30,707 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 66.24% (822/1241) 	 Branch coverage: 68.89% (62/90) 	 Transactions: 52 (38 unique)   	 Time: 0.2507593631744385[0m
+2025-09-21 14:37:31,011 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 67.37% (836/1241) 	 Branch coverage: 70.00% (63/90) 	 Transactions: 88 (57 unique)   	 Time: 0.5549931526184082[0m
+2025-09-21 14:37:31,327 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 68.98% (856/1241) 	 Branch coverage: 74.44% (67/90) 	 Transactions: 145 (80 unique)   	 Time: 0.8708014488220215[0m
+2025-09-21 14:37:31,781 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 68.98% (856/1241) 	 Branch coverage: 74.44% (67/90) 	 Transactions: 222 (103 unique)   	 Time: 1.324991226196289[0m
+2025-09-21 14:37:32,403 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 68.98% (856/1241) 	 Branch coverage: 74.44% (67/90) 	 Transactions: 308 (125 unique)   	 Time: 1.9470319747924805[0m
+2025-09-21 14:37:32,945 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 383 (140 unique)   	 Time: 2.489126443862915[0m
+2025-09-21 14:37:33,222 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 432 (148 unique)   	 Time: 2.7658369541168213[0m
+2025-09-21 14:37:33,481 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 474 (154 unique)   	 Time: 3.0247838497161865[0m
+2025-09-21 14:37:33,656 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 501 (155 unique)   	 Time: 3.2005207538604736[0m
+2025-09-21 14:37:33,817 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 525 (157 unique)   	 Time: 3.3605854511260986[0m
+2025-09-21 14:37:34,042 - Analysis - INFO - [1mGeneration number 11 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 561 (161 unique)   	 Time: 3.5857343673706055[0m
+2025-09-21 14:37:34,251 - Analysis - INFO - [1mGeneration number 12 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 597 (162 unique)   	 Time: 3.7949860095977783[0m
+2025-09-21 14:37:34,453 - Analysis - INFO - [1mGeneration number 13 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 630 (164 unique)   	 Time: 3.996558904647827[0m
+2025-09-21 14:37:34,663 - Analysis - INFO - [1mGeneration number 14 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 666 (165 unique)   	 Time: 4.207476615905762[0m
+2025-09-21 14:37:34,869 - Analysis - INFO - [1mGeneration number 15 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 699 (167 unique)   	 Time: 4.412657022476196[0m
+2025-09-21 14:37:35,068 - Analysis - INFO - [1mGeneration number 16 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 732 (167 unique)   	 Time: 4.61230993270874[0m
+2025-09-21 14:37:35,264 - Analysis - INFO - [1mGeneration number 17 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 76.67% (69/90) 	 Transactions: 765 (168 unique)   	 Time: 4.8081159591674805[0m
+2025-09-21 14:37:35,619 - Analysis - INFO - [1mGeneration number 18 	 Code coverage: 69.46% (862/1241) 	 Branch coverage: 77.78% (70/90) 	 Transactions: 815 (196 unique)   	 Time: 5.163358449935913[0m
+2025-09-21 14:37:35,891 - Analysis - INFO - [1mGeneration number 19 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 863 (213 unique)   	 Time: 5.434715032577515[0m
+2025-09-21 14:37:36,253 - Analysis - INFO - [1mGeneration number 20 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 927 (230 unique)   	 Time: 5.796978235244751[0m
+2025-09-21 14:37:36,717 - Analysis - INFO - [1mGeneration number 21 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1002 (250 unique)   	 Time: 6.261040449142456[0m
+2025-09-21 14:37:37,251 - Analysis - INFO - [1mGeneration number 22 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1087 (269 unique)   	 Time: 6.795254945755005[0m
+2025-09-21 14:37:37,780 - Analysis - INFO - [1mGeneration number 23 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1170 (286 unique)   	 Time: 7.324193239212036[0m
+2025-09-21 14:37:38,373 - Analysis - INFO - [1mGeneration number 24 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1261 (301 unique)   	 Time: 7.917058944702148[0m
+2025-09-21 14:37:39,034 - Analysis - INFO - [1mGeneration number 25 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1362 (321 unique)   	 Time: 8.578060626983643[0m
+2025-09-21 14:37:39,819 - Analysis - INFO - [1mGeneration number 26 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1469 (344 unique)   	 Time: 9.362962245941162[0m
+2025-09-21 14:37:40,710 - Analysis - INFO - [1mGeneration number 27 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1591 (369 unique)   	 Time: 10.254440307617188[0m
+2025-09-21 14:37:41,627 - Analysis - INFO - [1mGeneration number 28 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1721 (395 unique)   	 Time: 11.170569896697998[0m
+2025-09-21 14:37:42,542 - Analysis - INFO - [1mGeneration number 29 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1851 (421 unique)   	 Time: 12.08584189414978[0m
+2025-09-21 14:37:43,461 - Analysis - INFO - [1mGeneration number 30 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 1981 (447 unique)   	 Time: 13.005480527877808[0m
+2025-09-21 14:37:43,796 - Analysis - INFO - [1mGeneration number 31 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 2032 (477 unique)   	 Time: 13.34043288230896[0m
+2025-09-21 14:37:44,120 - Analysis - INFO - [1mGeneration number 32 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 2082 (496 unique)   	 Time: 13.664514780044556[0m
+2025-09-21 14:37:44,569 - Analysis - INFO - [1mGeneration number 33 	 Code coverage: 70.51% (875/1241) 	 Branch coverage: 80.00% (72/90) 	 Transactions: 2149 (517 unique)   	 Time: 14.112684488296509[0m
+2025-09-21 14:37:45,225 - Analysis - INFO - [1mGeneration number 34 	 Code coverage: 84.13% (1044/1241) 	 Branch coverage: 86.67% (78/90) 	 Transactions: 2223 (537 unique)   	 Time: 14.768803358078003[0m
+2025-09-21 14:37:46,316 - Analysis - INFO - [1mGeneration number 35 	 Code coverage: 84.13% (1044/1241) 	 Branch coverage: 86.67% (78/90) 	 Transactions: 2339 (559 unique)   	 Time: 15.85974907875061[0m
+2025-09-21 14:37:47,298 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1552282333208917729[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:47,852 - Analysis - INFO - [1mGeneration number 36 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 2447 (580 unique)   	 Time: 17.396444082260132[0m
+2025-09-21 14:37:47,992 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4144212333545604709[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:48,042 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5911096915249258564[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:48,059 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5022184497332507156[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:49,019 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5293413153037800206[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:49,134 - Analysis - INFO - [1mGeneration number 37 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 2561 (602 unique)   	 Time: 18.67845368385315[0m
+2025-09-21 14:37:49,472 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-6379400861175012334[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:49,737 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4002891425233725965[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:49,789 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1100807533462201492[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:49,842 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-8847352952276658768[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:50,376 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2015687993618463113[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:50,428 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5293413153037800206[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:50,847 - Analysis - INFO - [1mGeneration number 38 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 2670 (621 unique)   	 Time: 20.390851497650146[0m
+2025-09-21 14:37:51,380 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5293413153037800206[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:51,499 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3817706180371488530[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:51,867 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-6408654455298204587[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:51,922 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1100807533462201492[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,011 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7274029166396576524[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,097 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4694774757253502871[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,231 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-730087860470232542[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,396 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4002891425233725965[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,414 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2522181232752116997[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,434 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2151981910341846819[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:52,657 - Analysis - INFO - [1mGeneration number 39 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 2783 (641 unique)   	 Time: 22.201290130615234[0m
+2025-09-21 14:37:53,286 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7860722640731578723[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:53,295 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7860722640731578723[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:53,328 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7669933027611847441[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:53,380 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7940535338675000855[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:53,398 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5828240084036517499[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:53,457 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4433605533680520927[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:53,979 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3919461921577850146[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,028 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4694774757253502871[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,125 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3268293412638024114[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,126 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3268293412638024114[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,233 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4365529750400168755[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,281 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7118240216981620290[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,411 - Analysis - INFO - [1mGeneration number 40 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 2891 (661 unique)   	 Time: 23.95467710494995[0m
+2025-09-21 14:37:54,966 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5226373200629709627[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:54,995 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7669933027611847441[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,046 - Analysis - ERROR - [91m[1mValidation error in [91m[1m9030003337336183027[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,157 - Analysis - ERROR - [91m[1mValidation error in [91m[1m245589961949401161[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,157 - Analysis - ERROR - [91m[1mValidation error in [91m[1m245589961949401161[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,488 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3443129073813912323[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,497 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3443129073813912323[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,550 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1017000904731068359[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,646 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7985578658766859344[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,716 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2522181232752116997[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,738 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2908360733453102478[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,822 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7422319469235051269[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,940 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2495443414290777942[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:55,949 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2495443414290777942[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:56,003 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3919461921577850146[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:56,109 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5009785269337942987[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:56,118 - Analysis - INFO - [1mGeneration number 41 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 2996 (680 unique)   	 Time: 25.66166090965271[0m
+2025-09-21 14:37:56,573 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5706005396533539077[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:56,761 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2216955618714921067[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:56,951 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3919461921577850146[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,020 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-8199819767495183195[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,060 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7860722640731578723[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,069 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7860722640731578723[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,281 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2522181232752116997[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,334 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1137912191107032916[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,568 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8680627669574595230[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,833 - Analysis - ERROR - [91m[1mValidation error in [91m[1m9083008657454855171[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:57,900 - Analysis - ERROR - [91m[1mValidation error in [91m[1m996463856471023115[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:58,042 - Analysis - INFO - [1mGeneration number 42 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3106 (699 unique)   	 Time: 27.58609676361084[0m
+2025-09-21 14:37:58,560 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1159365795038067146[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:58,794 - Analysis - ERROR - [91m[1mValidation error in [91m[1m9083008657454855171[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,018 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3283638425328791766[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,074 - Analysis - ERROR - [91m[1mValidation error in [91m[1m626887106682985229[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,124 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1137912191107032916[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,214 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2908360733453102478[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,358 - Analysis - ERROR - [91m[1mValidation error in [91m[1m604003923672789718[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,448 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-665261795895099251[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,610 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3540808878949701987[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,961 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8442928360795624797[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:37:59,970 - Analysis - INFO - [1mGeneration number 43 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3221 (720 unique)   	 Time: 29.513856887817383[0m
+2025-09-21 14:38:00,459 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5824421488691798507[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:00,678 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4703342396661437552[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:00,731 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3540808878949701987[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,007 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2908360733453102478[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,136 - Analysis - ERROR - [91m[1mValidation error in [91m[1m996463856471023115[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,169 - Analysis - ERROR - [91m[1mValidation error in [91m[1m604003923672789718[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,356 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5341126099913494330[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,357 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-6412342324710506838[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,529 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4675250589198418998[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,811 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5900926781262372790[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:01,976 - Analysis - INFO - [1mGeneration number 44 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3331 (738 unique)   	 Time: 31.520389556884766[0m
+2025-09-21 14:38:02,072 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-6412342324710506838[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,335 - Analysis - ERROR - [91m[1mValidation error in [91m[1m996463856471023115[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,437 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2908360733453102478[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,523 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2216955618714921067[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,614 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3935381347802475089[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,663 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2751550230024988208[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,854 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3253494882318204652[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,948 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5754875155427781582[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:02,999 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1174713427911236239[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:03,143 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3540808878949701987[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:03,694 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7669933027611847441[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:03,884 - Analysis - ERROR - [91m[1mValidation error in [91m[1m933206587683831575[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:03,959 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5884797361297757991[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:03,997 - Analysis - ERROR - [91m[1mValidation error in [91m[1m3380725483863104708[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:04,090 - Analysis - INFO - [1mGeneration number 45 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3445 (757 unique)   	 Time: 33.63381910324097[0m
+2025-09-21 14:38:04,603 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7090230268008706244[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:04,774 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2908360733453102478[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:04,951 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7424001760533905162[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,041 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-6054727031808237119[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,420 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7809205045815742129[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,669 - Analysis - ERROR - [91m[1mValidation error in [91m[1m16677245642749858[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,822 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2455279173919448019[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,823 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2455279173919448019[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,912 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-8051351949000769514[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:05,966 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7377023471623806106[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:06,092 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3504902120240430443[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:06,179 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2216955618714921067[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:06,361 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5905729091402095604[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:06,471 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1276475781522781693[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:06,479 - Analysis - INFO - [1mGeneration number 46 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3559 (779 unique)   	 Time: 36.02333211898804[0m
+2025-09-21 14:38:06,841 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-9008861495369952309[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:07,340 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7572043996197011644[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:07,698 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2476553733145645413[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:07,886 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8557306090833417729[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,027 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7244693279295496371[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,068 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7187034556203508605[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,068 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7187034556203508605[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,107 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8839259602953274940[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,252 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8602606491458641143[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,482 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1963147503423857990[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,678 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7377023471623806106[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,730 - Analysis - ERROR - [91m[1mValidation error in [91m[1m355922155746688559[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,741 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7485800294478788223[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:08,749 - Analysis - INFO - [1mGeneration number 47 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3664 (800 unique)   	 Time: 38.29309034347534[0m
+2025-09-21 14:38:09,168 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2950177868239979480[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:09,364 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2971184351117448671[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:09,414 - Analysis - INFO - [1mGeneration number 48 	 Code coverage: 86.14% (1069/1241) 	 Branch coverage: 88.89% (80/90) 	 Transactions: 3715 (822 unique)   	 Time: 38.95825743675232[0m
+2025-09-21 14:38:09,782 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2440513163197449212[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:09,983 - Analysis - ERROR - [91m[1mValidation error in [91m[1m260801802548273181[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:09,989 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-140353342305472410[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,117 - Analysis - INFO - [1mGeneration number 49 	 Code coverage: 86.70% (1076/1241) 	 Branch coverage: 90.00% (81/90) 	 Transactions: 3765 (841 unique)   	 Time: 39.66145181655884[0m
+2025-09-21 14:38:10,145 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1461222804642865101[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,152 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5663874935276252649[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,381 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-9158096105953468008[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,388 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7545653563382482036[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,496 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1828563026411875687[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,503 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1389254184970276087[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,521 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4097901652793895956[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,633 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5961974486738819030[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,798 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4951985987364315155[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2025-09-21 14:38:10,807 - Analysis - INFO - [1mGeneration number 50 	 Code coverage: 95.25% (1182/1241) 	 Branch coverage: 92.22% (83/90) 	 Transactions: 3845 (864 unique)   	 Time: 40.35136389732361[0m
+2025-09-21 14:38:10,807 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-21 14:38:10,807 - Analysis - INFO - Number of generations: 	 50
+2025-09-21 14:38:10,807 - Analysis - INFO - Number of transactions: 	 3845 (864 unique)
+2025-09-21 14:38:10,808 - Analysis - INFO - Transactions per second: 	 95
+2025-09-21 14:38:10,808 - Analysis - INFO - Total code coverage: 	 95.25% (1182/1241)
+2025-09-21 14:38:10,808 - Analysis - INFO - Total branch coverage: 	 92.22% (83/90)
+2025-09-21 14:38:10,808 - Analysis - INFO - Total execution time: 	 40.35 seconds
+2025-09-21 14:38:10,808 - Analysis - INFO - Total memory consumption: 	 82.03 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

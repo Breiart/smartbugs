@@ -1,0 +1,96 @@
+'solc --version' running
+'solc /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+IXTPaymentContract.transferIXT(address,address,string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#179-193) uses arbitrary from in transferFrom: price != 0 && ! tokenContract.transferFrom(from,to,price) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#186)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#arbitrary-from-in-transferfrom
+
+PolicyRegistry (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:
+	- policiesByParticipant[msg.sender].push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#374)
+PolicyRegistry (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:
+	- policies.push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#377)
+PolicyRegistry (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:
+	- policiesByParticipant[_clientEtherAddress].push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#370)
+PolicyRegistry (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:
+	- policiesByParticipant[_brokerEtherAddress].push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#367)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#array-length-assignment
+
+EmergencySafe.emergencyERC20Drain(ERC20Interface,uint256) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#74-76) ignores return value by token.transfer(owner,amount) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#75)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-transfer
+
+PolicyRegistry.createContract(string,address,address,string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381) ignores return value by IXTPayment.transferIXT(_clientEtherAddress,owner,create_insurance) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#379)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-return
+
+Ownable.changeOwner(address) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#21-24) should emit an event for: 
+	- owner = newOwner (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#23) 
+	- owner = newOwner (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#23) 
+Ownable.changeOwner(address) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#21-24) should emit an event for: 
+	- owner = newOwner (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#23) 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-events-access-control
+
+Reentrancy in PolicyRegistry.createContract(string,address,address,string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381):
+	External calls:
+	- policy.changeOwner(msg.sender) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#366)
+	State variables written after the call(s):
+	- policies.push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#377)
+	- policiesByParticipant[_brokerEtherAddress].push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#367)
+	- policiesByParticipant[_clientEtherAddress].push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#370)
+	- policiesByParticipant[msg.sender].push(policy) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#374)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2
+
+Reentrancy in PolicyRegistry.createContract(string,address,address,string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381):
+	External calls:
+	- policy.changeOwner(msg.sender) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#366)
+	- IXTPayment.transferIXT(_clientEtherAddress,owner,create_insurance) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#379)
+	Event emitted after the call(s):
+	- PolicyCreated(policy,msg.sender) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#380)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+Version constraint 0.4.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- 0.4.21 (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#1)
+solc-0.4.21 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._inceptionDate (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase
+Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._expirationDate (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase
+Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._limitOfLiability (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase
+Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._limitOfLiabilityCurrency (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase
+Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._insuranceType (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase
+Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._policyDocReference (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase
+Parameter PolicyRegistry.createContract(string,address,address,string)._clientInfo (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase
+Parameter PolicyRegistry.createContract(string,address,address,string)._brokerEtherAddress (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase
+Parameter PolicyRegistry.createContract(string,address,address,string)._clientEtherAddress (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase
+Parameter PolicyRegistry.createContract(string,address,address,string)._enquiryId (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase
+Variable PolicyRegistry.IXTPayment (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#345) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+transferIXT(address,address,string) should be declared external:
+	- IXTPaymentContract.transferIXT(address,address,string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#179-193)
+setAction(string,uint256) should be declared external:
+	- IXTPaymentContract.setAction(string,uint256) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#208-210)
+getActionPrice(string) should be declared external:
+	- IXTPaymentContract.getActionPrice(string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#216-218)
+addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32) should be declared external:
+	- Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307-319)
+createContract(string,address,address,string) should be declared external:
+	- PolicyRegistry.createContract(string,address,address,string) (../../sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol analyzed (7 contracts with 93 detectors), 29 result(s) found

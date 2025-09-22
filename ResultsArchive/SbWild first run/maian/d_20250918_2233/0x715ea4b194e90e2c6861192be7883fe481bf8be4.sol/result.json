@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "StandardToken",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x715ea4b194e90e2c6861192be7883fe481bf8be4.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "StandardToken",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x715ea4b194e90e2c6861192be7883fe481bf8be4.sol",
+            "name": "No Ether leak (no send)"
+        },
+        {
+            "contract": "StandardToken",
+            "feature": "CANNOT_RECEIVE_ETHER",
+            "filename": "samples/SmartbugsWild/0x715ea4b194e90e2c6861192be7883fe481bf8be4.sol",
+            "name": "No Ether lock (Ether refused)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,51 @@
+{
+    "docker": {
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/0x864def510d754df9c1d43b925dd9887baa5acb07.sol' '0' '/sb/bin' ''",
+        "image": "smartbugs/slither:0.10.4",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpbgsojiwl": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "samples/SmartbugsWild/0x864def510d754df9c1d43b925dd9887baa5acb07.sol",
+    "platform": {
+        "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+        "python": "3.12.3.final.0 (64 bit)",
+        "release": "6.14.0-29-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug 14 16:52:50 UTC 2"
+    },
+    "result": {
+        "duration": 0.896437406539917,
+        "exit_code": 255,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1758250251.291266
+    },
+    "runid": "d_20250918_2233",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "default_params": "",
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$ARGS'",
+        "id": "slither-0.10.4",
+        "image": "smartbugs/slither:0.10.4",
+        "info": "Slither is a Solidity static analysis framework written in Python 3. It runs a suite of vulnerability detectors and prints visual information about contract details. Slither enables developers to find vulnerabilities, enhance their code comphrehension, and quickly prototype custom analyses.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Slither",
+        "origin": "https://github.com/crytic/slither",
+        "output": "/output.json",
+        "parser": "parser.py",
+        "solc": true,
+        "version": "0.10.4"
+    },
+    "tool_args": ""
+}

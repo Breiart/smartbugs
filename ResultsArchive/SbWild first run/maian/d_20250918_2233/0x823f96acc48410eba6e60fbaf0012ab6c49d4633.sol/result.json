@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "Ownable",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "Ownable",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "name": "No Ether leak (no send)"
+        },
+        {
+            "contract": "Ownable",
+            "feature": "CANNOT_RECEIVE_ETHER",
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "name": "No Ether lock (Ether refused)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

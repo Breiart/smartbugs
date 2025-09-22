@@ -1,0 +1,10 @@
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:31:1: Compiler version 0.4.24 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:52:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:54:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:56:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:58:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:59:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:60:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol:195:9: Avoid to use inline assembly. It is acceptable only in rare cases [Warning/no-inline-assembly]
+
+8 problems

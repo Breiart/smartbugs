@@ -1,0 +1,29 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "EGYPT",
+            "filename": "samples/SmartbugsWild/0x0cd8a63e6772b80c6e94c85b596736fd6f1ba0d3.sol",
+            "line": 23,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "SafeMath",
+            "filename": "samples/SmartbugsWild/0x0cd8a63e6772b80c6e94c85b596736fd6f1ba0d3.sol",
+            "line": 23,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

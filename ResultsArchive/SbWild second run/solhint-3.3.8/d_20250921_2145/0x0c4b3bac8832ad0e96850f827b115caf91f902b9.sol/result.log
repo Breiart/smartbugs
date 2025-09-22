@@ -1,0 +1,13 @@
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:1:1: Compiler version ^0.4.23 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:78:3: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:80:3: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:95:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:96:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:134:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:135:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:136:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:232:3: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:233:3: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+/sb/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol:234:3: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+
+11 problems

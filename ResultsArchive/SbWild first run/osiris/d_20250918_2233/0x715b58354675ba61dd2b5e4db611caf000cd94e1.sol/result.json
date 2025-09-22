@@ -1,0 +1,24 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "column": 12,
+            "contract": "IXTPaymentContract",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "line": 83,
+            "name": "Callstack bug"
+        }
+    ],
+    "infos": [
+        "analysis incomplete"
+    ],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

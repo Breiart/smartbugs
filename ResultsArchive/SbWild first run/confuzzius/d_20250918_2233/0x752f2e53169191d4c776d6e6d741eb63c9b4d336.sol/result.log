@@ -1,0 +1,31 @@
+2025-09-21 15:49:03,956 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-21 15:49:04,079 - Fuzzer   - INFO - [1mFuzzing contract [1mBasicToken[0m[0m
+2025-09-21 15:49:04,113 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 46.93% (145/309) 	 Branch coverage: 68.18% (15/22) 	 Transactions: 9 (8 unique)   	 Time: 0.027911901473999023[0m
+2025-09-21 15:49:04,136 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 46.93% (145/309) 	 Branch coverage: 68.18% (15/22) 	 Transactions: 16 (13 unique)   	 Time: 0.05100536346435547[0m
+2025-09-21 15:49:04,195 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 98.06% (303/309) 	 Branch coverage: 86.36% (19/22) 	 Transactions: 22 (15 unique)   	 Time: 0.10943007469177246[0m
+2025-09-21 15:49:04,257 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 98.06% (303/309) 	 Branch coverage: 86.36% (19/22) 	 Transactions: 31 (18 unique)   	 Time: 0.17180442810058594[0m
+2025-09-21 15:49:04,357 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 43 (20 unique)   	 Time: 0.27129054069519043[0m
+2025-09-21 15:49:04,511 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 61 (23 unique)   	 Time: 0.42531704902648926[0m
+2025-09-21 15:49:04,933 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 91 (29 unique)   	 Time: 0.8473551273345947[0m
+2025-09-21 15:49:05,175 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 115 (32 unique)   	 Time: 1.0893309116363525[0m
+2025-09-21 15:49:05,522 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 139 (36 unique)   	 Time: 1.4368352890014648[0m
+2025-09-21 15:49:05,869 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 163 (38 unique)   	 Time: 1.7841780185699463[0m
+2025-09-21 15:49:06,260 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 99.03% (306/309) 	 Branch coverage: 90.91% (20/22) 	 Transactions: 191 (41 unique)   	 Time: 2.1745259761810303[0m
+2025-09-21 15:49:06,270 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-21 15:49:06,270 - Analysis - INFO - Number of generations: 	 10
+2025-09-21 15:49:06,270 - Analysis - INFO - Number of transactions: 	 191 (41 unique)
+2025-09-21 15:49:06,270 - Analysis - INFO - Transactions per second: 	 87
+2025-09-21 15:49:06,270 - Analysis - INFO - Total code coverage: 	 99.03% (306/309)
+2025-09-21 15:49:06,270 - Analysis - INFO - Total branch coverage: 	 90.91% (20/22)
+2025-09-21 15:49:06,270 - Analysis - INFO - Total execution time: 	 2.18 seconds
+2025-09-21 15:49:06,270 - Analysis - INFO - Total memory consumption: 	 75.56 MB
+2025-09-21 15:49:06,273 - Fuzzer   - INFO - [1mFuzzing contract [1mFreeFeeCoin[0m[0m
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+2025-09-21 15:49:06,280 - Fuzzer   - ERROR - [91m[1m[91m[1mProblem while deploying contract [91m[1m[91m[1mFreeFeeCoin[0m[0m[0m[0m using account [91m[1m[91m[1m0xcafebabecafebabecafebabecafebabecafebabe[0m[0m[0m[0m. Error message: b''[0m[0m[0m[0m
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

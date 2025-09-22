@@ -1,0 +1,12 @@
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:1:1: Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:7:9: Provide an error message for require [Warning/reason-string]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:10:9: Provide an error message for require [Warning/reason-string]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:15:9: Provide an error message for require [Warning/reason-string]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:18:9: Provide an error message for require [Warning/reason-string]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:56:9: Provide an error message for require [Warning/reason-string]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:64:9: Provide an error message for require [Warning/reason-string]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:81:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:82:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x715bb6b4c3013667de41d90a852152817cb88541.sol:150:9: Provide an error message for revert [Warning/reason-string]
+
+10 problems

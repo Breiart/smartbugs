@@ -1,0 +1,439 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.13 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 15,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 16,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 23,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 25,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 31,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 36,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 38,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 47,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 49,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 51,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 60,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 40,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 60,
+            "message": "Use \"keccak256\" instead of deprecated \"sha3\"",
+            "name": "avoid-sha3"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 62,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 74,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 74,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 80,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 89,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 91,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 93,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 97,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 101,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 103,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 106,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 108,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 114,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 114,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 116,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 122,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 122,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 124,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 130,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 130,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 134,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 138,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 142,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 150,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 150,
+            "message": "Avoid to use \".call.value()()\"",
+            "name": "avoid-call-value"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 150,
+            "message": "Avoid to use low level calls.",
+            "name": "avoid-low-level-calls"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 156,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 156,
+            "message": "Fallback function must be simple",
+            "name": "no-complex-fallback"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 158,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 160,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "level": "warning",
+            "line": 162,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,61 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "SXCT",
+            "filename": "samples/SmartbugsWild/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol",
+            "line": 38,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "SXCT",
+            "filename": "samples/SmartbugsWild/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol",
+            "line": 39,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardBurnableToken",
+            "filename": "samples/SmartbugsWild/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol",
+            "line": 38,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardBurnableToken",
+            "filename": "samples/SmartbugsWild/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol",
+            "line": 39,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol",
+            "line": 38,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol",
+            "line": 39,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

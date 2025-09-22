@@ -1,0 +1,16 @@
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:1:1: Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:66:3: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:74:5: Provide an error message for require [Warning/reason-string]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:105:3: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:115:5: Provide an error message for require [Warning/reason-string]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:161:3: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:168:3: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:199:3: Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0) [Warning/func-visibility]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:208:5: Provide an error message for require [Warning/reason-string]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:217:58: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:218:5: Provide an error message for require [Warning/reason-string]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:240:5: Provide an error message for require [Warning/reason-string]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:250:65: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+/sb/0x824bc5ab53f9e58592703483fdbc8a7c954bf635.sol:262:38: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+
+14 problems

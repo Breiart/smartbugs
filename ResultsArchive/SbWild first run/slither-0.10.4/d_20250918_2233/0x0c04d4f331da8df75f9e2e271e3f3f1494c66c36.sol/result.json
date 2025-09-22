@@ -1,0 +1,375 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Minter",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "mint",
+            "impact": "Medium",
+            "line": 227,
+            "line_end": 232,
+            "message": "Reentrancy in Minter.mint() (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#227-232):\n\tExternal calls:\n\t- prosperaToken.mintToAccount(msg.sender,value) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#229)\n\t- updateMintingStatus(value) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#230)\n\t\t- prosperaToken.incrementTotalSupply(_mintedAmount) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#224)\n\tState variables written after the call(s):\n\t- updateMintingStatus(value) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#230)\n\t\t- lastMintingAmount = _mintedAmount (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#222)\n\tMinter.lastMintingAmount (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#200) can be used in cross function reentrancies:\n\t- Minter.Minter(uint256,address) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#210-214)\n\t- Minter.calculateMintAmount() (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#217-219)\n\t- Minter.lastMintingAmount (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#200)\n\t- Minter.updateMintingStatus(uint256) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#221-225)\n\t- updateMintingStatus(value) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#230)\n\t\t- lastMintingTime = block.timestamp (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#223)\n\tMinter.lastMintingTime (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#199) can be used in cross function reentrancies:\n\t- Minter.allowedMinting() (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#204-208)\n\t- Minter.lastMintingTime (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#199)\n\t- Minter.updateMintingStatus(uint256) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#221-225)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Minter",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "mint",
+            "impact": "Medium",
+            "line": 227,
+            "line_end": 232,
+            "message": "Minter.mint() (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#227-232) ignores return value by prosperaToken.mintToAccount(msg.sender,value) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#229)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Minter",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "updateMintingStatus",
+            "impact": "Medium",
+            "line": 221,
+            "line_end": 225,
+            "message": "Minter.updateMintingStatus(uint256) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#221-225) ignores return value by prosperaToken.incrementTotalSupply(_mintedAmount) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#224)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Owned",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "transferOwnership",
+            "impact": "Low",
+            "line": 105,
+            "line_end": 108,
+            "message": "Owned.transferOwnership(address) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#105-108) should emit an event for: \n\t- owner = newOwner (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#106) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ProsperaToken",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "setMinter",
+            "impact": "Low",
+            "line": 178,
+            "line_end": 181,
+            "message": "ProsperaToken.setMinter(address) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#178-181) should emit an event for: \n\t- minterContract = newMinter (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#179) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Low",
+            "line": 105,
+            "message": "Owned.transferOwnership(address).newOwner (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#105) lacks a zero-check on :\n\t\t- owner = newOwner (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#106)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Low",
+            "line": 178,
+            "message": "ProsperaToken.setMinter(address).newMinter (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#178) lacks a zero-check on :\n\t\t- minterContract = newMinter (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#179)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Low",
+            "line": 210,
+            "message": "Minter.Minter(uint256,address)._ownerContract (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#210) lacks a zero-check on :\n\t\t- prosperaTokenAddress = _ownerContract (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#212)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "High",
+            "contract": "Minter",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "allowedMinting",
+            "impact": "Low",
+            "line": 204,
+            "line_end": 208,
+            "message": "Modifier Minter.allowedMinting() (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#204-208) does not always execute _; or revert\n",
+            "name": "incorrect-modifier"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 163,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#163):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 174,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#174):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 101,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#101):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 185,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#185):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 153,
+            "message": "Deprecated standard detected ! _spender.call(bytes4(bytes32(sha3()(receiveApproval(address,uint256,address,bytes)))),msg.sender,_value,this,_extraData) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#153):\n\t- Usage of \"sha3()\" should be replaced with \"keccak256()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 160,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#160):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 153,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#153):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 115,
+            "message": "Deprecated standard detected THROW (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#115):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.11 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput\n\t- SkipEmptyStringLiteral.\nIt is used by:\n\t- ^0.4.11 (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "ProsperaToken",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "approveAndCall",
+            "impact": "Informational",
+            "line": 146,
+            "line_end": 155,
+            "message": "Low level call in ProsperaToken.approveAndCall(address,uint256,bytes) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#146-155):\n\t- ! _spender.call(bytes4(bytes32(sha3()(receiveApproval(address,uint256,address,bytes)))),msg.sender,_value,this,_extraData) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#153)\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 85,
+            "message": "Parameter StandardToken.allowance(address,address)._spender (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#85) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 79,
+            "message": "Parameter StandardToken.approve(address,uint256)._value (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#79) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 85,
+            "message": "Parameter StandardToken.allowance(address,address)._owner (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#85) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 50,
+            "message": "Parameter StandardToken.transfer(address,uint256)._value (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#50) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 50,
+            "message": "Parameter StandardToken.transfer(address,uint256)._to (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#50) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 63,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._from (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#63) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 63,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._to (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#63) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter ProsperaToken.approveAndCall(address,uint256,bytes)._value (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 79,
+            "message": "Parameter StandardToken.approve(address,uint256)._spender (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#79) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 159,
+            "message": "Parameter ProsperaToken.batchTransfer(address[],uint256[])._recipients (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#159) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter ProsperaToken.approveAndCall(address,uint256,bytes)._extraData (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 221,
+            "message": "Parameter Minter.updateMintingStatus(uint256)._mintedAmount (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#221) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 159,
+            "message": "Parameter ProsperaToken.batchTransfer(address[],uint256[])._values (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#159) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 183,
+            "message": "Parameter ProsperaToken.mintToAccount(address,uint256)._account (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#183) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 183,
+            "message": "Parameter ProsperaToken.mintToAccount(address,uint256)._amount (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#183) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 191,
+            "message": "Parameter ProsperaToken.incrementTotalSupply(uint256)._incrementValue (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#191) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 63,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._value (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#63) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 75,
+            "message": "Parameter StandardToken.balanceOf(address)._owner (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#75) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter ProsperaToken.approveAndCall(address,uint256,bytes)._spender (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "impact": "Optimization",
+            "line": 129,
+            "message": "ProsperaToken.version (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#129) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "ProsperaToken",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "batchTransfer",
+            "impact": "Optimization",
+            "line": 159,
+            "line_end": 166,
+            "message": "batchTransfer(address[],uint256[]) should be declared external:\n\t- ProsperaToken.batchTransfer(address[],uint256[]) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#159-166)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ProsperaToken",
+            "filename": "samples/SmartbugsWild/0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol",
+            "function": "approveAndCall",
+            "impact": "Optimization",
+            "line": 146,
+            "line_end": 155,
+            "message": "approveAndCall(address,uint256,bytes) should be declared external:\n\t- ProsperaToken.approveAndCall(address,uint256,bytes) (0x0c04d4f331da8df75f9e2e271e3f3f1494c66c36.sol#146-155)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

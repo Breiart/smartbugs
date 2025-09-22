@@ -1,0 +1,66 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Adoption",
+            "filename": "samples/SmartbugsWild/0x0c1bfd8365100b6176f0149d716182498581e883.sol",
+            "function": "withdraw",
+            "impact": "High",
+            "line": 34,
+            "line_end": 36,
+            "message": "Adoption.withdraw() (0x0c1bfd8365100b6176f0149d716182498581e883.sol#34-36) sends eth to arbitrary user\n\tDangerous calls:\n\t- msg.sender.transfer(address(this).balance) (0x0c1bfd8365100b6176f0149d716182498581e883.sol#35)\n",
+            "name": "arbitrary-send-eth"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1bfd8365100b6176f0149d716182498581e883.sol",
+            "impact": "High",
+            "line": 29,
+            "message": "Adoption.owner (0x0c1bfd8365100b6176f0149d716182498581e883.sol#29) is never initialized. It is used in:\n",
+            "name": "uninitialized-state"
+        },
+        {
+            "confidence": "High",
+            "contract": "Adoption",
+            "filename": "samples/SmartbugsWild/0x0c1bfd8365100b6176f0149d716182498581e883.sol",
+            "function": "adopt",
+            "impact": "Medium",
+            "line": 14,
+            "line_end": 23,
+            "message": "Adoption.adopt(uint256) (0x0c1bfd8365100b6176f0149d716182498581e883.sol#14-23) contains a tautology or contradiction:\n\t- require(bool)(petId >= 0 && petId <= 15) (0x0c1bfd8365100b6176f0149d716182498581e883.sol#15)\n",
+            "name": "tautology"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1bfd8365100b6176f0149d716182498581e883.sol",
+            "impact": "Informational",
+            "message": "solc-0.5.17 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1bfd8365100b6176f0149d716182498581e883.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.5.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor\n\t- IncorrectEventSignatureInLibraries\n\t- ABIEncoderV2PackedStorage.\nIt is used by:\n\t- ^0.5.0 (0x0c1bfd8365100b6176f0149d716182498581e883.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1bfd8365100b6176f0149d716182498581e883.sol",
+            "impact": "Optimization",
+            "line": 29,
+            "message": "Adoption.owner (0x0c1bfd8365100b6176f0149d716182498581e883.sol#29) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

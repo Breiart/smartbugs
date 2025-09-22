@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "BaseFixedERC20Token",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x752ff65b884b9c260d212c804e0b7aceea012473.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "BaseFixedERC20Token",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x752ff65b884b9c260d212c804e0b7aceea012473.sol",
+            "name": "No Ether leak (no send)"
+        },
+        {
+            "contract": "BaseFixedERC20Token",
+            "feature": "CANNOT_RECEIVE_ETHER",
+            "filename": "samples/SmartbugsWild/0x752ff65b884b9c260d212c804e0b7aceea012473.sol",
+            "name": "No Ether lock (Ether refused)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

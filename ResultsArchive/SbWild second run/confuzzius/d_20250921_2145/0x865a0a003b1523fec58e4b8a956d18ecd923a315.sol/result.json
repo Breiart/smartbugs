@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "VICToken",
+            "filename": "samples/SmartbugsWild/0x865a0a003b1523fec58e4b8a956d18ecd923a315.sol",
+            "line": 28,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "VICToken",
+            "filename": "samples/SmartbugsWild/0x865a0a003b1523fec58e4b8a956d18ecd923a315.sol",
+            "line": 29,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "VICToken",
+            "filename": "samples/SmartbugsWild/0x865a0a003b1523fec58e4b8a956d18ecd923a315.sol",
+            "line": 11,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,14 @@
+{
+    "errors": [],
+    "fails": [
+        "exception (TypeError: unsupported operand type(s) for &: 'int' and 'NoneType')"
+    ],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": "-vt time_manipulation"
+}

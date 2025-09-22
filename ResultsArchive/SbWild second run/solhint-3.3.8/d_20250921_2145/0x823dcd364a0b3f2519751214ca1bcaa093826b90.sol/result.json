@@ -1,0 +1,127 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "error",
+            "line": 3,
+            "message": "Compiler version ^0.4.12 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 61,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 70,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 71,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 97,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 105,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 145,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 155,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 235,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 236,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 249,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 250,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 251,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "level": "warning",
+            "line": 253,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

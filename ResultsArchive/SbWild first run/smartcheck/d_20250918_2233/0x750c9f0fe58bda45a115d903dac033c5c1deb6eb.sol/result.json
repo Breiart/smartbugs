@@ -1,0 +1,34 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 65,
+            "name": "SOLIDITY_ERC20_APPROVE",
+            "severity": 2
+        },
+        {
+            "column": 0,
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 81,
+            "name": "SOLIDITY_LOCKED_MONEY",
+            "severity": 3
+        },
+        {
+            "column": 24,
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 114,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

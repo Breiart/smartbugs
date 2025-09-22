@@ -1,0 +1,183 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.8 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 5,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 7,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 9,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 11,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 13,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 15,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 24,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 25,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 26,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 31,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 15,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 39,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 44,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 49,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 53,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 57,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 70,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 89,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 6,
+            "filename": "samples/SmartbugsWild/0x0cc06a72f686662adfb7d29c25c40f9b1725fc76.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

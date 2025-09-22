@@ -1,0 +1,15 @@
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:1:1: Compiler version 0.4.11 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:11:5: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:18:5: Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0) [Warning/func-visibility]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:29:5: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:33:5: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:37:5: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:43:13: "throw" is deprecated, avoid to use it [Warning/avoid-throw]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:54:63: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:56:13: "throw" is deprecated, avoid to use it [Warning/avoid-throw]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:87:5: Explicitly mark visibility in function [Warning/func-visibility]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:87:60: Use "keccak256" instead of deprecated "sha3" [Warning/avoid-sha3]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:88:16: Check result of "send" call [Warning/check-send-result]
+/sb/0x0ccb03cb1a89808209eaebbcb059ed05e44cb9cf.sol:92:5: Explicitly mark visibility in function [Warning/func-visibility]
+
+13 problems

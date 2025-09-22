@@ -1,0 +1,53 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "BasicToken",
+            "filename": "samples/SmartbugsWild/0x714f73d7f983bdc11a9ae2cc1ada2644e2044d31.sol",
+            "line": 90,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BitcoinPetrol",
+            "filename": "samples/SmartbugsWild/0x714f73d7f983bdc11a9ae2cc1ada2644e2044d31.sol",
+            "line": 90,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BitcoinPetrol",
+            "filename": "samples/SmartbugsWild/0x714f73d7f983bdc11a9ae2cc1ada2644e2044d31.sol",
+            "line": 95,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "BitcoinPetrol",
+            "filename": "samples/SmartbugsWild/0x714f73d7f983bdc11a9ae2cc1ada2644e2044d31.sol",
+            "line": 96,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x714f73d7f983bdc11a9ae2cc1ada2644e2044d31.sol",
+            "line": 90,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

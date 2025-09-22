@@ -1,0 +1,36 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 13,
+            "contract": "EdwinToken",
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "line": 60,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 13,
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "line": 50,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 13,
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "line": 60,
+            "name": "Overflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

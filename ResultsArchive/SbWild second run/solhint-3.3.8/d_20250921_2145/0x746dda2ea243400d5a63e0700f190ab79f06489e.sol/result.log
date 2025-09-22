@@ -1,0 +1,8 @@
+/sb/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol:1:1: Compiler version ^0.5.0 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol:40:9: Error message for require is too long [Warning/reason-string]
+/sb/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol:197:9: Error message for require is too long [Warning/reason-string]
+/sb/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol:226:9: Error message for require is too long [Warning/reason-string]
+/sb/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol:240:9: Error message for require is too long [Warning/reason-string]
+/sb/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol:241:9: Error message for require is too long [Warning/reason-string]
+
+6 problems

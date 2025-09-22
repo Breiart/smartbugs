@@ -1,0 +1,33 @@
+{
+    "errors": [
+        "Unknown operation"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "MEDELIN",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x0c4f0652d08951982d38f21e8deca798836a1597.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "MEDELIN",
+            "exploit": [
+                "303f5f51",
+                "3ccfd60b"
+            ],
+            "feature": "PRODIGAL_CONFIRMED",
+            "filename": "samples/SmartbugsWild/0x0c4f0652d08951982d38f21e8deca798836a1597.sol",
+            "name": "Ether leak (verified)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

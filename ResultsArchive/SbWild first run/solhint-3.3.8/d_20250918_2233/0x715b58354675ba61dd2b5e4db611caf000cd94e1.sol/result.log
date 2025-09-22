@@ -1,0 +1,14 @@
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:1:1: Compiler version 0.4.21 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:22:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:30:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:50:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:58:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:83:12: Check result of "send" call [Warning/check-send-result]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:121:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:135:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:158:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:284:5: Provide an error message for require [Warning/reason-string]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:299:15: Use double quotes for string literals [Error/quotes]
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:345:3: Variable name must be in mixedCase [Warning/var-name-mixedcase]
+
+12 problems

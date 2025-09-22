@@ -1,0 +1,29 @@
+2025-09-20 05:20:45,274 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-20 05:20:45,333 - Fuzzer   - INFO - [1mFuzzing contract [1mSetBuyer[0m[0m
+2025-09-20 05:20:45,368 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 7 (6 unique)   	 Time: 0.026543855667114258[0m
+2025-09-20 05:20:45,390 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 12 (7 unique)   	 Time: 0.04859352111816406[0m
+2025-09-20 05:20:45,430 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 16 (7 unique)   	 Time: 0.0888359546661377[0m
+2025-09-20 05:20:45,465 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 21 (10 unique)   	 Time: 0.12355995178222656[0m
+2025-09-20 05:20:45,504 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 26 (13 unique)   	 Time: 0.1631934642791748[0m
+2025-09-20 05:20:45,563 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 32 (15 unique)   	 Time: 0.2214961051940918[0m
+2025-09-20 05:20:45,614 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 38 (16 unique)   	 Time: 0.27303338050842285[0m
+2025-09-20 05:20:45,651 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 43 (16 unique)   	 Time: 0.3097383975982666[0m
+2025-09-20 05:20:45,693 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 49 (16 unique)   	 Time: 0.3521745204925537[0m
+2025-09-20 05:20:45,740 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 55 (17 unique)   	 Time: 0.3989589214324951[0m
+2025-09-20 05:20:45,787 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 9.34% (144/1542) 	 Branch coverage: 8.33% (10/120) 	 Transactions: 61 (18 unique)   	 Time: 0.44613170623779297[0m
+2025-09-20 05:20:45,798 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2025-09-20 05:20:45,798 - Analysis - INFO - Number of generations: 	 10
+2025-09-20 05:20:45,798 - Analysis - INFO - Number of transactions: 	 61 (18 unique)
+2025-09-20 05:20:45,798 - Analysis - INFO - Transactions per second: 	 134
+2025-09-20 05:20:45,798 - Analysis - INFO - Total code coverage: 	 9.34% (144/1542)
+2025-09-20 05:20:45,798 - Analysis - INFO - Total branch coverage: 	 8.33% (10/120)
+2025-09-20 05:20:45,798 - Analysis - INFO - Total execution time: 	 0.46 seconds
+2025-09-20 05:20:45,798 - Analysis - INFO - Total memory consumption: 	 65.20 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

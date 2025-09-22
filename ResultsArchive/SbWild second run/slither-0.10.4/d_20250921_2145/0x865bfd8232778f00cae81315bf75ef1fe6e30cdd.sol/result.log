@@ -1,0 +1,83 @@
+'solc --version' running
+'solc /sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+Contract locking ether found:
+	Contract AbleToken (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#487-558) has payable functions:
+	 - AbleToken.fallback() (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#510-512)
+	But does not have a function to withdraw the ether
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether
+
+Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData.
+It is used by:
+	- ^0.4.24 (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter Ownable.transferOwnership(address)._newOwner (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#95) is not in mixedCase
+Parameter BasicToken.transfer(address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#163) is not in mixedCase
+Parameter BasicToken.transfer(address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#163) is not in mixedCase
+Parameter BasicToken.balanceOf(address)._owner (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#178) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._from (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#202) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#202) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#202) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#223) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#223) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._owner (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#235) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#235) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#248) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._addedValue (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#248) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#263) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._subtractedValue (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#263) is not in mixedCase
+Parameter BurnableToken.burn(uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#288) is not in mixedCase
+Parameter StandardBurnableToken.burnFrom(address,uint256)._from (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#316) is not in mixedCase
+Parameter StandardBurnableToken.burnFrom(address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#316) is not in mixedCase
+Parameter MintableToken.mint(address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#353) is not in mixedCase
+Parameter MintableToken.mint(address,uint256)._amount (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#353) is not in mixedCase
+Parameter PausableToken.transfer(address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#425) is not in mixedCase
+Parameter PausableToken.transfer(address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#426) is not in mixedCase
+Parameter PausableToken.transferFrom(address,address,uint256)._from (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#436) is not in mixedCase
+Parameter PausableToken.transferFrom(address,address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#437) is not in mixedCase
+Parameter PausableToken.transferFrom(address,address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#438) is not in mixedCase
+Parameter PausableToken.approve(address,uint256)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#448) is not in mixedCase
+Parameter PausableToken.approve(address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#449) is not in mixedCase
+Parameter PausableToken.increaseApproval(address,uint256)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#459) is not in mixedCase
+Parameter PausableToken.increaseApproval(address,uint256)._addedValue (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#460) is not in mixedCase
+Parameter PausableToken.decreaseApproval(address,uint256)._spender (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#470) is not in mixedCase
+Parameter PausableToken.decreaseApproval(address,uint256)._subtractedValue (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#471) is not in mixedCase
+Parameter AbleToken.freezeAccount(address)._target (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#518) is not in mixedCase
+Parameter AbleToken.unfreezeAccount(address)._target (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#528) is not in mixedCase
+Parameter AbleToken.transfer(address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#539) is not in mixedCase
+Parameter AbleToken.transfer(address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#539) is not in mixedCase
+Parameter AbleToken.transferFrom(address,address,uint256)._from (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#551) is not in mixedCase
+Parameter AbleToken.transferFrom(address,address,uint256)._to (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#551) is not in mixedCase
+Parameter AbleToken.transferFrom(address,address,uint256)._value (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#551) is not in mixedCase
+Variable AbleToken.INITIAL_SUPPLY (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#492) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+AbleToken.slitherConstructorVariables() (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#487-558) uses literals with too many digits:
+	- INITIAL_SUPPLY = 25000000000000000000000000000 (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#492)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+
+AbleToken.INITIAL_SUPPLY (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#492) should be constant 
+AbleToken.decimals (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#491) should be constant 
+AbleToken.name (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#489) should be constant 
+AbleToken.symbol (../../sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol#490) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+/sb/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol analyzed (12 contracts with 93 detectors), 47 result(s) found

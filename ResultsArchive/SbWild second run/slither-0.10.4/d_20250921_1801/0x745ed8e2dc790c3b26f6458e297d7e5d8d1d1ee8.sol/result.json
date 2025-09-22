@@ -1,0 +1,129 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "High",
+            "line": 164,
+            "line_end": 192,
+            "message": "TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) sends eth to arbitrary user\n\tDangerous calls:\n\t- creator.transfer(address(this).balance) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#190)\n",
+            "name": "arbitrary-send-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "Medium",
+            "line": 164,
+            "line_end": 192,
+            "message": "TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) performs a multiplication on the result of a division:\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)\n",
+            "name": "divide-before-multiply"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "Medium",
+            "line": 164,
+            "line_end": 192,
+            "message": "TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) performs a multiplication on the result of a division:\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)\n",
+            "name": "divide-before-multiply"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "Medium",
+            "line": 164,
+            "line_end": 192,
+            "message": "TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) performs a multiplication on the result of a division:\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)\n",
+            "name": "divide-before-multiply"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "impact": "Medium",
+            "line": 166,
+            "message": "TokenSale.buyTokenWithEther().scaledAmount (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#166) is a local variable never initialized\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "Low",
+            "line": 164,
+            "line_end": 192,
+            "message": "Reentrancy in TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192):\n\tExternal calls:\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#171)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)\n\t- scaledAmount = scaledAmount.add((earlyBirdValue).mul(uint256(10) ** tokenContract.decimals())) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#183)\n\t- require(bool)(tokenContract.balanceOf(address(this)) >= scaledAmount) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#187)\n\tState variables written after the call(s):\n\t- tokensSold = tokensSold.add(scaledAmount) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#189)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "Low",
+            "line": 164,
+            "line_end": 192,
+            "message": "Reentrancy in TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192):\n\tExternal calls:\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#171)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)\n\tState variables written after the call(s):\n\t- earlyBirdsPaid = earlyBirdsPaid.add(1) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#182)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenSale",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "function": "buyTokenWithEther",
+            "impact": "Low",
+            "line": 164,
+            "line_end": 192,
+            "message": "Reentrancy in TokenSale.buyTokenWithEther() (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192):\n\tExternal calls:\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#171)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)\n\t- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)\n\t- scaledAmount = scaledAmount.add((earlyBirdValue).mul(uint256(10) ** tokenContract.decimals())) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#183)\n\t- require(bool)(tokenContract.balanceOf(address(this)) >= scaledAmount) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#187)\n\tEvent emitted after the call(s):\n\t- Sold(msg.sender,scaledAmount) (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#188)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "impact": "Informational",
+            "message": "solc-0.5.17 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "impact": "Informational",
+            "line": 13,
+            "message": "Variable Ownable._owner (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#13) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "impact": "Optimization",
+            "line": 140,
+            "message": "TokenSale.earlyBirdValue (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#140) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol",
+            "impact": "Optimization",
+            "line": 139,
+            "message": "TokenSale.earlyBirdBonus (0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#139) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

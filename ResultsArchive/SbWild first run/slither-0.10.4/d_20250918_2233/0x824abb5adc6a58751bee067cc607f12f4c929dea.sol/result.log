@@ -1,0 +1,155 @@
+'solc --version' running
+'solc /sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:169:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function TBToken() public {
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:45:9: Warning: Invoking events without "emit" prefix is deprecated.
+        OwnershipTransferred(owner, newOwner);
+        ^-----------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:81:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:97:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:103:6: Warning: Invoking events without "emit" prefix is deprecated.
+     Approval(msg.sender, _spender, _value);
+     ^------------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:113:6: Warning: Invoking events without "emit" prefix is deprecated.
+     Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+     ^-----------------------------------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:124:6: Warning: Invoking events without "emit" prefix is deprecated.
+     Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+     ^-----------------------------------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:136:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _to, _value, _data);
+        ^--------------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:180:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(address(0), msg.sender, releaseAmount);
+    ^---------------------------------------------^
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:218:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(address(0), msg.sender, tokens);
+        ^--------------------------------------^
+
+
+StandardToken.isContract(address) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#139-146) is declared view but contains assembly code
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#constant-functions-using-assembly-code
+
+Owned.transferOwnership(address)._newOwner (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#40) lacks a zero-check on :
+		- newOwner = _newOwner (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#41)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Reentrancy in StandardToken.transfer(address,uint256,bytes) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#128-137):
+	External calls:
+	- receiver.tokenFallback(msg.sender,_value,_data) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#132)
+	State variables written after the call(s):
+	- balances[msg.sender] = subSafe(balances[msg.sender],_value) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#134)
+	- balances[_to] = addSafe(balances[_to],_value) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#135)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2
+
+Reentrancy in StandardToken.transfer(address,uint256,bytes) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#128-137):
+	External calls:
+	- receiver.tokenFallback(msg.sender,_value,_data) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#132)
+	Event emitted after the call(s):
+	- Transfer(msg.sender,_to,_value,_data) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#136)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+TBToken.getReleaseAmount() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#184-204) uses timestamp for comparisons
+	Dangerous comparisons:
+	- now >= firstAnnual && now < secondAnnual && firstAnnualReleasedAmount > 0 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#186-188)
+	- now >= secondAnnual && now < thirdAnnual && secondAnnualReleasedAmount > 0 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#191-193)
+	- now >= thirdAnnual && thirdAnnualReleasedAmount > 0 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#196-197)
+TBToken.fallback() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#206-220) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool)(now >= createTime && now <= endDate) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#207)
+	- now <= bonusEnds (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#209)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+StandardToken.isContract(address) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#139-146) uses assembly
+	- INLINE ASM (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#141-145)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+SafeMath.divSafe(uint256,uint256) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#13-16) is never used and should be removed
+SafeMath.mulSafe(uint256,uint256) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#4-11) is never used and should be removed
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dead-code
+
+Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- ^0.4.18 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Function Owned.Constructor() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#34) is not in mixedCase
+Parameter Owned.transferOwnership(address)._newOwner (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#40) is not in mixedCase
+Parameter StandardToken.transfer(address,uint256)._to (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#76) is not in mixedCase
+Parameter StandardToken.transfer(address,uint256)._value (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#76) is not in mixedCase
+Parameter StandardToken.balanceOf(address)._owner (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#85) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._from (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#89) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._to (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#89) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._value (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#89) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._spender (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#101) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._value (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#101) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._owner (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#107) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._spender (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#107) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._spender (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#111) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._addedValue (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#111) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._spender (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#117) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._subtractedValue (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#117) is not in mixedCase
+Parameter StandardToken.transfer(address,uint256,bytes)._to (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#128) is not in mixedCase
+Parameter StandardToken.transfer(address,uint256,bytes)._value (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#128) is not in mixedCase
+Parameter StandardToken.transfer(address,uint256,bytes)._data (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#128) is not in mixedCase
+Variable TBToken.INITIAL_SUPPLY (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#162) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+TBToken.TBToken() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#169-173) uses literals with too many digits:
+	- totalSupply = 200000000 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#170)
+TBToken.slitherConstructorVariables() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#150-222) uses literals with too many digits:
+	- INITIAL_SUPPLY = 1000000000 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#162)
+TBToken.slitherConstructorVariables() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#150-222) uses literals with too many digits:
+	- frozenForever = 400000000 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#163)
+TBToken.slitherConstructorVariables() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#150-222) uses literals with too many digits:
+	- firstAnnualReleasedAmount = 150000000 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#165)
+TBToken.slitherConstructorVariables() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#150-222) uses literals with too many digits:
+	- secondAnnualReleasedAmount = 150000000 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#166)
+TBToken.slitherConstructorVariables() (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#150-222) uses literals with too many digits:
+	- thirdAnnualReleasedAmount = 100000000 (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#167)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+
+TBToken.INITIAL_SUPPLY (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#162) should be constant 
+TBToken.bonusEnds (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#156) should be constant 
+TBToken.createTime (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#155) should be constant 
+TBToken.decimals (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#153) should be constant 
+TBToken.endDate (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#157) should be constant 
+TBToken.firstAnnual (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#158) should be constant 
+TBToken.frozenForever (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#163) should be constant 
+TBToken.name (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#151) should be constant 
+TBToken.secondAnnual (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#159) should be constant 
+TBToken.symbol (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#152) should be constant 
+TBToken.thirdAnnual (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#160) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+
+transfer(address,uint256,bytes) should be declared external:
+	- ERC223.transfer(address,uint256,bytes) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#63)
+	- StandardToken.transfer(address,uint256,bytes) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#128-137)
+tokenFallback(address,uint256,bytes) should be declared external:
+	- ERC223ReceivingContract.tokenFallback(address,uint256,bytes) (../../sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol#68)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol analyzed (7 contracts with 93 detectors), 50 result(s) found

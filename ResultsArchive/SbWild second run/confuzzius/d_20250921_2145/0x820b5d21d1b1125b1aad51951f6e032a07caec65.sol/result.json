@@ -1,0 +1,47 @@
+{
+    "errors": [
+        "Validation error: Sender account balance cannot afford txn (ignoring for now)"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 74,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 164,
+            "message": "Classification: SWC-114",
+            "name": "Transaction Order Dependency",
+            "severity": "Medium"
+        },
+        {
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 134,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 118,
+            "message": "Classification: SWC-114",
+            "name": "Transaction Order Dependency",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

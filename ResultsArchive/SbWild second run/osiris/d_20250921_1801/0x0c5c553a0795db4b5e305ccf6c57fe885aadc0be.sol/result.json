@@ -1,0 +1,45 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "column": 5,
+            "contract": "ClinicAllRefundEscrow",
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "line": 386,
+            "name": "Concurrency bug"
+        },
+        {
+            "column": 5,
+            "contract": "ClinicAllRefundEscrow",
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "line": 506,
+            "name": "Concurrency bug"
+        },
+        {
+            "column": 5,
+            "contract": "RefundEscrow",
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "line": 185,
+            "name": "Concurrency bug"
+        },
+        {
+            "column": 5,
+            "contract": "RefundEscrow",
+            "filename": "samples/SmartbugsWild/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol",
+            "line": 271,
+            "name": "Concurrency bug"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

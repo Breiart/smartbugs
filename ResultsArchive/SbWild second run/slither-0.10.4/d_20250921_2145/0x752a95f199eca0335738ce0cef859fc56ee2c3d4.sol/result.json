@@ -1,0 +1,285 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 34,
+            "line_end": 533,
+            "message": "RENTCONTROL (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#34-533) has incorrect ERC20 function interface:RENTCONTROL.transfer(address,uint256) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#365-375)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData.\nIt is used by:\n\t- ^0.4.24 (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 213,
+            "message": "Parameter RENTCONTROL.addTotalLevelValue(uint256,uint256)._old (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#213) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 365,
+            "message": "Parameter RENTCONTROL.transfer(address,uint256)._to (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#365) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 383,
+            "message": "Parameter RENTCONTROL.setName(string)._name (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#383) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 414,
+            "message": "Parameter RENTCONTROL.setLevelPrice(uint256,uint256)._price (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#414) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 463,
+            "message": "Parameter RENTCONTROL.getOwnerBalance(address)._levelOwner (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#463) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 213,
+            "message": "Parameter RENTCONTROL.addTotalLevelValue(uint256,uint256)._new (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#213) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 433,
+            "message": "Parameter RENTCONTROL.setAllowReferral(bool)._allowReferral (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#433) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 58,
+            "line_end": 61,
+            "message": "Event RENTCONTROL.onWithdraw(address,uint256) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#58-61) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 220,
+            "message": "Parameter RENTCONTROL.buy(uint256,address)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#220) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 365,
+            "message": "Parameter RENTCONTROL.transfer(address,uint256)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#365) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 440,
+            "message": "Parameter RENTCONTROL.setAutoNewlevel(bool)._autoNewLevel (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#440) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 481,
+            "message": "Parameter RENTCONTROL.getlevelOwner(uint256)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#481) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 51,
+            "line_end": 56,
+            "message": "Event RENTCONTROL.onLevelPurchase(address,uint256,uint256,uint256) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#51-56) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 472,
+            "message": "Parameter RENTCONTROL.getlevelPrice(uint256)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#472) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 220,
+            "message": "Parameter RENTCONTROL.buy(uint256,address)._referrer (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#220) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 393,
+            "message": "Parameter RENTCONTROL.setSymbol(string)._symbol (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#393) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 490,
+            "message": "Parameter RENTCONTROL.gettotalLevelDivs(uint256)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#490) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 422,
+            "message": "Parameter RENTCONTROL.addNewLevel(uint256)._price (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#422) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 414,
+            "message": "Parameter RENTCONTROL.setLevelPrice(uint256,uint256)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#414) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 407,
+            "message": "Parameter RENTCONTROL.setMaxLevels(uint256)._level (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#407) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 336,
+            "message": "Parameter RENTCONTROL.withdrawPart(uint256)._amount (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#336) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 303,
+            "message": "Parameter RENTCONTROL.distributeRent(uint256,uint256)._distDividends (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#303) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 400,
+            "message": "Parameter RENTCONTROL.setInitialPrice(uint256)._price (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#400) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "function": "withdraw",
+            "impact": "Informational",
+            "line": 323,
+            "line_end": 334,
+            "message": "Reentrancy in RENTCONTROL.withdraw() (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#323-334):\n\tExternal calls:\n\t- _customerAddress.transfer(_dividends) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#331)\n\tEvent emitted after the call(s):\n\t- onWithdraw(_customerAddress,_dividends) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#333)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "function": "withdrawPart",
+            "impact": "Informational",
+            "line": 336,
+            "line_end": 348,
+            "message": "Reentrancy in RENTCONTROL.withdrawPart(uint256) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#336-348):\n\tExternal calls:\n\t- _customerAddress.transfer(_amount) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#345)\n\tEvent emitted after the call(s):\n\t- onWithdraw(_customerAddress,_amount) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#347)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Informational",
+            "line": 97,
+            "message": "RENTCONTROL.levelName (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#97) is never used in RENTCONTROL (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#34-533)\n",
+            "name": "unused-state"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "impact": "Optimization",
+            "line": 99,
+            "message": "RENTCONTROL.levelPriceIncrement (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#99) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "function": "setSymbol",
+            "impact": "Optimization",
+            "line": 393,
+            "line_end": 398,
+            "message": "setSymbol(string) should be declared external:\n\t- RENTCONTROL.setSymbol(string) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#393-398)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "function": "setName",
+            "impact": "Optimization",
+            "line": 383,
+            "line_end": 388,
+            "message": "setName(string) should be declared external:\n\t- RENTCONTROL.setName(string) (0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol#383-388)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

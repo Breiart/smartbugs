@@ -1,0 +1,93 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "BasicToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 43,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 43,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 53,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 55,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "PotionOwl",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 43,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "PotionOwl",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 53,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "PotionOwl",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 55,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 43,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 53,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "line": 55,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

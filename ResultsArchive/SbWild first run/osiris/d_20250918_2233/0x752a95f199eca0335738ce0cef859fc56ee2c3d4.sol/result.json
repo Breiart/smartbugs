@@ -1,0 +1,29 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 9,
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "line": 331,
+            "name": "Concurrency bug"
+        },
+        {
+            "column": 9,
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "line": 345,
+            "name": "Concurrency bug"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

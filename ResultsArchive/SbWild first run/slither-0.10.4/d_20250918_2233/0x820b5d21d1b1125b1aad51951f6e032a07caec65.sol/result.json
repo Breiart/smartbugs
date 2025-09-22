@@ -1,0 +1,321 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "withdraw",
+            "impact": "Medium",
+            "line": 72,
+            "line_end": 111,
+            "message": "Reentrancy in MonethaBuyer.withdraw(address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#72-111):\n\tExternal calls:\n\t- contract_token_balance = token.balanceOf(address(this)) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#89)\n\tState variables written after the call(s):\n\t- balances[user] = 0 (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#97)\n\tMonethaBuyer.balances (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#21) can be used in cross function reentrancies:\n\t- MonethaBuyer.balances (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#21)\n\t- MonethaBuyer.fallback() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#156-165)\n\t- MonethaBuyer.withdraw(address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#72-111)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "add_to_withdraw_bounty",
+            "impact": "Low",
+            "line": 122,
+            "line_end": 127,
+            "message": "MonethaBuyer.add_to_withdraw_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#122-127) should emit an event for: \n\t- withdraw_bounty += msg.value (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#126) \n",
+            "name": "events-maths"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "add_to_buy_bounty",
+            "impact": "Low",
+            "line": 114,
+            "line_end": 119,
+            "message": "MonethaBuyer.add_to_buy_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#114-119) should emit an event for: \n\t- buy_bounty += msg.value (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#118) \n",
+            "name": "events-maths"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Low",
+            "line": 47,
+            "message": "MonethaBuyer.set_addresses(address,address)._sale (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#47) lacks a zero-check on :\n\t\t- sale = _sale (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#53)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "withdraw",
+            "impact": "Low",
+            "line": 72,
+            "line_end": 111,
+            "message": "Reentrancy in MonethaBuyer.withdraw(address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#72-111):\n\tExternal calls:\n\t- contract_token_balance = token.balanceOf(address(this)) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#89)\n\tState variables written after the call(s):\n\t- contract_eth_value -= balances[user] (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#95)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "withdraw",
+            "impact": "Low",
+            "line": 72,
+            "line_end": 111,
+            "message": "Reentrancy in MonethaBuyer.withdraw(address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#72-111):\n\tExternal calls:\n\t- contract_token_balance = token.balanceOf(address(this)) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#89)\n\t- require(bool)(token.transfer(developer,fee)) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#101)\n\t- require(bool)(token.transfer(user,tokens_to_withdraw - fee)) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#103)\n\tExternal calls sending eth:\n\t- user.transfer(eth_to_withdraw) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#84)\n\tState variables written after the call(s):\n\t- withdraw_bounty -= claimed_bounty (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#108)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "claim_bounty",
+            "impact": "Low",
+            "line": 130,
+            "line_end": 153,
+            "message": "MonethaBuyer.claim_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#130-153) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- now < earliest_buy_time (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#134)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "withdraw",
+            "impact": "Low",
+            "line": 72,
+            "line_end": 111,
+            "message": "MonethaBuyer.withdraw(address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#72-111) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool)(bought_tokens || now > earliest_buy_time + 3600) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#74)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 60,
+            "message": "Deprecated standard detected require(bool)(msg.sender == developer || sha3()(password) == password_hash) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#60):\n\t- Usage of \"sha3()\" should be replaced with \"keccak256()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.13 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput.\nIt is used by:\n\t- ^0.4.13 (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "claim_bounty",
+            "impact": "Informational",
+            "line": 130,
+            "line_end": 153,
+            "message": "Low level call in MonethaBuyer.claim_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#130-153):\n\t- require(bool)(sale.call.value(contract_eth_value)()) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#150)\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "add_to_withdraw_bounty",
+            "impact": "Informational",
+            "line": 122,
+            "line_end": 127,
+            "message": "Function MonethaBuyer.add_to_withdraw_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#122-127) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "add_to_buy_bounty",
+            "impact": "Informational",
+            "line": 114,
+            "line_end": 119,
+            "message": "Function MonethaBuyer.add_to_buy_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#114-119) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "activate_kill_switch",
+            "impact": "Informational",
+            "line": 58,
+            "line_end": 69,
+            "message": "Function MonethaBuyer.activate_kill_switch(string) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#58-69) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 29,
+            "message": "Variable MonethaBuyer.contract_eth_value (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#29) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 47,
+            "message": "Parameter MonethaBuyer.set_addresses(address,address)._sale (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#47) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 36,
+            "message": "Variable MonethaBuyer.earliest_buy_time (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#36) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 34,
+            "message": "Variable MonethaBuyer.password_hash (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#34) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 25,
+            "message": "Variable MonethaBuyer.withdraw_bounty (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#25) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 31,
+            "message": "Variable MonethaBuyer.kill_switch (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#31) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 23,
+            "message": "Variable MonethaBuyer.buy_bounty (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#23) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 38,
+            "message": "Variable MonethaBuyer.eth_cap (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#38) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "set_addresses",
+            "impact": "Informational",
+            "line": 47,
+            "line_end": 55,
+            "message": "Function MonethaBuyer.set_addresses(address,address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#47-55) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 47,
+            "message": "Parameter MonethaBuyer.set_addresses(address,address)._token (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#47) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "claim_bounty",
+            "impact": "Informational",
+            "line": 130,
+            "line_end": 153,
+            "message": "Function MonethaBuyer.claim_bounty() (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#130-153) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Informational",
+            "line": 27,
+            "message": "Variable MonethaBuyer.bought_tokens (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#27) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "withdraw",
+            "impact": "Informational",
+            "line": 72,
+            "line_end": 111,
+            "message": "Reentrancy in MonethaBuyer.withdraw(address) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#72-111):\n\tExternal calls:\n\t- user.transfer(eth_to_withdraw) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#84)\n\tState variables written after the call(s):\n\t- withdraw_bounty -= claimed_bounty (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#108)\n",
+            "name": "reentrancy-unlimited-gas"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Optimization",
+            "line": 36,
+            "message": "MonethaBuyer.earliest_buy_time (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#36) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Optimization",
+            "line": 34,
+            "message": "MonethaBuyer.password_hash (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#34) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Optimization",
+            "line": 38,
+            "message": "MonethaBuyer.eth_cap (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#38) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "impact": "Optimization",
+            "line": 40,
+            "message": "MonethaBuyer.developer (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#40) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "function": "activate_kill_switch",
+            "impact": "Optimization",
+            "line": 58,
+            "line_end": 69,
+            "message": "activate_kill_switch(string) should be declared external:\n\t- MonethaBuyer.activate_kill_switch(string) (0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol#58-69)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

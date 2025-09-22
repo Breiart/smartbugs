@@ -1,0 +1,29 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "line": 576,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "RENTCONTROL",
+            "filename": "samples/SmartbugsWild/0x752a95f199eca0335738ce0cef859fc56ee2c3d4.sol",
+            "line": 575,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

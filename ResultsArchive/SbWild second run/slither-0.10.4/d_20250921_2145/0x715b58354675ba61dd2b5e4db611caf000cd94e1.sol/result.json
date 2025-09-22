@@ -1,0 +1,284 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "IXTPaymentContract",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "transferIXT",
+            "impact": "High",
+            "line": 179,
+            "line_end": 193,
+            "message": "IXTPaymentContract.transferIXT(address,address,string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#179-193) uses arbitrary from in transferFrom: price != 0 && ! tokenContract.transferFrom(from,to,price) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#186)\n",
+            "name": "arbitrary-send-erc20"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "High",
+            "line": 341,
+            "line_end": 405,
+            "message": "PolicyRegistry (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:\n\t- policies.push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#377)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "High",
+            "line": 341,
+            "line_end": 405,
+            "message": "PolicyRegistry (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:\n\t- policiesByParticipant[msg.sender].push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#374)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "High",
+            "line": 341,
+            "line_end": 405,
+            "message": "PolicyRegistry (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:\n\t- policiesByParticipant[_clientEtherAddress].push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#370)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "High",
+            "line": 341,
+            "line_end": 405,
+            "message": "PolicyRegistry (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#341-405) contract sets array length with a user-controlled value:\n\t- policiesByParticipant[_brokerEtherAddress].push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#367)\n",
+            "name": "controlled-array-length"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "EmergencySafe",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "emergencyERC20Drain",
+            "impact": "High",
+            "line": 74,
+            "line_end": 76,
+            "message": "EmergencySafe.emergencyERC20Drain(ERC20Interface,uint256) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#74-76) ignores return value by token.transfer(owner,amount) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#75)\n",
+            "name": "unchecked-transfer"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "PolicyRegistry",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "createContract",
+            "impact": "Medium",
+            "line": 363,
+            "line_end": 381,
+            "message": "PolicyRegistry.createContract(string,address,address,string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381) ignores return value by IXTPayment.transferIXT(_clientEtherAddress,owner,create_insurance) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#379)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Ownable",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "changeOwner",
+            "impact": "Low",
+            "line": 21,
+            "line_end": 24,
+            "message": "Ownable.changeOwner(address) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#21-24) should emit an event for: \n\t- owner = newOwner (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#23) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Ownable",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "changeOwner",
+            "impact": "Low",
+            "line": 21,
+            "line_end": 24,
+            "message": "Ownable.changeOwner(address) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#21-24) should emit an event for: \n\t- owner = newOwner (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#23) \n\t- owner = newOwner (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#23) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "PolicyRegistry",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "createContract",
+            "impact": "Low",
+            "line": 363,
+            "line_end": 381,
+            "message": "Reentrancy in PolicyRegistry.createContract(string,address,address,string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381):\n\tExternal calls:\n\t- policy.changeOwner(msg.sender) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#366)\n\tState variables written after the call(s):\n\t- policies.push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#377)\n\t- policiesByParticipant[_brokerEtherAddress].push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#367)\n\t- policiesByParticipant[_clientEtherAddress].push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#370)\n\t- policiesByParticipant[msg.sender].push(policy) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#374)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "PolicyRegistry",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "createContract",
+            "impact": "Low",
+            "line": 363,
+            "line_end": 381,
+            "message": "Reentrancy in PolicyRegistry.createContract(string,address,address,string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381):\n\tExternal calls:\n\t- policy.changeOwner(msg.sender) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#366)\n\t- IXTPayment.transferIXT(_clientEtherAddress,owner,create_insurance) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#379)\n\tEvent emitted after the call(s):\n\t- PolicyCreated(policy,msg.sender) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#380)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint 0.4.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- 0.4.21 (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.21 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 345,
+            "message": "Variable PolicyRegistry.IXTPayment (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#345) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._insuranceType (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 363,
+            "message": "Parameter PolicyRegistry.createContract(string,address,address,string)._clientInfo (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 363,
+            "message": "Parameter PolicyRegistry.createContract(string,address,address,string)._enquiryId (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._limitOfLiability (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 363,
+            "message": "Parameter PolicyRegistry.createContract(string,address,address,string)._clientEtherAddress (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._inceptionDate (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._expirationDate (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._policyDocReference (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32)._limitOfLiabilityCurrency (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "impact": "Informational",
+            "line": 363,
+            "message": "Parameter PolicyRegistry.createContract(string,address,address,string)._brokerEtherAddress (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "Policy",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "addInsuranceProduct",
+            "impact": "Optimization",
+            "line": 307,
+            "line_end": 319,
+            "message": "addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32) should be declared external:\n\t- Policy.addInsuranceProduct(uint256,uint256,uint256,string,string,bytes32) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#307-319)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IXTPaymentContract",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "setAction",
+            "impact": "Optimization",
+            "line": 208,
+            "line_end": 210,
+            "message": "setAction(string,uint256) should be declared external:\n\t- IXTPaymentContract.setAction(string,uint256) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#208-210)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "PolicyRegistry",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "createContract",
+            "impact": "Optimization",
+            "line": 363,
+            "line_end": 381,
+            "message": "createContract(string,address,address,string) should be declared external:\n\t- PolicyRegistry.createContract(string,address,address,string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#363-381)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IXTPaymentContract",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "getActionPrice",
+            "impact": "Optimization",
+            "line": 216,
+            "line_end": 218,
+            "message": "getActionPrice(string) should be declared external:\n\t- IXTPaymentContract.getActionPrice(string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#216-218)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IXTPaymentContract",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "function": "transferIXT",
+            "impact": "Optimization",
+            "line": 179,
+            "line_end": 193,
+            "message": "transferIXT(address,address,string) should be declared external:\n\t- IXTPaymentContract.transferIXT(address,address,string) (0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol#179-193)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,69 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 128,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 151,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 160,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 140,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 160,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 102,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "UETH",
+            "filename": "samples/SmartbugsWild/0x750c9f0fe58bda45a115d903dac033c5c1deb6eb.sol",
+            "line": 101,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,77 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "BasicToken",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 24,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 24,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 29,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "BurnableToken",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 30,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "INTARO",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 24,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "INTARO",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 29,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "INTARO",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 30,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 24,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

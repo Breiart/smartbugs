@@ -1,0 +1,215 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 30,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 51,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 59,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 65,
+            "message": "Contract name must be in CamelCase",
+            "name": "contract-name-camelcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 68,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 68,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 73,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 74,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 44,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 76,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 36,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 83,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 88,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 89,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 90,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 32,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 96,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 96,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 34,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 100,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 101,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 102,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 103,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 104,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823f96acc48410eba6e60fbaf0012ab6c49d4633.sol",
+            "level": "warning",
+            "line": 107,
+            "message": "Possible reentrancy vulnerabilities. Avoid state changes after transfer.",
+            "name": "reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}
