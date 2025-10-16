@@ -1,0 +1,21 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "EOCToken",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol",
+            "name": "Not destructible (no self-destruct)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

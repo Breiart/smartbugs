@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "EmergencySafe",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "EmergencySafe",
+            "feature": "PRODIGAL_NOT_FOUND",
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "name": "No prodigal vulnerability found"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

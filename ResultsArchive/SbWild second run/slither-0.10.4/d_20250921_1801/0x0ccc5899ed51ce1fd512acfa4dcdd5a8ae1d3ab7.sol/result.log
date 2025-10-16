@@ -1,0 +1,58 @@
+'solc --version' running
+'solc /sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+Version constraint 0.5.4 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor
+	- IncorrectEventSignatureInLibraries
+	- ABIEncoderV2PackedStorage.
+It is used by:
+	- 0.5.4 (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#1)
+solc-0.5.4 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Contract pDNADistributedRegistryInterface (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#69-72) is not in CapWords
+Contract pDNA (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#78-130) is not in CapWords
+Parameter pDNA.getFile(string)._name (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#107) is not in mixedCase
+Parameter pDNA.removeFile(string)._name (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#111) is not in mixedCase
+Parameter pDNA.putFile(bytes32,string)._hash (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#122) is not in mixedCase
+Parameter pDNA.putFile(bytes32,string)._name (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#122) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+pDNA.curators (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#80) should be constant 
+pDNA.registry (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#83) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+
+getProperty(string) should be declared external:
+	- pDNADistributedRegistryInterface.getProperty(string) (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#70)
+Moreover, the following function parameters should change its data location:
+_eGrid location should be calldata
+checkRole(address,string) should be declared external:
+	- CuratorsInterface.checkRole(address,string) (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#75)
+Moreover, the following function parameters should change its data location:
+_permission location should be calldata
+getFile(string) should be declared external:
+	- pDNA.getFile(string) (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#107-109)
+Moreover, the following function parameters should change its data location:
+_name location should be calldata
+removeFile(string) should be declared external:
+	- pDNA.removeFile(string) (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#111-120)
+Moreover, the following function parameters should change its data location:
+_name location should be calldata
+putFile(bytes32,string) should be declared external:
+	- pDNA.putFile(bytes32,string) (../../sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#122-128)
+Moreover, the following function parameters should change its data location:
+_name location should be calldata
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol analyzed (4 contracts with 93 detectors), 15 result(s) found

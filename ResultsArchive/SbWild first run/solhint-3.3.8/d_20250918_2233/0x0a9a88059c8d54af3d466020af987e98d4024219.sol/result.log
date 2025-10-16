@@ -1,0 +1,9 @@
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:1:1: Compiler version ^0.4.21 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:69:3: Provide an error message for require [Warning/reason-string]
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:77:3: Provide an error message for require [Warning/reason-string]
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:85:3: Provide an error message for require [Warning/reason-string]
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:93:3: Provide an error message for require [Warning/reason-string]
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:159:3: Provide an error message for require [Warning/reason-string]
+/sb/0x0a9a88059c8d54af3d466020af987e98d4024219.sol:169:3: Provide an error message for require [Warning/reason-string]
+
+7 problems

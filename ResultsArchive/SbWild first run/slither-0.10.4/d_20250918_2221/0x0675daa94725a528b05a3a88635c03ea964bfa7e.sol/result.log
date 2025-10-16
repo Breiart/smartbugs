@@ -1,0 +1,95 @@
+'solc --version' running
+'solc /sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+TKLNToken.updateVesting(address) (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#385-392) uses timestamp for comparisons
+	Dangerous comparisons:
+	- CrowdsaleParameters.vestingTime90Days < now (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#386)
+	- CrowdsaleParameters.vestingTime180Days < now (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#389)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+TKLNToken.approve(address,uint256) (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#262-270) compares to a boolean constant:
+	-require(bool)(_value == 0 || allowanceUsed[msg.sender][_spender] == false) (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#263)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#boolean-equality
+
+CrowdsaleParameters.wallet1 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#24) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0xae46bae68D0a884812bD20A241b6707F313Cb03a,20e6,vestingTime180Days)
+CrowdsaleParameters.wallet2 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#25) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0xfe472389F3311e5ea19B4Cd2c9945b6D64732F13,20e6,vestingTime180Days)
+CrowdsaleParameters.wallet3 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#26) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0xE37dfF409AF16B7358Fae98D2223459b17be0B0B,20e6,vestingTime180Days)
+CrowdsaleParameters.wallet4 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#27) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0x39482f4cd374D0deDD68b93eB7F3fc29ae7105db,10e6,vestingTime180Days)
+CrowdsaleParameters.wallet5 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#28) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0x03736d5B560fE0784b0F5c2D0eA76A7F15E5b99e,5e6,vestingTime180Days)
+CrowdsaleParameters.wallet6 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#29) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0xD21726226c32570Ab88E12A9ac0fb2ed20BE88B9,5e6,vestingTime180Days)
+CrowdsaleParameters.foundersWallet (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#30) is set pre-construction with a non-constant function or state variable:
+	- AddressTokenAllocation(0xC66Cbb7Ba88F120E86920C0f85A97B2c68784755,30e6,vestingTime90Days)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#function-initializing-state
+
+Version constraint 0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- 0.4.18 (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#1)
+solc-0.4.18 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Constant CrowdsaleParameters.presaleStartDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#11) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant CrowdsaleParameters.presaleEndDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#12) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant CrowdsaleParameters.generalSaleStartDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#13) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant CrowdsaleParameters.generalSaleEndDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#14) is not in UPPER_CASE_WITH_UNDERSCORES
+Parameter TKLNToken.approveCrowdsale(address)._crowdsaleAddress (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#152) is not in mixedCase
+Parameter TKLNToken.approvePresale(address)._presaleAddress (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#162) is not in mixedCase
+Parameter TKLNToken.approveAllocation(CrowdsaleParameters.AddressTokenAllocation,address)._crowdsaleAddress (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#166) is not in mixedCase
+Parameter TKLNToken.balanceOf(address)._address (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#181) is not in mixedCase
+Parameter TKLNToken.vestedBalanceOf(address)._address (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#191) is not in mixedCase
+Parameter TKLNToken.allowance(address,address)._owner (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#202) is not in mixedCase
+Parameter TKLNToken.allowance(address,address)._spender (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#202) is not in mixedCase
+Parameter TKLNToken.transfer(address,uint256)._to (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#212) is not in mixedCase
+Parameter TKLNToken.transfer(address,uint256)._value (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#212) is not in mixedCase
+Parameter TKLNToken.approve(address,uint256)._spender (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#262) is not in mixedCase
+Parameter TKLNToken.approve(address,uint256)._value (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#262) is not in mixedCase
+Parameter TKLNToken.approve(address,uint256,uint256)._spender (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#280) is not in mixedCase
+Parameter TKLNToken.approve(address,uint256,uint256)._currentValue (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#280) is not in mixedCase
+Parameter TKLNToken.approve(address,uint256,uint256)._value (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#280) is not in mixedCase
+Parameter TKLNToken.transferFrom(address,address,uint256)._from (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#295) is not in mixedCase
+Parameter TKLNToken.transferFrom(address,address,uint256)._to (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#295) is not in mixedCase
+Parameter TKLNToken.transferFrom(address,address,uint256)._value (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#295) is not in mixedCase
+Parameter TKLNToken.toggleTransfers(bool)._enable (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#343) is not in mixedCase
+Parameter TKLNToken.addToVesting(address,address,uint256,uint256)._from (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#375) is not in mixedCase
+Parameter TKLNToken.addToVesting(address,address,uint256,uint256)._target (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#375) is not in mixedCase
+Parameter TKLNToken.addToVesting(address,address,uint256,uint256)._vestingTime (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#375) is not in mixedCase
+Parameter TKLNToken.addToVesting(address,address,uint256,uint256)._amount (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#375) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+CrowdsaleParameters.presaleStartDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#11) is never used in TKLNToken (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#78-394)
+CrowdsaleParameters.presaleEndDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#12) is never used in TKLNToken (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#78-394)
+CrowdsaleParameters.generalSaleStartDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#13) is never used in TKLNToken (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#78-394)
+CrowdsaleParameters.generalSaleEndDate (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#14) is never used in TKLNToken (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#78-394)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-state-variable
+
+CrowdsaleParameters.minimumICOCap (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#41) should be constant 
+CrowdsaleParameters.vestingTime180Days (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#9) should be constant 
+CrowdsaleParameters.vestingTime90Days (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#8) should be constant 
+TKLNToken.decimals (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#83) should be constant 
+TKLNToken.name (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#81) should be constant 
+TKLNToken.standard (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#80) should be constant 
+TKLNToken.symbol (../../sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol#82) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+/sb/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol analyzed (3 contracts with 93 detectors), 48 result(s) found

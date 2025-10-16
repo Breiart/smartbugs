@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "BurnableToken",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "BurnableToken",
+            "feature": "PRODIGAL_NOT_FOUND",
+            "filename": "samples/SmartbugsWild/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol",
+            "name": "No prodigal vulnerability found"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

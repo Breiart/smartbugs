@@ -1,0 +1,22 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 3,
+            "contract": "DENMARK_WINS",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "line": 50,
+            "name": "Overflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

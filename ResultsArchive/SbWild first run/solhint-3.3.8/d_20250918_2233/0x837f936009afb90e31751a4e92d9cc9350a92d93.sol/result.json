@@ -1,0 +1,303 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 61,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 60,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 69,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 70,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 62,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 190,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 191,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 193,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 196,
+            "message": "Avoid to use \".call.value()()\"",
+            "name": "avoid-call-value"
+        },
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 196,
+            "message": "Avoid to use low level calls.",
+            "name": "avoid-low-level-calls"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 206,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 219,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 62,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 229,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 231,
+            "message": "Avoid to use inline assembly. It is acceptable only in rare cases",
+            "name": "no-inline-assembly"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 240,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 250,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 268,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 269,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 270,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 50,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 304,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 305,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 307,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 317,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 320,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 322,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 331,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 332,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 335,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 339,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 341,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 60,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 349,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 24,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 356,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 356,
+            "message": "Fallback function must be simple",
+            "name": "no-complex-fallback"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 357,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 358,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 361,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "level": "warning",
+            "line": 362,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

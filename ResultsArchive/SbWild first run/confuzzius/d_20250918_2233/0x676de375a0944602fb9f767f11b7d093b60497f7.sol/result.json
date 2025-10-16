@@ -1,0 +1,21 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "line": 96,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

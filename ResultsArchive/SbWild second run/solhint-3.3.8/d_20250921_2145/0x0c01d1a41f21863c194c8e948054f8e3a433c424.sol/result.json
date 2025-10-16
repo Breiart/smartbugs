@@ -1,0 +1,119 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.13 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 66,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 87,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 89,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 90,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 169,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 170,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 171,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 172,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 177,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 183,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 47,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 185,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 39,
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "level": "warning",
+            "line": 186,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

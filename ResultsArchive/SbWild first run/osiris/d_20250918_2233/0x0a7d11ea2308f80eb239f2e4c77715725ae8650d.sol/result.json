@@ -1,0 +1,31 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "column": 56,
+            "contract": "Option",
+            "filename": "samples/SmartbugsWild/0x0a7d11ea2308f80eb239f2e4c77715725ae8650d.sol",
+            "line": 145,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 57,
+            "contract": "Option",
+            "filename": "samples/SmartbugsWild/0x0a7d11ea2308f80eb239f2e4c77715725ae8650d.sol",
+            "line": 145,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [
+        "analysis incomplete"
+    ],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

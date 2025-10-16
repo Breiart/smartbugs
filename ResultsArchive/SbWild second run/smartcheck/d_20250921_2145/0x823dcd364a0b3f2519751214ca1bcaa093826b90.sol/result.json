@@ -1,0 +1,48 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 179,
+            "name": "SOLIDITY_ERC20_APPROVE",
+            "severity": 2
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 3,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 95,
+            "name": "SOLIDITY_SAFEMATH",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 97,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x823dcd364a0b3f2519751214ca1bcaa093826b90.sol",
+            "line": 145,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

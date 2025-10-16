@@ -1,0 +1,21 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "Basic",
+            "feature": "PRODIGAL_NOT_FOUND",
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "name": "No prodigal vulnerability found"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

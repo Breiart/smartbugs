@@ -1,0 +1,61 @@
+'solc --version' running
+'solc /sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) sends eth to arbitrary user
+	Dangerous calls:
+	- creator.transfer(address(this).balance) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#190)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
+
+TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) performs a multiplication on the result of a division:
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)
+TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) performs a multiplication on the result of a division:
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)
+TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192) performs a multiplication on the result of a division:
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+
+TokenSale.buyTokenWithEther().scaledAmount (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#166) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+
+Reentrancy in TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192):
+	External calls:
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#171)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)
+	State variables written after the call(s):
+	- earlyBirdsPaid = earlyBirdsPaid.add(1) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#182)
+Reentrancy in TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192):
+	External calls:
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#171)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)
+	- scaledAmount = scaledAmount.add((earlyBirdValue).mul(uint256(10) ** tokenContract.decimals())) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#183)
+	- require(bool)(tokenContract.balanceOf(address(this)) >= scaledAmount) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#187)
+	State variables written after the call(s):
+	- tokensSold = tokensSold.add(scaledAmount) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#189)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2
+
+Reentrancy in TokenSale.buyTokenWithEther() (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#164-192):
+	External calls:
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#171)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage1).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#174)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage2).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#177)
+	- scaledAmount = msg.value.mul(tokenPerEther).mul(uint256(10) ** tokenContract.decimals()).div(10 ** 18).mul(bonusPercentage3).div(100) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#180)
+	- scaledAmount = scaledAmount.add((earlyBirdValue).mul(uint256(10) ** tokenContract.decimals())) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#183)
+	- require(bool)(tokenContract.balanceOf(address(this)) >= scaledAmount) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#187)
+	Event emitted after the call(s):
+	- Sold(msg.sender,scaledAmount) (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#188)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+solc-0.5.17 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Variable Ownable._owner (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#13) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+TokenSale.earlyBirdBonus (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#139) should be constant 
+TokenSale.earlyBirdValue (../../sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol#140) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol analyzed (4 contracts with 93 detectors), 12 result(s) found

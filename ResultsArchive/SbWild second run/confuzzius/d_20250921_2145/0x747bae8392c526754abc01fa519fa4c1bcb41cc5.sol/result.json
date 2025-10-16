@@ -1,0 +1,29 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "CCP",
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "line": 137,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "CCP",
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "line": 66,
+            "message": "Classification: SWC-107",
+            "name": "Reentrancy",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

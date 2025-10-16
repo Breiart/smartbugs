@@ -1,0 +1,29 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 9,
+            "contract": "EthConnect",
+            "filename": "samples/SmartbugsWild/0x0a2a94ded0b8c9cb3bd4ec2ef86eeee637a4db7c.sol",
+            "line": 122,
+            "name": "Underflow bugs"
+        },
+        {
+            "column": 9,
+            "contract": "EthConnect",
+            "filename": "samples/SmartbugsWild/0x0a2a94ded0b8c9cb3bd4ec2ef86eeee637a4db7c.sol",
+            "line": 140,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

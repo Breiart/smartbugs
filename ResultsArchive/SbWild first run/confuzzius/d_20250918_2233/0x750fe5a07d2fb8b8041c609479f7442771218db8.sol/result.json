@@ -1,0 +1,45 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "BCFToken",
+            "filename": "samples/SmartbugsWild/0x750fe5a07d2fb8b8041c609479f7442771218db8.sol",
+            "line": 44,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "BCFToken",
+            "filename": "samples/SmartbugsWild/0x750fe5a07d2fb8b8041c609479f7442771218db8.sol",
+            "line": 45,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x750fe5a07d2fb8b8041c609479f7442771218db8.sol",
+            "line": 44,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x750fe5a07d2fb8b8041c609479f7442771218db8.sol",
+            "line": 45,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

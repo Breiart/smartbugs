@@ -1,0 +1,69 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "AifiAsset",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 352,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "AifiToken",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 368,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "AifiToken",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 413,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "AifiToken",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 43,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "AifiToken",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 44,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 43,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "line": 44,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

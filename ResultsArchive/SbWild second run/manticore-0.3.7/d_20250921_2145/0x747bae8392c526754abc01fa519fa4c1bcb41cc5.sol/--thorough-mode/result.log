@@ -1,0 +1,9 @@
+2025-09-21 22:48:33,232: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
+2025-09-21 22:48:33,232: [11] m.main:INFO: Beginning analysis
+2025-09-21 22:48:33,234: [11] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-21 22:48:34,355: [11] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' -> 32434096268151414502930714319429211172703610272722345406708838912687411675598
+2025-09-21 22:48:39,902: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-21 22:48:55,660: [11] m.e.detectors:WARNING: Potentially reading uninitialized storage
+2025-09-21 22:48:56,694: [11] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01' -> 27376155845717860833342594873357525089589924219251518322086369159840883582034
+2025-09-21 22:48:58,708: [11] m.e.detectors:WARNING: Potentially reading uninitialized storage
+2025-09-21 22:53:12,176: [11] m.e.detectors:WARNING: Potentially reading uninitialized storage

@@ -1,0 +1,20 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 18,
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "line": 1,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

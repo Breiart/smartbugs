@@ -1,0 +1,12 @@
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:1:1: Compiler version 0.4.21 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:30:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:39:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:48:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:52:5: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:53:5: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:55:24: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:55:5: Fallback function must be simple [Warning/no-complex-fallback]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:67:34: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+/sb/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol:72:9: Provide an error message for require [Warning/reason-string]
+
+10 problems

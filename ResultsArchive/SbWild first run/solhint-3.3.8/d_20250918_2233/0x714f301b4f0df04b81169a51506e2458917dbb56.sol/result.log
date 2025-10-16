@@ -1,0 +1,5 @@
+/sb/0x714f301b4f0df04b81169a51506e2458917dbb56.sol:1:1: Compiler version ^0.4.16 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x714f301b4f0df04b81169a51506e2458917dbb56.sol:61:9: Provide an error message for require [Warning/reason-string]
+/sb/0x714f301b4f0df04b81169a51506e2458917dbb56.sol:79:9: Provide an error message for require [Warning/reason-string]
+
+3 problems

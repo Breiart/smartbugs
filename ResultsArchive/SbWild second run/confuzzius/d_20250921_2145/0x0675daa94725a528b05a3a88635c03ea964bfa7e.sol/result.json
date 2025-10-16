@@ -1,0 +1,21 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "TKLNToken",
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "line": 389,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

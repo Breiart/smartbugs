@@ -1,0 +1,372 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Medium",
+            "line": 60,
+            "message": "Ownable.owner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#60) is written in both\n\towner = msg.sender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#488)\n\towner = oldOwner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#490)\n",
+            "name": "write-after-write"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "mint",
+            "impact": "Low",
+            "line": 486,
+            "line_end": 492,
+            "message": "OREX.mint(address,uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#486-492) should emit an event for: \n\t- owner = msg.sender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#488) \n\t- owner = msg.sender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#488) \n\t- owner = oldOwner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#490) \n\t- owner = oldOwner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#490) \n",
+            "name": "events-access"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BasicToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "transfer",
+            "impact": "Low",
+            "line": 169,
+            "line_end": 187,
+            "message": "BasicToken.transfer(address,uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#169-187) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- (now >= transferOpenTimes) && (now <= transferCloseTimes) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#171)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "transferFrom",
+            "impact": "Low",
+            "line": 222,
+            "line_end": 240,
+            "message": "StandardToken.transferFrom(address,address,uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#222-240) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- (now >= transferOpenTimes) && (now <= transferCloseTimes) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#224)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "mint",
+            "impact": "Informational",
+            "line": 486,
+            "line_end": 492,
+            "message": "OREX.mint(address,uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#486-492) has costly operations inside a loop:\n\t- owner = msg.sender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#488)\n",
+            "name": "costly-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "mint",
+            "impact": "Informational",
+            "line": 486,
+            "line_end": 492,
+            "message": "OREX.mint(address,uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#486-492) has costly operations inside a loop:\n\t- owner = oldOwner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#490)\n",
+            "name": "costly-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MintableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "mint",
+            "impact": "Informational",
+            "line": 332,
+            "line_end": 341,
+            "message": "MintableToken.mint(address,uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#332-341) has costly operations inside a loop:\n\t- mintNums_ = vtemp (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#336)\n",
+            "name": "costly-loop"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.17 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector.\nIt is used by:\n\t- ^0.4.17 (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 413,
+            "message": "Parameter PausableToken.transferFrom(address,address,uint256)._from (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#413) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 486,
+            "message": "Parameter OREX.mint(address,uint256)._to (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#486) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 454,
+            "message": "Parameter OREX.setTimedTransfer(uint256,uint256)._closingTime (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#454) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 264,
+            "message": "Parameter StandardToken.allowance(address,address)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#264) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 252,
+            "message": "Parameter StandardToken.approve(address,uint256)._value (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#252) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 413,
+            "message": "Parameter PausableToken.transferFrom(address,address,uint256)._to (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#413) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 454,
+            "message": "Parameter OREX.setTimedTransfer(uint256,uint256)._openingTime (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#454) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 169,
+            "message": "Parameter BasicToken.transfer(address,uint256)._value (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#169) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 264,
+            "message": "Parameter StandardToken.allowance(address,address)._owner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#264) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 332,
+            "message": "Parameter MintableToken.mint(address,uint256)._to (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#332) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 222,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._from (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#222) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 417,
+            "message": "Parameter PausableToken.approve(address,uint256)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#417) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 222,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._to (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#222) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 425,
+            "message": "Parameter PausableToken.decreaseApproval(address,uint256)._subtractedValue (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#425) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 252,
+            "message": "Parameter StandardToken.approve(address,uint256)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#252) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter StandardToken.increaseApproval(address,uint256)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 169,
+            "message": "Parameter BasicToken.transfer(address,uint256)._to (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#169) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 486,
+            "message": "Parameter OREX.mint(address,uint256)._amount (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#486) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 294,
+            "message": "Parameter StandardToken.decreaseApproval(address,uint256)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#294) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 196,
+            "message": "Parameter BasicToken.balanceOf(address)._owner (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#196) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 332,
+            "message": "Parameter MintableToken.mint(address,uint256)._amount (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#332) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter StandardToken.increaseApproval(address,uint256)._addedValue (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 421,
+            "message": "Parameter PausableToken.increaseApproval(address,uint256)._addedValue (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#421) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 294,
+            "message": "Parameter StandardToken.decreaseApproval(address,uint256)._subtractedValue (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#294) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 409,
+            "message": "Parameter PausableToken.transfer(address,uint256)._value (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#409) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 425,
+            "message": "Parameter PausableToken.decreaseApproval(address,uint256)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#425) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 421,
+            "message": "Parameter PausableToken.increaseApproval(address,uint256)._spender (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#421) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 409,
+            "message": "Parameter PausableToken.transfer(address,uint256)._to (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#409) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 417,
+            "message": "Parameter PausableToken.approve(address,uint256)._value (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#417) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 413,
+            "message": "Parameter PausableToken.transferFrom(address,address,uint256)._value (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#413) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "impact": "Informational",
+            "line": 222,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._value (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#222) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "mintToAddresses",
+            "impact": "Optimization",
+            "line": 468,
+            "line_end": 472,
+            "message": "mintToAddresses(address[],uint256) should be declared external:\n\t- OREX.mintToAddresses(address[],uint256) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#468-472)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "function": "mintToAddressesAndAmounts",
+            "impact": "Optimization",
+            "line": 474,
+            "line_end": 479,
+            "message": "mintToAddressesAndAmounts(address[],uint256[]) should be declared external:\n\t- OREX.mintToAddressesAndAmounts(address[],uint256[]) (0x0c4ca33a680fb974b41f020fda52fa430af22039.sol#474-479)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

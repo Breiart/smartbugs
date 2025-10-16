@@ -1,0 +1,535 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.17 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 31,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 7,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 37,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 41,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 60,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 51,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 63,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 69,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 65,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 88,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 84,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 103,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 47,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 105,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 68,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 113,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 88,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 127,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 156,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 128,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 106,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 129,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 65,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 130,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 65,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 131,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 82,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 133,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 64,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 138,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 43,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 139,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 56,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 140,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 66,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 141,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 47,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 142,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 38,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 143,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 170,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 153,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 113,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 154,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 112,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 155,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 83,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 156,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 67,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 157,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 69,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 158,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 79,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 159,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 86,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 161,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 42,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 164,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 68,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 167,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 168,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 169,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 68,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 170,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 171,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 40,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 172,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 59,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 173,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 105,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 183,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 36,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 183,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 79,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 184,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 24,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 184,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 92,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 186,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 42,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 189,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 68,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 192,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 52,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 193,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 85,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 193,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 59,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 194,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 69,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 195,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 196,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 45,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 197,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 66,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 198,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 208,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 252,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 163,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 252,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 121,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 252,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 8,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 263,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 67,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 264,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 76,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 267,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 8,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 276,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 88,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 277,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 8,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 290,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        },
+        {
+            "column": 75,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 291,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        },
+        {
+            "column": 35,
+            "filename": "samples/SmartbugsWild/0x0a7fa17d89d45370819691e335cb8fe688364632.sol",
+            "level": "warning",
+            "line": 314,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

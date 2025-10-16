@@ -1,0 +1,16 @@
+{
+    "errors": [
+        "0xc262805d: ['uint64'] -> [18446744073709551616]",
+        "EXIT_CODE_250",
+        "Value 18446744073709551616 cannot be encoded in 64 bits.  Must be bounded between [0, 18446744073709551615]"
+    ],
+    "fails": [],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,26 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol:BaseToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 85.5%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol:BaseToken:19:33
+balanceOf[_from] + balanceOf[_to]
+^
+/sb/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol:BaseToken:22:16
+balanceOf[_from] + balanceOf[_to]
+^
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 16.0143671036 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x0cd7cd39bb7b10bd33a886a47d53e112bbf5ceb2.sol:CustomToken:
+INFO:symExec:Running, please wait...

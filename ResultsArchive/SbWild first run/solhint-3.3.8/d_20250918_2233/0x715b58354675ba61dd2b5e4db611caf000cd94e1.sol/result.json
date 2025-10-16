@@ -1,0 +1,111 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version 0.4.21 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 22,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 30,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 50,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 12,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 83,
+            "message": "Check result of \"send\" call",
+            "name": "check-send-result"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 121,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 135,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 158,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 284,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 15,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "error",
+            "line": 299,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol",
+            "level": "warning",
+            "line": 345,
+            "message": "Variable name must be in mixedCase",
+            "name": "var-name-mixedcase"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,14 @@
+{
+    "errors": [
+        "Solc experienced a fatal error"
+    ],
+    "fails": [],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "mythril-0.24.7",
+        "mode": "solidity",
+        "version": "2024/03/24"
+    },
+    "tool_args": "--modules Exceptions,UnexpectedEther"
+}

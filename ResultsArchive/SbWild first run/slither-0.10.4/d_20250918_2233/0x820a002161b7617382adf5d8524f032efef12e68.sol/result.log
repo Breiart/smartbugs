@@ -1,0 +1,99 @@
+'solc --version' running
+'solc /sb/0x820a002161b7617382adf5d8524f032efef12e68.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:99:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:505:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function PotionOwl () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:139:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:215:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:325:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:357:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:403:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    ^-----------------------------------------------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:427:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    ^-----------------------------------------------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:481:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Burn(burner, _value);
+        ^------------------^
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:99:3: Warning: No visibility specified. Defaulting to "public". 
+  function Ownable() {
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:397:3: Warning: No visibility specified. Defaulting to "public". 
+  function increaseApproval (address _spender, uint _addedValue)
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:411:3: Warning: No visibility specified. Defaulting to "public". 
+  function decreaseApproval (address _spender, uint _subtractedValue)
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:505:5: Warning: No visibility specified. Defaulting to "public". 
+    function PotionOwl () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:15:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:41:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol:51:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Version constraint ^0.4.12 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- NestedArrayFunctionCallDecoder
+	- ZeroFunctionSelector
+	- DelegateCallReturnValue
+	- ECRecoverMalformedInput.
+It is used by:
+	- ^0.4.12 (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter BasicToken.transfer(address,uint256)._to (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#203) is not in mixedCase
+Parameter BasicToken.transfer(address,uint256)._value (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#203) is not in mixedCase
+Parameter BasicToken.balanceOf(address)._owner (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#233) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._from (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#303) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._to (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#303) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._value (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#303) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._spender (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#353) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._value (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#353) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._owner (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#377) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._spender (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#377) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._spender (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#397) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._addedValue (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#397) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._spender (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#411) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._subtractedValue (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#411) is not in mixedCase
+Parameter BurnableToken.burn(uint256)._value (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#463) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+PotionOwl.slitherConstructorConstantVariables() (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#489-516) uses literals with too many digits:
+	- initialSupply = 100000000 * (10 ** uint256(decimals)) (../../sb/0x820a002161b7617382adf5d8524f032efef12e68.sol#499)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+/sb/0x820a002161b7617382adf5d8524f032efef12e68.sol analyzed (8 contracts with 93 detectors), 18 result(s) found

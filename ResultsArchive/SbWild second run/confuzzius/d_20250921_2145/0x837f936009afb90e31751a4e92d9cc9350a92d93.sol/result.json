@@ -1,0 +1,37 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "ContractReceiver",
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "line": 129,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "ContractReceiver",
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "line": 129,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "HiroyukiCoinDark",
+            "filename": "samples/SmartbugsWild/0x837f936009afb90e31751a4e92d9cc9350a92d93.sol",
+            "line": 14,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

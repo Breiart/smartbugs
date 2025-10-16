@@ -1,0 +1,43 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 19,
+            "contract": "ERC820Registry",
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "line": 6,
+            "name": "Truncation bugs"
+        },
+        {
+            "column": 3,
+            "contract": "ERC820Registry",
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "line": 8,
+            "name": "Truncation bugs"
+        },
+        {
+            "column": 16,
+            "contract": "ERC820Registry",
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "line": 186,
+            "name": "Truncation bugs"
+        },
+        {
+            "column": 38,
+            "contract": "ERC820Registry",
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "line": 4,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

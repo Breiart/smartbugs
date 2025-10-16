@@ -1,0 +1,152 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "function": "release",
+            "impact": "High",
+            "line": 100,
+            "line_end": 108,
+            "message": "lockEtherPay.release() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#100-108) ignores return value by token_reward.transfer(beneficiary,token_amount) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#105)\n",
+            "name": "unchecked-transfer"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "function": "release",
+            "impact": "Medium",
+            "line": 100,
+            "line_end": 108,
+            "message": "Reentrancy in lockEtherPay.release() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#100-108):\n\tExternal calls:\n\t- token_amount = tokenBalance() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#104)\n\t\t- token_reward.balanceOf(this) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#84)\n\t- token_reward.transfer(beneficiary,token_amount) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#105)\n\tState variables written after the call(s):\n\t- isReleased = true (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#107)\n\tlockEtherPay.isReleased (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#71) can be used in cross function reentrancies:\n\t- lockEtherPay.isReleased (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#71)\n\t- lockEtherPay.release() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#100-108)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "function": "lock",
+            "impact": "Medium",
+            "line": 87,
+            "line_end": 93,
+            "message": "Reentrancy in lockEtherPay.lock() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#87-93):\n\tExternal calls:\n\t- require(bool)(tokenBalance() > 0) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#89)\n\t\t- token_reward.balanceOf(this) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#84)\n\tState variables written after the call(s):\n\t- isLocked = true (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#92)\n\tlockEtherPay.isLocked (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#70) can be used in cross function reentrancies:\n\t- lockEtherPay.isLocked (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#70)\n\t- lockEtherPay.lock() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#87-93)\n\t- lockEtherPay.release() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#100-108)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "function": "lock",
+            "impact": "Low",
+            "line": 87,
+            "line_end": 93,
+            "message": "Reentrancy in lockEtherPay.lock() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#87-93):\n\tExternal calls:\n\t- require(bool)(tokenBalance() > 0) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#89)\n\t\t- token_reward.balanceOf(this) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#84)\n\tState variables written after the call(s):\n\t- end_time = start_time.add(fifty_two_weeks) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#91)\n\t- start_time = now (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#90)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "function": "release",
+            "impact": "Low",
+            "line": 100,
+            "line_end": 108,
+            "message": "Reentrancy in lockEtherPay.release() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#100-108):\n\tExternal calls:\n\t- token_amount = tokenBalance() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#104)\n\t\t- token_reward.balanceOf(this) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#84)\n\t- token_reward.transfer(beneficiary,token_amount) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#105)\n\tEvent emitted after the call(s):\n\t- TokenReleased(beneficiary,token_amount) (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#106)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "lockEtherPay",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "function": "lockOver",
+            "impact": "Low",
+            "line": 95,
+            "line_end": 98,
+            "message": "lockEtherPay.lockOver() (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#95-98) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- current_time > end_time (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#97)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.18 (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 74,
+            "message": "Variable lockEtherPay.fifty_two_weeks (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#74) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 30,
+            "line_end": 35,
+            "message": "Contract token (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#30-35) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 72,
+            "message": "Variable lockEtherPay.start_time (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#72) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 73,
+            "message": "Variable lockEtherPay.end_time (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#73) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 65,
+            "line_end": 110,
+            "message": "Contract lockEtherPay (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#65-110) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Informational",
+            "line": 68,
+            "message": "Variable lockEtherPay.token_reward (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#68) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x676de375a0944602fb9f767f11b7d093b60497f7.sol",
+            "impact": "Optimization",
+            "line": 74,
+            "message": "lockEtherPay.fifty_two_weeks (0x676de375a0944602fb9f767f11b7d093b60497f7.sol#74) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

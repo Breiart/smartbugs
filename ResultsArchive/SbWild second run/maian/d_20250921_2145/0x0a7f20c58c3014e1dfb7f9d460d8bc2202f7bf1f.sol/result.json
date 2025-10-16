@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "ExternalCall",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "ExternalCall",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

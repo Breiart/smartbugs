@@ -1,0 +1,62 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 184,
+            "name": "SOLIDITY_ERC20_APPROVE",
+            "severity": 2
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 429,
+            "name": "SOLIDITY_OVERPOWERED_ROLE",
+            "severity": 2
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 1,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 76,
+            "name": "SOLIDITY_SAFEMATH",
+            "severity": 1
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 378,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 33,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 378,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol",
+            "line": 267,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

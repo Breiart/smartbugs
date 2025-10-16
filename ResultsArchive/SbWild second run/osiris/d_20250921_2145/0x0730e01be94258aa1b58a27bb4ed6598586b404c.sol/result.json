@@ -1,0 +1,28 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT",
+        "exception (IndexError: pop from empty list)"
+    ],
+    "findings": [
+        {
+            "column": 37,
+            "contract": "BetterNameService",
+            "filename": "samples/SmartbugsWild/0x0730e01be94258aa1b58a27bb4ed6598586b404c.sol",
+            "line": 235,
+            "name": "Signedness bugs"
+        }
+    ],
+    "infos": [
+        "analysis incomplete",
+        "incomplete push instruction"
+    ],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

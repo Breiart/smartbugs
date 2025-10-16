@@ -1,0 +1,82 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "BoomerangLiquidity",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "function": "fallback",
+            "impact": "Medium",
+            "line": 55,
+            "line_end": 65,
+            "message": "BoomerangLiquidity.fallback() (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#55-65) ignores return value by p3dContract.buy.value(half)(msg.sender) (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#63)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BoomerangLiquidity",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "function": "donateP3D",
+            "impact": "Medium",
+            "line": 67,
+            "line_end": 69,
+            "message": "BoomerangLiquidity.donateP3D() (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#67-69) ignores return value by p3dContract.buy.value(msg.value)(msg.sender) (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#68)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "impact": "Low",
+            "line": 34,
+            "message": "Owned.changeOwner(address)._newOwner (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#34) lacks a zero-check on :\n\t\t- ownerCandidate = _newOwner (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#35)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.21 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint 0.4.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- 0.4.21 (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "impact": "Informational",
+            "line": 34,
+            "message": "Parameter Owned.changeOwner(address)._newOwner (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#34) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "impact": "Informational",
+            "line": 53,
+            "message": "Constant BoomerangLiquidity.sk2xContract (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#53) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Constant BoomerangLiquidity.p3dContract (0x0676c860e11ea7b53c09bd7f2adb70fe81c8dd1e.sol#52) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,191 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version 0.4.18 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 4,
+            "message": "Contract has 21 states declarations but allowed no more than 15",
+            "name": "max-states-count"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 11,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 12,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 13,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 14,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 59,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 54,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 70,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 71,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 30,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "error",
+            "line": 80,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 26,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "error",
+            "line": 81,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 28,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "error",
+            "line": 82,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 137,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 215,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 263,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 281,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 299,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 302,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 335,
+            "message": "When fallback is not payable you will not be able to receive ether",
+            "name": "payable-fallback"
+        },
+        {
+            "column": 53,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 386,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        },
+        {
+            "column": 54,
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "level": "warning",
+            "line": 389,
+            "message": "Avoid making time-based decisions in your business logic",
+            "name": "not-rely-on-time"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

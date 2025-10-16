@@ -1,0 +1,8 @@
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol:1:1: Compiler version 0.5.4 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol:28:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol:63:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol:69:1: Contract name must be in CamelCase [Warning/contract-name-camelcase]
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol:78:1: Contract name must be in CamelCase [Warning/contract-name-camelcase]
+/sb/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol:115:5: Provide an error message for require [Warning/reason-string]
+
+6 problems

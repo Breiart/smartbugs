@@ -1,0 +1,8 @@
+/sb/0x9a9199b6332f0d163c33bd4afaaef0c56aa5df19.sol:1:1: Compiler version ^0.4.21 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x9a9199b6332f0d163c33bd4afaaef0c56aa5df19.sol:3:1: Contract name must be in CamelCase [Warning/contract-name-camelcase]
+/sb/0x9a9199b6332f0d163c33bd4afaaef0c56aa5df19.sol:15:2: Function name must be in mixedCase [Warning/func-name-mixedcase]
+/sb/0x9a9199b6332f0d163c33bd4afaaef0c56aa5df19.sol:21:3: Provide an error message for require [Warning/reason-string]
+/sb/0x9a9199b6332f0d163c33bd4afaaef0c56aa5df19.sol:46:3: Provide an error message for require [Warning/reason-string]
+/sb/0x9a9199b6332f0d163c33bd4afaaef0c56aa5df19.sol:47:3: Provide an error message for require [Warning/reason-string]
+
+6 problems

@@ -1,0 +1,127 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.23 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 93,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 95,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 110,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 111,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 158,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 159,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 160,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 273,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 314,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 323,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 385,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 402,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0ccf3426755c88f85445e325f6f0f413e3375b49.sol",
+            "level": "warning",
+            "line": 414,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

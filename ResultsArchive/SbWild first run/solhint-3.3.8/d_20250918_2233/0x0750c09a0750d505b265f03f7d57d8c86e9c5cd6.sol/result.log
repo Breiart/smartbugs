@@ -1,0 +1,17 @@
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:1:1: Compiler version ^0.4.18 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:97:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:106:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:127:3: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:129:3: Explicitly mark visibility of state [Warning/state-visibility]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:139:12: Use double quotes for string literals [Error/quotes]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:140:14: Use double quotes for string literals [Error/quotes]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:160:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:161:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:162:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:187:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:188:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:189:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:190:5: Provide an error message for require [Warning/reason-string]
+/sb/0x0750c09a0750d505b265f03f7d57d8c86e9c5cd6.sol:279:46: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+
+15 problems

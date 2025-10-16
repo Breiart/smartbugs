@@ -1,0 +1,138 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "High",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) sends eth to arbitrary user\n\tDangerous calls:\n\t- msg.sender.transfer(address(this).balance) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#329)\n",
+            "name": "arbitrary-send-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "High",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) use msg.value in a loop: amount = msg.value.mul(weight[i]).div(weightSum) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#309)\n",
+            "name": "msg-value-loop"
+        },
+        {
+            "confidence": "High",
+            "contract": "ISetToken",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 157,
+            "line_end": 251,
+            "message": "ISetToken (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#157-251) has incorrect ERC20 function interface:ISetToken.transfer(address,uint256) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#246-250)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "Medium",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) ignores return value by (weight[i],None) = kyber.getExpectedRate(components[i],ETHER_ADDRESS,units[i]) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#303)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "Low",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) has external calls inside a loop: (weight[i],None) = kyber.getExpectedRate(components[i],ETHER_ADDRESS,units[i]) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#303)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "Low",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) has external calls inside a loop: token.balanceOf(this) > 0 (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#333)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "Low",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) has external calls inside a loop: require(bool,string)(token.transfer(msg.sender,token.balanceOf(this)),transfer failed) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#334)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "SetBuyer",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "buy",
+            "impact": "Low",
+            "line": 290,
+            "line_end": 337,
+            "message": "SetBuyer.buy(ISetToken,IKyberNetworkProxy) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#290-337) has external calls inside a loop: received = kyber.tradeWithHint.value(amount)(ETHER_ADDRESS,amount,components[i],this,1 << 255,0,0,) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#310-319)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExternalCall",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "externalCall",
+            "impact": "Informational",
+            "line": 110,
+            "line_end": 127,
+            "message": "ExternalCall.externalCall(address,uint256,bytes,uint256,uint256) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#110-127) uses assembly\n\t- INLINE ASM (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#112-127)\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData.\nIt is used by:\n\t- ^0.4.24 (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#1)\n\t- ^0.4.24 (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#148)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "IKyberNetworkProxy",
+            "filename": "samples/SmartbugsWild/0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol",
+            "function": "tradeWithHint",
+            "impact": "Optimization",
+            "line": 256,
+            "line_end": 268,
+            "message": "tradeWithHint(address,uint256,address,address,uint256,uint256,address,bytes) should be declared external:\n\t- IKyberNetworkProxy.tradeWithHint(address,uint256,address,address,uint256,uint256,address,bytes) (0x0a7f20c58c3014e1dfb7f9d460d8bc2202f7bf1f.sol#256-268)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

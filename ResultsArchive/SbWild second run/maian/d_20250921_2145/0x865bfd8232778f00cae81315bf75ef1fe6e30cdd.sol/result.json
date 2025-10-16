@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "AbleToken",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "AbleToken",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol",
+            "name": "No Ether leak (no send)"
+        },
+        {
+            "contract": "AbleToken",
+            "feature": "CANNOT_RECEIVE_ETHER",
+            "filename": "samples/SmartbugsWild/0x865bfd8232778f00cae81315bf75ef1fe6e30cdd.sol",
+            "name": "No Ether lock (Ether refused)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

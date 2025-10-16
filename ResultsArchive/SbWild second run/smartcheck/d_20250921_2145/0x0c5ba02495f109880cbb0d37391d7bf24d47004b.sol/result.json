@@ -1,0 +1,69 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 20,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 28,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 18,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 99,
+            "name": "SOLIDITY_ADDRESS_HARDCODED",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 73,
+            "name": "SOLIDITY_ERC20_APPROVE",
+            "severity": 2
+        },
+        {
+            "column": 16,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 1,
+            "name": "SOLIDITY_PRAGMAS_VERSION",
+            "severity": 1
+        },
+        {
+            "column": 21,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 88,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 23,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 92,
+            "name": "SOLIDITY_UPGRADE_TO_050",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 27,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        },
+        {
+            "column": 4,
+            "filename": "samples/SmartbugsWild/0x0c5ba02495f109880cbb0d37391d7bf24d47004b.sol",
+            "line": 28,
+            "name": "SOLIDITY_VISIBILITY",
+            "severity": 1
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "smartcheck",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,29 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol:EOCToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 60.2%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol:EOCToken:50:33
+balanceOf[_from] + balanceOf[_to]
+^
+/sb/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol:EOCToken:57:16
+balanceOf[_from] + balanceOf[_to]
+^
+INFO:symExec:	  └> Underflow bugs: 	 True
+/sb/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol:EOCToken:131:9
+totalSupply -= _value
+^
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 16.0150771141 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol:TokenERC20:
+INFO:symExec:Running, please wait...

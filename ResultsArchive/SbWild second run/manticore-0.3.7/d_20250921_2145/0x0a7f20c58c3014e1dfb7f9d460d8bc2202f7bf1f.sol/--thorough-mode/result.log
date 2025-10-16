@@ -1,0 +1,113 @@
+2025-09-22 00:50:56,853: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
+2025-09-22 00:50:56,853: [11] m.main:INFO: Beginning analysis
+2025-09-22 00:50:56,855: [11] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-22 00:50:57,219: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-22 00:50:57,295: [11] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2025-09-22 00:50:57,322: [11] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-22 00:50:57,383: [54] m.c.manticore:INFO: Generated testcase No. 0 - REVERT(2 txs)
+2025-09-22 00:50:57,384: [54] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:50:57,684: [11] m.c.manticore:INFO: Results in /mcore_z1r_zbqj
+2025-09-22 00:50:57,684: [11] m.c.manticore:INFO: Total time: 0.46376633644104004
+2025-09-22 00:50:58,133: [70] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
+2025-09-22 00:50:58,134: [70] m.main:INFO: Beginning analysis
+2025-09-22 00:50:58,135: [70] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-22 00:50:58,490: [70] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-22 00:50:58,577: [70] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2025-09-22 00:50:58,602: [70] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-22 00:50:58,663: [113] m.c.manticore:INFO: Generated testcase No. 0 - REVERT(2 txs)
+2025-09-22 00:50:58,664: [113] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:50:58,954: [70] m.c.manticore:INFO: Results in /mcore_m20qi94_
+2025-09-22 00:50:58,954: [70] m.c.manticore:INFO: Total time: 0.4621710777282715
+2025-09-22 00:50:59,405: [129] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
+2025-09-22 00:50:59,406: [129] m.main:INFO: Beginning analysis
+2025-09-22 00:50:59,407: [129] m.e.manticore:INFO: Starting symbolic create contract
+2025-09-22 00:51:01,427: [129] m.e.manticore:INFO: Starting symbolic transaction: 0
+2025-09-22 00:51:03,386: [129] m.e.detectors:WARNING: Warning ORIGIN instruction used
+2025-09-22 00:51:05,269: [129] m.u.event:WARNING: Exception raised in callback: name 'AND' is not defined
+2025-09-22 00:51:05,303: [129] m.c.worker:ERROR: Exception in state 5: NameError("name 'AND' is not defined")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3106, in execute
+    self.current_vm.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1325, in execute
+    last_pc, last_gas, instruction, arguments, fee, allocated = self._checkpoint()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1200, in _checkpoint
+    "will_evm_execute_instruction", self.instruction, self._top_arguments()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 148, in _publish
+    self._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 175, in _publish_impl
+    sink._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 175, in _publish_impl
+    sink._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 173, in _publish_impl
+    sink._publish_impl(_name, self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 166, in _publish_impl
+    callback(robj(), *new_args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/plugin.py", line 25, in g
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/detectors.py", line 171, in will_evm_execute_instruction_callback
+    constraint=AND(msg_sender == dest_address, sent_value != 0),
+NameError: name 'AND' is not defined
+ 
+2025-09-22 00:51:05,336: [129] m.e.manticore:INFO: 1 alive states, 6 terminated states
+2025-09-22 00:51:06,440: [129] m.e.manticore:INFO: Starting symbolic transaction: 1
+2025-09-22 00:51:08,350: [129] m.e.detectors:WARNING: Warning ORIGIN instruction used
+2025-09-22 00:51:10,192: [129] m.u.event:WARNING: Exception raised in callback: name 'AND' is not defined
+2025-09-22 00:51:10,193: [129] m.c.worker:ERROR: Exception in state 10: NameError("name 'AND' is not defined")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3106, in execute
+    self.current_vm.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1325, in execute
+    last_pc, last_gas, instruction, arguments, fee, allocated = self._checkpoint()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1200, in _checkpoint
+    "will_evm_execute_instruction", self.instruction, self._top_arguments()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 148, in _publish
+    self._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 175, in _publish_impl
+    sink._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 175, in _publish_impl
+    sink._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 173, in _publish_impl
+    sink._publish_impl(_name, self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 166, in _publish_impl
+    callback(robj(), *new_args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/plugin.py", line 25, in g
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/detectors.py", line 171, in will_evm_execute_instruction_callback
+    constraint=AND(msg_sender == dest_address, sent_value != 0),
+NameError: name 'AND' is not defined
+ 
+2025-09-22 00:51:10,227: [129] m.e.manticore:INFO: 1 alive states, 11 terminated states
+2025-09-22 00:51:11,480: [207] m.c.manticore:INFO: Generated testcase No. 1 - REVERT(1 txs)
+2025-09-22 00:51:11,482: [207] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:11,584: [206] m.c.manticore:INFO: Generated testcase No. 0 - RETURN(3 txs)
+2025-09-22 00:51:11,591: [206] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:11,931: [214] m.c.manticore:INFO: Generated testcase No. 3 - REVERT(2 txs)
+2025-09-22 00:51:11,932: [214] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:11,944: [216] m.c.manticore:INFO: Generated testcase No. 2 - REVERT(2 txs)
+2025-09-22 00:51:11,945: [216] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:11,963: [208] m.c.manticore:INFO: Generated testcase No. 4 - REVERT(2 txs)
+2025-09-22 00:51:11,964: [208] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:11,974: [217] m.c.manticore:INFO: Generated testcase No. 5 - REVERT(3 txs)
+2025-09-22 00:51:11,976: [217] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:12,106: [212] m.c.manticore:INFO: Generated testcase No. 6 - REVERT(2 txs)
+2025-09-22 00:51:12,110: [212] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:12,132: [223] m.c.manticore:INFO: Generated testcase No. 9 - REVERT(3 txs)
+2025-09-22 00:51:12,133: [223] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:12,158: [211] m.c.manticore:INFO: Generated testcase No. 7 - REVERT(2 txs)
+2025-09-22 00:51:12,159: [211] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:12,210: [218] m.c.manticore:INFO: Generated testcase No. 8 - REVERT(3 txs)
+2025-09-22 00:51:12,215: [218] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:12,338: [222] m.c.manticore:INFO: Generated testcase No. 11 - REVERT(3 txs)
+2025-09-22 00:51:12,344: [222] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:12,360: [220] m.c.manticore:INFO: Generated testcase No. 10 - REVERT(3 txs)
+2025-09-22 00:51:12,361: [220] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2025-09-22 00:51:21,415: [129] m.c.manticore:INFO: Results in /mcore_wqrcling
+2025-09-22 00:51:21,415: [129] m.c.manticore:INFO: Total time: 14.944517850875854

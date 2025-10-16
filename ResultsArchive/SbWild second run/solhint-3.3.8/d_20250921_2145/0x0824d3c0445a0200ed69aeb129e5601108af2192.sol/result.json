@@ -1,0 +1,247 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.4 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 6,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 62,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 6,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 10,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 75,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 10,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 16,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 75,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 16,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 23,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 94,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 23,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 79,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 29,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 95,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Code contains empty blocks",
+            "name": "no-empty-blocks"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 43,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 56,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 68,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 72,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 78,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 82,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 83,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 91,
+            "message": "When fallback is not payable you will not be able to receive ether",
+            "name": "payable-fallback"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 91,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 93,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        },
+        {
+            "column": 29,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "error",
+            "line": 107,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 109,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 119,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 13,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 126,
+            "message": "Avoid to use low level calls.",
+            "name": "avoid-low-level-calls"
+        },
+        {
+            "column": 42,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 126,
+            "message": "Use \"keccak256\" instead of deprecated \"sha3\"",
+            "name": "avoid-sha3"
+        },
+        {
+            "column": 141,
+            "filename": "samples/SmartbugsWild/0x0824d3c0445a0200ed69aeb129e5601108af2192.sol",
+            "level": "warning",
+            "line": 126,
+            "message": "\"throw\" is deprecated, avoid to use it",
+            "name": "avoid-throw"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

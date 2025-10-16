@@ -1,0 +1,11 @@
+2025-09-19 17:06:19,629 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2025-09-19 17:06:19,781 - Fuzzer   - INFO - [1mFuzzing contract [1mClinicAllRefundEscrow[0m[0m
+2025-09-19 17:06:19,793 - Fuzzer   - ERROR - [91m[1mProblem while deploying contract [91m[1mClinicAllRefundEscrow[0m[0m using account [91m[1m0xcafebabecafebabecafebabecafebabecafebabe[0m[0m. Error message: b''[0m[0m
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

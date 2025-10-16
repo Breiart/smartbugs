@@ -1,0 +1,147 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint 0.5.4 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor\n\t- IncorrectEventSignatureInLibraries\n\t- ABIEncoderV2PackedStorage.\nIt is used by:\n\t- 0.5.4 (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "message": "solc-0.5.4 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 78,
+            "line_end": 130,
+            "message": "Contract pDNA (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#78-130) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 69,
+            "line_end": 72,
+            "message": "Contract pDNADistributedRegistryInterface (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#69-72) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 122,
+            "message": "Parameter pDNA.putFile(bytes32,string)._hash (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#122) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 111,
+            "message": "Parameter pDNA.removeFile(string)._name (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#111) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 122,
+            "message": "Parameter pDNA.putFile(bytes32,string)._name (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#122) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Informational",
+            "line": 107,
+            "message": "Parameter pDNA.getFile(string)._name (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#107) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Optimization",
+            "line": 80,
+            "message": "pDNA.curators (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#80) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "impact": "Optimization",
+            "line": 83,
+            "message": "pDNA.registry (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#83) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "pDNADistributedRegistryInterface",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "function": "getProperty",
+            "impact": "Optimization",
+            "line": 70,
+            "message": "getProperty(string) should be declared external:\n\t- pDNADistributedRegistryInterface.getProperty(string) (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#70)\nMoreover, the following function parameters should change its data location:\n_eGrid location should be calldata\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "pDNA",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "function": "getFile",
+            "impact": "Optimization",
+            "line": 107,
+            "line_end": 109,
+            "message": "getFile(string) should be declared external:\n\t- pDNA.getFile(string) (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#107-109)\nMoreover, the following function parameters should change its data location:\n_name location should be calldata\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CuratorsInterface",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "function": "checkRole",
+            "impact": "Optimization",
+            "line": 75,
+            "message": "checkRole(address,string) should be declared external:\n\t- CuratorsInterface.checkRole(address,string) (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#75)\nMoreover, the following function parameters should change its data location:\n_permission location should be calldata\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "pDNA",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "function": "putFile",
+            "impact": "Optimization",
+            "line": 122,
+            "line_end": 128,
+            "message": "putFile(bytes32,string) should be declared external:\n\t- pDNA.putFile(bytes32,string) (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#122-128)\nMoreover, the following function parameters should change its data location:\n_name location should be calldata\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "pDNA",
+            "filename": "samples/SmartbugsWild/0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol",
+            "function": "removeFile",
+            "impact": "Optimization",
+            "line": 111,
+            "line_end": 120,
+            "message": "removeFile(string) should be declared external:\n\t- pDNA.removeFile(string) (0x0ccc5899ed51ce1fd512acfa4dcdd5a8ae1d3ab7.sol#111-120)\nMoreover, the following function parameters should change its data location:\n_name location should be calldata\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

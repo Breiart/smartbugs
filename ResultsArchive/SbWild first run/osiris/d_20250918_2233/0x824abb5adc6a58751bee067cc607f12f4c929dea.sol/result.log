@@ -1,0 +1,54 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:Owned:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.8%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.217820167542 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:SafeMath:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 100.0%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.00484919548035 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:StandardToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 73.5%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 16.0093998909 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x824abb5adc6a58751bee067cc607f12f4c929dea.sol:TBToken:
+INFO:symExec:Running, please wait...

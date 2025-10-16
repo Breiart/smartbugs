@@ -1,0 +1,56 @@
+INFO:root:Contract /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:EmergencySafe:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.8%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.366096019745 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:IXTPaymentContract:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 26.8%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 True
+/sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:IXTPaymentContract:83:12
+owner.send(amount)
+^
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 16.008491993 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:Ownable:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.4%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.123610019684 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:Policy:
+INFO:symExec:Running, please wait...

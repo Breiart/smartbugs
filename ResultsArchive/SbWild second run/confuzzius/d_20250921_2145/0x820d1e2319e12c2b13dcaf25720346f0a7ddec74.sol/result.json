@@ -1,0 +1,29 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "OmVPNToken",
+            "filename": "samples/SmartbugsWild/0x820d1e2319e12c2b13dcaf25720346f0a7ddec74.sol",
+            "line": 8,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "SafeMath",
+            "filename": "samples/SmartbugsWild/0x820d1e2319e12c2b13dcaf25720346f0a7ddec74.sol",
+            "line": 8,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

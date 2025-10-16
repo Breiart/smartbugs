@@ -1,0 +1,38 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "column": 33,
+            "contract": "EOCToken",
+            "filename": "samples/SmartbugsWild/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol",
+            "line": 50,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 16,
+            "contract": "EOCToken",
+            "filename": "samples/SmartbugsWild/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol",
+            "line": 57,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 9,
+            "contract": "EOCToken",
+            "filename": "samples/SmartbugsWild/0x675feee9725a652009cc115a74bc4c32ed5c4f03.sol",
+            "line": 131,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [
+        "analysis incomplete"
+    ],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

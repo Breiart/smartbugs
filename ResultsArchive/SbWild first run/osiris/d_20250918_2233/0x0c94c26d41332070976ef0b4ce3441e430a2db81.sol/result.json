@@ -1,0 +1,36 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 33,
+            "contract": "TokenERC20",
+            "filename": "samples/SmartbugsWild/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol",
+            "line": 46,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 16,
+            "contract": "TokenERC20",
+            "filename": "samples/SmartbugsWild/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol",
+            "line": 53,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 9,
+            "contract": "TokenERC20",
+            "filename": "samples/SmartbugsWild/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol",
+            "line": 126,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

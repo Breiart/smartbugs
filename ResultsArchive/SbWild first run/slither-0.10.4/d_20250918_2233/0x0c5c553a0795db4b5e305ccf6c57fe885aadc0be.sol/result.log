@@ -1,0 +1,102 @@
+'solc --version' running
+'solc /sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol:
+/sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol:277:30: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+  function withdrawalAllowed(address _payee) public view returns (bool) {
+                             ^------------^
+
+
+RefundEscrow.beneficiaryWithdraw() (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#269-272) sends eth to arbitrary user
+	Dangerous calls:
+	- beneficiary.transfer(address(this).balance) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#271)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
+
+ClinicAllRefundEscrow.deposits (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#304) shadows:
+	- Escrow.deposits (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#158)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variable-shadowing
+
+ClinicAllRefundEscrow.beneficiaryWithdrawChunk(uint256) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#494-498) should emit an event for: 
+	- beneficiaryDepositedAmount = beneficiaryDepositedAmount.sub(_value) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#496) 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-events-arithmetic
+
+ClinicAllRefundEscrow.withdrawChunk(uint256,uint256) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#432-471) has external calls inside a loop: _refundee.transfer(_paymentWithoutTxFee) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#453)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop
+
+ClinicAllRefundEscrow.withdraw(address) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#372-393) compares to a boolean constant:
+	-require(bool,string)(_data.isRefunded == false,An investor should not be refunded.) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#377)
+ClinicAllRefundEscrow.withdrawChunk(uint256,uint256) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#432-471) compares to a boolean constant:
+	-_data.isRefunded == false (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#447)
+ClinicAllRefundEscrow.withdrawChunk(uint256,uint256) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#432-471) compares to a boolean constant:
+	-require(bool,string)(_dataCleanup.isRefunded == true,Investors in this list should be refunded.) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#465)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#boolean-equality
+
+Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData.
+It is used by:
+	- ^0.4.24 (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter Ownable.transferOwnership(address)._newOwner (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#76) is not in mixedCase
+Parameter Escrow.depositsOf(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#160) is not in mixedCase
+Parameter Escrow.deposit(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#168) is not in mixedCase
+Parameter Escrow.withdraw(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#179) is not in mixedCase
+Parameter ConditionalEscrow.withdraw(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#205) is not in mixedCase
+Parameter RefundEscrow.deposit(address)._refundee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#242) is not in mixedCase
+Parameter ClinicAllRefundEscrow.depositsOf(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#322) is not in mixedCase
+Parameter ClinicAllRefundEscrow.beneficiaryDepositsOf(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#326) is not in mixedCase
+Parameter ClinicAllRefundEscrow.deposit(address)._refundee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#335) is not in mixedCase
+Parameter ClinicAllRefundEscrow.depositFunds(address,uint256)._refundee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#346) is not in mixedCase
+Parameter ClinicAllRefundEscrow.depositFunds(address,uint256)._value (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#346) is not in mixedCase
+Parameter ClinicAllRefundEscrow.withdraw(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#372) is not in mixedCase
+Parameter ClinicAllRefundEscrow.manualRefund(address)._payee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#399) is not in mixedCase
+Parameter ClinicAllRefundEscrow.removeRefundeeByIndex(uint256)._indexToDelete (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#414) is not in mixedCase
+Parameter ClinicAllRefundEscrow.withdrawChunk(uint256,uint256)._txFee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#432) is not in mixedCase
+Parameter ClinicAllRefundEscrow.withdrawChunk(uint256,uint256)._chunkLength (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#432) is not in mixedCase
+Parameter ClinicAllRefundEscrow.withdrawEverything(uint256)._txFee (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#477) is not in mixedCase
+Parameter ClinicAllRefundEscrow.beneficiaryWithdrawChunk(uint256)._value (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#494) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+Reentrancy in Escrow.withdraw(address) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#179-188):
+	External calls:
+	- _payee.transfer(payment) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#185)
+	Event emitted after the call(s):
+	- Withdrawn(_payee,payment) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#187)
+Reentrancy in ClinicAllRefundEscrow.withdraw(address) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#372-393):
+	External calls:
+	- _payee.transfer(payment) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#386)
+	State variables written after the call(s):
+	- _data.isRefunded = true (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#390)
+	- removeRefundeeByIndex(_data.index) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#392)
+		- refundeesList[_indexToDelete] = refundeesList[_lastIndex] (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#417)
+		- refundeesList.length -- (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#418)
+	Event emitted after the call(s):
+	- Withdrawn(_payee,payment) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#388)
+Reentrancy in ClinicAllRefundEscrow.withdrawChunk(uint256,uint256) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#432-471):
+	External calls:
+	- _refundee.transfer(_paymentWithoutTxFee) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#453)
+	State variables written after the call(s):
+	- _data.isRefunded = true (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#455)
+	- removeRefundeeByIndex(_dataCleanup.index) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#466)
+		- refundeesList[_indexToDelete] = refundeesList[_lastIndex] (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#417)
+		- refundeesList.length -- (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#418)
+	Event emitted after the call(s):
+	- Withdrawn(_refundee,_paymentWithoutTxFee) (../../sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol#454)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-4
+/sb/0x0c5c553a0795db4b5e305ccf6c57fe885aadc0be.sol analyzed (7 contracts with 93 detectors), 30 result(s) found

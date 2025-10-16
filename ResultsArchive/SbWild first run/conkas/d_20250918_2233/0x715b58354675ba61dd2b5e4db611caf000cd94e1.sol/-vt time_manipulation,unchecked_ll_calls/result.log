@@ -1,0 +1,51 @@
+Exception in time_manipulation,unchecked_ll_calls module
+Traceback (most recent call last):
+  File "/conkas/vuln_finder/vulnerability_finder.py", line 51, in __analyse_modules
+    vulns = vuln_finder.available_modules[vuln_module_key](self._traces, self._find_all)
+KeyError: 'time_manipulation,unchecked_ll_calls'
+Exception in time_manipulation,unchecked_ll_calls module
+Traceback (most recent call last):
+  File "/conkas/vuln_finder/vulnerability_finder.py", line 51, in __analyse_modules
+    vulns = vuln_finder.available_modules[vuln_module_key](self._traces, self._find_all)
+KeyError: 'time_manipulation,unchecked_ll_calls'
+Exception in time_manipulation,unchecked_ll_calls module
+Traceback (most recent call last):
+  File "/conkas/vuln_finder/vulnerability_finder.py", line 51, in __analyse_modules
+    vulns = vuln_finder.available_modules[vuln_module_key](self._traces, self._find_all)
+KeyError: 'time_manipulation,unchecked_ll_calls'
+Exception in time_manipulation,unchecked_ll_calls module
+Traceback (most recent call last):
+  File "/conkas/vuln_finder/vulnerability_finder.py", line 51, in __analyse_modules
+    vulns = vuln_finder.available_modules[vuln_module_key](self._traces, self._find_all)
+KeyError: 'time_manipulation,unchecked_ll_calls'
+PHI instruction need arguments but 0 was given
+
+Traceback (most recent call last):
+  File "conkas.py", line 114, in main
+    traces = sym_exec.execute()
+  File "/conkas/sym_exec/symbolic_executor.py", line 51, in execute
+    new_traces = self.__sym_exec_traces(traces_to_execute)
+  File "/conkas/sym_exec/symbolic_executor.py", line 64, in __sym_exec_traces
+    new_blocks = self.__sym_exec_block(block_to_analyse, trace.state)
+  File "/conkas/sym_exec/symbolic_executor.py", line 93, in __sym_exec_block
+    new_blocks = self.__sym_exec_instruction(instruction, state)
+  File "/conkas/sym_exec/symbolic_executor.py", line 116, in __sym_exec_instruction
+    return func(instruction, state)
+  File "/conkas/sym_exec/instructions/rattle_instructions.py", line 58, in inst_phi
+    raise Exception
+Exception
+Exception in time_manipulation,unchecked_ll_calls module
+Traceback (most recent call last):
+  File "/conkas/vuln_finder/vulnerability_finder.py", line 51, in __analyse_modules
+    vulns = vuln_finder.available_modules[vuln_module_key](self._traces, self._find_all)
+KeyError: 'time_manipulation,unchecked_ll_calls'
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:ERC20Interface...
+Nothing to analyse
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:EmergencySafe...
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:IXTPaymentContract...
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:Ownable...
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:Policy...
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:PolicyRegistry...
+Analysing /sb/0x715b58354675ba61dd2b5e4db611caf000cd94e1.sol:Upgradeable...

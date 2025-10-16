@@ -1,0 +1,119 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.25 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 33,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 75,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 77,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 83,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 84,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 108,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 109,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 110,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 171,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 184,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 188,
+            "message": "Function name must be in mixedCase",
+            "name": "func-name-mixedcase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x823ddda8fb4b1faf08dfc7440b98366454295d28.sol",
+            "level": "warning",
+            "line": 193,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

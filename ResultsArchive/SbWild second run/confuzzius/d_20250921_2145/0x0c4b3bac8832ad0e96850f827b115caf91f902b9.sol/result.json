@@ -1,0 +1,45 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol",
+            "line": 47,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "StandardToken",
+            "filename": "samples/SmartbugsWild/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol",
+            "line": 48,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "UMINT24",
+            "filename": "samples/SmartbugsWild/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol",
+            "line": 47,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "UMINT24",
+            "filename": "samples/SmartbugsWild/0x0c4b3bac8832ad0e96850f827b115caf91f902b9.sol",
+            "line": 48,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

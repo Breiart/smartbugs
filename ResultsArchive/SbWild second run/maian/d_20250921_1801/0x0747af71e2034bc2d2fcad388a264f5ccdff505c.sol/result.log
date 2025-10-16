@@ -1,0 +1,36 @@
+
+====================================================================================================
+[1m[ ] Compiling Solidity contract from the file /sb/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol ... [0m[92m Done [0m
+[1m[ ] Connecting to PRIVATE blockchain emptychain  [0m.[92m ESTABLISHED [0m
+[1m[ ] Deploying contract [0m[92m confirmed at address: 0x9E536236ABF2288a7864C6A1AfaA4Cb98D464306 [0m
+[1m[ ] Contract code length on the blockchain : [0m [92m  5710  : 0x6080604052600436106100e65760... [0m
+[1m[ ] Contract address saved in file: [0m[92m./out/BlockVentureCoin.address [0m
+[94m[ ] Check if contract is SUICIDAL[0m
+
+[ ] Contract address   : 0x9E536236ABF2288a7864C6A1AfaA4Cb98D464306
+[ ] Contract bytecode  : 6080604052600436106100e6576000357c0100000000000000...
+[ ] Bytecode length    : 11420
+[ ] Blockchain contract: True
+[ ] Debug              : False
+
+[92m[-] The code does not contain SUICIDE instructions, hence it is not vulnerable[0m
+
+====================================================================================================
+[1m[ ] Compiling Solidity contract from the file /sb/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol ... [0m[92m Done [0m
+[1m[ ] Connecting to PRIVATE blockchain emptychain  [0m.[92m ESTABLISHED [0m
+[1m[ ] Sending Ether to contract 0x9E536236ABF2288a7864C6A1AfaA4Cb98D464306  [0m......... tx[0] mined [92m Sent! [0m
+[1m[ ] Deploying contract [0m[92m confirmed at address: 0x9E536236ABF2288a7864C6A1AfaA4Cb98D464306 [0m
+[1m[ ] Contract code length on the blockchain : [0m [92m  5710  : 0x6080604052600436106100e65760... [0m
+[1m[ ] Contract address saved in file: [0m[92m./out/BlockVentureCoin.address [0m
+[1m[ ] The contract balance: 44  [0m[92m Positive balance[0m
+[94m[ ] Check if contract is PRODIGAL[0m
+
+[ ] Contract address   : 0x9E536236ABF2288a7864C6A1AfaA4Cb98D464306
+[ ] Contract bytecode  : 6080604052600436106100e6576000357c0100000000000000...
+[ ] Bytecode length    : 11420
+[ ] Blockchain contract: True
+[ ] Debug              : False
+
+[ ][1m Search with call depth: 1   : [0m1111111
+[ ][1m Search with call depth: 2   : [0m12222222122222221222222212222222122222221222222212222222
+[ ][1m Search with call depth: 3   : [0m12233333332333333

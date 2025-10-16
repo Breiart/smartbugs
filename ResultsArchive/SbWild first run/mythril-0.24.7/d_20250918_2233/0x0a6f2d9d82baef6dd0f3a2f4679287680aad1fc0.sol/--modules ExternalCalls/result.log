@@ -1,0 +1,1 @@
+{"success": false, "error": "Solc experienced a fatal error.\n\n/sb/0x0a6f2d9d82baef6dd0f3a2f4679287680aad1fc0.sol:44:14: ParserError: Expected identifier, got 'LParen'\n  constructor() public{\r\n             ^\n", "issues": []}

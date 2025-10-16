@@ -1,0 +1,13 @@
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:1:1: Compiler version ^0.4.16 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:3:1: Contract name must be in CamelCase [Warning/contract-name-camelcase]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:31:16: Use double quotes for string literals [Error/quotes]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:32:18: Use double quotes for string literals [Error/quotes]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:40:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:42:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:44:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:78:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:124:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:140:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0c94c26d41332070976ef0b4ce3441e430a2db81.sol:141:9: Provide an error message for require [Warning/reason-string]
+
+11 problems

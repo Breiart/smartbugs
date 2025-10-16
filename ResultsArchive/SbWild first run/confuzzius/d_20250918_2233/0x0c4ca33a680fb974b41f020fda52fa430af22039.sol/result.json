@@ -1,0 +1,127 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "BasicToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 171,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "BasicToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 171,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "MintableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 171,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "MintableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 45,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "MintableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 46,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 224,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 171,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 45,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 46,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "OREX",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 171,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "PausableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 224,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        },
+        {
+            "contract": "PausableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 45,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "PausableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 46,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "PausableToken",
+            "filename": "samples/SmartbugsWild/0x0c4ca33a680fb974b41f020fda52fa430af22039.sol",
+            "line": 224,
+            "message": "Classification: SWC-120",
+            "name": "Block Dependency",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

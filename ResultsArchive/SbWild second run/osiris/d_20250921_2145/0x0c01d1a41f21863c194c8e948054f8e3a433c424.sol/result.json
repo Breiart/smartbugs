@@ -1,0 +1,26 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "column": 9,
+            "contract": "TombAction",
+            "filename": "samples/SmartbugsWild/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol",
+            "line": 133,
+            "name": "Truncation bugs"
+        }
+    ],
+    "infos": [
+        "analysis incomplete"
+    ],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

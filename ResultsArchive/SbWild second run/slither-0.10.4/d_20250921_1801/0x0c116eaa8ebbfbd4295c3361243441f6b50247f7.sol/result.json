@@ -1,0 +1,158 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "High",
+            "line": 114,
+            "message": "BIFAToken.totalSupply (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#114) shadows:\n\t- RegularToken.totalSupply (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#78)\n",
+            "name": "shadowing-state"
+        },
+        {
+            "confidence": "High",
+            "contract": "RegularToken",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "function": "allowance",
+            "impact": "Low",
+            "line": 94,
+            "message": "UnboundedRegularToken.transferFrom(address,address,uint256).allowance (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#94) shadows:\n\t- RegularToken.allowance(address,address) (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#72-74) (function)\n\t- Token.allowance(address,address) (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#34) (function)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint 0.4.19 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- 0.4.19 (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.19 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 42,
+            "message": "Parameter RegularToken.transfer(address,uint256)._to (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#42) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 90,
+            "message": "Parameter UnboundedRegularToken.transferFrom(address,address,uint256)._value (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#90) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 90,
+            "message": "Parameter UnboundedRegularToken.transferFrom(address,address,uint256)._to (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#90) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 90,
+            "message": "Parameter UnboundedRegularToken.transferFrom(address,address,uint256)._from (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#90) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 72,
+            "message": "Parameter RegularToken.allowance(address,address)._owner (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#72) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 72,
+            "message": "Parameter RegularToken.allowance(address,address)._spender (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#72) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 62,
+            "message": "Parameter RegularToken.balanceOf(address)._owner (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#62) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Parameter RegularToken.transferFrom(address,address,uint256)._value (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#52) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Parameter RegularToken.transferFrom(address,address,uint256)._to (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#52) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 66,
+            "message": "Parameter RegularToken.approve(address,uint256)._spender (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#66) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 42,
+            "message": "Parameter RegularToken.transfer(address,uint256)._value (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#42) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Parameter RegularToken.transferFrom(address,address,uint256)._from (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#52) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Informational",
+            "line": 66,
+            "message": "Parameter RegularToken.approve(address,uint256)._value (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#66) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "impact": "Optimization",
+            "line": 114,
+            "message": "BIFAToken.totalSupply (0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol#114) should be constant \n",
+            "name": "constable-states"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

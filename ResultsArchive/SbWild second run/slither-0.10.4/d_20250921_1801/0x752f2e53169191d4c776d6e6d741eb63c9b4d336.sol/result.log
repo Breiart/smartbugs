@@ -1,0 +1,79 @@
+'solc --version' running
+'solc /sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+FreeFeeCoin.constructor(string,string,address,address,address)._owner (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#378) lacks a zero-check on :
+		- owner = _owner (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#387)
+FreeFeeCoin.constructor(string,string,address,address,address)._admin (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#378) lacks a zero-check on :
+		- admin = _admin (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#388)
+FreeFeeCoin.constructor(string,string,address,address,address)._vault (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#378) lacks a zero-check on :
+		- vault = _vault (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#389)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData.
+It is used by:
+	- ^0.4.24 (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter SafeMath.mul(uint256,uint256)._a (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#28) is not in mixedCase
+Parameter SafeMath.mul(uint256,uint256)._b (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#28) is not in mixedCase
+Parameter SafeMath.div(uint256,uint256)._a (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#44) is not in mixedCase
+Parameter SafeMath.div(uint256,uint256)._b (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#44) is not in mixedCase
+Parameter SafeMath.sub(uint256,uint256)._a (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#54) is not in mixedCase
+Parameter SafeMath.sub(uint256,uint256)._b (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#54) is not in mixedCase
+Parameter SafeMath.add(uint256,uint256)._a (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#62) is not in mixedCase
+Parameter SafeMath.add(uint256,uint256)._b (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#62) is not in mixedCase
+Parameter BasicToken.transfer(address,uint256)._to (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#94) is not in mixedCase
+Parameter BasicToken.transfer(address,uint256)._value (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#94) is not in mixedCase
+Parameter BasicToken.balanceOf(address)._owner (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#109) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._from (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#157) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._to (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#158) is not in mixedCase
+Parameter StandardToken.transferFrom(address,address,uint256)._value (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#159) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._spender (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#184) is not in mixedCase
+Parameter StandardToken.approve(address,uint256)._value (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#184) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._owner (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#197) is not in mixedCase
+Parameter StandardToken.allowance(address,address)._spender (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#198) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._spender (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#217) is not in mixedCase
+Parameter StandardToken.increaseApproval(address,uint256)._addedValue (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#218) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._spender (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#239) is not in mixedCase
+Parameter StandardToken.decreaseApproval(address,uint256)._subtractedValue (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#240) is not in mixedCase
+Parameter FreeFeeCoin.setReserve(address,uint256)._address (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#405) is not in mixedCase
+Parameter FreeFeeCoin.setReserve(address,uint256)._reserve (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#405) is not in mixedCase
+Parameter FreeFeeCoin.transfer(address,uint256)._to (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#417) is not in mixedCase
+Parameter FreeFeeCoin.transfer(address,uint256)._value (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#417) is not in mixedCase
+Parameter FreeFeeCoin.setVault(address)._newVault (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#429) is not in mixedCase
+Parameter FreeFeeCoin.setOwner(address)._newOwner (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#454) is not in mixedCase
+Parameter FreeFeeCoin.setAdmin(address)._newAdmin (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#466) is not in mixedCase
+Parameter FreeFeeCoin.recall(address,uint256)._from (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#483) is not in mixedCase
+Parameter FreeFeeCoin.recall(address,uint256)._amount (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#483) is not in mixedCase
+Parameter FreeFeeCoin.transferFrom(address,address,uint256)._from (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#511) is not in mixedCase
+Parameter FreeFeeCoin.transferFrom(address,address,uint256)._to (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#511) is not in mixedCase
+Parameter FreeFeeCoin.transferFrom(address,address,uint256)._value (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#511) is not in mixedCase
+Parameter FreeFeeCoin.reserveOf(address)._address (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#539) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+FreeFeeCoin.slitherConstructorVariables() (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#262-550) uses literals with too many digits:
+	- noOfTokens = 2500000000 (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#267)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+
+FreeFeeCoin.decimals (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#265) should be constant 
+FreeFeeCoin.noOfTokens (../../sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol#267) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+/sb/0x752f2e53169191d4c776d6e6d741eb63c9b4d336.sol analyzed (6 contracts with 93 detectors), 43 result(s) found

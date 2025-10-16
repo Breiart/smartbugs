@@ -1,0 +1,119 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.21 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 27,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 30,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 31,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 32,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 34,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 2,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 35,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 51,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 61,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 73,
+            "message": "Avoid to use inline assembly. It is acceptable only in rare cases",
+            "name": "no-inline-assembly"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 81,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 93,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x747bae8392c526754abc01fa519fa4c1bcb41cc5.sol",
+            "level": "warning",
+            "line": 106,
+            "message": "Provide an error message for revert",
+            "name": "reason-string"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

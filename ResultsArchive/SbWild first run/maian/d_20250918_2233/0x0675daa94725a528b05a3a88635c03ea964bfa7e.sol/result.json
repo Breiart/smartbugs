@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "CrowdsaleParameters",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "CrowdsaleParameters",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x0675daa94725a528b05a3a88635c03ea964bfa7e.sol",
+            "name": "No Ether leak (no send)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

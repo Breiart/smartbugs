@@ -1,0 +1,22 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 9,
+            "contract": "XBYR",
+            "filename": "samples/SmartbugsWild/0x714f301b4f0df04b81169a51506e2458917dbb56.sol",
+            "line": 81,
+            "name": "Overflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

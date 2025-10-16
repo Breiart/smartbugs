@@ -1,0 +1,184 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "DCUCoin",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "fallback",
+            "impact": "Medium",
+            "line": 135,
+            "line_end": 210,
+            "message": "Contract locking ether found:\n\tContract DCUCoin (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#135-210) has payable functions:\n\t - DCUCoin.fallback() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#150-152)\n\tBut does not have a function to withdraw the ether\n",
+            "name": "locked-ether"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSAuth",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "setOwner",
+            "impact": "Medium",
+            "line": 23,
+            "line_end": 29,
+            "message": "Reentrancy in DSAuth.setOwner(address) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#23-29):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#25)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tState variables written after the call(s):\n\t- owner = owner_ (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#27)\n\tDSAuth.owner (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#16) can be used in cross function reentrancies:\n\t- DSAuth.constructor() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#18-21)\n\t- DSAuth.isAuthorized(address,bytes4) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#44-54)\n\t- DSAuth.owner (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#16)\n\t- DSAuth.setOwner(address) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#23-29)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSAuth",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "setAuthority",
+            "impact": "Medium",
+            "line": 31,
+            "line_end": 37,
+            "message": "Reentrancy in DSAuth.setAuthority(DSAuthority) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#31-37):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#33)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tState variables written after the call(s):\n\t- authority = authority_ (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#35)\n\tDSAuth.authority (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#15) can be used in cross function reentrancies:\n\t- DSAuth.authority (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#15)\n\t- DSAuth.isAuthorized(address,bytes4) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#44-54)\n\t- DSAuth.setAuthority(DSAuthority) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#31-37)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "impact": "Low",
+            "line": 23,
+            "message": "DSAuth.setOwner(address).owner_ (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#23) lacks a zero-check on :\n\t\t- owner = owner_ (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#27)\n",
+            "name": "missing-zero-check"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSStop",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "start",
+            "impact": "Low",
+            "line": 94,
+            "line_end": 96,
+            "message": "Reentrancy in DSStop.start() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#94-96):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#94)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tState variables written after the call(s):\n\t- stopped = false (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#95)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DCUCoin",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "setName",
+            "impact": "Low",
+            "line": 154,
+            "line_end": 156,
+            "message": "Reentrancy in DCUCoin.setName(string) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#154-156):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#154)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tState variables written after the call(s):\n\t- name = token_name (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#155)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSStop",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "stop",
+            "impact": "Low",
+            "line": 90,
+            "line_end": 92,
+            "message": "Reentrancy in DSStop.stop() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#90-92):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#90)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tState variables written after the call(s):\n\t- stopped = true (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#91)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSAuth",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "setAuthority",
+            "impact": "Low",
+            "line": 31,
+            "line_end": 37,
+            "message": "Reentrancy in DSAuth.setAuthority(DSAuthority) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#31-37):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#33)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tEvent emitted after the call(s):\n\t- LogSetAuthority(authority) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#36)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSStop",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "stop",
+            "impact": "Low",
+            "line": 90,
+            "line_end": 92,
+            "message": "Reentrancy in DSStop.stop() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#90-92):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#90)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tEvent emitted after the call(s):\n\t- LogNote(msg.sig,msg.sender,foo,bar,msg.value,msg.data) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#76)\n\t\t- note() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#90)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSStop",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "start",
+            "impact": "Low",
+            "line": 94,
+            "line_end": 96,
+            "message": "Reentrancy in DSStop.start() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#94-96):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#94)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tEvent emitted after the call(s):\n\t- LogNote(msg.sig,msg.sender,foo,bar,msg.value,msg.data) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#76)\n\t\t- note() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#94)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSAuth",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "setOwner",
+            "impact": "Low",
+            "line": 23,
+            "line_end": 29,
+            "message": "Reentrancy in DSAuth.setOwner(address) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#23-29):\n\tExternal calls:\n\t- auth() (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#25)\n\t\t- authority.canCall(src,this,sig) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#52)\n\tEvent emitted after the call(s):\n\t- LogSetOwner(owner) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#28)\n",
+            "name": "reentrancy-events"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DSMath",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "mul",
+            "impact": "Informational",
+            "line": 109,
+            "line_end": 111,
+            "message": "DSMath.mul(uint256,uint256) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#109-111) is never used and should be removed\n",
+            "name": "dead-code"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.23 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ABIEncoderV2PackedStorage_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData.\nIt is used by:\n\t- ^0.4.23 (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "impact": "Informational",
+            "line": 154,
+            "message": "Parameter DCUCoin.setName(string).token_name (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#154) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "impact": "Optimization",
+            "line": 138,
+            "message": "DCUCoin.decimals (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#138) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "DCUCoin",
+            "filename": "samples/SmartbugsWild/0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol",
+            "function": "setName",
+            "impact": "Optimization",
+            "line": 154,
+            "line_end": 156,
+            "message": "setName(string) should be declared external:\n\t- DCUCoin.setName(string) (0x0c93bd73cbb8b4a4abb8e811d5cb7887133ffa3b.sol#154-156)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

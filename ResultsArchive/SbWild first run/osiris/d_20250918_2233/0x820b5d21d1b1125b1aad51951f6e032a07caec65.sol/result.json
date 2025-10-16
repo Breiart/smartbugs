@@ -1,0 +1,71 @@
+{
+    "errors": [
+        "SYMBOLIC EXECUTION TIMEOUT"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 13,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 150,
+            "name": "Concurrency bug"
+        },
+        {
+            "column": 5,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 152,
+            "name": "Concurrency bug"
+        },
+        {
+            "column": 5,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 126,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 42,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 146,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 5,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 164,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 5,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 134,
+            "name": "Time dependency bug"
+        },
+        {
+            "column": 7,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 95,
+            "name": "Underflow bugs"
+        },
+        {
+            "column": 26,
+            "contract": "MonethaBuyer",
+            "filename": "samples/SmartbugsWild/0x820b5d21d1b1125b1aad51951f6e032a07caec65.sol",
+            "line": 146,
+            "name": "Underflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

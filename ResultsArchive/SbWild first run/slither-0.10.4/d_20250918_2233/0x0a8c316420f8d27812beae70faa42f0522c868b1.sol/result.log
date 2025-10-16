@@ -1,0 +1,85 @@
+'solc --version' running
+'solc /sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+Compilation warnings/errors on /sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:120:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function WAVEliteToken() public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:69:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnershipTransferred(owner, newOwner);
+    ^-----------------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:94:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Pause();
+        ^-----^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:99:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Unpause();
+        ^-------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:124:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(0x0, msg.sender, INITIAL_SUPPLY);
+        ^---------------------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:142:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(msg.sender, _to, _value);
+        ^-------------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:158:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(_from, _to, _value);
+        ^--------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:164:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Approval(msg.sender, _spender, _value);
+        ^------------------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:170:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        ^-----------------------------------------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:180:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        ^-----------------------------------------------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:194:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Burn(burner, _value);
+        ^------------------^
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol:195:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(burner, address(0), _value);      
+        ^----------------------------------^
+
+
+Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData
+	- NestedArrayFunctionCallDecoder.
+It is used by:
+	- ^0.4.18 (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter WAVEliteToken.balanceOf(address)._who (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#131) is not in mixedCase
+Parameter WAVEliteToken.transfer(address,uint256)._to (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#135) is not in mixedCase
+Parameter WAVEliteToken.transfer(address,uint256)._value (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#135) is not in mixedCase
+Parameter WAVEliteToken.allowance(address,address)._owner (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#146) is not in mixedCase
+Parameter WAVEliteToken.allowance(address,address)._spender (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#146) is not in mixedCase
+Parameter WAVEliteToken.transferFrom(address,address,uint256)._from (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#150) is not in mixedCase
+Parameter WAVEliteToken.transferFrom(address,address,uint256)._to (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#150) is not in mixedCase
+Parameter WAVEliteToken.transferFrom(address,address,uint256)._value (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#150) is not in mixedCase
+Parameter WAVEliteToken.approve(address,uint256)._spender (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#162) is not in mixedCase
+Parameter WAVEliteToken.approve(address,uint256)._value (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#162) is not in mixedCase
+Parameter WAVEliteToken.increaseApproval(address,uint256)._spender (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#168) is not in mixedCase
+Parameter WAVEliteToken.increaseApproval(address,uint256)._addValue (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#168) is not in mixedCase
+Parameter WAVEliteToken.decreaseApproval(address,uint256)._spender (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#174) is not in mixedCase
+Parameter WAVEliteToken.decreaseApproval(address,uint256)._subValue (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#174) is not in mixedCase
+Parameter WAVEliteToken.burn(uint256)._value (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#189) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+WAVEliteToken.slitherConstructorConstantVariables() (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#106-198) uses literals with too many digits:
+	- INITIAL_SUPPLY = 45000000 * (10 ** uint256(decimals)) (../../sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#118)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+/sb/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol analyzed (5 contracts with 93 detectors), 18 result(s) found

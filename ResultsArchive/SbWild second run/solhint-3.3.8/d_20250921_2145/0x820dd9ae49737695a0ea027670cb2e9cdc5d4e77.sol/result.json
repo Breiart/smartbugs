@@ -1,0 +1,79 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "error",
+            "line": 31,
+            "message": "Compiler version 0.4.24 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 52,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 54,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 56,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 58,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 59,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 60,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820dd9ae49737695a0ea027670cb2e9cdc5d4e77.sol",
+            "level": "warning",
+            "line": 195,
+            "message": "Avoid to use inline assembly. It is acceptable only in rare cases",
+            "name": "no-inline-assembly"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

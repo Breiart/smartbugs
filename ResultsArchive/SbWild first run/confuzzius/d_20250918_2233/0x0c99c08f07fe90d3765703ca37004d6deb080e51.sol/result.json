@@ -1,0 +1,61 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "contract": "LimitedTransferBancorSmartToken",
+            "filename": "samples/SmartbugsWild/0x0c99c08f07fe90d3765703ca37004d6deb080e51.sol",
+            "line": 28,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "LimitedTransferBancorSmartToken",
+            "filename": "samples/SmartbugsWild/0x0c99c08f07fe90d3765703ca37004d6deb080e51.sol",
+            "line": 29,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "MintableToken",
+            "filename": "samples/SmartbugsWild/0x0c99c08f07fe90d3765703ca37004d6deb080e51.sol",
+            "line": 28,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "MintableToken",
+            "filename": "samples/SmartbugsWild/0x0c99c08f07fe90d3765703ca37004d6deb080e51.sol",
+            "line": 29,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        },
+        {
+            "contract": "SirinSmartToken",
+            "filename": "samples/SmartbugsWild/0x0c99c08f07fe90d3765703ca37004d6deb080e51.sol",
+            "line": 28,
+            "message": "Classification: SWC-101",
+            "name": "Integer Overflow",
+            "severity": "High"
+        },
+        {
+            "contract": "SirinSmartToken",
+            "filename": "samples/SmartbugsWild/0x0c99c08f07fe90d3765703ca37004d6deb080e51.sol",
+            "line": 29,
+            "message": "Classification: SWC-110",
+            "name": "Assertion Failure",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "confuzzius",
+        "mode": "solidity",
+        "version": "2022/12/31"
+    },
+    "tool_args": ""
+}

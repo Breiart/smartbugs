@@ -1,0 +1,95 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.25 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 50,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 57,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 68,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 49,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 78,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 92,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 93,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 29,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "error",
+            "line": 109,
+            "message": "Use double quotes for string literals",
+            "name": "quotes"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 133,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 17,
+            "filename": "samples/SmartbugsWild/0x820ff8ccf3e70070cc742db2d64b124d83fcfa76.sol",
+            "level": "warning",
+            "line": 133,
+            "message": "Avoid to use low level calls.",
+            "name": "avoid-low-level-calls"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

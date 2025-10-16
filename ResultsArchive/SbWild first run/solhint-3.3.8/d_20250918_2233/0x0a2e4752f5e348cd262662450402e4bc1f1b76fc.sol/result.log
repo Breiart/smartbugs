@@ -1,0 +1,11 @@
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:1:1: Compiler version ^0.4.16 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:3:1: Contract name must be in CamelCase [Warning/contract-name-camelcase]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:39:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:41:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:43:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:67:25: Visibility modifier must be first in list of modifiers [Warning/visibility-modifier-order]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:67:5: Fallback function must be simple [Warning/no-complex-fallback]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:71:9: Provide an error message for require [Warning/reason-string]
+/sb/0x0a2e4752f5e348cd262662450402e4bc1f1b76fc.sol:72:9: Provide an error message for require [Warning/reason-string]
+
+9 problems

@@ -1,0 +1,277 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 329,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#329):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 215,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#215):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 289,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#289):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 283,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#283):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 331,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#331):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 311,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#311):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 287,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#287):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 211,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#211):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 285,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#285):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 213,
+            "message": "Deprecated standard detected THROW (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#213):\n\t- Usage of \"throw\" should be replaced with \"revert()\"\n",
+            "name": "deprecated-standards"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.11 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- NestedArrayFunctionCallDecoder\n\t- ZeroFunctionSelector\n\t- DelegateCallReturnValue\n\t- ECRecoverMalformedInput\n\t- SkipEmptyStringLiteral.\nIt is used by:\n\t- ^0.4.11 (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 281,
+            "message": "Parameter BlockVentureCoin.transferFrom(address,address,uint256)._value (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#281) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 5,
+            "line_end": 9,
+            "message": "Contract tokenRecipient (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#5-9) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 209,
+            "message": "Parameter BlockVentureCoin.transfer(address,uint256)._to (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#209) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Parameter BlockVentureCoin.allowance(address,address)._owner (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 325,
+            "message": "Parameter BlockVentureCoin.burnFrom(address,uint256)._from (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#325) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 325,
+            "message": "Parameter BlockVentureCoin.burnFrom(address,uint256)._value (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#325) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 237,
+            "message": "Parameter BlockVentureCoin.approve(address,uint256)._value (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#237) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 309,
+            "message": "Parameter BlockVentureCoin.burn(uint256)._value (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#309) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 281,
+            "message": "Parameter BlockVentureCoin.transferFrom(address,address,uint256)._from (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#281) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 209,
+            "message": "Parameter BlockVentureCoin.transfer(address,uint256)._value (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#209) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 253,
+            "message": "Parameter BlockVentureCoin.approveAndCall(address,uint256,bytes)._extraData (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#253) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 237,
+            "message": "Parameter BlockVentureCoin.approve(address,uint256)._spender (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#237) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 253,
+            "message": "Parameter BlockVentureCoin.approveAndCall(address,uint256,bytes)._value (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#253) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 281,
+            "message": "Parameter BlockVentureCoin.transferFrom(address,address,uint256)._to (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#281) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Parameter BlockVentureCoin.allowance(address,address)._spender (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Informational",
+            "line": 253,
+            "message": "Parameter BlockVentureCoin.approveAndCall(address,uint256,bytes)._spender (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#253) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BlockVentureCoin",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "function": "BlockVentureCoin",
+            "impact": "Informational",
+            "line": 109,
+            "line_end": 135,
+            "message": "BlockVentureCoin.BlockVentureCoin() (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#109-135) uses literals with too many digits:\n\t- supply = 10000000000000000 (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#113)\n",
+            "name": "too-many-digits"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "impact": "Optimization",
+            "line": 61,
+            "message": "BlockVentureCoin.standard (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#61) should be constant \n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "tokenRecipient",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "function": "receiveApproval",
+            "impact": "Optimization",
+            "line": 7,
+            "message": "receiveApproval(address,uint256,address,bytes) should be declared external:\n\t- tokenRecipient.receiveApproval(address,uint256,address,bytes) (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#7)\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BlockVentureCoin",
+            "filename": "samples/SmartbugsWild/0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol",
+            "function": "approveAndCall",
+            "impact": "Optimization",
+            "line": 253,
+            "line_end": 267,
+            "message": "approveAndCall(address,uint256,bytes) should be declared external:\n\t- BlockVentureCoin.approveAndCall(address,uint256,bytes) (0x0747af71e2034bc2d2fcad388a264f5ccdff505c.sol#253-267)\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

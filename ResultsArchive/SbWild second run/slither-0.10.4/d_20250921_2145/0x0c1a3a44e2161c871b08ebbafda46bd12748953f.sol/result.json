@@ -1,0 +1,290 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "RISTToken",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "function": "RISTToken",
+            "impact": "Medium",
+            "line": 414,
+            "line_end": 438,
+            "message": "Contract locking ether found:\n\tContract RISTToken (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#414-438) has payable functions:\n\t - RISTToken.RISTToken() (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#420-435)\n\tBut does not have a function to withdraw the ether\n",
+            "name": "locked-ether"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.18 (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 397,
+            "message": "Parameter PausableToken.transferFrom(address,address,uint256)._from (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#397) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 329,
+            "message": "Parameter BurnableToken.burn(uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#329) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 200,
+            "message": "Parameter StandardToken.allowance(address,address)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#200) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 188,
+            "message": "Parameter StandardToken.approve(address,uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#188) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 397,
+            "message": "Parameter PausableToken.transferFrom(address,address,uint256)._to (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#397) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 125,
+            "message": "Parameter BasicToken.transfer(address,uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#125) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter CappedToken.mint(address,uint256)._amount (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 200,
+            "message": "Parameter StandardToken.allowance(address,address)._owner (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#200) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 269,
+            "message": "Parameter MintableToken.mint(address,uint256)._to (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#269) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 166,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._from (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#166) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 401,
+            "message": "Parameter PausableToken.approve(address,uint256)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#401) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 166,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._to (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#166) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 409,
+            "message": "Parameter PausableToken.decreaseApproval(address,uint256)._subtractedValue (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#409) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 188,
+            "message": "Parameter StandardToken.approve(address,uint256)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#188) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 214,
+            "message": "Parameter StandardToken.increaseApproval(address,uint256)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#214) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 125,
+            "message": "Parameter BasicToken.transfer(address,uint256)._to (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#125) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 230,
+            "message": "Parameter StandardToken.decreaseApproval(address,uint256)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#230) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 141,
+            "message": "Parameter BasicToken.balanceOf(address)._owner (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#141) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 269,
+            "message": "Parameter MintableToken.mint(address,uint256)._amount (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#269) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 214,
+            "message": "Parameter StandardToken.increaseApproval(address,uint256)._addedValue (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#214) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 405,
+            "message": "Parameter PausableToken.increaseApproval(address,uint256)._addedValue (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#405) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter CappedToken.mint(address,uint256)._to (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 230,
+            "message": "Parameter StandardToken.decreaseApproval(address,uint256)._subtractedValue (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#230) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 393,
+            "message": "Parameter PausableToken.transfer(address,uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#393) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 409,
+            "message": "Parameter PausableToken.decreaseApproval(address,uint256)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#409) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 405,
+            "message": "Parameter PausableToken.increaseApproval(address,uint256)._spender (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#405) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 393,
+            "message": "Parameter PausableToken.transfer(address,uint256)._to (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#393) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 401,
+            "message": "Parameter PausableToken.approve(address,uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#401) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 397,
+            "message": "Parameter PausableToken.transferFrom(address,address,uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#397) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "impact": "Informational",
+            "line": 166,
+            "message": "Parameter StandardToken.transferFrom(address,address,uint256)._value (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#166) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RISTToken",
+            "filename": "samples/SmartbugsWild/0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol",
+            "function": "RISTToken",
+            "impact": "Informational",
+            "line": 420,
+            "line_end": 435,
+            "message": "RISTToken.RISTToken() (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#420-435) uses literals with too many digits:\n\t- CappedToken(1000000 * 10 ** uint256(decimals)) (0x0c1a3a44e2161c871b08ebbafda46bd12748953f.sol#423)\n",
+            "name": "too-many-digits"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

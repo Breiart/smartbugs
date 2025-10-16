@@ -1,0 +1,80 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "function": "symbol",
+            "impact": "Low",
+            "line": 266,
+            "message": "ERC20Detailed.constructor(string,string,uint8).symbol (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#266) shadows:\n\t- ERC20Detailed.symbol() (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#282-284) (function)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "function": "decimals",
+            "impact": "Low",
+            "line": 266,
+            "message": "ERC20Detailed.constructor(string,string,uint8).decimals (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#266) shadows:\n\t- ERC20Detailed.decimals() (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#289-291) (function)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "function": "name",
+            "impact": "Low",
+            "line": 266,
+            "message": "ERC20Detailed.constructor(string,string,uint8).name (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#266) shadows:\n\t- ERC20Detailed.name() (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#275-277) (function)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ERC20",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "function": "_burnFrom",
+            "impact": "Informational",
+            "line": 255,
+            "line_end": 258,
+            "message": "ERC20._burnFrom(address,uint256) (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#255-258) is never used and should be removed\n",
+            "name": "dead-code"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ERC20",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "function": "_burn",
+            "impact": "Informational",
+            "line": 225,
+            "line_end": 231,
+            "message": "ERC20._burn(address,uint256) (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#225-231) is never used and should be removed\n",
+            "name": "dead-code"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "impact": "Informational",
+            "message": "solc-0.5.17 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x746dda2ea243400d5a63e0700f190ab79f06489e.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.5.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor\n\t- IncorrectEventSignatureInLibraries\n\t- ABIEncoderV2PackedStorage.\nIt is used by:\n\t- ^0.5.0 (0x746dda2ea243400d5a63e0700f190ab79f06489e.sol#1)\n",
+            "name": "solc-version"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}

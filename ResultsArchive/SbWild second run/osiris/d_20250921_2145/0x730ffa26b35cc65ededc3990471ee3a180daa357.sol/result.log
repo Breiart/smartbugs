@@ -1,0 +1,154 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol:BasicToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.8%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.345251083374 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol:BurnableToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.9%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.544239997864 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol:SXCT:
+INFO:symExec:Running, please wait...
+Traceback (most recent call last):
+
+  File "_ctypes/callbacks.c", line 315, in 'calling callback function'
+  .oooooo.             o8o            o8o          
+  File "/root/osiris/z3/z3.py", line 137, in z3_error_handler
+ d8P'  `Y8b            `"'            `"'          
+888      888  .oooo.o oooo  oooo d8b oooo   .oooo.o
+888      888 d88(  "8 `888  `888""8P `888  d88(  "8
+888      888 `"Y88b.   888   888      888  `"Y88b. 
+`88b    d88' o.  )88b  888   888      888  o.  )88b
+    def z3_error_handler(c, e):
+ `Y8bood8P'  8""888P' o888o d888b    o888o 8""888P'
+  File "/root/osiris/symExec.py", line 2868, in handler
+
+
+
+
+!!! SYMBOLIC EXECUTION TIMEOUT !!!
+    raise Exception("timeout")
+Exception: timeout
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 74.0%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 16.0247650146 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol:SafeMath:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 100.0%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.00736904144287 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol:StandardBurnableToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 100.0%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 1.69161295891 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x730ffa26b35cc65ededc3990471ee3a180daa357.sol:StandardToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.9%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 1.3594648838 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+Exception z3.z3types.Z3Exception: Z3Exception() in <object repr() failed> ignored
+
+
+

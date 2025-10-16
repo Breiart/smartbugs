@@ -1,0 +1,76 @@
+'solc --version' running
+'solc /sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/sb' running
+
+Reentrancy in ERC223Standard.transfer(address,uint256,bytes) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#287-304):
+	External calls:
+	- receiver.tokenFallback(msg.sender,_value,_data) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#301)
+	Event emitted after the call(s):
+	- Transfer(msg.sender,_to,_value) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#303)
+Reentrancy in ERC223Standard.transfer(address,uint256) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#315-332):
+	External calls:
+	- receiver.tokenFallback(msg.sender,_value,empty) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#328)
+	Event emitted after the call(s):
+	- Transfer(msg.sender,_to,_value) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#330)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+ERC223Standard.transfer(address,uint256,bytes) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#287-304) uses assembly
+	- INLINE ASM (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#292-297)
+ERC223Standard.transfer(address,uint256) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#315-332) uses assembly
+	- INLINE ASM (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#319-324)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Version constraint ^0.4.24 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- DirtyBytesArrayToStorage
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching
+	- EmptyByteArrayCopy
+	- DynamicArrayCleanup
+	- ImplicitConstructorCallvalueCheck
+	- TupleAssignmentMultiStackSlotComponents
+	- MemoryArrayCreationOverflow
+	- privateCanBeOverridden
+	- SignedArrayStorageCopy
+	- ABIEncoderV2StorageArrayWithMultiSlotElement
+	- DynamicConstructorArgumentsClippedABIV2
+	- UninitializedFunctionPointerInConstructor_0.4.x
+	- IncorrectEventSignatureInLibraries_0.4.x
+	- ABIEncoderV2PackedStorage_0.4.x
+	- ExpExponentCleanup
+	- EventStructWrongData.
+It is used by:
+	- ^0.4.24 (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#1)
+solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter ERC20Standard.transfer(address,uint256)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#107) is not in mixedCase
+Parameter ERC20Standard.transfer(address,uint256)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#107) is not in mixedCase
+Parameter ERC20Standard.transferFrom(address,address,uint256)._from (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#124) is not in mixedCase
+Parameter ERC20Standard.transferFrom(address,address,uint256)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#124) is not in mixedCase
+Parameter ERC20Standard.transferFrom(address,address,uint256)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#124) is not in mixedCase
+Parameter ERC20Standard.approve(address,uint256)._spender (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#149) is not in mixedCase
+Parameter ERC20Standard.approve(address,uint256)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#149) is not in mixedCase
+Parameter ERC20Standard.balanceOf(address)._owner (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#168) is not in mixedCase
+Parameter ERC20Standard.allowance(address,address)._owner (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#178) is not in mixedCase
+Parameter ERC20Standard.allowance(address,address)._spender (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#178) is not in mixedCase
+Parameter ERC20Standard.increaseApproval(address,uint256)._spender (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#192) is not in mixedCase
+Parameter ERC20Standard.increaseApproval(address,uint256)._addedValue (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#192) is not in mixedCase
+Parameter ERC20Standard.decreaseApproval(address,uint256)._spender (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#208) is not in mixedCase
+Parameter ERC20Standard.decreaseApproval(address,uint256)._subtractedValue (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#208) is not in mixedCase
+Parameter ERC223Standard.transfer(address,uint256,bytes)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#287) is not in mixedCase
+Parameter ERC223Standard.transfer(address,uint256,bytes)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#287) is not in mixedCase
+Parameter ERC223Standard.transfer(address,uint256,bytes)._data (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#287) is not in mixedCase
+Parameter ERC223Standard.transfer(address,uint256)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#315) is not in mixedCase
+Parameter ERC223Standard.transfer(address,uint256)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#315) is not in mixedCase
+Parameter MintableToken.mint(address,uint256)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#418) is not in mixedCase
+Parameter MintableToken.mint(address,uint256)._amount (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#418) is not in mixedCase
+Parameter StandardToken.forceTransfer(address,uint256)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#460) is not in mixedCase
+Parameter StandardToken.forceTransfer(address,uint256)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#460) is not in mixedCase
+Parameter BurnableToken.burn(uint256)._value (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#493) is not in mixedCase
+Parameter CappedToken.mint(address,uint256)._to (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#528) is not in mixedCase
+Parameter CappedToken.mint(address,uint256)._amount (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#528) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+tokenFallback(address,uint256,bytes) should be declared external:
+	- ERC223ReceivingContract.tokenFallback(address,uint256,bytes) (../../sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol#241)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+/sb/0x837e9d70de24e6ae273a6c691686c6c431b78c6b.sol analyzed (12 contracts with 93 detectors), 33 result(s) found

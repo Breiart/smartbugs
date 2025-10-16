@@ -1,0 +1,159 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "column": 1,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "error",
+            "line": 1,
+            "message": "Compiler version ^0.4.12 does not satisfy the ^0.5.8 semver requirement",
+            "name": "compiler-version"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 99,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 117,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 58,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 135,
+            "message": "Visibility modifier must be first in list of modifiers",
+            "name": "visibility-modifier-order"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 137,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 189,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 205,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 285,
+            "message": "Explicitly mark visibility of state",
+            "name": "state-visibility"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 305,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 397,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 3,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 411,
+            "message": "Explicitly mark visibility in function",
+            "name": "func-visibility"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 465,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 9,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 467,
+            "message": "Provide an error message for require",
+            "name": "reason-string"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 493,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 495,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 497,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 499,
+            "message": "Constant name must be in capitalized SNAKE_CASE",
+            "name": "const-name-snakecase"
+        },
+        {
+            "column": 5,
+            "filename": "samples/SmartbugsWild/0x820a002161b7617382adf5d8524f032efef12e68.sol",
+            "level": "warning",
+            "line": 505,
+            "message": "Explicitly mark visibility in function (Set ignoreConstructors to true if using solidity >=0.7.0)",
+            "name": "func-visibility"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "solhint-3.3.8",
+        "mode": "solidity",
+        "version": "2023/02/12"
+    },
+    "tool_args": ""
+}

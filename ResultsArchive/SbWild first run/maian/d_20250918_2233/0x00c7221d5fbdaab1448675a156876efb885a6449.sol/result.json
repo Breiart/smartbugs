@@ -1,0 +1,33 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [
+        {
+            "contract": "DENMARK_WINS",
+            "feature": "NO_SELFDESTRUCT",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "name": "Not destructible (no self-destruct)"
+        },
+        {
+            "contract": "DENMARK_WINS",
+            "feature": "NOT_PRODIGAL",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "name": "No Ether leak (no send)"
+        },
+        {
+            "contract": "DENMARK_WINS",
+            "feature": "CANNOT_RECEIVE_ETHER",
+            "filename": "samples/SmartbugsWild/0x00c7221d5fbdaab1448675a156876efb885a6449.sol",
+            "name": "No Ether lock (Ether refused)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "maian",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    },
+    "tool_args": ""
+}

@@ -1,0 +1,27 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "column": 16,
+            "contract": "BIFAToken",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "line": 97,
+            "name": "Overflow bugs"
+        },
+        {
+            "column": 16,
+            "contract": "UnboundedRegularToken",
+            "filename": "samples/SmartbugsWild/0x0c116eaa8ebbfbd4295c3361243441f6b50247f7.sol",
+            "line": 97,
+            "name": "Overflow bugs"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "osiris",
+        "mode": "solidity",
+        "version": "2023/02/27"
+    },
+    "tool_args": ""
+}

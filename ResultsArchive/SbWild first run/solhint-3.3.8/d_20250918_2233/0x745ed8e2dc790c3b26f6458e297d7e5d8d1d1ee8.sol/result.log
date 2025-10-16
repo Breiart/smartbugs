@@ -1,0 +1,10 @@
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:1:1: Compiler version >0.4.99 <0.6.0 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:25:14: Avoid to use tx.origin [Warning/avoid-tx-origin]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:40:5: Provide an error message for require [Warning/reason-string]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:75:5: Provide an error message for require [Warning/reason-string]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:131:5: Constant name must be in capitalized SNAKE_CASE [Warning/const-name-snakecase]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:168:9: Provide an error message for require [Warning/reason-string]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:187:9: Provide an error message for require [Warning/reason-string]
+/sb/0x745ed8e2dc790c3b26f6458e297d7e5d8d1d1ee8.sol:191:9: Provide an error message for require [Warning/reason-string]
+
+8 problems

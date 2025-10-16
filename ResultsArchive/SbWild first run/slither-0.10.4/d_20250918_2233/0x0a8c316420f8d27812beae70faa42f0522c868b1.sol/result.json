@@ -1,0 +1,159 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Version constraint ^0.4.18 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- DirtyBytesArrayToStorage\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching\n\t- EmptyByteArrayCopy\n\t- DynamicArrayCleanup\n\t- ImplicitConstructorCallvalueCheck\n\t- TupleAssignmentMultiStackSlotComponents\n\t- MemoryArrayCreationOverflow\n\t- privateCanBeOverridden\n\t- SignedArrayStorageCopy\n\t- ABIEncoderV2StorageArrayWithMultiSlotElement\n\t- DynamicConstructorArgumentsClippedABIV2\n\t- UninitializedFunctionPointerInConstructor_0.4.x\n\t- IncorrectEventSignatureInLibraries_0.4.x\n\t- ExpExponentCleanup\n\t- EventStructWrongData\n\t- NestedArrayFunctionCallDecoder.\nIt is used by:\n\t- ^0.4.18 (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#1)\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "message": "solc-0.4.26 is an outdated solc version. Use a more recent version (at least 0.8.0), if possible.\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 189,
+            "message": "Parameter WAVEliteToken.burn(uint256)._value (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#189) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 162,
+            "message": "Parameter WAVEliteToken.approve(address,uint256)._spender (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#162) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 168,
+            "message": "Parameter WAVEliteToken.increaseApproval(address,uint256)._spender (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#168) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 150,
+            "message": "Parameter WAVEliteToken.transferFrom(address,address,uint256)._from (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#150) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 150,
+            "message": "Parameter WAVEliteToken.transferFrom(address,address,uint256)._to (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#150) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 131,
+            "message": "Parameter WAVEliteToken.balanceOf(address)._who (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#131) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 162,
+            "message": "Parameter WAVEliteToken.approve(address,uint256)._value (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#162) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 135,
+            "message": "Parameter WAVEliteToken.transfer(address,uint256)._to (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#135) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 174,
+            "message": "Parameter WAVEliteToken.decreaseApproval(address,uint256)._subValue (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#174) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 174,
+            "message": "Parameter WAVEliteToken.decreaseApproval(address,uint256)._spender (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#174) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter WAVEliteToken.allowance(address,address)._spender (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 150,
+            "message": "Parameter WAVEliteToken.transferFrom(address,address,uint256)._value (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#150) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 168,
+            "message": "Parameter WAVEliteToken.increaseApproval(address,uint256)._addValue (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#168) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 135,
+            "message": "Parameter WAVEliteToken.transfer(address,uint256)._value (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#135) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter WAVEliteToken.allowance(address,address)._owner (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "WAVEliteToken",
+            "filename": "samples/SmartbugsWild/0x0a8c316420f8d27812beae70faa42f0522c868b1.sol",
+            "function": "slitherConstructorConstantVariables",
+            "impact": "Informational",
+            "line": 106,
+            "line_end": 198,
+            "message": "WAVEliteToken.slitherConstructorConstantVariables() (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#106-198) uses literals with too many digits:\n\t- INITIAL_SUPPLY = 45000000 * (10 ** uint256(decimals)) (0x0a8c316420f8d27812beae70faa42f0522c868b1.sol#118)\n",
+            "name": "too-many-digits"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither-0.10.4",
+        "mode": "solidity",
+        "version": "2024/04/30"
+    },
+    "tool_args": ""
+}
