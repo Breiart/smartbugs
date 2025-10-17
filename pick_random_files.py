@@ -4,10 +4,10 @@ import shutil
 
 # cartella con tutti i file
 src_dir = "/Users/micheleaversana/Documents/GitHub/smartbugs-wild/contracts"
-# cartella con i 100 file già presi
-existing_dir = "/Users/micheleaversana/Documents/GitHub/smartbugs/samples/SmartbugsWild"
+# cartella con i file già presi
+existing_dir = "/Users/micheleaversana/Documents/ContrattiUsati"
 # cartella di destinazione per i nuovi 50 file
-dest_dir = "/Users/micheleaversana/Documents/GitHub/smartbugs/samples/SmartbugsWild2"
+dest_dir = "/Users/micheleaversana/Documents/GitHub/smartbugs/samples/SmartbugsWild3"
 
 # lista di tutti i file nella cartella grande
 all_files = set(os.listdir(src_dir))
