@@ -24,7 +24,7 @@ Potential reentrancy vulnerability:
     classification: SWC-107, DASP-1
 Reentrancy multi-million ether bug:
     classification: SWC-107, DASP-1
-Potentially reading uninitialized memory at instruction (address: %r, offset %r): {}
+Potentially reading uninitialized memory at instruction (address:%r, offset:%r): {}
 Potentially reading uninitialized storage:
     classification: SWC-109
 Signed integer overflow at %s instruction:
