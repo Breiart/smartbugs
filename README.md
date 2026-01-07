@@ -1,4 +1,4 @@
-# smartbugs-orchestrator
+# Smartbugs Orchestrator
 
 This repository contains the **thesis code release** of an evidence-driven orchestrator built on top of the **SmartBugs** framework for Ethereum smart-contract analysis.
 
