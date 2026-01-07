@@ -1,5 +1,0 @@
-2025-09-19 01:38:27,108: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
-2025-09-19 01:38:27,108: [11] m.main:INFO: Beginning analysis
-2025-09-19 01:38:27,110: [11] m.e.manticore:INFO: Starting symbolic create contract
-2025-09-19 01:38:31,403: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
-2025-09-19 01:38:41,131: [11] m.e.detectors:WARNING: Potentially reading uninitialized storage

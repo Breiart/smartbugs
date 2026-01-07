@@ -1,7 +1,0 @@
-ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
-ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
-Analysing /sb/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol:DinosaurFarmer2...
-Vulnerability: Time Manipulation. Maybe in function: getFreeShrimp(). PC: 0x7f4. Line number: 79.
-Vulnerability: Time Manipulation. Maybe in function: calculateEggSell(uint256). PC: 0x12b5. Line number: 96.
-Vulnerability: Time Manipulation. Maybe in function: calculateEggSell(uint256). PC: 0x129f. Line number: 128.
-Analysing /sb/0x675f070e80f89ddcc3f2457d9fe571814741e904.sol:SafeMath...

@@ -1,1 +1,0 @@
-{"success": false, "error": "Solc experienced a fatal error.\n\n/sb/0x0c01d1a41f21863c194c8e948054f8e3a433c424.sol:4:40: ParserError: Expected token LBrace got reserved keyword 'Pure'\n    function implementsERC721() public pure returns (bool);\r\n                                       ^\n", "issues": []}

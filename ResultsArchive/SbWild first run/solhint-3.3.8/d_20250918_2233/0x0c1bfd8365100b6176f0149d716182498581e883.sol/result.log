@@ -1,6 +1,0 @@
-/sb/0x0c1bfd8365100b6176f0149d716182498581e883.sol:1:1: Compiler version ^0.5.0 does not satisfy the ^0.5.8 semver requirement [Error/compiler-version]
-/sb/0x0c1bfd8365100b6176f0149d716182498581e883.sol:15:5: Provide an error message for require [Warning/reason-string]
-/sb/0x0c1bfd8365100b6176f0149d716182498581e883.sol:16:5: Provide an error message for require [Warning/reason-string]
-/sb/0x0c1bfd8365100b6176f0149d716182498581e883.sol:31:9: Provide an error message for require [Warning/reason-string]
-
-4 problems

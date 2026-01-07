@@ -1,5 +1,0 @@
-2025-09-19 02:41:12,851: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
-2025-09-19 02:41:12,851: [11] m.main:INFO: Beginning analysis
-2025-09-19 02:41:12,853: [11] m.e.manticore:INFO: Starting symbolic create contract
-2025-09-19 02:41:13,710: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
-2025-09-19 02:41:15,611: [11] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' -> 73138091548938366139099779971772605061518111956507126412222883840269740007539

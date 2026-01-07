@@ -1,1 +1,0 @@
-{"success": false, "error": "Solc experienced a fatal error.\n\n/sb/0x0c1a07d17f39a179245f2ef277cef97671cf9648.sol:100:27: ParserError: Expected token Semicolon got 'LParen'\n        emit DistrFinished();\r\n                          ^\n", "issues": []}

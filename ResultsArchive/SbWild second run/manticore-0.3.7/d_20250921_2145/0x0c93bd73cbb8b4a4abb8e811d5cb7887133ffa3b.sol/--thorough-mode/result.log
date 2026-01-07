@@ -1,3 +1,0 @@
-2025-09-21 21:11:39,424: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, DetectInvalid, DetectIntegerOverflow, DetectUninitializedStorage, DetectUninitializedMemory, DetectReentrancySimple, DetectReentrancyAdvanced, DetectUnusedRetVal, DetectSuicidal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectManipulableBalance
-2025-09-21 21:11:39,424: [11] m.main:INFO: Beginning analysis
-2025-09-21 21:11:39,426: [11] m.e.manticore:INFO: Starting symbolic create contract
